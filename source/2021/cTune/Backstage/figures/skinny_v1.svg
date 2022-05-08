@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="670px" preserveAspectRatio="none" style="width:371px;height:670px;background:#FFFFFF;" version="1.1" viewBox="0 0 371 670" width="371px" zoomAndPan="magnify"><defs><filter height="300%" id="fvez8fnbqu0gb" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[42603eecb267091c13893a16d8c379fb]
+cluster player--><polygon fill="#D3D3D3" filter="url(#fvez8fnbqu0gb)" points="64,133,120,133,127,155.2969,231,155.2969,231,556,64,556,64,133" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="64" x2="127" y1="155.2969" y2="155.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="50" x="68" y="147.9951">player</text><!--MD5=[18ed41bc3c380f16b51f00d3688aa4e9]
+entity RadioStream--><ellipse cx="152" cy="38.5" fill="#000000" filter="url(#fvez8fnbqu0gb)" rx="8" ry="8" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="103.5" y="68.4951">Radio Stream</text><!--MD5=[55ead11f279d43a49df83e73bfcb0783]
+entity out--><ellipse cx="133" cy="632" fill="#000000" filter="url(#fvez8fnbqu0gb)" rx="8" ry="8" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="97" y="661.9951">Sound out</text><!--MD5=[0015618b095ddb59eb88a6c6643322a2]
+entity iAudioOut--><ellipse cx="113" cy="253" fill="#FEFECE" filter="url(#fvez8fnbqu0gb)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="6" y="282.9951">AudioOut interface</text><!--MD5=[e8907a2785b2ea9784e1231cc1aa4a14]
+entity RadioPlayer--><rect fill="#FEFECE" filter="url(#fvez8fnbqu0gb)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="125" x="89.5" y="168"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="194.5" y="173"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="192.5" y="175"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="192.5" y="179"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="104.5" y="200.9951">RadioPlayer</text><!--MD5=[ea7232234d7e06393d4815c65d0eaa7d]
+entity SDL--><rect fill="#FEFECE" filter="url(#fvez8fnbqu0gb)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="68" x="99" y="494"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="147" y="499"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="145" y="501"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="145" y="505"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="28" x="114" y="526.9951">SDL</text><!--MD5=[f855680bc6c989572ebb25245d27968d]
+entity Controller--><rect fill="#FFD700" filter="url(#fvez8fnbqu0gb)" height="62.5938" style="stroke:#000000;stroke-width:1.5;" width="86" x="271" y="7"/><rect fill="#FFD700" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="337" y="12"/><rect fill="#FFD700" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="335" y="14"/><rect fill="#FFD700" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="335" y="18"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="286" y="39.9951">Driver</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="286" y="56.292">(main)</text><!--MD5=[77fc73022587df38fd9c9577d98809c4]
+link iAudioOut to SDL--><path d="M106.21,262.35 C96.82,274.77 81,299.23 81,323 C81,323 81,323 81,433 C81,456.3 95.89,478.43 109.74,493.97 " fill="none" id="iAudioOut-SDL" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d824fa6e977ef5b8837aacf1ad844209]
+link RadioPlayer to iAudioOut--><path d="M137.7,214 C133.14,221.01 128.18,228.65 123.9,235.23 " fill="none" id="RadioPlayer-to-iAudioOut" style="stroke:#A80036;stroke-width:1.0;"/><path d="M127.0274,245.9429 A9,9 0 0 0 112.8505 236.7171" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><!--MD5=[eadcacca0db42609150eb313f80da4bc]
+link RadioPlayer to SDL--><path d="M152,214.24 C152,234.51 152,265.26 152,292 C152,292 152,292 152,433 C152,452.02 147.2,472.89 142.42,488.95 " fill="none" id="RadioPlayer-to-SDL" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="140.95,493.77,147.4042,486.3307,142.4104,488.988,139.7531,483.9941,140.95,493.77" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="153" y="367.0669">PCM data</text><!--MD5=[a36c77bd0f52f26392d247897d4ec3c6]
+link RadioStream to RadioPlayer--><path d="M152,47.59 C152,68.92 152,127.43 152,162.46 " fill="none" id="RadioStream-to-RadioPlayer" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="152,167.87,156,158.87,152,162.87,148,158.87,152,167.87" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[3949feb81c00c211d641f96dd760c895]
+link SDL to out--><path d="M133,540.06 C133,562.99 133,598.17 133,617.36 " fill="none" id="SDL-to-out" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="133,622.77,137,613.77,133,617.77,129,613.77,133,622.77" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[30e46fa21d3c4462bba3a0b10c513127]
+link Controller to RadioPlayer--><path d="M280.83,70.32 C250.88,98.14 207.35,138.58 179.36,164.59 " fill="none" id="Controller-to-RadioPlayer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="175.68,168,184.9946,164.8002,179.3414,164.595,179.5466,158.9419,175.68,168" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[30e46fa21d3c4462bba3a0b10c513127]
+link Controller to RadioPlayer--><path d="M293.83,70.32 C283.24,85.29 269.47,103.02 255,117 C236.39,134.98 213.04,151.91 193.28,164.92 " fill="none" id="Controller-to-RadioPlayer-1" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="188.86,167.81,198.5839,166.2461,193.0486,165.0795,194.2151,159.5443,188.86,167.81" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="270" y="113.0669">stream url</text><!--MD5=[16a9d01cb5529677b6ba7ed87d97b18a]
+@startuml
+'https://plantuml.com/component-diagram
+
+together {
+    interface "Radio Stream" as RadioStream #back:black;line:black
+    interface "Sound out" as out #back:black;line:black
+
+    package player #lightgrey {
+        interface "AudioOut interface                    " as iAudioOut
+        component RadioPlayer
+        component SDL
+
+        iAudioOut - -right- - SDL
+        RadioPlayer - -right- -( iAudioOut
+    }
+
+    RadioPlayer .[#black]....> SDL : PCM data
+
+    RadioStream .[#black].> RadioPlayer
+    SDL .[#black].> out
+}
+
+component "Driver\n(main)" as Controller #back:gold;line:black
+Controller -right-> RadioPlayer
+Controller .[#black].> RadioPlayer : stream url
+
+
+
+
+@enduml
+
+@startuml
+
+together {
+    interface "Radio Stream" as RadioStream #back:black;line:black
+    interface "Sound out" as out #back:black;line:black
+
+    package player #lightgrey {
+        interface "AudioOut interface                    " as iAudioOut
+        component RadioPlayer
+        component SDL
+
+        iAudioOut - -right- - SDL
+        RadioPlayer - -right- -( iAudioOut
+    }
+
+    RadioPlayer .[#black]....> SDL : PCM data
+
+    RadioStream .[#black].> RadioPlayer
+    SDL .[#black].> out
+}
+
+component "Driver\n(main)" as Controller #back:gold;line:black
+Controller -right-> RadioPlayer
+Controller .[#black].> RadioPlayer : stream url
+
+
+
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

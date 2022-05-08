@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+enum CLI_STATES {
+    CLI_EXIT_OK
+    CLI_EXIT_ERR
+    CLI_CONTINUE
+    CLI_CONTINUE_WITH_OPT
+}
+
+@enduml

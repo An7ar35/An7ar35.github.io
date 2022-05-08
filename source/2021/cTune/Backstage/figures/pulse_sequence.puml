@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'autonumber
+
+participant cTune
+participant plugin
+participant PulseAudio
+
+activate cTune
+activate PulseAudio
+
+group Initialise
+    cTune -> plugin : ""init(..)""
+    activate plugin
+    plugin -> PulseAudio : setup properties
+    plugin -> PulseAudio : set context state callback
+    plugin -> PulseAudio : ""pa_context_connect(..)""
+    plugin -> PulseAudio : ""pa_threaded_mainloop_lock(..)""
+    plugin -> PulseAudio : ""pa_threaded_mainloop_start(..)""
+    loop ""pa_context_get_state != PA_CONTEXT_READY""
+        plugin -> PulseAudio : ""pa_threaded_mainloop_wait(..)""
+    end loop
+    plugin -> PulseAudio : ""pa_stream_new(..)""
+    plugin -> PulseAudio : set stream callbacks
+    plugin -> PulseAudio : ""pa_stream_connect_playback(..)""
+    loop ""pa_stream_get_state != PA_STREAM_READY""
+        plugin -> PulseAudio : ""pa_threaded_mainloop_wait(..)""
+    end loop
+    plugin -> PulseAudio : ""pa_threaded_mainloop_unlock(..)""
+end group
+
+group Playback PCM data
+    cTune -> plugin : ""write(..)""
+    plugin -> PulseAudio : ""pa_threaded_mainloop_lock(..)""
+    plugin -> PulseAudio : ""pa_stream_write(..)""
+    plugin -> PulseAudio : ""pa_threaded_mainloop_unlock(..)""
+end group
+
+group Shutdown
+    cTune  -> plugin : ""shutdown()""
+    plugin -> PulseAudio : ""pa_threaded_mainloop_stop(..)""
+    plugin -> PulseAudio : ""pa_context_disconnect(..)""
+    plugin -> PulseAudio : ""pa_stream_disconnect(..)""
+    plugin -> PulseAudio : ""pa_stream_unref(..)""
+    plugin -> PulseAudio : ""pa_threaded_mainloop_free(..)""
+end group
+
+deactivate plugin
+@enduml

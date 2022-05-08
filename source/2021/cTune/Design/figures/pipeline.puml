@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+<style>
+    usecase {
+        BackGroundColor white
+        LineThickness 2
+    }
+    interface {
+        BackGroundColor black
+        LineThickness 2
+        LineColor black
+    }
+</style>
+
+interface in as in1
+interface out
+usecase "p//1//" as p1
+usecase "p//2//" as p2
+usecase "p//3//" as p3
+usecase "p//4//" as p4
+usecase "p//5//" as p5
+usecase "p//n//" as pn
+
+in1  .[#black]right.> (p1)
+(p1) .[#black]right.> (p2)
+(p2) .[#black]right.> (p3)
+(p3) .[#black]up.> (p4)
+(p3) .[#black]right.> (p5)
+(p4) .[#black]right.> (p5)
+(p5) .[#black]right.> (pn)
+(pn) .[#black]right.> out
+
+together {
+    interface in as in2
+    usecase "p//a//" as pa
+    usecase "p//b//" as pb
+    in2  .[#black]right.> (pa)
+    (pa) .[#black]right.> (pb)
+    (pb) .[#black]down.> (p2)
+}
+
+@enduml

@@ -1,0 +1,617 @@
+<!-- Generated with Blogator 1.3.2 (https://an7ar35.bitbucket.io) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' 'unsafe-eval';">
+    <title>EAD | Writings</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/blogator/main.css" />
+</head>
+    <body>
+        <div class="header">
+            <div><img src="../img/tree-left.svg" alt="left tree"/></div>
+            <div>
+                <div class="site-title">Es' corner</div>
+                <div class="site-micro-title">Just another keyboard-enthusiastic hominid.</div>
+            </div>
+            <div><img src="../img/tree-right.svg" alt="right tree"/></div>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li class="active">
+                    <a class="nav-writings" href="../index.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Home</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-projects" href="../pages/projects/personal.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Projects</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-contact" href="../pages/contact.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script src="../js/sticky-top-navbar.js"></script>
+
+        <div class="breadcrumb">
+        	<ul>
+        		<li><a href="../index.html">Home</a></li>
+        		<li><a href="../index/by_date/0.html">Posts</a></li>
+        		<li>Indexed search with Javascript</li>
+        	</ul>
+        </div>
+
+        <div class="content-h">
+            <div class="left-col">
+                <div class="post-content">
+
+<article>
+    <div>
+        <h1><span class="title">Indexed search with Javascript</span></h1>
+        <time datetime="2020-06-16">16 June 2020</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">Algorithm</span>
+            <span class="tag">Data Structure</span>
+            <span class="tag">Javascript</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <div class="auto-toc">
+        	<h2>Table of Contents</h2>
+        	<ol>
+        		<li><a href="#heading_1">1. The goals</a></li>
+        		<li><a href="#heading_2">2. The approach</a></li>
+        		<li><ol>
+        			<li><a href="#heading_2_1">2.1 Data-structure</a></li>
+        			<li><a href="#heading_2_2">2.2 Populating the grove</a></li>
+        			<li><a href="#heading_2_3">2.3 Parsing search strings</a></li>
+        			<li><a href="#heading_2_4">2.4 Output</a></li>
+        			<li><ol>
+        				<li><a href="#heading_2_4_1">2.4.1 Filtering</a></li>
+        				<li><a href="#heading_2_4_2">2.4.2 DOM injection</a></li>
+        			</ol></li>
+        			<li><a href="#heading_2_5">2.5 Graceful failure</a></li>
+        		</ol></li>
+        		<li><a href="#heading_3">3. Additions</a></li>
+        		<li><ol>
+        			<li><a href="#heading_3_1">3.1 Passing query to the URL</a></li>
+        			<li><a href="#heading_3_2">3.2 New category</a></li>
+        		</ol></li>
+        		<li><a href="#heading_4">4. Final thoughts</a></li>
+        	</ol>
+        </div>
+
+        <p><span class="summary">It started with an idea: "Wouldn't it be nice to have a search functionality on my blog?". Sure, nowadays there are many libraries and external sites such as Google offering this in some form or other. But, as far as my personal projects are concerned, I am not one to be satiated with a solution that would likely involve said third party injecting hell-knows-what into my little home-brew site. Even if that was an option it would probably be overkill for what I actually need.</span></p>
+
+        <p>Other reasons for doing it from scratch are firstly "why not?" and secondly an opportunity to flex my rather atrophied javascript muscle. Last I did anything related to it was 2013 so might as well say the Cambrian era...</p>
+
+        <h2 id="heading_1">1. The goals</h2>
+
+        <p>So what's the end game here? Defining goals early on helps keep the scope from ever-expanding during implementation. It is always tempting to explore more than is actually needed and get so spread out that the project gets never finished becoming a time sink with a slice of guilt attached to it as a bonus.</p>
+
+        <p>As the search will execute entirely on the client side some considerations must be made towards having descent performance. As this site doesn't have, nor will likely have, 20,000 articles it should be relatively easy to have snippy responses to searches.</p>
+
+        <p>The requirements:</p>
+        <ol>
+            <li>site-local solution that runs entirely on the client</li>
+            <li>results based on the <code class="inline terminal">index.json</code> file generated by Blogator</li>
+            <li>result pool generated at least from:<ul>
+                <li>article's title,</li>
+                <li>article's tags,</li>
+                <li>tag names.</li>
+            </ul></li>
+            <li>result filtering for blog article and tags (maybe even projects as an extra)</li>
+            <li>accept both exact and partial words in a search string</li>
+            <li>case-insensitive search</li>
+            <li>no duplication in results</li>
+            <li>multiple word matches (individual word result set intersection &cap;)</li>
+            <li>graceful failure when Javascript is disabled in the client browser</li>
+        </ol>
+
+        <h2 id="heading_2">2. The approach</h2>
+
+        <p>The structure of the source JSON generated by Blogator is as follows:</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">{
+    "articles": [
+        {
+            "title"   : "...",
+            "date"    : "...",
+            "authors" : [ "..." ],
+            "tags"    : [ "..." ],
+            "headings": [ "..." ],
+            "href"    : "..."
+        },
+        ...
+    ],
+    "tags": [
+        {
+            "name": "...",
+            "href": "..."
+        },
+        ...
+    ]
+}</code>
+        </div>
+
+        <p>As the solution needs to differentiate between categories (articles/tags) the JSON index can be parsed as-is without further manipulations and kept in memory as the source reference. The work will mainly be on creating a searchable index and getting the results out based on the words given in the search string.</p>
+
+        <h3 id="heading_2_1">2.1 Data-structure</h3>
+
+        <p>Since it would be pretty cool to have a sort of "auto-complete" feature which fills up results as a query is typed I've gone with a collection of tree data-structure which I'm calling a "<i>grove</i>"<sup>[1]</sup> since there won't be such a large number of trees as to call it a <i>forest</i>... (arborism related joke &#9786;)</p>
+
+        <p>This <i>grove</i> contains the root nodes of the trees. Each tree represent a group of words sharing the same starting letter. Meaning that each tree can efficiently hold multiple words that stem from the same root letter or share the same prefix. Each node is identified with a single letter and can link back to sources as well as have any number of children connected to it.</p>
+
+        <p>Let's go with an example. Here we have a collection of words that can be grouped into 2 trees: one with a root node '<code class="inline terminal">b</code>' and the other with a root node of '<code class="inline terminal">h</code>':</p>
+
+        <ul>
+            <li><b>blog</b> (tag)</li>
+            <li><b>blogator</b> (articles)</li>
+            <li><b>hell</b> (articles and tag)</li>
+            <li><b>hello</b> (articles)</li>
+            <li><b>hellraiser</b> (articles)</li>
+            <li><b>help</b> (tag)</li>
+        </ul>
+
+        <p>Visually it will look like this:</p>
+
+        <figure class="center">
+            <a href="../source/2020/Indexed%20search%20in%20JS/grove_example.svg"><img src="../source/2020/Indexed%20search%20in%20JS/grove_example.svg" alt="Tree based search"/></a>
+            <figcaption>Tree-based searching</figcaption>
+        </figure>
+
+        <p>When transversing a tree from root to all the leaf nodes, all words can be listed. This means that sources of words with a shared prefix can be collected using a recursive function.</p>
+
+        <div class="code-wrap">
+            <code class="javascript block">accumulateResults = function( node, articles, tags ) {
+    gatherNodeResults( node, articles, tags );
+
+    node.child_nodes.forEach(
+        ( value ) =&gt; { this.accumulateResults( value, articles, tags, projects ); }
+    );
+}</code>
+        </div>
+        <div class="caption-bottom">Recursive tree transversal</div>
+
+        <p>For a descent average case performance (<code class="inline">O(1)</code> access), children are held in associative array (Maps) whose key are the next possible character for an indexed word.</p>
+
+        <p>Where applicable, nodes hold references to the articles/tags that are related to the word assembled by traversing the tree from root to said node.</p>
+
+        <p>It's important to note that this approach would not be so great with very large data-sets of lexically different words. The size of the grove and complexity of the trees therein would lead to a longer construction, an increase in the memory footprint, and also have a negative impact on recursive accumulation of matches. The latter could be mitigated by restricting search results to exact matches but that would get rid of the auto-complete feature (the main attraction with this approach).</p>
+
+        <p>Thankfully the number and lexical diversity of the words contained in headings and tags of this subject-specific blog are not that huge.</p>
+
+        <p class="footnote"><sup>[1]</sup> A grove is a small group of trees.</p>
+
+        <h3 id="heading_2_2">2.2 Populating the grove</h3>
+
+        <p>Adding words to the <i>grove</i> is pretty straightforward with this setup. First, words from a source must be extracted then converted to lowercase (case-insensitive search) and, finally, any duplicates removed. Duplicates can be taken care with just using a  <code class="inline terminal">Set</code> to store the extracted words.</p>
+
+            <p>All that's left afterwards is to iterate through the characters on each word whilst transversing the tree at the same time and adding nodes where needed until the last character is reached. Then a reference to the source is added to the corresponding node.</p>
+
+        <div class="code-wrap">
+            <code class="javascript block">Grove.prototype.addWord = function( src_ref, src_type, word, node ) {
+    if( word === '' )
+        return;
+
+    const c = word.charAt( 0 );
+
+    if( !node.children.has( c ) )
+        node.children.set( c, new Node() );
+
+    let next_node = node.children.get( c );
+
+    if( word.length &gt; 1 ) {
+        this.addWord( src_ref, src_type, word.slice( 1 ), next_node );
+
+    } else { //i.e.: last char in word
+        if( src_type === "article" )
+            next_node.articles_src.push( src_ref );
+        if( src_type === "tag"" )
+            next_node.tags_src.push( src_ref );
+    }
+};
+
+Grove.prototype.addGroveTree = function( word, src_ref, src_type ) {
+    if( word.length &lt; 2 )
+        return;
+
+    const c = word.charAt( 0 );
+
+    if( !this.trees.has( c ) )
+        this.trees.set( c, new Node() );
+
+    this.addWord( src_ref, src_type, word.slice( 1 ), this.trees.get( c ) );
+}</code>
+        </div>
+        <div class="caption-bottom">Recursive word adding for the Grove.</div>
+
+        <h3 id="heading_2_3">2.3 Parsing search strings</h3>
+
+        <p>Search string can be <code class="inline">1..n</code> words in length that can either result in partial and exact matches or just exact matches alone. So essentially there are 3 sub-problems to solve here:</p>
+
+        <ol>
+            <li>how to recognise and deal with partial words</li>
+            <li>how to recognise and deal with exact words</li>
+            <li>how to recognise and deal with multiple words that can each be either partial or exact</li>
+        </ol>
+
+        <p>For the sake of simplicity words that should return exact matches <b>only</b> will have double quotation marks <code class="inline">""</code>. No quotation marks should return any sources that has an exact match or has word(s) whose prefix match the given word. As for multiple words, a space will act as a list delimiter in the search string. As examples:</p>
+
+        <ol>
+            <li>partial matches: <code class="inline">java</code></li>
+            <li>exact matches: <code class="inline">"java"</code></li>
+            <li>word set intersection matches (&cap;): <code class="inline">java "notes"</code></li>
+        </ol>
+
+        <p>To begin dealing with all of that, the search string needs to be split into its individual words then each of these need to be checked for quotation marks (regex helps here). Based on the result of the check, words can be put into 1 of 2 sets: exact and partial words.</p>
+
+        <p>With these two sets, the search can begin for each of the words. As there are two source categories (articles and tags), their results are kept apart to allow category-based filtering on output later on. All results for words can be put into individual sets that are, in turn, stored in arrays.</p>
+
+        <div class="code-wrap">
+            <code class="javascript block">let article_sets = [];
+let tag_sets     = [];
+
+for( let i = 0; i &lt; exact_words.length; ++i ) {
+    let a = article_sets.push( new Set() ) - 1;
+    let t = tag_sets.push( new Set() ) - 1;
+
+    getExactResults( exact_words[i], article_sets[a], tag_sets[t] );
+}
+
+for( let i = 0; i &lt; partial_words.length; ++i ) {
+    let a = article_sets.push( new Set() ) - 1;
+    let t = tag_sets.push( new Set() ) - 1;
+
+    getPartialResults( partial_words[i], article_sets[a], tag_sets[t] );
+}</code>
+        </div>
+        <div class="caption-bottom">Getting each of the word's matches</div>
+
+        <p>In the case where there was only 1 word in total from both the partial and exact word sets, then any result gathered is returned. When there are more than 1 word total a set intersection must be made from all different result sets in the arrays (<code class="inline">article_sets</code> and <code class="inline">tag_sets</code>).</p>
+
+        <p>The easiest way to to that is just to take the first set in the array, iterate over it and check each item for existence in the other sets. If one doesn't exist (i.e.: intersects) then we can do an early return as there won't be any results.</p>
+
+        <div class="code-wrap">
+            <code class="javascript block">if( article_sets.length ) {
+    article_sets[0].forEach( value => {
+        for( let i = 0; i &lt; article_sets.length; ++i ) {
+            if( !article_sets[i].has( value ) )
+                return;
+        }
+        article_results.push( value );
+    } );
+}</code>
+        </div>
+        <div class="caption-bottom">Set intersection checking</div>
+
+        <h3 id="heading_2_4">2.4 Output</h3>
+
+        <p>The search has completed and there are arrays of source reference (article and tag) that match. What now?</p>
+
+        <h4 id="heading_2_4_1">2.4.1 Filtering</h4>
+
+        <p>For filtering purposes the results can be inserted into different containers (<code class="inline">article-results</code>, <code class="inline">tag-results</code>). This way they can be shown/hidden with the help of a tick box and an <code class="inline">onclick</code> call to a js method that sets the display properties.</p>
+
+        <div class="code-wrap">
+            <code class="javascript block">showSearchResults = function( cat ) {
+    const article_wrapper = document.getElementById( "article-results" );
+    const article_opt     = document.getElementById( "show-articles" );
+    const tag_div         = document.getElementById( "tag-results-out" );
+    const tag_opt         = document.getElementById( "show-tags" );
+
+    switch ( cat ) {
+        case "articles": {
+            if( article_opt.checked )
+                article_wrapper.style.display = 'flex';
+            else
+                article_wrapper.style.display = 'none';
+            break;
+        }
+        case "tags": {
+            if( tag_opt.checked )
+                tag_div.style.display = 'flex';
+            else
+                tag_div.style.display = 'none';
+            break;
+        }
+    }
+}</code>
+        </div>
+        <div class="caption-bottom">Method to show/hide result blocks</div>
+
+        <p>It's simple enough and avoids having to re-run a script.</p>
+
+        <h4 id="heading_2_4_2">2.4.2 DOM injection</h4>
+
+        <p>This is where these results can finally be injected into the result <code class="inline">div</code>. There are 2 ways to do that: use the proper JS DOM manipulation functions or just inject HTML code. I went for the latter just because it takes less typing and is visually easier to debug.</p>
+
+        <div class="code-wrap">
+            <code class="javascript block">populateSearchResults = function( articles, tags ) {
+    const container_msg = document.getElementById( "search-msg" );
+    const container_a   = document.getElementById( "article-results-out" );
+    const container_t   = document.getElementById( "tag-results-out" );
+
+    container_a.innerHTML = "";
+    container_t.innerHTML = "";
+
+    if( document.getElementById( "show-articles" ).checked )
+        showSearchResults( "articles" );
+
+    if( document.getElementById( "show-tags" ).checked )
+        showSearchResults( "tags" );
+
+    if( articles.length || tags.length ) {
+
+        articles.forEach( value =&gt; {
+            let html = `&lt;a href=&quot;../${value.href}&quot;&gt;
+                            &lt;div&gt;
+                                &lt;h3&gt;${value.title}&lt;/h3&gt;
+                                &lt;span class=&quot;date-stamp&quot;&gt;${value.date}&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div&gt;
+                                &lt;div class=&quot;tags&quot;&gt;`
+
+            value.tags.forEach( tag =&gt; { html += `&lt;span class=&quot;tag&quot;&gt;${tag}&lt;/span&gt;`; } )
+
+            html +=             `&lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/a&gt;`;
+
+            container_a.innerHTML += html;
+        } );
+
+        tags.forEach( value =&gt; {
+            container_t.innerHTML +=
+                `&lt;a href=&quot;../${value.href}&quot;&gt;
+                    &lt;h3&gt;${value.name}&lt;/h3&gt;
+                &lt;/a&gt;`;
+        } );
+
+        container_msg.style.display = 'none';
+
+    } else {
+        container_msg.style.display = 'block';
+    }
+}</code>
+        </div>
+        <div class="caption-bottom">HTML injection of results</div>
+
+        <p>Each of the results are encased in a link whose '<code class="inline">href</code>' is grabbed from the result's source.</p>
+
+        <h3 id="heading_2_5">2.5 Graceful failure</h3>
+
+        <p>In case Javascript is disabled on the host machine a message needs to be seen explaining the situation to the operator. To do that is actually really simple: have a <code class="inline">div</code> or other container with the appropriate message and have the script auto-hide it on the page load. If the script can't be run then the message stays in sight.</p>
+
+
+        <div class="code-wrap">
+            <code class="javascript block">window.onload = function loadIndexJSON() {
+    /* ... code to init the search 'engine' */
+
+    document.getElementById( "search-msg-no-js" ).style.display = 'none';  /* JS disabled */
+    document.getElementById( "search-msg" ).style.display       = 'block'; /* JS enabled */
+}</code>
+        </div>
+        <div class="caption-bottom">Auto-hide 'javascript disabled' message on load</div>
+
+        <h2 id="heading_3">3. Additions</h2>
+
+        <h3 id="heading_3_1">3.1 Passing query to the URL</h3>
+
+        <p>A neat thing that HTML forms with a <code class="inline">GET</code> method can do is append parameters to an '<code class="inline">action</code>' URL. This means that a search bar can be put anywhere on or off the site and redirect to the search page along with the search string the operator typed.</p>
+
+        <div class="code-wrap">
+            <code class="javascript block">&lt;form action=&quot;search.html&quot; method=&quot;GET&quot; autocomplete=&quot;off&quot;&gt;
+    &lt;button type=&quot;submit&quot;&gt;&lt;/button&gt;
+    &lt;label&gt;&lt;input type=&quot;text&quot; placeholder=&quot;Type search string here.&quot; name=&quot;search-string&quot; /&gt;&lt;/label&gt;
+&lt;/form&gt;</code>
+        </div>
+        <div class="caption-bottom">HTML form on other page</div>
+
+<div class="code-wrap">
+    <code class="javascript block">loadSearch = function() {
+    const regex  = new RegExp( "\\?search-string=(.*)" );
+    let   result = regex.exec( decodeURIComponent( window.location.search ) );
+
+    if( result &amp;&amp; result.length > 1 )
+        postSearchResults( result[1] );
+}</code>
+        </div>
+        <div class="caption-bottom">JS method to grab URL search parameters</div>
+
+        <h3 id="heading_3_2">3.2 New category</h3>
+
+        <p>Once the script worked without issues, the 'Projects' category was added. With the help of Blogator's JSON append functionality the <code class="inline terminal">index.json</code> file can now contain the content of a project-specific JSON index so it made sense to include it in the search.</p>
+
+        <p>All that was left to do was to amend the code to include that extra category (node, word insertion, result accumulation and output). It does add some complexity but being able to search that category as well is worth it.</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">{
+    "projects": [
+        {
+            "name": "...",
+            "year": "...",
+            "tags": [ "..." ],
+            "meta": [ "..." ],
+            "href": "..."
+        },
+        ...
+    ]
+}</code>
+        </div>
+        <div class="caption-bottom">Project JSON structure</div>
+
+        <h2 id="heading_4">4. Final thoughts</h2>
+
+        <p>In the end the search functionality turned out to be pretty responsive and, considering it's the same on a 6 year old mobile device, it should hold up for some time yet.</p>
+
+        <p>There are other approaches to this problem but as far as it goes on a small site like mine here, it does a fine job for now.</p>
+
+        <p>For a complete look at the glory of the script here's a <a href="../js/find-posts.js" rel="noreferrer" target="_blank">link</a> to the file.</p>
+    </div>
+</article>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="page-nav">
+                	<ul>
+                		<li class="first"><a href="1.html">|&#9664;</a></li>
+                		<li class="prev"><a rel="prev" href="21.html">&#9664;</a></li>
+                		<li class="curr">22 / 29</li>
+                		<li class="next"><a rel="next" href="23.html">&#9654;</a></li>
+                		<li class="last"><a href="29.html">&#9654;|</a></li>
+                	</ul>
+                </div>
+
+                <div>
+                    <h2>By Date</h2>
+                    <div class="index-pane-dates">
+                    		<ol class="tree">
+                    			<li><label for="checkbox_2021">2021</label><input type="checkbox" id="checkbox_2021"/>
+                    				<ol>
+                    					<li><label for="checkbox_202108">August</label><input type="checkbox" id="checkbox_202108"/>
+                    						<ol>
+                    							<li>12 <a href="29.html">Binary Search Algorithm</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202107">July</label><input type="checkbox" id="checkbox_202107"/>
+                    						<ol>
+                    							<li>19 <a href="28.html">Retrospective: cTune v1.0</a></li>
+                    							<li>10 <a href="27.html">Circular Buffer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202106">June</label><input type="checkbox" id="checkbox_202106"/>
+                    						<ol>
+                    							<li>30 <a href="26.html">cTune v1.0: Part 3 - Frontstage</a></li>
+                    							<li>25 <a href="25.html">cTune v1.0: Part 2 - Backstage</a></li>
+                    							<li>16 <a href="24.html">cTune v1.0: Part 1 - Design</a></li>
+                    							<li>15 <a href="23.html">cTune v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2020">2020</label><input type="checkbox" checked  id="checkbox_2020"/>
+                    				<ol>
+                    					<li><label for="checkbox_202006">June</label><input type="checkbox" checked  id="checkbox_202006"/>
+                    						<ol>
+                    							<li>16 <a class="current-post" href="22.html">Indexed search with Javascript</a></li>
+                    							<li>03 <a href="21.html">Character encoding primer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202005">May</label><input type="checkbox" id="checkbox_202005"/>
+                    						<ol>
+                    							<li>27 <a href="20.html">Blogator v1.3 released</a></li>
+                    							<li>07 <a href="19.html">Blogator v1.2 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202004">April</label><input type="checkbox" id="checkbox_202004"/>
+                    						<ol>
+                    							<li>22 <a href="18.html">HDD diagnosis and recovery tools</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202003">March</label><input type="checkbox" id="checkbox_202003"/>
+                    						<ol>
+                    							<li>27 <a href="17.html">Coronavirus info and form fetcher script for the French gov. page</a></li>
+                    							<li>24 <a href="16.html">A RaspberryPi Git server</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202002">February</label><input type="checkbox" id="checkbox_202002"/>
+                    						<ol>
+                    							<li>23 <a href="15.html">CMake Variable Injection</a></li>
+                    							<li>14 <a href="14.html">Android upgrade woes</a></li>
+                    							<li>11 <a href="13.html">Basics of the Linux terminal and tools</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2019">2019</label><input type="checkbox" id="checkbox_2019"/>
+                    				<ol>
+                    					<li><label for="checkbox_201910">October</label><input type="checkbox" id="checkbox_201910"/>
+                    						<ol>
+                    							<li>10 <a href="12.html">C++ Resource Acquisition Is Initialization (RAII)</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201908">August</label><input type="checkbox" id="checkbox_201908"/>
+                    						<ol>
+                    							<li>20 <a href="11.html">Retrospective: Blogator v1.0</a></li>
+                    							<li>13 <a href="10.html">Blogator v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201901">January</label><input type="checkbox" id="checkbox_201901"/>
+                    						<ol>
+                    							<li>06 <a href="9.html">Terminal plot-graphs with braille characters</a></li>
+                    							<li>02 <a href="8.html">Creating bitmaps using braille characters</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2018">2018</label><input type="checkbox" id="checkbox_2018"/>
+                    				<ol>
+                    					<li><label for="checkbox_201811">November</label><input type="checkbox" id="checkbox_201811"/>
+                    						<ol>
+                    							<li>30 <a href="7.html">Maximum value in a Sliding Window</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201809">September</label><input type="checkbox" id="checkbox_201809"/>
+                    						<ol>
+                    							<li>11 <a href="6.html">C++ Raw and Smart Pointers</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201808">August</label><input type="checkbox" id="checkbox_201808"/>
+                    						<ol>
+                    							<li>27 <a href="5.html">Design Pattern: Object Pool</a></li>
+                    							<li>14 <a href="4.html">Design Pattern: Singleton</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201803">March</label><input type="checkbox" id="checkbox_201803"/>
+                    						<ol>
+                    							<li>18 <a href="3.html">Python package based app structure</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201801">January</label><input type="checkbox" id="checkbox_201801"/>
+                    						<ol>
+                    							<li>27 <a href="2.html">Working out coordinates using distances</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2017">2017</label><input type="checkbox" id="checkbox_2017"/>
+                    				<ol>
+                    					<li><label for="checkbox_201712">December</label><input type="checkbox" id="checkbox_201712"/>
+                    						<ol>
+                    							<li>30 <a href="1.html">Arch Linux on a MacBook Pro 2015</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    		</ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>
+                <div>
+                    <span class="footer-avatar"><img src="../img/kitteh.jpg" alt="logo"></span>
+                    An7ar35, 2018-21
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

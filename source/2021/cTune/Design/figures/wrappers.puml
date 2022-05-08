@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+interface "Library API" as iExternalLib
+component "External library" as ExternalLib
+
+iExternalLib -- ExternalLib
+
+package Application #lightgray {
+    component "Component A" as A
+    component "Component B" as B
+    interface "Wrapper API" as iLibWrapper
+    component "Library wrapper" as LibWrapper
+}
+
+LibWrapper --( iExternalLib
+iLibWrapper -- LibWrapper
+A --( iLibWrapper
+B --( iLibWrapper
+
+@enduml

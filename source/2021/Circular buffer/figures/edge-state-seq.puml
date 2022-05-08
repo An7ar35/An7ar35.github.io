@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant producer
+box #gold
+participant CircularBuffer
+end box
+participant consumer
+group Fill operation
+producer -> CircularBuffer : write //n// bytes of data
+CircularBuffer -> CircularBuffer : advance write position by //n//
+CircularBuffer -> CircularBuffer : set ""empty"" flag to ""false""
+end group
+group Drain operation
+consumer -> CircularBuffer : read //n// bytes of data
+CircularBuffer -> CircularBuffer : advance read position by //n//
+CircularBuffer -> CircularBuffer : set ""empty"" flag to ""true""
+end group
+
+@enduml

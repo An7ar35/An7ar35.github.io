@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam linetype ortho
+hide enum members
+
+enum KeyEntryType_e
+enum ActionID_e
+enum Context_e
+enum KeyboardKey_e
+enum TextID_e
+
+interface "KeyBinding interface" as iKeyBinding {
+    + init( void ) : bool
+    ----
+    <b>UI global</b>
+    ----
+    + getAction( Context_e ctx, int ncurses_key ) : ActionID_e
+    ----
+    <b>Used for ContextHelp</b>
+    ----
+    + getKeyText( KeyboardKey_e keyID ) : const char *
+    + processEntries( Context_e ctx, void * userdata, void (* callback)( const KeyBinding_t * binding, void * userdata ) ) : bool
+}
+
+class KeyBinding_t {
+    + entry_type : KeyEntryType_e
+    + action : ActionID_e
+    + description : TextID_e
+    + key : KeyboardKey_e
+}
+
+iKeyBinding --> KeyBinding_t
+iKeyBinding --> Context_e
+iKeyBinding --> KeyboardKey_e
+iKeyBinding --> ActionID_e
+
+KeyBinding_t --> TextID_e
+KeyBinding_t --> KeyEntryType_e
+KeyBinding_t -down-> ActionID_e
+KeyBinding_t --> KeyboardKey_e
+
+@enduml

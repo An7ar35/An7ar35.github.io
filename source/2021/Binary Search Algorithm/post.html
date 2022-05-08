@@ -1,0 +1,89 @@
+<article>
+    <div>
+        <h1><span class="title">Binary Search Algorithm</span></h1>
+        <time datetime="2021-08-12">12 August 2021</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">C99</span>
+            <span class="tag">Algorithm</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <div class="auto-toc"></div>
+
+        <p><span class="summary"></span></p>
+
+        <h2>Algorithm</h2>
+
+        <p>The binary search algorithm is actually really quite simple. It has a <b>O(log <i>n</i>)</b> worst and average performance. For it to work, the source data must already be sorted.</p>
+
+        <p>The algorithm finds the middle point of the data and compares it with the target value. It then breaks apart the data at that middle point and does the same middle-sectioning steps to the half that may contain the target value recursively until there is only 1 element to check left.</p>
+
+        <figure class="center fill">
+            <a href="binary-search.svg"><img src="binary-search.svg" alt="Binary search" /></a>
+            <figcaption>Fig.1 Binary search</figcaption>
+        </figure>
+
+        <h2>Example</h2>
+
+        <div class="comment-box">
+            <p>My implementation uses the alternative '<i>ceiling</i>' method when partitioning the halves and actual recursion instead of the more common <code>while</code> loop.</p>
+        </div>
+
+        <p>The target value is '<b><code>3</code></b>' for this example. The steps are as follows:</p>.
+
+        <ul>
+            <li><b>Iteration #1</b>
+            <ol>
+                <li>Find the middle point of array (<code>[0]</code> to <code>[7]</code>): <code class="inline">0 + ceil( (7 - 0) / 2 ) = <b style="color: purple">4</b></code></li>
+                <li>Is there 1 element left?: <i>No</i></li>
+                <li>Check middle point against target: <code class="inline"><b>3</b> < <b style="color: purple">4</b></code>?</li>
+                <li>Yes, so partition left side: <code>[0]</code> &rarr; <code>[3]</code></li>
+            </ol></li>
+            <li><b>Iteration #2</b>
+            <ol>
+                <li>Find the middle point of array (<code>[0]</code> to <code>[3]</code>): <code class="inline">0 + ceil( (3 - 0) / 2 ) = <b style="color: purple">2</b></code></li>
+                <li>Is there 1 element left?: <i>No</i></li>
+                <li>Check middle point against target: <code class="inline"><b>3</b> < <b style="color: purple">2</b></code>?</li>
+                <li>No, so partition right side: <code>[2]</code> &rarr; <code>[3]</code></li>
+            </ol></li>
+            <li><b>Iteration #3</b>
+            <ol>
+                <li>Find the middle point of array (<code>[2]</code> to <code>[3]</code>): <code class="inline">2 + ceil( (3 - 2) / 2 ) = <b style="color: purple">3</b></code></li>
+                <li>Is there 1 element left?: <i>No</i></li>
+                <li>Check middle point against target: <code class="inline"><b>3</b> < <b style="color: purple">3</b></code>?</li>
+                <li>No, so partition right side: <code>[3]</code> &rarr; <code>[3]</code></li>
+            </ol></li>
+            <li><b>Iteration #4</b>
+            <ol>
+                <li>Find the middle point of array (<code>[3]</code> to <code>[3]</code>): <code class="inline">3 + ceil( (3 - 3) / 2 ) = <b style="color: purple">3</b></code></li>
+                <li>Is there 1 element left?: <i>Yes</i></li>
+                <li>Return <code><b>3</b> == element</code></li>
+            </ol></li>
+        </ul>
+
+        <figure class="center fill">
+            <a href="example.svg"><img src="example.svg" alt="Example" /></a>
+            <figcaption>Fig.2 Example</figcaption>
+        </figure>
+
+        <h2>Source code</h2>
+
+        <div class="flex-table">
+            <div class="flex-table-row">
+                <div class="flex-cell flex-table-heading">
+                    Github source code
+                </div>
+                <div class="flex-cell center-align">
+                    <a href="https://github.com/An7ar35/algorithms/blob/main/bsearch.c" rel="noreferrer" target="_blank">
+                        <img class="link-icon" src="../../../img/logos/lang/c.svg" alt="C source">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</article>

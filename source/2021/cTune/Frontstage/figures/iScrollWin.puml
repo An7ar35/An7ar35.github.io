@@ -1,0 +1,63 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class WindowProperty_t {
+    + rows : int
+    + cols : int
+    + pos_y : int
+    + pos_x : int
+}
+
+class ScrollWin_t {
+    <b>Pad properties</b>
+    ----
+    + pad : WINDOW *
+    + rows : int
+    + cols : int
+    ----
+    <b>View-box screen position</b>
+    ----
+    + viewbox.from_y : int
+    + viewbox.from_x : int
+    + viewbox.to_y : int
+    + viewbox.to_x : int
+    ----
+    <b>Position of the view-box on the pad</b>
+    ----
+    + pos.x : int
+    + pos.y : int
+    ----
+    <b>Scrolling state</b>
+    ----
+    + scrolling.y : bool
+    + scrolling.x : bool
+}
+
+interface ScrollWin {
+    + initBlank( void ) : ScrollWin_t
+    + init( int height, int width ) : ScrollWin_t
+    + createPad( ScrollWin_t * sw, int height, int width ) : void
+    + reinit( ScrollWin_t * sw, int height, int width ) : void
+    + free( ScrollWin_t * sw ) : void
+    ----
+    + refreshView( ScrollWin_t * sw ) : void
+    + redraw( ScrollWin_t * sw, int viewsize_y, int viewsize_x ) : void
+    + scrollPad( ScrollWin_t * sw, int nrows, int ncols ) : void
+    + moveViewBox( ScrollWin_t * sw, int y, int x ) : void
+    + setInsDelLine( ScrollWin_t * sw, bool state ) : void
+    + setScrolling( ScrollWin_t * sw, bool state ) : void
+    + setScrollingY(ScrollWin_t * sw,  bool state ) : void
+    + setScrollingX( ScrollWin_t * sw, bool state ) : void
+    + isScrollable( ScrollWin_t * sw ) : bool
+    + isScrollableY( ScrollWin_t * sw ) : bool
+    + isScrollableX( ScrollWin_t * sw ) : bool
+    + resizeViewBox( ScrollWin_t * sw, int rows, int cols ) : void
+    + getViewProperty( const ScrollWin_t * sw ) : WindowProperty_t
+    + resizePad( ScrollWin_t * sw, int rows, int cols ) : bool
+    + clearPad( ScrollWin_t * sw ) : void
+}
+
+ScrollWin --> ScrollWin_t
+ScrollWin --> WindowProperty_t
+
+@enduml

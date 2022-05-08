@@ -1,0 +1,63 @@
+@import "navigation.css";
+
+.header {
+    padding: 0;
+    text-align: center;
+    background-color: #FCFCFC; /* global background */
+    display: flex;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    position: relative;
+    flex-direction: row;
+    /*border-bottom: 1px solid #31363b;*/
+}
+
+.header img {
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+.header > div {
+    color: #31363b;
+    margin: 0.5em auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.header > div:first-of-type,
+.header > div:last-of-type {
+    height: 100%;
+    position: absolute;
+}
+
+.header > div:first-of-type,
+.header > div:first-of-type img { margin: 0 auto 0 0; left: 0; }
+
+.header > div:last-of-type,
+.header > div:last-of-type  img { margin: 0 0 0 auto; right: 0; }
+
+.header .site-title {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 6em;
+    font-weight: lighter;
+    text-transform: capitalize;
+    letter-spacing: 0.05em;
+    line-height: 1em;
+}
+
+.header .site-micro-title {
+    font-size: 0.85em;
+    text-align: right;
+    padding-right: 1em;
+}
+
+@media screen and ( max-width: 800px ) {
+    .header .site-title { font-size: 9.6vw; }
+}
+
+@media screen and ( max-width: 600px ) {
+    .header .site-micro-title { font-size: 2.8vw; }
+}

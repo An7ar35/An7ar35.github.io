@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+hide circle
+
+skinparam note {
+    BackgroundColor white
+    ArrowColor gray
+    BorderColor grey
+}
+
+class ctune_err {
+    - errno : volatile int
+    - errno_mutex : pthread_mutex_t
+    - print_callback : void (*)( const char * str, int err );
+    ----
+    + set( int err ) : void
+    + number( void ) : int
+    + strerror( void ) : const char *
+    + print( int error ) : const char *
+    + setPrintErrCallback( void(* cb)( const char * str, int err ) ) : void
+}
+
+note left of ctune_err::set(
+    Sets the <i>errno</i>
+end note
+
+note left of ctune_err::number(
+    Gets the <i>errno</i>
+end note
+
+note left of ctune_err::strerror( #grey
+    Gets the string for the set cTune
+    <i>errno</i> and resets the errno back
+    to `CTUNE_ERR_NONE`
+end note
+
+note left of ctune_err::print(
+    Gets the string for a cTune <i>errno</i> **without**
+    resetting the errno
+end note
+
+note left of ctune_err::setPrintErrCallback(
+    Sets a printing callback for when an error is set
+end note
+
+@enduml

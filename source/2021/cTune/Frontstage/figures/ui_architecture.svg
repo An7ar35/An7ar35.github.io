@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="467px" preserveAspectRatio="none" style="width:1104px;height:467px;background:#FFFFFF;" version="1.1" viewBox="0 0 1104 467" width="1104px" zoomAndPan="magnify"><defs><filter height="300%" id="fapsvmem5sk6c" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[64e2e010ba86d7988e5cd73bd64f61f9]
+cluster ui--><polygon fill="#D3D3D3" filter="url(#fapsvmem5sk6c)" points="16,6,37,6,44,28.2969,1087,28.2969,1087,460,16,460,16,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="44" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="15" x="20" y="20.9951">ui</text><!--MD5=[a6e358cb66527167c36266af760644d0]
+cluster widget--><polygon fill="#FFFFFF" filter="url(#fapsvmem5sk6c)" points="357,233,418,233,425,255.2969,775,255.2969,775,436,357,436,357,233" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="357" x2="425" y1="255.2969" y2="255.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="55" x="361" y="247.9951">widget</text><!--MD5=[8979897548285ccb326517f31c8ee88c]
+cluster window--><polygon fill="#FFFFFF" filter="url(#fapsvmem5sk6c)" points="40,112,107,112,114,134.2969,343,134.2969,343,209,40,209,40,112" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="40" x2="114" y1="134.2969" y2="134.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="61" x="44" y="126.9951">window</text><!--MD5=[46ca6b0f5c353cd412b92f13bbe4dc5f]
+cluster dialog--><polygon fill="#FFFFFF" filter="url(#fapsvmem5sk6c)" points="367,112,422,112,429,134.2969,1063,134.2969,1063,209,367,209,367,112" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="367" x2="429" y1="134.2969" y2="134.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="49" x="371" y="126.9951">dialog</text><!--MD5=[c42ed81cef7fdd2e33758127945b9a5b]
+entity UI--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="54" x="568" y="41"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="602" y="46"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="600" y="48"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="600" y="52"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="583" y="73.9951">UI</text><!--MD5=[7ef9c71f28e7142fede1c01911911cd9]
+entity BorderWin--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="116" x="522" y="268"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="618" y="273"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="616" y="275"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="616" y="279"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="537" y="300.9951">BorderWin</text><!--MD5=[c0fe58fc51baeeb321a12f9314f344e9]
+entity ScrollBar--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="105" x="444.5" y="374"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="529.5" y="379"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="527.5" y="381"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="527.5" y="385"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="459.5" y="406.9951">ScrollBar</text><!--MD5=[b17b380054658488226b61c31a96155e]
+entity SlideMenu--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="114" x="373" y="268"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="467" y="273"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="465" y="275"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="465" y="279"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="388" y="300.9951">SlideMenu</text><!--MD5=[990ee15e83baa4304cfacc7544d75f46]
+entity Dialog--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="86" x="673" y="268"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="739" y="273"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="737" y="275"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="737" y="279"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="688" y="300.9951">Dialog</text><!--MD5=[477c6e5c6dee203282aba02378dc1801]
+entity ScrollWin--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="107" x="652.5" y="374"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="739.5" y="379"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="737.5" y="381"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="737.5" y="385"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="667.5" y="406.9951">ScrollWin</text><!--MD5=[4ad3a69cd1dfb856bd21c1bfee809d6a]
+entity RSListWin--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="110" x="56" y="147"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="146" y="152"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="144" y="154"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="144" y="158"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="71" y="179.9951">RSListWin</text><!--MD5=[faf4f431297255e5386b06572d652af7]
+entity BrowserWin--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="125" x="201.5" y="147"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="306.5" y="152"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="304.5" y="154"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="304.5" y="158"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="216.5" y="179.9951">BrowserWin</text><!--MD5=[f0b29d8bd442c901a571e320c9c12398]
+entity ContextHelp--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="128" x="919" y="147"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1027" y="152"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1025" y="154"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1025" y="158"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="934" y="179.9951">ContextHelp</text><!--MD5=[4dae1caa626b928dac8f6e46ab0c3741]
+entity RSFind--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="89" x="794.5" y="147"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="863.5" y="152"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="861.5" y="154"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="861.5" y="158"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="809.5" y="179.9951">RSFind</text><!--MD5=[b224f35cb3ba45b955a5ce5c787892ec]
+entity RSInfo--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="86" x="673" y="147"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="739" y="152"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="737" y="154"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="737" y="158"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="688" y="179.9951">RSInfo</text><!--MD5=[c0fb2289473610512a22c23aca4410b3]
+entity RSEdit--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="86" x="552" y="147"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="618" y="152"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="616" y="154"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="616" y="158"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="567" y="179.9951">RSEdit</text><!--MD5=[cd9f97509c86510229e888529a3eb33e]
+entity OptionsMenu--><rect fill="#FEFECE" filter="url(#fapsvmem5sk6c)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="133" x="383.5" y="147"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="496.5" y="152"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="494.5" y="154"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="494.5" y="158"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="398.5" y="179.9951">OptionsMenu</text><!--MD5=[9a355a3fef76e95978d22f4510d4a7c8]
+reverse link Dialog to ScrollWin--><path d="M716,327 C716,327 716,373.68 716,373.68 " fill="none" id="Dialog-backto-ScrollWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="716,314,712,320,716,326,720,320,716,314" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7510c8f5a2dfbcf51882a9f2b1b52027]
+reverse link Dialog to ScrollBar--><path d="M659.59,303 C659.59,303 642.83,303 642.83,303 C642.83,303 642.83,397 642.83,397 C642.83,397 591.42,397 549.65,397 " fill="none" id="Dialog-backto-ScrollBar" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="672.59,303,666.59,299,660.59,303,666.59,307,672.59,303" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[532832561c8c15f1eeb8470c59f2f2c9]
+link BorderWin to Dialog--><path d="M638.07,291 C638.07,291 659.94,291 659.94,291 " fill="none" id="BorderWin-to-Dialog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="672.94,291,666.94,287,660.94,291,666.94,295,672.94,291" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6aacb35628e181700db035bb83c5402c]
+reverse link SlideMenu to ScrollBar--><path d="M465.75,327 C465.75,327 465.75,373.68 465.75,373.68 " fill="none" id="SlideMenu-backto-ScrollBar" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="465.75,314,461.75,320,465.75,326,469.75,320,465.75,314" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9df292c3db87d5462284c300140b9545]
+link RSListWin to BrowserWin--><path d="M166.24,170 C166.24,170 188.31,170 188.31,170 " fill="none" id="RSListWin-to-BrowserWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="201.31,170,195.31,166,189.31,170,195.31,174,201.31,170" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8c1720650488046a0974948e1ed688d1]
+reverse link ContextHelp to Dialog--><path d="M983,206.06 C983,206.06 983,299 983,299 C983,299 834.76,299 759.19,299 " fill="none" id="ContextHelp-backto-Dialog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="983,193.06,979,199.06,983,205.06,987,199.06,983,193.06" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9cb1b9d9425b487c92231f02671f8367]
+reverse link BrowserWin to SlideMenu--><path d="M339.81,170 C339.81,170 378.25,170 378.25,170 C378.25,170 378.25,232.85 378.25,267.96 " fill="none" id="BrowserWin-backto-SlideMenu" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="326.81,170,332.81,174,338.81,170,332.81,166,326.81,170" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cb99c7a0d828a661c3e2a5cc191261cf]
+reverse link OptionsMenu to SlideMenu--><path d="M435.25,206.04 C435.25,206.04 435.25,267.63 435.25,267.63 " fill="none" id="OptionsMenu-backto-SlideMenu" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="435.25,193.04,431.25,199.04,435.25,205.04,439.25,199.04,435.25,193.04" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7758242a5a47b0734c4736929ba1c83f]
+reverse link RSFind to Dialog--><path d="M839,206.07 C839,206.07 839,284 839,284 C839,284 794.49,284 759.02,284 " fill="none" id="RSFind-backto-Dialog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="839,193.07,835,199.07,839,205.07,843,199.07,839,193.07" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4d972a6ab5603d2c2ccab4ad1552b7ed]
+reverse link RSInfo to Dialog--><path d="M716,206.04 C716,206.04 716,267.63 716,267.63 " fill="none" id="RSInfo-backto-Dialog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="716,193.04,712,199.04,716,205.04,720,199.04,716,193.04" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[96f5a0bc8cdf8ad40e26c6dc205313d4]
+reverse link RSEdit to Dialog--><path d="M646.7,170 C646.7,170 647.67,170 647.67,170 C647.67,170 647.67,280 647.67,280 C647.67,280 659.16,280 672.72,280 " fill="none" id="RSEdit-backto-Dialog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="638.01,170,644.01,174,650.01,170,644.01,166,638.01,170" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b91a0f8c27dcbc853ae9db4b0ee2f338]
+reverse link OptionsMenu to BorderWin--><path d="M501.75,206.04 C501.75,206.04 501.75,291 501.75,291 C501.75,291 510.38,291 521.9,291 " fill="none" id="OptionsMenu-backto-BorderWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="501.75,193.04,497.75,199.04,501.75,205.04,505.75,199.04,501.75,193.04" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6fddb8ea4d076c931b1041aba40d6105]
+link UI to OptionsMenu--><path d="M567.73,76 C525.72,76 450,76 450,76 C450,76 450,141.76 450,141.76 " fill="none" id="UI-to-OptionsMenu" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="450,146.76,454,137.76,450,141.76,446,137.76,450,146.76" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5de3942b55cc53b259457cc7d0a5969d]
+link UI to ContextHelp--><path d="M622.28,53 C710.6,53 983,53 983,53 C983,53 983,141.88 983,141.88 " fill="none" id="UI-to-ContextHelp" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="983,146.88,987,137.88,983,141.88,979,137.88,983,146.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[0675953996ef12884123cc1241b64a4f]
+link UI to RSFind--><path d="M622.04,64 C685.57,64 839,64 839,64 C839,64 839,142 839,142 " fill="none" id="UI-to-RSFind" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="839,147,843,138,839,142,835,138,839,147" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[32f6d01573a9f6a5f1fdcd477733ffc9]
+link UI to RSInfo--><path d="M622.15,76 C657.83,76 716,76 716,76 C716,76 716,141.76 716,141.76 " fill="none" id="UI-to-RSInfo" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="716,146.76,720,137.76,716,141.76,712,137.76,716,146.76" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[108e3c8a19d94cf04ccc480efa316058]
+link UI to RSEdit--><path d="M595,87 C595,87 595,141.68 595,141.68 " fill="none" id="UI-to-RSEdit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="595,146.68,599,137.68,595,141.68,591,137.68,595,146.68" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e1a3fae15f6b1845271ddda50f815782]
+link UI to RSListWin--><path d="M567.94,53 C466.01,53 111,53 111,53 C111,53 111,141.88 111,141.88 " fill="none" id="UI-to-RSListWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="111,146.88,115,137.88,111,141.88,107,137.88,111,146.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d88f4389af6c8f71f5226fade45170a9]
+link UI to BrowserWin--><path d="M567.91,64 C488.86,64 264,64 264,64 C264,64 264,142 264,142 " fill="none" id="UI-to-BrowserWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="264,147,268,138,264,142,260,138,264,147" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[721c4474f4226553e16e1443f1b4a3aa]
+@startuml
+'https://plantuml.com/component-diagram
+
+skinparam linetype ortho
+'skinparam linetype polyline
+
+package ui #lightgrey {
+    component UI
+
+    package widget #white {
+        component BorderWin
+        component ScrollBar
+        component SlideMenu
+        component Dialog
+        component ScrollWin
+
+        Dialog    *- - ScrollWin
+        Dialog    *- - ScrollBar
+        Dialog    *-left- BorderWin
+        SlideMenu *- - ScrollBar
+    }
+
+    package window #white {
+        component RSListWin
+        component BrowserWin
+
+        BrowserWin *-left- RSListWin
+    }
+
+    package dialog #white {
+        component ContextHelp
+        component RSFind
+        component RSInfo
+        component RSEdit
+        component OptionsMenu
+
+        ContextHelp *- - Dialog
+    }
+
+    BrowserWin  *- - SlideMenu
+    OptionsMenu *- - SlideMenu
+    RSFind      *- - Dialog
+    RSInfo      *- - Dialog
+    RSEdit      *- - Dialog
+    OptionsMenu *- - BorderWin
+
+    UI      - -> OptionsMenu
+    UI      - -> ContextHelp
+    UI      - -> RSFind
+    UI      - -> RSInfo
+    UI      - -> RSEdit
+    UI      - -> RSListWin
+    UI      - -> BrowserWin
+}
+
+@enduml
+
+@startuml
+
+skinparam linetype ortho
+
+package ui #lightgrey {
+    component UI
+
+    package widget #white {
+        component BorderWin
+        component ScrollBar
+        component SlideMenu
+        component Dialog
+        component ScrollWin
+
+        Dialog    *- - ScrollWin
+        Dialog    *- - ScrollBar
+        Dialog    *-left- BorderWin
+        SlideMenu *- - ScrollBar
+    }
+
+    package window #white {
+        component RSListWin
+        component BrowserWin
+
+        BrowserWin *-left- RSListWin
+    }
+
+    package dialog #white {
+        component ContextHelp
+        component RSFind
+        component RSInfo
+        component RSEdit
+        component OptionsMenu
+
+        ContextHelp *- - Dialog
+    }
+
+    BrowserWin  *- - SlideMenu
+    OptionsMenu *- - SlideMenu
+    RSFind      *- - Dialog
+    RSInfo      *- - Dialog
+    RSEdit      *- - Dialog
+    OptionsMenu *- - BorderWin
+
+    UI      - -> OptionsMenu
+    UI      - -> ContextHelp
+    UI      - -> RSFind
+    UI      - -> RSInfo
+    UI      - -> RSEdit
+    UI      - -> RSListWin
+    UI      - -> BrowserWin
+}
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

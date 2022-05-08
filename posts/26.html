@@ -1,0 +1,757 @@
+<!-- Generated with Blogator 1.3.2 (https://an7ar35.bitbucket.io) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' 'unsafe-eval';">
+    <title>EAD | Writings</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/blogator/main.css" />
+</head>
+    <body>
+        <div class="header">
+            <div><img src="../img/tree-left.svg" alt="left tree"/></div>
+            <div>
+                <div class="site-title">Es' corner</div>
+                <div class="site-micro-title">Just another keyboard-enthusiastic hominid.</div>
+            </div>
+            <div><img src="../img/tree-right.svg" alt="right tree"/></div>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li class="active">
+                    <a class="nav-writings" href="../index.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Home</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-projects" href="../pages/projects/personal.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Projects</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-contact" href="../pages/contact.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script src="../js/sticky-top-navbar.js"></script>
+
+        <div class="breadcrumb">
+        	<ul>
+        		<li><a href="../index.html">Home</a></li>
+        		<li><a href="../index/by_date/0.html">Posts</a></li>
+        		<li>cTune v1.0: Part 3 - Frontstage</li>
+        	</ul>
+        </div>
+
+        <div class="content-h">
+            <div class="left-col">
+                <div class="post-content">
+
+<article>
+  <div>
+    <h1><span class="title">cTune v1.0: Part 3 - Frontstage</span></h1>
+    <time datetime="2021-06-30">30 June 2021</time>
+    <div class="authors">
+      <span class="author">Es</span>
+    </div>
+    <div class="tags">
+      <span class="tag">cTune</span>
+      <span class="tag">C99</span>
+      <span class="tag">Project</span>
+    </div>
+  </div>
+  <div class="post-text">
+
+    <div class="auto-toc">
+    	<h2>Table of Contents</h2>
+    	<ol>
+    		<li><a href="#heading_1">1. Design</a></li>
+    		<li><ol>
+    			<li><a href="#heading_1_1">1.1 Wireframes</a></li>
+    			<li><ol>
+    				<li><a href="#heading_1_1_1">1.1.1 Main window</a></li>
+    				<li><a href="#heading_1_1_2">1.1.2 Station lists</a></li>
+    				<li><a href="#heading_1_1_3">1.1.3 Sub-listings browsing with a "SlideMenu"</a></li>
+    				<li><a href="#heading_1_1_4">1.1.4 Station information dialog</a></li>
+    				<li><a href="#heading_1_1_5">1.1.5 Station search dialog</a></li>
+    				<li><a href="#heading_1_1_6">1.1.6 Add/Edit station dialog</a></li>
+    				<li><a href="#heading_1_1_7">1.1.7 Contextual Help dialog</a></li>
+    				<li><a href="#heading_1_1_8">1.1.8 Options menu</a></li>
+    			</ol></li>
+    			<li><a href="#heading_1_2">1.2 Architecture</a></li>
+    		</ol></li>
+    		<li><a href="#heading_2">2. Implementation</a></li>
+    		<li><ol>
+    			<li><a href="#heading_2_1">2.1 Navigation</a></li>
+    			<li><a href="#heading_2_2">2.2 Theming</a></li>
+    			<li><a href="#heading_2_3">2.3 Language</a></li>
+    			<li><a href="#heading_2_4">2.4 Resizer</a></li>
+    			<li><a href="#heading_2_5">2.5 Widgets</a></li>
+    			<li><ol>
+    				<li><a href="#heading_2_5_1">2.5.1 ScrollWin</a></li>
+    				<li><a href="#heading_2_5_2">2.5.2 ScrollBar</a></li>
+    				<li><a href="#heading_2_5_3">2.5.3 BorderWin</a></li>
+    				<li><a href="#heading_2_5_4">2.5.4 Dialog</a></li>
+    				<li><a href="#heading_2_5_5">2.5.5 SlideMenu</a></li>
+    			</ol></li>
+    			<li><a href="#heading_2_6">2.6 Master UI component</a></li>
+    		</ol></li>
+    		<li><a href="#heading_3">3. Overview</a></li>
+    	</ol>
+    </div>
+
+    <p><span class="summary"><code class="inline terminal">ctune</code> is Linux based internet radio stream player for the console entirely written in C. It uses the <a href="https://www.radio-browser.info" rel="noreferrer" target="_blank">RadioBrowser API</a> as a source for searching streams and getting station information.</span></p>
+
+    <p><span class="summary">This is part 3 of 3 blog posts detailing the process of designing and implementing cTune's frontend (UI).</span></p>
+
+    <p>The wireframes and UI graphics are made with <a href="https://github.com/evolus/pencil" rel="noreferrer" target="_blank">Pencil</a> and, the UML diagrams, with <a href="https://plantuml.com/" rel="noreferrer" target="_blank">PlantUML</a>.</p>
+
+    <h2 id="heading_1">1. Design</h2>
+
+    <div class="comment-box">
+      <p>The wireframe graphics presented here are actually cleaned up versions of my original sketches that were scratched on pieces of paper.</p>
+    </div>
+
+    <h3 id="heading_1_1">1.1 Wireframes</h3>
+
+    <h4 id="heading_1_1_1">1.1.1 Main window</h4>
+
+    <p>The first question was "What information should always be present in the main window?". The answer is refreshingly limited in scope:</p>
+    <ul>
+      <li>visual queues to access the distinct data categories (i.e.: what the application can offer)</li>
+      <li>the volume,</li>
+      <li>station playing/queued and song title</li>
+      <li>indicator to show if the station is playing or not,</li>
+      <li>error messages (lifetime at least until the next operator action)</li>
+      <li>the name of the application and the current version (not strictly required but nice to have nonetheless).</li>
+    </ul>
+
+    <p>And so the data categories (search results, browser, bookmarked favourites) were placed as tabs and the rest placed on the edges of the main UI space:</p>
+    <ul>
+      <li>a <i>title bar</i> for the application name/version,</li>
+      <li>a <i>status bar</i> for the play state, current station/song descriptions and volume,</li>
+      <li>a <i>message bar</i> for the a description of any error spawned from the depth of the application.</li>
+    </ul>
+
+    <figure class="center three-quarter-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/main-win.svg"><img src="../source/2021/cTune/Frontstage/wireframes/main-win.svg" alt="Main window" /></a>
+      <figcaption>Wireframe.1 Master window</figcaption>
+    </figure>
+
+    <h4 id="heading_1_1_2">1.1.2 Station lists</h4>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/station-list.svg"><img src="../source/2021/cTune/Frontstage/wireframes/station-list.svg" alt="Radio station list" /></a>
+      <figcaption>Wireframe.2 Radio station list</figcaption>
+    </figure>
+
+    <p>The application revolves around showing lists of radio stations so the next item to look at was just that. These lists will be in all 3 of the tabs in some form or other: favourites, search results, browse listings.</p>
+
+    <p>Essentially each item in a station list represents a <b>RadioStationInfo</b> DTO but these contain a lot of fields that cannot all be shown in the item. Only the most important fields that convey enough information to make a choice should be shown. After some musing the following were chosen:</p>
+
+    <ul>
+      <li>Name of the station,</li>
+      <li>Bitrate</li>
+      <li>Country indicator (country code)</li>
+      <li>Category tags</li>
+    </ul>
+
+    <p>Putting each in a corner requires 2 lines of text + a delimiter for every list-item but, as I wanted some options for real-estate-challenged terminal windows, an alternative "compact" version of the list-item template was additionally added to the design (see wireframe 2).</p>
+
+    <h4 id="heading_1_1_3">1.1.3 Sub-listings browsing with a "SlideMenu"</h4>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/browser-tab.svg"><img src="../source/2021/cTune/Frontstage/wireframes/browser-tab.svg" alt="Browser tab" /></a>
+      <figcaption>Wireframe.3 Browser tab</figcaption>
+    </figure>
+
+    <p>The "Browser" tab was to be the only one with a different layout. Though, the first design iteration involved using a dialog for the category selection which would then open a new dialog for the sub-categories. As this was too complicated, it was eventually dropped in favour of the 2-pane window as seen in wireframe 3. The category choices would now be placed on the left as a "slide-menu" and, the results, on the right pane.</p>
+
+    <p>The premise for the "slide-menu" was that it could slide left/right based on what item was selected and the appropriate action triggered (go to parent, go to sub-menu or fetch results). This way it could not only hold the browsing category hierarchy but also initiate the calls for fetching when relevant.</p>
+
+    <p>Using the wireframe below as example:</p>
+    <ul>
+      <li>"Item A" in the root slides into its sub-menu.</li>
+      <li>"Item A" in the sub-menu slides back into its parent (i.e.: the root menu).</li>
+      <li>"Sub-item A1" in the sub-menu slides into its sub-menu.</li>
+      <li>"Sub-item A1" in the sub-sub-menu slides back into its parent (i.e. the sub-menu).</li>
+      <li>Any item in the sub-sub-menu triggers a fetch action (no sub-menu).</li>
+    </ul>
+
+    <figure class="center three-quarter-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/slide-menu.svg"><img src="../source/2021/cTune/Frontstage/wireframes/slide-menu.svg" alt="SlideMenu" /></a>
+      <figcaption>Wireframe.4 SlideMenu</figcaption>
+    </figure>
+
+    <h4 id="heading_1_1_4">1.1.4 Station information dialog</h4>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/info-dialog.svg"><img src="../source/2021/cTune/Frontstage/wireframes/info-dialog.svg" alt="Station information dialog" /></a>
+      <figcaption>Wireframe.5 Station information dialog</figcaption>
+    </figure>
+
+    <p>Not all of a station's properties can be displayed in its list entry. In order to do that, a radio station information popup/dialog was added.</p>
+
+    <p>Although simple looking, the possibility of having the information take more space than the available screen real-estate leads to a specific requirement: the ability to scroll. This is a non-issue in standard desktop GUI frameworks but this was to be implemented in a text-only environment (the terminal). Meaning that it could potentially cause problems and, because of that, the decision to include this feature was not made lightly.</p>
+
+    <div class="comment-box">
+      <p><b>Spoiler alert:</b> It was a PITA to implement, especially when the ability for the terminal window to resize was taken into account!</p>
+    </div>
+
+    <h4 id="heading_1_1_5">1.1.5 Station search dialog</h4>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/search-dialog.svg"><img src="../source/2021/cTune/Frontstage/wireframes/search-dialog.svg" alt="Search dialog" /></a>
+      <figcaption>Wireframe.6 Search dialog</figcaption>
+    </figure>
+
+    <p>The search dialog takes in search arguments from the operator and launches a search query when submitted. Tick-boxes were included for all boolean search arguments.</p>
+
+    <p>Originally, the "order by" field was thought of as a drop-down list but, as soon as the implementation of the search dialog began, it was clear that it was a bad choice. Getting a drop-down list working would require doing draw-position calculation with updates on terminal resize events and involved selection/escape logic. I.e. it was going to be convoluted. For simplicity's sake, it was changed into a side-scrolling list where the order can be selected with the left/right arrow keys leaving the up/down arrow keys free for prev/next field selection.</p>
+
+    <h4 id="heading_1_1_6">1.1.6 Add/Edit station dialog</h4>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/edit-dialog.svg"><img src="../source/2021/cTune/Frontstage/wireframes/edit-dialog.svg" alt="Edit dialog" /></a>
+      <figcaption>Wireframe.7 Add/edit station dialog</figcaption>
+    </figure>
+
+    <p>Since both editing and adding a station have the same fields, one dialog can be used for both cases as a time-saving measure.</p>
+
+    <p>The only un-editable field is for the station's UUID as this is either provided by <a href="https://www.radio-browser.info" rel="noreferrer" target="_blank">RadioBrowser</a> or is auto-generated in the case of "local" stations. Aside from that, the only truly compulsory fields are a URL/resolved URL and a name for the station entry. The rest is optional.</p>
+
+    <p>For the codec and bitrate there is an optional "Test/Auto-Detect" button to make sure the given stream's URL is valid as well as fetch and auto-fill its bitrate/codec information. Some indication of the test's return state is to be shown by changing the button's colour to either green or red (pass/fail).</p>
+
+    <h4 id="heading_1_1_7">1.1.7 Contextual Help dialog</h4>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/help-dialog.svg"><img src="../source/2021/cTune/Frontstage/wireframes/help-dialog.svg" alt="Help dialog" /></a>
+      <figcaption>Wireframe.8 Help dialog</figcaption>
+    </figure>
+
+    <p>Keyboard navigation is not always obvious to anyone who spends most of their time in a mouse-enabled graphical interface. This is why then there should always be a way to get some indications as to what keys can be used in a particular context. A context-based help dialog system can achieve just that.</p>
+
+    <p>The whole premise for this was to give an operator help at the touch of a button (<code class="terminal inline">F1</code>). The <b>ContextHelp</b> then displays all relevant keys along with descriptions of the actions they enable within the given context</p>
+
+    <h4 id="heading_1_1_8">1.1.8 Options menu</h4>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/options-menu.svg"><img src="../source/2021/cTune/Frontstage/wireframes/options-menu.svg" alt="Options menu" /></a>
+      <figcaption>Wireframe.9 Options menu</figcaption>
+    </figure>
+
+    <p>The idea of an options menu came later during the UI implementation and was added primarily to give access to 2 significant functionalities: the sorting and syncing of bookmarked stations. The rest of the menu items (new, edit, remove) were included so as to offer alternative access and make the menu a little more populated.</p>
+
+    <p>The behaviour of this options menu is not dissimilar to the "SlideMenu" from the "Browser" tab so some code reuse was possible.</p>
+
+    <h3 id="heading_1_2">1.2 Architecture</h3>
+
+    <p>A widget based approach was eventually chosen after a few iterations. The <b>UI</b> connects to the <b>Controller</b> to access all the backend functionalities (see previous post). It initialises, spawns and controls all UI-related tasks (see fig.1).</p>
+
+    <figure class="center fill">
+      <a href="../source/2021/cTune/Frontstage/figures/ui_architecture.svg"><img src="../source/2021/cTune/Frontstage/figures/ui_architecture.svg" alt="UI Architecture" /></a>
+      <figcaption>Fig.1 UI architecture</figcaption>
+    </figure>
+
+    <div class="comment-box">
+      <p>It's only after some time playing around with <a href="https://invisible-island.net/ncurses/" rel="noreferrer" target="_blank">ncurses</a> that I eventually refactored what I'd implemented into an architecture that used the widgets as UI primitives. All to stem the rotten fragrance the code was beginning to exude. <b><span class="underline">Lesson</span>: when an implementation starts to smell, it's time to revisit the architecture!</b></p>
+    </div>
+
+    <h2 id="heading_2">2. Implementation</h2>
+
+    <p>The <a href="https://invisible-island.net/ncurses/" rel="noreferrer" target="_blank">ncurses</a> text-based terminal UI framework was chosen as it's the de-facto standard for terminal based UI interface development. In addition, the <a href="https://invisible-island.net/ncurses/ncurses-intro.html#panels" rel="noreferrer" target="_blank">Panel</a> and <a href="https://invisible-island.net/ncurses/ncurses-intro.html#form" rel="noreferrer" target="_blank">Form</a> libraries were used to facilitate the creation of stacked windows (z-axis) and form inputs.</p>
+
+    <h3 id="heading_2_1">2.1 Navigation</h3>
+
+    <figure class="center fill">
+      <a href="../source/2021/cTune/Frontstage/figures/ui_access_graph.svg"><img src="../source/2021/cTune/Frontstage/figures/ui_access_graph.svg" alt="UI access graph" /></a>
+      <figcaption>Fig.2 UI window and dialog access graph</figcaption>
+    </figure>
+
+    <p>Since cTune's interface is entirely in the terminal, intuitive keyboard navigation is pretty important. Meaning that transitions between views, panes and dialog should adhere to a logical hierarchy and use the same kind of navigation keys found in other standard interfaces.</p>
+
+    <p>While most of cTune's views are singular there is one exception that uses 2 panes: the browser tab. Bridging the transition between the two was challenging as there are two distinct paths that can be taken:</p>
+    <ol>
+      <li><b style="color: firebrick">Active transitions</b> - when initiating the 'fetch' action of the menu's leaf node leading to loading the results in the right pane and the focus to be shifted to it automatically,</li>
+      <li><b style="color: #2a7ae2">Passive transitions</b> - Shifting the focus from the left pane to the right and vice-versa with no action being taken on either side.</li>
+    </ol>
+
+    <figure class="center fill">
+      <a href="../source/2021/cTune/Frontstage/wireframes/browser-nav.svg"><img src="../source/2021/cTune/Frontstage/wireframes/browser-nav.svg" alt="Browser tab navigation" /></a>
+      <figcaption>Wireframe.10 Browser tab navigation transitions</figcaption>
+    </figure>
+
+    <p>The same approach goes with selection-to-dialog transitions in the station list. Initiating a playback event or displaying information on the selected station  are both <b style="color: firebrick">active transitions</b> that differ only based on the context - the key pressed.</p>
+
+    <figure class="center fill">
+      <a href="../source/2021/cTune/Frontstage/wireframes/info-transition.svg"><img src="../source/2021/cTune/Frontstage/wireframes/info-transition.svg" alt="Station list navigation transition" /></a>
+      <figcaption>Wireframe.11 Station list navigation transitions</figcaption>
+    </figure>
+
+    <p>Bridging the different views and their available actions required some forethought especially when taking into consideration the auto-filling of the help dialog with the context's key bindings.</p>
+
+    <p>Implementing keyboard input capture loops by using <a href="https://invisible-island.net/ncurses/" rel="noreferrer" target="_blank">ncurses</a>'s key codes, as found on numerous examples, would be the obvious choice. That also means that a list of all these key-bindings need to be kept as a record from which the contextual help can fetch information from. This is not great for 2 reasons: <b>1)</b> any key-binding change in the input capture loops needs to be reflected in the list and <b>2)</b> as information is spread in different places, it creates difficulties when modifying any key-binding. It also creates issues when trying to express a key input re-used in different contexts.</p>
+
+      <p>For a central interface that hold all the key-binding records there are 4 pieces of information that is be required for each entry:</p>
+      <ol>
+          <li>the context,</li>
+          <li>the ncurse key-code bound to the action (or a reference to it),</li>
+          <li>the required action ID,</li>
+          <li>and a description of the action for the contextual help.</li>
+      </ol>
+
+    <p>There is now a new issue presenting itself; how to look up the action for a specific key-code input. The priority is to keep the delay between a keyboard key being pressed and the program reacting to it as low as possible. No one likes lag, especially in the terminal!</p>
+
+    <p>A cache lookup array constructed during cTune's initialisation from key-binding was implemented after a few try-outs with different approaches.</p>
+
+    <p>The binding information, which comprises of the aforementioned pieces of information plus a help entry type for formatting purposes, is currently hard coded as context arrays. At startup these are iterated over and the individual <code class="terminal inline">ActionID_e</code> is set in the 2-dimensional array cache (<code class="terminal inline">ActionID_e = cache[Context_e][ncurses_key]</code>).</p>
+
+    <p>When a key is pressed, <code class="terminal inline">KeyBinding.getAction(..)</code> is called and gets the <code class="terminal inline">ActionID_e</code> for the given context and keyboard key pressed. The input loop uses a <code>switch</code> statment to decide what to do for the returned <code class="terminal inline">ActionID_e</code>. Now the key-binding is decoupled from the various input loops.</p>
+
+    <div class="comment-box">
+      <p>There are currently (as of v1.0.0) a total of 140 key bindings spread amongst different contexts. The cache array is made up of <code>8 x MAX_KEY</code> entries (where <code class="terminal inline">MAX_KEY</code> in ncurses' implementation is '777'). This means that the total size of the cache is <code>8 contexts x 777 possible key codes x 4 bytes = 24864 bytes</code> so just under <b>25kB</b>.</p>
+
+    <p>Considering the running size of cTune v1.0.0 is around 10MB-ish when using the <i>ffmpeg</i> and <i>pulseaudio</i> plugins, the cache takes only 0.0244&#37; of it. Pretty descent price to pay for speed I think. Also the contextual help has a <math>O(1)</math> lookup on the context's key-binding list.</p>
+    </div>
+
+    <figure class="center two-third-width">
+      <a href="../source/2021/cTune/Frontstage/figures/iKeyBinding.svg"><img src="../source/2021/cTune/Frontstage/figures/iKeyBinding.svg" alt="UI KeyBinding interface" /></a>
+      <figcaption>Fig.3 UI KeyBinding interface</figcaption>
+    </figure>
+
+    <h3 id="heading_2_2">2.2 Theming</h3>
+
+    <figure class="right third-width">
+      <a href="../source/2021/cTune/Frontstage/figures/favs_colours.png"><img src="../source/2021/cTune/Frontstage/figures/favs_colours.png" alt="Favourites theming" /></a>
+      <figcaption>Fig.4 Local/Remote theming for favourites</figcaption>
+    </figure>
+
+    <p>As colours started to be an important part of the visual feedback of information it became clear that a theming 'engine' was required. For example; as a way to distinguish local and remote stations bookmarked in the favourites (see fig.4).</p>
+
+    <p>The purpose of the <b>Theme</b> component is to centralise colour queries from the UI components and to facilitate changes to the global application colours. The way it is designed makes it so that UI pieces are assigned a <code class="terminal inline">ThemeItem_e</code> enum which is passed to <b>Theme</b> which, in turn, gives back the <a href="https://invisible-island.net/ncurses/" rel="noreferrer" target="_blank">ncurses</a> colour id assigned to the enum.</p>
+
+    <p>The theming 'engine' gets its 'theme' from the <code class="terminal inline">ColourTheme</code> object it is initialised with.</p>
+
+    <figure class="center two-third-width">
+      <a href="../source/2021/cTune/Frontstage/figures/iTheme.svg"><img src="../source/2021/cTune/Frontstage/figures/iTheme.svg" alt="UI Theme interface" /></a>
+      <figcaption>Fig.5 UI Theming interface</figcaption>
+    </figure>
+
+    <h3 id="heading_2_3">2.3 Language</h3>
+
+    <figure class="right third-width">
+      <a href="../source/2021/cTune/Frontstage/figures/iLanguage.svg"><img src="../source/2021/cTune/Frontstage/figures/iLanguage.svg" alt="UI Language interface" /></a>
+      <figcaption>Fig.6 UI Language interface</figcaption>
+    </figure>
+
+    <p>In order to allow for any future development of multi-language support, all UI display strings were assigned a <code class="terminal inline">TextID_e</code> enum and aggregated behind an interface.</p>
+
+    <p>Anytime the UI components requires a string for the display (e.g.: tab names, labels, etc...) it goes through the <b>Language</b> interface using the <code class="terminal inline">text(..)</code> method.</p>
+
+    <p>At the moment all UI strings are hardcoded in the implementation file (<code>Language.c</code>) for <b>Language</b>.</p>
+
+    <h3 id="heading_2_4">2.4 Resizer</h3>
+
+    <figure class="left third-width">
+      <a href="../source/2021/cTune/Frontstage/figures/iResizer.svg"><img src="../source/2021/cTune/Frontstage/figures/iResizer.svg" alt="UI Resizer interface" /></a>
+      <figcaption>Fig.7 UI Resizer interface</figcaption>
+    </figure>
+
+    <p>To deal with a terminal resize event when multiple stacked panel groups and dialogs are on screen the <b>Resizer</b> was created. It is basically a stack that holds references to all the opened element and their respective 'resizer' method that is responsible for repainting their elements. Any group or dialog opened is responsible for pushing and popping themselves with <b>Resizer</b>.</p>
+
+    <p>In the implementation all the window/element sizes are pre-calculated and stored in the <b>UI</b> component. Since <b>UI</b> is where everything else is spawned from, the sizes are passed individually as pointers to any relevant elements created so that, when painting/re-painting, the correct and up-to-date sizes are known.</p>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/figures/resize_sequence.svg"><img src="../source/2021/cTune/Frontstage/figures/resize_sequence.svg" alt="UI Resizer sequence" /></a>
+      <figcaption>Fig.8 UI Resizer sequence with 1 opened dialog</figcaption>
+    </figure>
+
+    <p>When a resize event is detected ("<code class="terminal inline">KEY_RESIZE</code>" in ncurses, a.k.a. "<code class="terminal inline">ACTION_RESIZE</code>" in cTune) then the <code class="terminal inline">Resizer.resize()</code> method is called. It iterates through the stack bottom-to-top and calls all the referenced 'resizer' methods. The first one is always <b>UI</b> and its method first calls its inner <code class="terminal inline">calculateWinSizes(..)</code> method to re-calculate all the sizes based on the updated screen dimensions.</p>
+
+    <div class="comment-box">
+      <p>The main problem was the fact that the input was originally designed to be captured by <b>Dialog</b>s so made repainting anything under them a tricky problem. This is why the whole global access and stack solution was eventually envisioned and implemented. Though it took a fair amount of musing and experiments of different approaches to get to this now very obvious and simple solution!</p>
+    </div>
+
+    <h3 id="heading_2_5">2.5 Widgets</h3>
+
+    <figure class="right third-width">
+      <a href="../source/2021/cTune/Frontstage/figures/widgets.svg"><img src="../source/2021/cTune/Frontstage/figures/widgets.svg" alt="Widgets" /></a>
+      <figcaption>Fig.9 Widgets</figcaption>
+    </figure>
+
+    <p>The whole point of widgets is to have a more understandable abstraction and UI primitives to construct the UI from.</p>
+
+    <p>There are two types of widgets:</p>
+    <ul>
+      <li><i>primitive</i> - base interface elements,</li>
+      <li><i>compound</i> - more complex elements build from primitives.</li>
+    </ul>
+
+    <p>Widgets are great for code reuse. In addition, all the minutia involved in creating and manipulating the elements are hidden away behind a much more descriptive interface.</p>
+
+    <div class="comment-box">
+      <p>Technically, <i>dialogs</i> are not widgets but widget-like element and, thus, do not belong in the widget hierarchy. As the distinction is not exactly earth-shattering here, I've dumped them into the same widget bag regardless.</p>
+    </div>
+
+    <h4 id="heading_2_5_1">2.5.1 ScrollWin</h4>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/figures/iScrollWin.svg"><img src="../source/2021/cTune/Frontstage/figures/iScrollWin.svg" alt="ScrollWin interface" /></a>
+      <figcaption>Fig.10 ScrollWin interface</figcaption>
+    </figure>
+
+    <p>The way <a href="https://invisible-island.net/ncurses/" rel="noreferrer" target="_blank">ncurses</a> work is that it uses a sort of canvas called <code class="terminal inline">WINDOW</code> which makes it easier to section off parts of the screen and manipulate these independently from each other (i.e.: edit/refresh only a section).</p>
+
+    <p>There is an alternative type called a <i>pad</i> which acts like a virtual <code class="terminal inline">WINDOW</code>. It has a view-box that is used as a sort of proxy to it. Because of this, the dimensions of the <i>pad</i> can actually be larger than the screen (see fig.X) which makes it ideal to use when the screen size is either not known in advance or not immutable.</p>
+
+    <p>In fig.X, <code>S<sub>1</sub></code> and <code>S<sub>2</sub></code> are the column/row coordinates of the top left and bottom right corners of the view-box on the screen respectively. The size of the view-box is known to <a href="https://invisible-island.net/ncurses/" rel="noreferrer" target="_blank">ncurses</a> from subtracting one from the other. This is why only <code>P<sub>1</sub></code>, is needed for the pad.</p>
+
+    <p><b>ScrollWin</b> was made as a wrapper for a <i>pad</i> mainly to facilitate the whole content scrolling process and the usage of the '<i>pad</i>' in general.</p>
+
+    <figure class="center fill">
+      <a href="../source/2021/cTune/Frontstage/wireframes/ncurses-pad.svg"><img src="../source/2021/cTune/Frontstage/wireframes/ncurses-pad.svg" alt="ncurses pad" /></a>
+      <figcaption>Fig.11 nCurses Pad construction</figcaption>
+    </figure>
+
+    <h4 id="heading_2_5_2">2.5.2 ScrollBar</h4>
+
+    <p>After the creation of a scroll-capable window widget, scrolling indicators were a must.</p>
+
+    <div class="information-box">
+      <p><span class="underline"><b>Definitions:</b></span></p>
+      <dl>
+        <dt>axis</dt>
+        <dd>scrolling direction - row (<i>y</i>) or column (<i>x</i>)</dd>
+        <dt>unit</dt>
+        <dd>a character space on the axis</dd>
+        <dt>scroll length</dt>
+        <dd>the length of the pad on the axis</dd>
+        <dt>scroller size</dt>
+        <dd>size of scroller in units</dd>
+        <dt>bar length</dt>
+        <dd>size of scrollbar in units</dd>
+        <dt>page</dt>
+        <dd>content resulting from a unique view-box pad position on the axis</dd>
+        <dt>page count</dt>
+        <dd>total number of page views on the axis</dd>
+        <dt>page increments</dt>
+        <dd>page count - 1</dd>
+        <dt>scroller position</dt>
+        <dd>increment position offset of the scroller on the scrollbar</dd>
+        <dt>page increment value</dt>
+        <dd>value of a page as a proportion of the scrollbar size (<code class="inline">bar length/page count</code>)<dd>
+      </dl>
+    </div>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/scrollbar.svg"><img src="../source/2021/cTune/Frontstage/wireframes/scrollbar.svg" alt="ScrollBar" /></a>
+      <figcaption>Fig.12 Scrollbar</figcaption>
+    </figure>
+
+    <p>Because the terminal is not about pixels but rows and columns of characters, there are some adjustments required. In particular there is the 'threshold' problem. I.e.: when to initiate a scroll event. When moving the cursor on rows or columns within the boundary of the current view-box view, scrolling should not happen. But when the cursor moves to the first row or column outside the boundary then scrolling should happen as the pad shifts by 1 unit.</p>
+
+    <p>A scrollbar represent the entire length of the <i>pad</i> on the axis whereas its scroller represents the view-box and, by extension, its position on the <i>pad</i>. The scroller size correlates with the proportion the view-box takes over the pad on the axis. When the view-box shifts on the axis, the scroller moves as a proportion of the shift over the <i>pad</i> length.</p>
+
+    <p>There are 3 possible scenarios to consider:</p>
+    <ol>
+      <li>when the <i>page count</i> is 1 (i.e.: the size of view-box is smaller or equal to the size of the <i>pad</i> on the axis)</li>
+      <li>when the <i>page increments</i> is smaller or equal than the <i>bar length</i> and,</li>
+      <li>when the <i>page increments</i> is larger than the <i>bar length</i>.</li>
+    </ol>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/scroll-pages.svg"><img src="../source/2021/cTune/Frontstage/wireframes/scroll-pages.svg" alt="Scroll pages" /></a>
+      <figcaption>Fig.13 Scroll pages</figcaption>
+    </figure>
+
+    <p>Scenario 1 is easy as there is no scrolling so either the scroller is shown filling the bar at full length or the scroll bar is not shown.</p>
+
+    <p>Scenario 2 means that both the <i>scroller size</i> and <i>page increment value</i> are equal or larger than 1 unit. I.e. the scroller will move everytime the <i>view-box</i> shifts on the axis.</p>
+
+    <p>In scenario 3, the <i>page increment value</i> is a fraction of a unit so the scroller does not always move if the <i>scroller position</i> does not meet its threshold value.</p>
+
+    <p>Once the scrolling logic is implemented there is the matter of informing the scrollbar where the pad rests on its axis (with <code class="terminal inline">setPosition(..)</code> ) so that it can calculate and update the <i>scroller position</i>.</p>
+
+    <p>Some extra features were added during development. Namely scrollbar positions (top/right/bottom/left) and a hide flag when scrolling is disabled.</p>
+
+    <figure class="center three-quarter-width">
+      <a href="../source/2021/cTune/Frontstage/figures/iScrollBar.svg"><img src="../source/2021/cTune/Frontstage/figures/iScrollBar.svg" alt="ScrollBar interface" /></a>
+      <figcaption>Fig.14 Scrollbar interface</figcaption>
+    </figure>
+
+    <h4 id="heading_2_5_3">2.5.3 BorderWin</h4>
+
+    <p>The <b>BorderWin</b> widget serves solely to provide a frame and a title around content. The edges are 'boxed' and the title added centered at the top edge. That's it.</p>
+
+    <figure class="center fill">
+      <a href="../source/2021/cTune/Frontstage/figures/iBorderWin.svg"><img src="../source/2021/cTune/Frontstage/figures/iBorderWin.svg" alt="BorderWin interface" /></a>
+      <figcaption>Fig.15 BorderWin interface</figcaption>
+    </figure>
+
+    <h4 id="heading_2_5_4">2.5.4 Dialog</h4>
+
+    <p><b>Dialog</b> uses 3 UI primitives: <b>ScrollWin</b>, <b>BorderWin</b> and <b>ScrollBar</b> and hides the complexities of creating a dialog window behind its interface.</p>
+
+    <figure class="right third-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/dialog-composition.svg"><img src="../source/2021/cTune/Frontstage/wireframes/dialog-composition.svg" alt="Dialog composition" /></a>
+      <figcaption>Fig.16 Dialog widget composition</figcaption>
+    </figure>
+
+    <p>One thing of note is the capability of auto-scrolling based on a given threshold. This was added in as a way to deal with form fields in a smaller than expected space (i.e.: <i>form</i> size &gt; <b>ScrollWin</b>'s <i>view-box</i> size).</p>
+
+    <p>To auto-scroll, the current cursor coordinates (column and row) is passed to <code class="terminal inline">autoScroll(..)</code> and the scrolling position is auto-magically calculated and both the <b>ScrollWin</b>'s <i>view-box</i> and <b>ScrollBar</b>'s <i>scroller(s)</i> are set to the their correct values</p>
+
+    <p>The scrolling threshold can be specified through <code class="terminal inline">setAutoScrollOffset(..)</code>. This sets the offset at which the scrolling should be triggered at. This allows a margin to be kept around the cursor wherever it goes.</p>
+
+    <figure class="right third-width">
+      <a href="../source/2021/cTune/Frontstage/wireframes/auto-scroll.svg"><img src="../source/2021/cTune/Frontstage/wireframes/auto-scroll.svg" alt="Auto-scroll boundary" /></a>
+      <figcaption>Fig.17 Auto-scroll boundary</figcaption>
+    </figure>
+
+    <p>For example, say that a <i>view-box</i>'s dimension is 10 rows x 15 columns, currently at the top-left corner of a large <i>pad</i> and the threshold offsets are 2 rows/4 columns. If the auto-scroll row/col position given is (8,11) then nothing happens. With the position of (9,14), the <i>view-box</i> top-left corner position shifts to (1,3) on the <i>pad</i> (<code class="inline">col = (9 + 2) - 10 = 1, row = (14 + 4) - 15 = 3</code>).</p>
+
+    <p>Aside from this nifty little feature, the <b>Dialog</b> interface includes methods to scroll by single units (up/down/left/right) and shortcuts to scroll to the edges of the <i>pad</i> (top/bottom/left-edge/right-edge).</p>
+
+    <figure class="center three-quarter-width">
+      <a href="../source/2021/cTune/Frontstage/figures/iDialog.svg"><img src="../source/2021/cTune/Frontstage/figures/iDialog.svg" alt="Dialog interface" /></a>
+      <figcaption>Fig.18 Dialog interface</figcaption>
+    </figure>
+
+    <h4 id="heading_2_5_5">2.5.5 SlideMenu</h4>
+
+    <p><b>SlideMenu</b> uses just 1 other UI primitive; <b>ScrollBar</b>. Any menu created using this widget is always confined within the <code class="terminal inline">WindowProperty</code> given during initialisation and the scroller set automatically for each menu slides.</p>
+
+    <p>All items in the menu, including sub-menus and back-to-parent navigation, are set via the <code class="terminal inline">createMenu(..)</code> and <code class="terminal inline">createMenuItem(..)</code> interface methods. There are 3 types of menu items:</p>
+
+    <ol>
+      <li><b>parent</b>: item to go back up in the menu hierarchy,</li>
+      <li><b>menu</b>: item that leads to a sub-menu,</li>
+      <li><b>leaf</b>: (actionable) item entry.</li>
+    </ol>
+
+    <p>Actionable items require a callback method that executes when activated in the menu. The callback takes a <code class="terminal inline">SlideMenu_Item_t *</code> argument. In order to allow custom data to be passed, an obscure data pointer can be provided when constructing a menu item which can then be accessed by the callback via the item pointer. Optionally, a callback can also be added to other types of menu items if required (e.g.: to dynamically load the sub-menu items).</p>
+
+    <figure class="center fill">
+      <a href="../source/2021/cTune/Frontstage/figures/iSlideMenu.svg"><img src="../source/2021/cTune/Frontstage/figures/iSlideMenu.svg" alt="SlideMenu interface" /></a>
+      <figcaption>Fig.19 SlideMenu interface</figcaption>
+    </figure>
+
+    <p>The following code example demonstrates usage for creating menu content.</p>
+
+    <div class="code-wrap">
+      <code class="clang block">struct Payload {
+  void * obscure_ptr;
+  bool (* cb)( void * );
+};
+
+bool payloadCtrlCb( SlideMenu_Item_t * menu_item ) {
+  CbPayload_t * payload = (CbPayload_t *) menu_item->data;
+
+  if( payload == NULL || payload.obscure_ptr == NULL || payload->cb == NULL )
+      return false; //EARLY RETURN
+
+  return payload->cb( payload->obscure_ptr );
+}
+
+void createMenus( SlideMenu_t * sm, Payload * payload ) {
+  //create a menu within the root menu
+  SlideMenu.createMenuItem( &sm->menu.root, SLIDEMENU_MENU, "Sub-menu A", NULL, NULL );
+
+  //get the pointer to the newly created 'sub-menu' item
+  SlideMenu_Item_t * item = Vector.at( &sm->menu.root.items, 0 );
+
+  //create and allocate the actual sub-menu inside the sub-menu item
+  SlideMenu.createMenu( &item->sub_menu, item->parent_menu, item->index )
+
+  //create item in 'sub-menu' to navigate back to the parent (root)
+  SlideMenu.createMenuItem( item->sub_menu, SLIDEMENU_PARENT, "Go back", NULL, NULL );
+
+  //create a couple of dummy items in the 'sub-menu'
+  SlideMenu.createMenuItem( item->sub_menu, SLIDEMENU_LEAF, "Sub-menu item A1", NULL, NULL );
+  SlideMenu.createMenuItem( item->sub_menu, SLIDEMENU_LEAF, "Sub-menu item A2", NULL, NULL );
+
+  //create an item with an associated action in the root menu
+  SlideMenu.createMenuItem( &sm->menu.root, SLIDEMENU_LEAF, "do something", payload, payloadCtrlCb );
+}</code></div>
+    <div class="caption-bottom">Example: Creating a SlideMenu</div>
+
+    <h3 id="heading_2_6">2.6 Master UI component</h3>
+
+    <figure class="right half-width">
+      <a href="../source/2021/cTune/Frontstage/figures/iUI.svg"><img src="../source/2021/cTune/Frontstage/figures/iUI.svg" alt="UI interface" /></a>
+      <figcaption>Fig.20 UI interface</figcaption>
+    </figure>
+
+    <p>The <b>UI</b> component acts as a the UI's core and boundary interface similar to how <b>Controller</b> gate-keeps cTune's backend. It also is responsible for initialising and tearing down the UI.</p>
+
+    <p>Most of its interface provides methods to print information to the screen. These are used as callbacks in the <b>Controller</b>. The <code class="terminal inline">setQuietVolChangeCallback(..)</code> method allows to set a callback for a volume change event when nothing is playing.</p>
+
+    <h2 id="heading_3">3. Overview</h2>
+
+    <p>As for the backend, here's the final UI diagram. Again, for cleanliness' sake, the globally used interfaces are not connected to everything (see blue comments) and the DTOs/data-structures have not been included.</p>
+
+    <figure class="center fill">
+      <a href="../source/2021/cTune/Frontstage/figures/ctune_ui.svg"><img src="../source/2021/cTune/Frontstage/figures/ctune_ui.svg" alt="Frontend diagram" /></a>
+      <figcaption>Fig.21 Sexy frontend diagram</figcaption>
+    </figure>
+
+  </div>
+</article>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="page-nav">
+                	<ul>
+                		<li class="first"><a href="1.html">|&#9664;</a></li>
+                		<li class="prev"><a rel="prev" href="25.html">&#9664;</a></li>
+                		<li class="curr">26 / 29</li>
+                		<li class="next"><a rel="next" href="27.html">&#9654;</a></li>
+                		<li class="last"><a href="29.html">&#9654;|</a></li>
+                	</ul>
+                </div>
+
+                <div>
+                    <h2>By Date</h2>
+                    <div class="index-pane-dates">
+                    		<ol class="tree">
+                    			<li><label for="checkbox_2021">2021</label><input type="checkbox" checked  id="checkbox_2021"/>
+                    				<ol>
+                    					<li><label for="checkbox_202108">August</label><input type="checkbox" id="checkbox_202108"/>
+                    						<ol>
+                    							<li>12 <a href="29.html">Binary Search Algorithm</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202107">July</label><input type="checkbox" id="checkbox_202107"/>
+                    						<ol>
+                    							<li>19 <a href="28.html">Retrospective: cTune v1.0</a></li>
+                    							<li>10 <a href="27.html">Circular Buffer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202106">June</label><input type="checkbox" checked  id="checkbox_202106"/>
+                    						<ol>
+                    							<li>30 <a class="current-post" href="26.html">cTune v1.0: Part 3 - Frontstage</a></li>
+                    							<li>25 <a href="25.html">cTune v1.0: Part 2 - Backstage</a></li>
+                    							<li>16 <a href="24.html">cTune v1.0: Part 1 - Design</a></li>
+                    							<li>15 <a href="23.html">cTune v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2020">2020</label><input type="checkbox" id="checkbox_2020"/>
+                    				<ol>
+                    					<li><label for="checkbox_202006">June</label><input type="checkbox" id="checkbox_202006"/>
+                    						<ol>
+                    							<li>16 <a href="22.html">Indexed search with Javascript</a></li>
+                    							<li>03 <a href="21.html">Character encoding primer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202005">May</label><input type="checkbox" id="checkbox_202005"/>
+                    						<ol>
+                    							<li>27 <a href="20.html">Blogator v1.3 released</a></li>
+                    							<li>07 <a href="19.html">Blogator v1.2 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202004">April</label><input type="checkbox" id="checkbox_202004"/>
+                    						<ol>
+                    							<li>22 <a href="18.html">HDD diagnosis and recovery tools</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202003">March</label><input type="checkbox" id="checkbox_202003"/>
+                    						<ol>
+                    							<li>27 <a href="17.html">Coronavirus info and form fetcher script for the French gov. page</a></li>
+                    							<li>24 <a href="16.html">A RaspberryPi Git server</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202002">February</label><input type="checkbox" id="checkbox_202002"/>
+                    						<ol>
+                    							<li>23 <a href="15.html">CMake Variable Injection</a></li>
+                    							<li>14 <a href="14.html">Android upgrade woes</a></li>
+                    							<li>11 <a href="13.html">Basics of the Linux terminal and tools</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2019">2019</label><input type="checkbox" id="checkbox_2019"/>
+                    				<ol>
+                    					<li><label for="checkbox_201910">October</label><input type="checkbox" id="checkbox_201910"/>
+                    						<ol>
+                    							<li>10 <a href="12.html">C++ Resource Acquisition Is Initialization (RAII)</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201908">August</label><input type="checkbox" id="checkbox_201908"/>
+                    						<ol>
+                    							<li>20 <a href="11.html">Retrospective: Blogator v1.0</a></li>
+                    							<li>13 <a href="10.html">Blogator v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201901">January</label><input type="checkbox" id="checkbox_201901"/>
+                    						<ol>
+                    							<li>06 <a href="9.html">Terminal plot-graphs with braille characters</a></li>
+                    							<li>02 <a href="8.html">Creating bitmaps using braille characters</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2018">2018</label><input type="checkbox" id="checkbox_2018"/>
+                    				<ol>
+                    					<li><label for="checkbox_201811">November</label><input type="checkbox" id="checkbox_201811"/>
+                    						<ol>
+                    							<li>30 <a href="7.html">Maximum value in a Sliding Window</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201809">September</label><input type="checkbox" id="checkbox_201809"/>
+                    						<ol>
+                    							<li>11 <a href="6.html">C++ Raw and Smart Pointers</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201808">August</label><input type="checkbox" id="checkbox_201808"/>
+                    						<ol>
+                    							<li>27 <a href="5.html">Design Pattern: Object Pool</a></li>
+                    							<li>14 <a href="4.html">Design Pattern: Singleton</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201803">March</label><input type="checkbox" id="checkbox_201803"/>
+                    						<ol>
+                    							<li>18 <a href="3.html">Python package based app structure</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201801">January</label><input type="checkbox" id="checkbox_201801"/>
+                    						<ol>
+                    							<li>27 <a href="2.html">Working out coordinates using distances</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2017">2017</label><input type="checkbox" id="checkbox_2017"/>
+                    				<ol>
+                    					<li><label for="checkbox_201712">December</label><input type="checkbox" id="checkbox_201712"/>
+                    						<ol>
+                    							<li>30 <a href="1.html">Arch Linux on a MacBook Pro 2015</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    		</ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>
+                <div>
+                    <span class="footer-avatar"><img src="../img/kitteh.jpg" alt="logo"></span>
+                    An7ar35, 2018-21
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

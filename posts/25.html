@@ -1,0 +1,794 @@
+<!-- Generated with Blogator 1.3.2 (https://an7ar35.bitbucket.io) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' 'unsafe-eval';">
+    <title>EAD | Writings</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/blogator/main.css" />
+</head>
+    <body>
+        <div class="header">
+            <div><img src="../img/tree-left.svg" alt="left tree"/></div>
+            <div>
+                <div class="site-title">Es' corner</div>
+                <div class="site-micro-title">Just another keyboard-enthusiastic hominid.</div>
+            </div>
+            <div><img src="../img/tree-right.svg" alt="right tree"/></div>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li class="active">
+                    <a class="nav-writings" href="../index.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Home</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-projects" href="../pages/projects/personal.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Projects</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-contact" href="../pages/contact.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script src="../js/sticky-top-navbar.js"></script>
+
+        <div class="breadcrumb">
+        	<ul>
+        		<li><a href="../index.html">Home</a></li>
+        		<li><a href="../index/by_date/0.html">Posts</a></li>
+        		<li>cTune v1.0: Part 2 - Backstage</li>
+        	</ul>
+        </div>
+
+        <div class="content-h">
+            <div class="left-col">
+                <div class="post-content">
+
+<article xmlns="http://www.w3.org/1999/html">
+    <div>
+        <h1><span class="title">cTune v1.0: Part 2 - Backstage</span></h1>
+        <time datetime="2021-06-25">25 June 2021</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">cTune</span>
+            <span class="tag">C99</span>
+            <span class="tag">Project</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <div class="auto-toc">
+        	<h2>Table of Contents</h2>
+        	<ol>
+        		<li><a href="#heading_1">1. Skeleton implementation</a></li>
+        		<li><ol>
+        			<li><a href="#heading_1_1">1.1 Bare-bone Logger</a></li>
+        			<li><a href="#heading_1_2">1.2 Iteration #1</a></li>
+        			<li><a href="#heading_1_3">1.3 Iteration #2</a></li>
+        			<li><ol>
+        				<li><a href="#heading_1_3_1">1.3.1 Network IO</a></li>
+        				<li><a href="#heading_1_3_2">1.3.2 RadioBrowser API</a></li>
+        				<li><a href="#heading_1_3_3">1.3.3 DTO Namespaces</a></li>
+        				<li><a href="#heading_1_3_4">1.3.4 JSON data extraction</a></li>
+        			</ol></li>
+        		</ol></li>
+        		<li><a href="#heading_2">2. Growing the implementation</a></li>
+        		<li><ol>
+        			<li><a href="#heading_2_1">2.1 Error numbers</a></li>
+        			<li><a href="#heading_2_2">2.2 Logger</a></li>
+        			<li><a href="#heading_2_3">2.3 Configuration</a></li>
+        			<li><a href="#heading_2_4">2.4 Plugin system</a></li>
+        			<li><a href="#heading_2_5">2.5 Controller</a></li>
+        			<li><a href="#heading_2_6">2.6 CLI</a></li>
+        			<li><a href="#heading_2_7">2.7 Playback logger</a></li>
+        			<li><a href="#heading_2_8">2.8 Plugins</a></li>
+        			<li><ol>
+        				<li><a href="#heading_2_8_1">2.8.1 ALSA</a></li>
+        				<li><a href="#heading_2_8_2">2.8.2 PulseAudio</a></li>
+        				<li><a href="#heading_2_8_3">2.8.3 SNDIO</a></li>
+        				<li><a href="#heading_2_8_4">2.8.4 VLC</a></li>
+        			</ol></li>
+        		</ol></li>
+        		<li><a href="#heading_3">3. Final state</a></li>
+        		<li><ol>
+        			<li><a href="#heading_3_1">3.1 Minor addition(s)</a></li>
+        			<li><a href="#heading_3_2">3.2 Overview</a></li>
+        			</ol></li>
+        	</ol>
+        </div>
+
+        <p><span class="summary"><code class="inline terminal">ctune</code> is Linux based internet radio stream player for the console entirely written in C. It uses the <a href="https://www.radio-browser.info" rel="noreferrer" target="_blank">RadioBrowser API</a> as a source for searching streams and getting station information.</span></p>
+
+        <p><span class="summary">This is part 2 of 3 blog posts detailing the process in implementing cTune's backend.</span></p>
+
+        <p>All UML diagrams are made with <a href="https://plantuml.com/" rel="noreferrer" target="_blank">PlantUML</a>.</p>
+
+        <h2 id="heading_1">1. Skeleton implementation</h2>
+
+        <div class="comment-box">
+            <p>When starting implementation I like to first start with a "skinny" version of the main data processing pipeline, expand it, then refactor the working parts into the target design's components.</p>
+
+            <p>This way I can check my assumptions as I go and get a working implementation of the most important functionality. As long as playing a stream from a URL and outputting the PCM data to a sound library works, even if in a rough state, the rest can be added in with the assured knowledge that the core MVP is sound. It's a lot easier to trust the original planning and design when music comes out of the speakers!</p>
+        </div>
+
+        <h3 id="heading_1_1">1.1 Bare-bone Logger</h3>
+
+        <p>The first priority was the <b>Logger</b>. To start with, a complete API was defined. Even if the preliminary implementation was just made up mostly of stubs and forwarded log message to the terminal output, it allowed for the rest of cTune to make calls to it as if completely implemented.</p>
+
+        <figure class="center three-quarter-width">
+            <a href="../source/2021/cTune/Backstage/figures/iLogger.svg"><img src="../source/2021/cTune/Backstage/figures/iLogger.svg" alt="Logger interface" /></a>
+            <figcaption>Fig.1 Logger interface</figcaption>
+        </figure>
+
+        <p>The <code class="terminal">LOG(..)</code> call in the interface is actually a MACRO to either <code class="terminal">log(..)</code> or <code class="terminal">logDBG(..)</code> depending on whether the build has the 'DEBUG' flag enabled or not. The only difference is that the debug version adds the file name and line number to the log message.</p>
+
+        <p>The log level ENUM's integer values map to their <a href="https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1" rel="noreferrer" target="_blank">RFC.5424</a> equivalents (<code class="terminal">CTUNE_LOG_TRACE</code> being the exception). This way they can be forwarded as-is to potential <a href="https://en.wikipedia.org/wiki/Syslog" rel="noreferrer" target="_blank">Syslog</a> calls in a failure scenario like, for example, when the output file cannot be open.</p>
+
+        <h3 id="heading_1_2">1.2 Iteration #1</h3>
+
+        <figure class="right third-width">
+            <a href="../source/2021/cTune/Backstage/figures/skinny_v1.svg"><img src="../source/2021/cTune/Backstage/figures/skinny_v1.svg" alt="Skinny v1" /></a>
+            <figcaption>Fig.2 Skinny iteration #1</figcaption>
+        </figure>
+
+        <p>The first iteration of cTune's "skinny" pipeline comprised of:</p>
+        <ul>
+            <li>Fetching/Decoding a random stream (from a hardcoded url) with <a href="https://ffmpeg.org/" rel="noreferrer" target="_blank">ffmpeg</a> into PCM data and</li>
+             <li>Sending the PCM data to the system's sound server (via <a href="https://www.libsdl.org/" rel="noreferrer" target="_blank">SDL2</a> to keep things simple).</li>
+        </ul>
+
+        <p>The program's <code class="terminal">main.c</code> source file was used as a make-shift <b>Controller</b> during the "skinny" pipeline's implementation.</p>
+
+        <p>Getting <a href="https://ffmpeg.org/" rel="noreferrer" target="_blank">ffmpeg</a> to output PCM data from a stream involves 5 distinct stages:</p>
+        <ol>
+            <li>Open input (source) stream and get its information,</li>
+            <li>Get and open a matching codec for the source stream in order to decode the compressed/coded source audio,</li>
+            <li>Setup resampling to convert the decoded source audio into mixed PCM data,</li>
+            <li>Setup the audio sink (a.k.a. the output)</li>
+            <li>Decode and resample the frames and send to output sink as they are received</li>
+        </ol>
+
+        <div class="comment-box">
+            <p>Although <a href="https://ffmpeg.org/" rel="noreferrer" target="_blank">ffmpeg</a> does have the ability to output to different sound servers baked into its library, I absconded from using this feature as it would have made output selection problematic if other 'player' plugins did not have such feature included.</p>
+        </div>
+
+        <p>As for the audio output, there are just 2 stages:</p>
+        <ol>
+            <li>Initialising the audio server/library with the output format specifications (output format, sample rate, number of channels, sample size), and</li>
+            <li>Write PCM data to the output.</li>
+        </ol>
+
+        <p>To connect the two, the output's <code class="terminal inline">write(..)</code> method is just called in <a href="https://ffmpeg.org/" rel="noreferrer" target="_blank">ffmpeg</a>'s 'loop' in stage 5.</p>
+
+        <figure class="center fill">
+            <a href="../source/2021/cTune/Backstage/figures/ffmpeg_sequence.svg"><img src="../source/2021/cTune/Backstage/figures/ffmpeg_sequence.svg" alt="FFMpeg interactions" /></a>
+            <figcaption>Fig.3 FFMpeg interactions</figcaption>
+        </figure>
+
+        <h3 id="heading_1_3">1.3 Iteration #2</h3>
+
+        <p>With that done, the stream was able to play to the speakers so the next step was to insert the pipeline's <b>RadioBrowser</b> component and its dependants to fetch available radio streams from the <a href="https://api.radio-browser.info/" rel="noreferrer" target="_blank">RadioBrowser</a> API.</p>
+
+        <p>The API <a href="https://de1.api.radio-browser.info" target="_blank" rel="noreferrer">documentation</a> described 4 steps to get that data:</p>
+        <ol>
+            <li>"<i>Get a list of available servers</i>" via a reverse DNS lookup,</li>
+            <li>"<i>Randomize the server list</i>" and pick one,</li>
+            <li>Send a query as a GET request to server,</li>
+            <li>Receive the data (JSON format)</li>
+        </ol>
+
+        <h4 id="heading_1_3_1">1.3.1 Network IO</h4>
+
+        <figure class="right quarter-width">
+            <a href="../source/2021/cTune/Backstage/figures/NetworkUtils.svg"><img src="../source/2021/cTune/Backstage/figures/NetworkUtils.svg" alt="NetworkUtils" /></a>
+            <figcaption>Fig.4 NetworkUtils component</figcaption>
+        </figure>
+
+        <p>Networking IO functionality needed to be implemented prior to making any requests to the <a href="https://api.radio-browser.info/" rel="noreferrer" target="_blank">RadioBrowser</a> API. I went with the well known 'Berkley sockets' library since it comes as standard on most linux distributions and, by looking at the <code class="inline terminal">man</code> pages, it can do both DNS lookup (for the server info) and inverse lookup (for the server address). Plain HTTP requests<sup>[1]</sup> are also doable but not HTTPS. For that, the <a href="https://www.openssl.org/" rel="noreferrer" target="_blank">OpenSSL</a> library is required on top and, it too, comes as standard in most Linux systems. As for randomising the list of servers; it's just a matter of shuffling the order of the items in the list.</p>
+
+        <p class="footnote"><sup>[1]</sup> HTTPS is actually mandatory; there is a line (when i looked) in the <a href="https://api.radio-browser.info/" target="_blank" rel="nofollow">Radio Browser API documentation</a> that states: "<i>Now you have a list of multiple names of servers which you can use to directly connect to with HTTP and preferably HTTPS.</i>". That's not quite true as it turns out. Doing a request in plain HTTP returns some HTML that advises to use HTTPS for the request. So, essentially, one can only get the required data (the JSON) via HTTPS.</p>
+
+        <h4 id="heading_1_3_2">1.3.2 RadioBrowser API</h4>
+
+        <p>To create a functional API for the <b>RadioBrowser</b> component, studying of the remote <a href="https://api.radio-browser.info/" rel="noreferrer" target="_blank">RadioBrowser</a> API was required. Based on that, a draft of the component's API was created matching both mandatory and optional cTune requirements. The mandatory ones are:</p>
+        <ul>
+            <li>Get radio stations based on a filter</li>
+            <li>Get radio stations based on a category type (<code class="terminal inline">ByCategory_e</code>)</li>
+            <li>Get a list of available sub-categories within a given list category (<code class="terminal inline">ListCategory_e</code>)</li>
+            <li>Increase the click counter for a radio station</li>
+        </ul>
+
+        <p>The rest are "nice to have but not absolutely needed" (i.e.: optional - see fig.5).</p>
+
+        <figure class="center three-quarter-width">
+            <a href="../source/2021/cTune/Backstage/figures/iRadioBrowser.svg"><img src="../source/2021/cTune/Backstage/figures/iRadioBrowser.svg" alt="RadioBrowser interface" /></a>
+            <figcaption>Fig.5 RadioBrowser interface</figcaption>
+        </figure>
+
+        <p>To pack all that information received from Radio Browser, some objects and a data-structure were created.</p>
+
+        <dl>
+            <dt><code class="terminal inline">RadioStationInfo_t</code></dt>
+            <dd>DTO container for information of a radio station stream (name, url, country, etc...).</dd>
+
+            <dt><code class="terminal inline">RadioStationFilter_t</code></dt>
+            <dd>DTO container for the filter arguments sent with a search query to the RadioBrowser API.</dd>
+
+            <dt><code class="terminal inline">CategoryItem_t</code></dt>
+            <dd>DTO container for a category's description (name, station count and, optionally, state).</dd>
+
+            <dt><code class="terminal inline">ClickCounter_t</code></dt>
+            <dd>DTO container for the returned values after a click event is sent to the RadioBrowser API.</dd>
+
+            <dt><code class="terminal inline">ServerStats_t</code></dt>
+            <dd>DTO container for the RadioBrowser remote server stats.</dd>
+
+            <dt><code class="terminal inline">ServerConfig_t</code></dt>
+            <dd>DTO container for the RadioBrowser remote server configuration information.</dd>
+
+            <dt><code class="terminal inline">RadioStationVote_t</code></dt>
+            <dd>DTO container for the returned values after a voting event is sent to the RadioBrowser API.</dd>
+
+            <dt><code class="terminal inline">NewRadioStation_t</code></dt>
+            <dd>DTO container for the radio stream info and returned values for sending a new radio station to the RadioBrowser API.</dd>
+
+            <dt><code class="terminal inline">Vector_t</code></dt>
+            <dd>Dynamically resizable contiguous array data-structure.</dd>
+        </dl>
+
+        <h4 id="heading_1_3_3">1.3.3 DTO Namespaces</h4>
+
+        <p>CTune's <i>Data Transfer Objects</i> have within their scopes certain functionalities that need to be accessed, in parts, in multiple places within the application. The most basic of these functionalities include, but are not limited to, initialisation and de-allocation (freeing). Because of this, it makes more sense to have these functionalities in a dedicated namespace for each of the DTOs.</p>
+
+        <figure class="right two-third-width">
+            <a href="../source/2021/cTune/Backstage/figures/iRadioStationFilter.svg"><img src="../source/2021/cTune/Backstage/figures/iRadioStationFilter.svg" alt="RadioStationFilter namespace" /></a>
+            <figcaption>Fig.6 RadioStationFilter namespace</figcaption>
+        </figure>
+
+        <p>Using <b>RadioStationFilter</b> as an example: in addition to init, deep copy freeing, getter and setter functions, there also a parameterization method. That function takes the filter's private variables and generates from them an HTML <code class="terminal inline">GET</code> query string.</p><br/>
+
+        <p>E.g.: the parameterized fields string below is: <code class="terminal inline">?tag=jazz&order=bitrate&reverse=true&limit=1000</code></p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">GET /json/stations/search?tag=jazz&order=bitrate&reverse=true&limit=1000
+User-Agent: ctune/1.0.0
+Host: https://fr1.api.radio-browser.info
+Content-type: application/json; charset=utf-8
+
+
+</code></div>
+        <div class="caption-bottom">Example of a HTML <code class="terminal inline">GET</code> query to the RadioBrowser API</div>
+
+        <p>Another DTO of note, <b>RadioStationInfo</b>, is a central piece in the software and so requires a few more functionalities than most.</p>
+
+        <p>Aside from comparison functions (equivalence and <code class="terminal inline">&lt;</code>,<code class="terminal inline">==</code>,<code class="terminal inline">&gt;</code> comparators), there's the hashing function. The latter being needed to create HashMap index keys for favourite <b><code class="terminal inline">RadioStationInfo_t</code></b> (that comes later). The <a href="https://en.wikipedia.org/wiki/Fowler_Noll_Vo_hash" rel="noreferrer" target="_blank">FNV-1 hash algorithm</a> is used here to create hashes from the radio station UUIDs.</p>
+
+        <figure class="center fill">
+            <a href="../source/2021/cTune/Backstage/figures/iRadioStationInfo.svg"><img src="../source/2021/cTune/Backstage/figures/iRadioStationInfo.svg" alt="RadioStationInfo namespace" /></a>
+            <figcaption>Fig.7 RadioStationInfo namespace</figcaption>
+        </figure>
+
+        <p>By keeping methods that only act on a DTO to said DTO's namespace it is easier to refactor these along with any variables inside the DTO itself. One of the challenges in software development is knowing how to group functionalities and variables in a semantically meaningful way which is not always straightforward.</p>
+
+        <div class="information-box">
+            <p>In C, there are no classes like in C++. Meaning that, in order to somewhat mimic the whole shebang, <code class="terminal inline">struct</code>s can be used in both objects and namespace capacities. The trick involves binding methods to function pointers inside a <code class="terminal inline">const struct</code> like so:</p>
+
+            <div class="code-wrap">
+                <code class="cpp block">typedef struct MyObject {
+    int a;
+    int b;
+} MyObject_t;
+
+struct MyObject_Namespace {
+    MyObject_t (* init)( int a, int b );
+    MyObject_t (* add)( const MyObject_t * lhs, const MyObject_t * rhs );
+} MyObject;</code></div>
+            <div class="caption-bottom">(MyObject.h) Header object and namespace declarations</div>
+
+            <div class="code-wrap">
+                <code class="clang block">#include MyObject.h
+
+static MyObject_t MyObject_init( int a, int b ) {
+    return (MyObject_t) {
+        .a = a,
+        .b = b,
+    };
+}
+
+static MyObject_t MyObject_add( const MyObject_t * lhs, const MyObject_t * rhs ) {
+    return (MyObject_t) {
+        .a = ( lhs->a + rhs->a ),
+        .b = ( lhs->b + rhs->b ),
+    };
+}
+
+const struct MyObject_Namespace MyObject = {
+    .init = &MyObject_init,
+    .add  = &MyObject_add,
+};</code></div>
+            <div class="caption-bottom">(MyObject.c) Implementation</div>
+
+            <p>Usage is just a matter of doing "<code class="terminal inline">MyObject_t o = MyObject.init( 1, 3 );</code>" for example.</p>
+        </div>
+
+        <h4 id="heading_1_3_4">1.3.4 JSON data extraction</h4>
+
+        <p>Once the DTOs were done, the next item on the work list was to do the packing of the JSON data into the matching DTOs.</p>
+
+        <p>Parsing data can be precarious and, thus, needs a fair amount of error control in the implementation so that, when it fails, it does so gracefully. There are 4 distinct possible failure points:</p>
+
+        <ul>
+            <li><code class="terminal inline">json-c</code> library parse failure,</li>
+            <li>unexpected json object,</li>
+            <li>unrecognised key in json object, and</li>
+            <li>cast failure from json object value to DTO variable type.</li>
+        </ul>
+
+        <p>Appropriate action and logging for these needed to be taken care of in each json-to-DTO parsing method implementations. Same goes for the inverse parsing of <b><code class="terminal inline">RadioStationInfo_t</code></b> DTOs to a JSON array which is used for exporting favourites to a JSON file. Informative logging becomes key to troubleshooting the issue promptly and successfully.</p>
+
+        <figure class="center fill">
+            <a href="../source/2021/cTune/Backstage/figures/iJSON.svg"><img src="../source/2021/cTune/Backstage/figures/iJSON.svg" alt="JSON parser interface" /></a>
+            <figcaption>Fig.8 JSON parser interface</figcaption>
+        </figure>
+`
+        <h2 id="heading_2">2. Growing the implementation</h2>
+
+        <p>At this point, the basic pipeline worked - a random station could now be fetched and it's stream played to the speakers. The next steps involved:</p>
+        <ul>
+            <li>growing the skinny pipeline implementation,</li>
+            <li>refactoring/developing to match the full version of the component design,</li>
+            <li>adding the peripheral components and connecting them to the rest.</li>
+        </ul>
+
+        <h3 id="heading_2_1">2.1 Error numbers</h3>
+
+        <p>C has its own <i><code class="terminal inline">errno</code></i> system (errno.h). So do some of the external libraries used. The aim, for cTune, was to catch these <i><code class="terminal inline">errno</code></i> at the points of failure, make a record of them in the log (inc. the string representation) and then either return a cTune specific error number from the function or set it directly using <code class="terminal inline">ctune_err.set(..)</code>.</p>
+
+        <p>Error numbers in cTune are grouped into categories which are, in turn, each given an offset so that categories could be further expanded when/where needed.</p>
+
+        <table class="basic-table">
+            <tr>
+                <th>MACRO</th>
+                <th>Offset</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_NONE</code></td>
+                <td>0</td>
+                <td>No error</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>1</td>
+                <td>Generic errors (alloc, overflow, cast, etc...)</td>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_LOG</code></td>
+                <td>10</td>
+                <td>Logger-specific errors</td>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_IO</code></td>
+                <td>20</td>
+                <td>IO errors</td>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_THREAD</code></td>
+                <td>30</td>
+                <td>Threading errors</td>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_NETWORK_IO</code></td>
+                <td>100</td>
+                <td>Networking errors</td>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_RADIO_BROWSER_API</code></td>
+                <td>200</td>
+                <td>'Radio Browser' web API errors</td>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_PARSE</code></td>
+                <td>300</td>
+                <td>Parsing errors</td>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_PLAYER</code></td>
+                <td>400</td>
+                <td>Player plugin errors</td>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_AUDIO_OUT</code></td>
+                <td>500</td>
+                <td>Audio output plugin errors</td>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_UI</code></td>
+                <td>600</td>
+                <td>UI errors</td>
+            </tr>
+            <tr>
+                <td><code class="terminal inline">CTUNE_ERR_ACTION</code></td>
+                <td>700</td>
+                <td>Failed UI action errors</td>
+            </tr>
+        </table>
+
+        <p>Setting an error had to be a globally accessible feature in cTune. Because there would be more than 1 thread running, the set/get methods needed to be thread-safe. In addition, in the case where quick successions of errors are set from various parts of the running application, each need to be logged as they come in. Side note: a 'print' callback was added to cover the case where the error description needed to be printed somewhere else like in the UI for example.</p>
+
+        <figure class="center three-quarter-width">
+            <a href="../source/2021/cTune/Backstage/figures/ctune_err.svg"><img src="../source/2021/cTune/Backstage/figures/ctune_err.svg" alt="cTune errno interface" /></a>
+            <figcaption>Fig.9 cTune errno interface</figcaption>
+        </figure>
+
+        <h3 id="heading_2_2">2.2 Logger</h3>
+
+        <p>Although only outputting to the terminal is less labour intensive it doesn't help in troubleshooting when the output is larger than the terminal's buffer. It's better to funnel everything to a file for convenience's sake especially as it can be saved for later viewing. Based on that, file output was implemented for the logger.</p>
+
+        <p>Here are the steps involved in logging message(s) in the final implementation:</p>
+        <ol>
+            <li>The <b>Logger</b> receives a message, unpacks and formats it into a ready-to-print string and adds it to the <b>LogQueue</b>,</li>
+            <li>On a 'enqueue' event, the <b>LogQueue</b> uses a callback method (<code class="terminal inline">resume()</code>) to signal the <b>LogWriter</b> that there is/are message(s) ready,</li>
+            <li>On the <code class="terminal inline">resume()</code> signal, the <b>LogWriter</b> wakes up if sleeping and resets the timer on the timeout,</li>
+            <li>While the timeout has not reached 0 and there are items in the  <b>LogQueue</b>, the <b>LogWriter</b> dequeues messages one-by-one and writes them out to the file output.</li>
+            <li>Once all messages have been dequeued/processed and the timeout has reached 0 then the <b>LogWriter</b> idles back to sleep until the next wake-up call from <code class="terminal inline">resume()</code>.</li>
+        </ol>
+
+        <figure class="center three-quarter-width">
+            <a href="../source/2021/cTune/Backstage/figures/logger_sequence.svg"><img src="../source/2021/cTune/Backstage/figures/logger_sequence.svg" alt="cTune logger sequence diagram" /></a>
+            <figcaption>Fig.10 cTune logger sequence diagram</figcaption>
+        </figure>
+
+        <div class="comment-box">
+            <p>At first the <code class="terminal inline">resume()</code> callback didn't exist and the worker thread in the <b>LogWriter</b> continuously checked for message to write out. This presented a problem as it essentially kept the CPU pegged on useless calls to the <b>LogQueue</b> even when there were no messages left to dequeue. Fortunately there's a way to "idle" a thread and wake it up on command. Using that feature along with a timeout system and a callback for signalling new messages in the queue eliminated that issue entirely. In the end, even though the abstract design was sound, the implementation took a couple of attempts to get right.</p>
+        </div>
+
+        <h3 id="heading_2_3">2.3 Configuration</h3>
+
+        <figure class="right half-width">
+            <a href="../source/2021/cTune/Backstage/figures/iSettings.svg"><img src="../source/2021/cTune/Backstage/figures/iSettings.svg" alt="Settings component API" /></a>
+            <figcaption>Fig.11 Settings component API</figcaption>
+        </figure>
+
+        <p>This component is responsible for saving and loading state between sessions. It includes operator-defined configuration variables, volume and queued station to be set on cTune's start and bookmarked favorites previously saved (<i>ctune.cfg</i> and <i>ctune.fav</i>).</p>
+
+        <p>Loading can be done by a call to the category's load method (<code class="terminal inline">favs.loadFavourites()</code> for favourites and <code class="terminal inline">cfg.loadCfg()</code> for the configuration). Everything is then accessible and assignable thorough getters and setters. At the end, to save any modifications the write-out methods can be used (<code class="terminal inline">favs.saveFavourites()</code> for favourites and <code class="terminal inline">cfg.writeCfg()</code> for the configuration). Currently, the target files are just overwritten with whatever is set in the configuration instead of just being edited.</p>
+
+        <p>It is also where the UI settings can be loaded/saved between sessions.</p>
+
+        <h3 id="heading_2_4">2.4 Plugin system</h3>
+
+        <figure class="right third-width">
+            <a href="../source/2021/cTune/Backstage/figures/skinny_v1.1.svg"><img src="../source/2021/cTune/Backstage/figures/skinny_v1.1.svg" alt="Player/AudioOut" /></a>
+            <figcaption>Fig.12 Player/AudioOut</figcaption>
+        </figure>
+
+        <p>The plugins system was the next area of focus but before diving in, the current <a href="https://ffmpeg.org/" rel="noreferrer" target="_blank">ffmpeg</a> player implementation was inside the <b>RadioPlayer</b> component so needed to be refactored into its own self-titled component (see fig.11).</p>
+
+        <p>Since the player calls on the audio output's write function, <code class="terminal inline">write( const void * buffer, int buff_size )</code>, whatever audio output plugin is being used would need to be injected into the player.</p>
+
+        <p>To keep the plugin loading process away from the player and sound output, <b>RadioPlayer</b>'s interface has 2 methods included for setting these: <code class="terminal inline">loadPlayerPlugin(..)</code> and <code class="terminal inline">loadSoundServerPlugin(..)</code>. <b>RadioPlayer</b> is now responsible for initialising the player with the output plugin and managing the player thread. Once the plugins are loaded everything is nicely encapsulated and playing a stream is just a matter of using the <code class="terminal inline">playRadioStream(..)</code> and <code class="terminal inline">stopPlayback(..)</code> functions.</p>
+
+        <figure class="center fill">
+            <a href="../source/2021/cTune/Backstage/figures/player-audioout.svg"><img src="../source/2021/cTune/Backstage/figures/player-audioout.svg" alt="Player/AudioOut interactions" /></a>
+            <figcaption>Fig.13 Player/AudioOut interactions</figcaption>
+        </figure>
+
+        <p>All there was left to do was to make the <b>Plugin</b> component to deal with all the loading and unloading minutia for both the chosen player and output plugins.</p>
+
+        <figure class="right half-width">
+            <a href="../source/2021/cTune/Backstage/figures/Plugin.svg"><img src="../source/2021/cTune/Backstage/figures/Plugin.svg" alt="Plugin system" /></a>
+            <figcaption>Fig.14 Plugin system</figcaption>
+        </figure>
+
+        <p>Since <b>Plugin</b> was to have its API walled off behind the <b>Settings</b> component, pass-through methods were added to the <b>Settings</b> API. These load the plugins based on the choices fetched from the configuration file (or a default if that failed). <b>Settings</b> is also responsible with the unloading and cleanup when it is itself freed during cTune's shutdown phase.</p>
+
+        <div class="information-box">
+            <p><code class="terminal inline">dlfcn.h</code> is used to dynamically load the plugins. There are 4 functions that are involved in this:</p>
+            <ol>
+                <li>Opening the target plugin and getting its handle using <code class="terminal inline">dlopen(..)</code>,</li>
+                <li>Getting the run-time address(es) of the plugin methods/objects with <code class="terminal inline">dlsym(..)</code>,</li>
+                <li>Closing the handle of the plugin using <code class="terminal inline">dlclose(..)</code>,</li>
+                <li>Checking error state of last made function calls with <code class="terminal inline">dlerror()</code>.</li>
+            </ol>
+        </div>
+
+        <h3 id="heading_2_5">2.5 Controller</h3>
+
+        <p>The <b>Controller</b> was created to be the center piece of cTune acting as a master API. It abstracts complex actions into single-call functions and acts as a gateway interface to which the UI can latch on and use.</p>
+
+        <p>It is itself bootstrapped by the driver (i.e.: <code class="terminal inline">main.c</code>). which initialises it, loads any relevant command line options, and attaches the UI callbacks to it during cTune's init stage. After that, it can be used as the sole point of interaction to the backend for the attached UI.</p>
+
+        <figure class="center three-quarter-width">
+            <a href="../source/2021/cTune/Backstage/figures/iController.svg"><img src="../source/2021/cTune/Backstage/figures/iController.svg" alt="Controller API" /></a>
+            <figcaption>Fig.15 Controller API</figcaption>
+        </figure>
+
+        <h3 id="heading_2_6">2.6 CLI</h3>
+
+        <p>The <b>CLI</b> component's purpose was to separate the parsing and processing of the command line arguments away from <code class="terminal inline">main.c</code> so as to make the latter cleaner. It takes in the arguments, checks their validity, parses them into <code class="terminal inline">ArgOption_t</code> objects and, in turn, insert them into an "actionable" list ready to be processed. <code class="terminal inline">main.c</code></p>
+
+        <p>Based on what options were parsed, the CLI processor returns the state where <code class="terminal inline">main.c</code> can either:</p>
+
+        <figure class="right quarter-width">
+            <a href="../source/2021/cTune/Backstage/figures/CLI_STATES.svg"><img src="../source/2021/cTune/Backstage/figures/CLI_STATES.svg" alt="CLI_STATES enum" /></a>
+            <figcaption>Fig.16 CLI output states</figcaption>
+        </figure>
+
+        <ol>
+            <li>Exit with an error,</li>
+            <li>Exit without an error,</li>
+            <li>Continue to launch (no actionable args found),</li>
+            <li>Process actionable arguments and then continue launching.</li>
+        </ol>
+
+        <figure class="center fill">
+            <a href="../source/2021/cTune/Backstage/figures/aCLI.svg"><img src="../source/2021/cTune/Backstage/figures/aCLI.svg" alt="CLI arg processing" /></a>
+            <figcaption>Fig.17 CLI arg processing</figcaption>
+        </figure>
+
+        <h3 id="heading_2_7">2.7 Playback logger</h3>
+
+        <p>In order to keep some sort of record of what was played during a session, the <b>PlaybackLog</b> was added as a "last-minute" feature. All it does is output to a file the radio station details when a stream begins playing and any song title plus the local timestamp when the stream's meta-data changes.</p>
+
+        <p>By default, the playback log file (<code class="terminal inline">playlog.txt</code>) is overwritten when cTune starts.</p>
+
+        <h3 id="heading_2_8">2.8 Plugins</h3>
+
+        <p>Having <a href="https://ffmpeg.org/" rel="noreferrer" target="_blank">ffmpeg</a> and <a href="https://www.libsdl.org/" rel="noreferrer" target="_blank">SDL2</a> already, the remainder of the planned output plugins (<a href="https://alsa-project.org" rel="noreferrer" target="_blank">ALSA</a> and <a href="https://www.freedesktop.org/wiki/Software/PulseAudio/" rel="noreferrer" target="_blank">PulseAudio</a>) were added to the roster.</p>
+
+        <p>In addition to the planned plugins, <a href="https://www.videolan.org/vlc/libvlc.html" rel="noreferrer" target="_blank">VLC</a> was added as a player and <a href="https://sndio.org/" rel="noreferrer" target="_blank">sndio</a> as a sound output too.</p>
+
+        <div class="comment-box">
+            <p>The main issue when using AV libraries for implementing both player and output plugins came down to the technical language. Some terms were used interchangeably to describe particular properties in various implementations. This, when coming from a zero-knowledge perspective, created a some degree of confusion for me. Most documentation (when it exist and is up-to-date!) tends to come from a position of familiarity and in-depth knowledge and, thus, is not always beginner friendly I found.</p>
+        </div>
+
+        <h4 id="heading_2_8_1">2.8.1 ALSA</h4>
+
+        <figure class="right third-width">
+            <a href="../source/2021/cTune/Backstage/figures/alsa_sequence.svg"><img src="../source/2021/cTune/Backstage/figures/alsa_sequence.svg" alt="ALSA interactions" /></a>
+            <figcaption>Fig.18 ALSA errorless sequence diagram</figcaption>
+        </figure>
+
+        <p>Implementing a plugin for ALSA wasn't too challenging once relevant example code snippets were found.</p>
+
+        <p>Though, there were some issues getting the PCM data sent to the audio server. ALSA's <code class="terminal inline">snd_pcm_writei(_snd_pcm *pcm, const void *buffer, snd_pcm_uframes_t size)</code> method requires a frame count instead of the usual 'frame size'/'PCM buffer size' encountered in other used output libraries. The solution was to simply divide the incoming frame size with the byte size value of a single frame. To do that the <code class="terminal inline">snd_pcm_frames_to_bytes(..)</code> is called during initialisation to convert 1 frame to its byte size. The value is then cached so it can be used for the divide operation in the <code class="terminal inline">write(..)</code> method's implementation.</p>
+
+        <p>The one particularity about this sound engine is that there are really just 2 possible volume sliders to control: "PCM" and "Master". A cTune-specific volume control on the ALSA mixer doesn't exist meaning that when the volume is modified, it is changed globally.</p>
+
+        <h4 id="heading_2_8_2">2.8.2 PulseAudio</h4>
+
+        <figure class="right third-width">
+            <a href="../source/2021/cTune/Backstage/figures/pulse_sequence.svg"><img src="../source/2021/cTune/Backstage/figures/pulse_sequence.svg" alt="PulseAudio interactions" /></a>
+            <figcaption>Fig.19 PulseAudio errorless sequence diagram</figcaption>
+        </figure>
+
+        <p><a href="https://www.freedesktop.org/wiki/Software/PulseAudio/" rel="noreferrer" target="_blank">PulseAudio</a> is ...complicated but once one has gone through the pain of setting it up and having something play through things become a little clearer. Nevertheless, the learning curve starts pretty steep. This is mostly due to the extended API it offers.</p>
+
+        <p>For cTune, most of the <a href="https://freedesktop.org/software/pulseaudio/doxygen/index.html" rel="noreferrer" target="_blank">PulseAudio API</a> is not actually required since features such as seeking and pause don't serve much purpose for internet radio streams. Any callbacks to deal with state changes for the context or stream is just used as an opportunity to log more information in case something goes sideways. The only situation where the callback does anything of note is for the stream overflow; the PulseAudio stream is flushed as an attempt to recover.</p>
+
+        <p>The rest of the implementation is mostly for setting up the main loop, connecting a stream to it and then writing the PCM data to it as it is received from whatever player plugin is used.</p>
+
+        <h4 id="heading_2_8_3">2.8.3 SNDIO</h4>
+
+        <p>The <code><a href="https://sndio.org/" rel="noreferrer" target="_blank">sndio</a></code> library was an unplanned extra and only made because the API is so superbly simple that it took barely any time at all to get working!</p>
+
+        <p>The only downside of this implementation is the lack of volume control support. From what I understood, as a BSD-centric library it doesn't really do this feature outside of that environment.</p>
+
+        <div class="comment-box">
+            <p>The only way to get volume control on <code>sndio</code> and also have one that is cTune-specific in the case of ALSA would be to add a mixer between the player and sound output plugins. Meaning that volume could be adjusted in the PCM data before it is sent to the sound output plugin but that would require revisiting the application's architecture.</p>
+        </div>
+        <h4 id="heading_2_8_4">2.8.4 VLC</h4>
+
+        <p>The VLC player plugin was also added as an extra at the end of cTune's development as an alternative to <a href="https://ffmpeg.org/" rel="noreferrer" target="_blank">ffmpeg</a>. <a href="https://www.videolan.org/vlc/libvlc.html" rel="noreferrer" target="_blank">LibVLC</a> has a well designed API and getting something playing is actually not very difficult:</p>
+        <ol>
+            <li>create VLC instance,</li>
+            <li>create VLC player,</li>
+            <li>create media,</li>
+            <li>play media in player.</li>
+        </ol>
+
+        <p>Having said that, there were a couple of issues that came up during the plugin's implementation which caused some headaches...</p>
+
+        <p>The first was a bug in the format specifier for <a href="https://www.videolan.org/vlc/libvlc.html" rel="noreferrer" target="_blank">VLC</a>'s PCM output which, regardless of what was put in, always ended up as '<code class="terminal inline">s16l</code>'. Specifying '<code class="terminal inline">s32n</code>' to make it inline with what was originally hard-coded default in cTune didn't work. The solution was to make the PCM format part of the input variables in the <b>SoundOut</b> output plugin interface (as seen previously in fig.13). This way when <a href="https://ffmpeg.org/" rel="noreferrer" target="_blank">ffmpeg</a> is used, it can set the PCM output format to the normal 32 bits and, for <a href="https://www.videolan.org/vlc/libvlc.html" rel="noreferrer" target="_blank">VLC</a>, 16 bits and the sound outputs know what to expect.</p>
+
+        <p>The second issue revolves around the event callback. When a title changed in the stream's metadata, neither <code class="terminal inline">libvlc_MediaPlayerTitleChanged</code> or any other event got triggered. This means that the first song title gotten from the stream on playback never changed thereafter. The only solution to get this feature working was to make periodical checks and comparisons of the meta-data's title to a stored copy, updating the copy when relevant.</p>
+
+        <p>Both issues are present as of LibVLC v3.0.14. This is why the VLC player plugin is considered only as a fallback option for the moment even though it works (mostly).</p>
+
+        <h2 id="heading_3">3. Final state</h2>
+
+        <h3 id="heading_3_1">3.1 Minor addition(s)</h3>
+
+        <p>There was an somewhat unplanned extra feature added when working on the the UI implementation for stream testing (auto-retrieves the codec and bitrate information too). The problem with that was that its inputted URI needed to be validated as such. For that, <a href="https://curl.haxx.se/libcurl/" target="_blank" rel="noreferrer">libCURL</a> was added as a dependency since it has that feature baked-in.</p>
+
+        <div class="comment-box">
+            <p>I'm aware that the <code><a href="https://curl.haxx.se/libcurl/" target="_blank" rel="noreferrer">libcurl</a></code> library could have been used to do all the network IO jobs in <b>NetworkUtils</b> and if I had to do it again I would do just that. So much for trying to keep dependencies to a minimum!</p>
+        </div>
+
+        <p>Aside from that, the following was also done:</p>
+        <ul>
+            <li>minor refactoring of variable names leftover from first trials and experiments to bring them up to the standard convention used,</li>
+            <li>insertion of forgotten/missing <code class="terminal inline">static</code> keywords in front of some methods belonging in "namespace",</li>
+            <li>miscellaneous cleanup of dead code.</li>
+        </ul>
+
+        <h3 id="heading_3_2">3.2 Overview</h3>
+
+        <p>The final diagram has a couple of things omitted to keep it clean and more readable:</p>
+        <ul>
+            <li>globally used interfaces are not connected to everything (<b>Logger</b> and <code class="terminal inline">ctune_err</code>)</li>
+            <li>some components are not connected to their spooler parent components (see notes appended in diagram),</li>
+            <li>technically the player plugins should all be connected to the <b>AudioOut</b> interface.</li>
+        </ul>
+
+        <figure class="center fill">
+          <a href="../source/2021/cTune/Backstage/figures/ctune_core.svg"><img src="../source/2021/cTune/Backstage/figures/ctune_core.svg" alt="Backend diagram" /></a>
+          <figcaption>Fig.20 Sexy backend diagram</figcaption>
+        </figure>
+
+    </div>
+</article>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="page-nav">
+                	<ul>
+                		<li class="first"><a href="1.html">|&#9664;</a></li>
+                		<li class="prev"><a rel="prev" href="24.html">&#9664;</a></li>
+                		<li class="curr">25 / 29</li>
+                		<li class="next"><a rel="next" href="26.html">&#9654;</a></li>
+                		<li class="last"><a href="29.html">&#9654;|</a></li>
+                	</ul>
+                </div>
+
+                <div>
+                    <h2>By Date</h2>
+                    <div class="index-pane-dates">
+                    		<ol class="tree">
+                    			<li><label for="checkbox_2021">2021</label><input type="checkbox" checked  id="checkbox_2021"/>
+                    				<ol>
+                    					<li><label for="checkbox_202108">August</label><input type="checkbox" id="checkbox_202108"/>
+                    						<ol>
+                    							<li>12 <a href="29.html">Binary Search Algorithm</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202107">July</label><input type="checkbox" id="checkbox_202107"/>
+                    						<ol>
+                    							<li>19 <a href="28.html">Retrospective: cTune v1.0</a></li>
+                    							<li>10 <a href="27.html">Circular Buffer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202106">June</label><input type="checkbox" checked  id="checkbox_202106"/>
+                    						<ol>
+                    							<li>30 <a href="26.html">cTune v1.0: Part 3 - Frontstage</a></li>
+                    							<li>25 <a class="current-post" href="25.html">cTune v1.0: Part 2 - Backstage</a></li>
+                    							<li>16 <a href="24.html">cTune v1.0: Part 1 - Design</a></li>
+                    							<li>15 <a href="23.html">cTune v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2020">2020</label><input type="checkbox" id="checkbox_2020"/>
+                    				<ol>
+                    					<li><label for="checkbox_202006">June</label><input type="checkbox" id="checkbox_202006"/>
+                    						<ol>
+                    							<li>16 <a href="22.html">Indexed search with Javascript</a></li>
+                    							<li>03 <a href="21.html">Character encoding primer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202005">May</label><input type="checkbox" id="checkbox_202005"/>
+                    						<ol>
+                    							<li>27 <a href="20.html">Blogator v1.3 released</a></li>
+                    							<li>07 <a href="19.html">Blogator v1.2 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202004">April</label><input type="checkbox" id="checkbox_202004"/>
+                    						<ol>
+                    							<li>22 <a href="18.html">HDD diagnosis and recovery tools</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202003">March</label><input type="checkbox" id="checkbox_202003"/>
+                    						<ol>
+                    							<li>27 <a href="17.html">Coronavirus info and form fetcher script for the French gov. page</a></li>
+                    							<li>24 <a href="16.html">A RaspberryPi Git server</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202002">February</label><input type="checkbox" id="checkbox_202002"/>
+                    						<ol>
+                    							<li>23 <a href="15.html">CMake Variable Injection</a></li>
+                    							<li>14 <a href="14.html">Android upgrade woes</a></li>
+                    							<li>11 <a href="13.html">Basics of the Linux terminal and tools</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2019">2019</label><input type="checkbox" id="checkbox_2019"/>
+                    				<ol>
+                    					<li><label for="checkbox_201910">October</label><input type="checkbox" id="checkbox_201910"/>
+                    						<ol>
+                    							<li>10 <a href="12.html">C++ Resource Acquisition Is Initialization (RAII)</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201908">August</label><input type="checkbox" id="checkbox_201908"/>
+                    						<ol>
+                    							<li>20 <a href="11.html">Retrospective: Blogator v1.0</a></li>
+                    							<li>13 <a href="10.html">Blogator v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201901">January</label><input type="checkbox" id="checkbox_201901"/>
+                    						<ol>
+                    							<li>06 <a href="9.html">Terminal plot-graphs with braille characters</a></li>
+                    							<li>02 <a href="8.html">Creating bitmaps using braille characters</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2018">2018</label><input type="checkbox" id="checkbox_2018"/>
+                    				<ol>
+                    					<li><label for="checkbox_201811">November</label><input type="checkbox" id="checkbox_201811"/>
+                    						<ol>
+                    							<li>30 <a href="7.html">Maximum value in a Sliding Window</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201809">September</label><input type="checkbox" id="checkbox_201809"/>
+                    						<ol>
+                    							<li>11 <a href="6.html">C++ Raw and Smart Pointers</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201808">August</label><input type="checkbox" id="checkbox_201808"/>
+                    						<ol>
+                    							<li>27 <a href="5.html">Design Pattern: Object Pool</a></li>
+                    							<li>14 <a href="4.html">Design Pattern: Singleton</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201803">March</label><input type="checkbox" id="checkbox_201803"/>
+                    						<ol>
+                    							<li>18 <a href="3.html">Python package based app structure</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201801">January</label><input type="checkbox" id="checkbox_201801"/>
+                    						<ol>
+                    							<li>27 <a href="2.html">Working out coordinates using distances</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2017">2017</label><input type="checkbox" id="checkbox_2017"/>
+                    				<ol>
+                    					<li><label for="checkbox_201712">December</label><input type="checkbox" id="checkbox_201712"/>
+                    						<ol>
+                    							<li>30 <a href="1.html">Arch Linux on a MacBook Pro 2015</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    		</ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>
+                <div>
+                    <span class="footer-avatar"><img src="../img/kitteh.jpg" alt="logo"></span>
+                    An7ar35, 2018-21
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

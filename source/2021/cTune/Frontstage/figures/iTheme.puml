@@ -1,0 +1,94 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+skinparam linetype ortho
+
+class UIConfig_t {
+    + fav_tab.hide_fav_theming : bool
+    + fav_tab.large_rows : bool
+    + search_tab.large_rows : bool
+    + browse_tab.large_rows : bool
+    + theme : struct ColourTheme
+    ====
+    + copy( const UIConfig_t * from, UIConfig_t * to ) : bool
+}
+
+class ColourTheme {
+    + background : short
+    + foreground : short
+    ----
+    + rows.background : short
+    + rows.foreground : short
+    + rows.selected_focused_bg : short
+    + rows.selected_focused_fg : short
+    + rows.selected_unfocused_bg : short
+    + rows.selected_unfocused_fg : short
+    + rows.favourite_local_fg : short
+    + rows.favourite_remote_fg : short
+    + rows.broken_fg : short
+    ----
+    + icons.playback_on : short
+    + icons.playback_off : short
+    + icons.queued_station : short
+    ----
+    + field.invalid_fg : short
+    ----
+    + button.background : short
+    + button.foreground : short
+    + button.invalid_fg : short
+    + button.validated_fg : short
+    ====
+    + init( void ) : struct ColourTheme;
+    + str( short colour ) : const char *
+}
+
+package UI #lightgrey {
+    package definitions #white {
+        enum ThemeItem_e {
+            ITEM_TITLE
+            ITEM_STATUS_BAR1
+            ITEM_STATUS_BAR2
+            ITEM_STATUS_BAR3
+            ITEM_MSG_LINE
+            ITEM_TAB_BG
+            ITEM_TAB_CURR
+            ITEM_DIALOG_WIN
+            ITEM_ROW
+            ITEM_ROW_SELECTED_FOCUSED
+            ITEM_ROW_SELECTED_UNFOCUSED
+            ITEM_TXT_FAV_LOCAL
+            ITEM_TXT_SELECTED_FOCUSED_FAV_LOCAL
+            ITEM_TXT_SELECTED_UNFOCUSED_FAV_LOCAL
+            ITEM_TXT_FAV_REMOTE
+            ITEM_TXT_SELECTED_FOCUSED_FAV_REMOTE
+            ITEM_TXT_SELECTED_UNFOCUSED_FAV_REMOTE
+            ITEM_TXT_HELP_HEADING
+            ITEM_SCROLL_INDICATOR
+            ITEM_PLAYBACK_ON
+            ITEM_PLAYBACK_OFF
+            ITEM_QUEUED
+            ITEM_QUEUED_INV_FOCUSED
+            ITEM_QUEUED_INV_UNFOCUSED
+            ITEM_FIELD_DFLT
+            ITEM_FIELD_INVALID
+            ITEM_BUTTON_DFLT
+            ITEM_BUTTON_VALID
+            ITEM_BUTTON_INVALID
+        }
+
+        interface "Theme interface" as iTheme {
+            + init( struct ColourTheme * theme ) : void
+            ----
+            <b>UI global</b>
+            ----
+            + color( ThemeItem_e item ) : int
+        }
+
+        iTheme --> ThemeItem_e
+    }
+}
+
+iTheme -down-> ColourTheme
+UIConfig_t -down-> ColourTheme
+
+@enduml

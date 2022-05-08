@@ -1,0 +1,91 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'skinparam sequenceArrowThickness 2
+
+participant cTune as ctune
+box Player #wheat
+    participant "RadioPlayer" as in
+    participant "FFMpeg library\n(avlib)" as ffmpeg
+end box
+box Audio Output #aquamarine
+    participant "SDL" as out
+    participant "SDL2 library" as sdl
+end box
+
+activate ctune
+ctune -> in : ""init(..)""
+activate in
+== Start Playback ==
+ctune -> in : ""playRadioStream(..)""
+in -> in : set state to ""PLAYBACK_CTRL_ON""
+
+group 1. setup stream input
+    activate ffmpeg
+    in -> ffmpeg : ""avformat_open_input(..)""
+    in -> ffmpeg : ""avformat_find_stream_info(..)""
+    in -> ffmpeg : ""av_find_best_stream(..)""
+end group
+
+group 2. Setup input codec
+    in -> ffmpeg : ""avcodec_open2(..)""
+end group
+
+group 3. Setup re-sampler
+    in -> ffmpeg : ""swr_alloc_set_opts(..)""
+    in -> ffmpeg : ""swr_init(..)""
+end group
+
+group 4. Setup audio sink
+    in -> out : ""init(..)""
+    activate out
+    group Initialise
+        out -> sdl : ""SDL_Init(..)""
+        activate sdl
+        out -> out : set ""SDL_AudioSpec"" options\nand buffer callback
+        out -> sdl :  ""SDL_OpenAudio(..)""
+        out -> sdl :  ""SDL_PauseAudio(0)""
+    end group
+    in -> in : create PCM buffer
+end group
+
+alt #lightblue control state == ""PLAYBACK_CTRL_ON""
+    group 5. Decode/resample frames
+        loop ""av_read_frame(..)"" and ""CTUNE_PLAYER_STATE_PLAYING""
+            in -> ffmpeg : ""avcodec_send_packet(..)""
+            loop ""avcodec_receive_frame(..)""
+                in -> ffmpeg : ""swr_convert(..)""
+                in -> ffmpeg : ""av_samples_get_buffer_size(..)""
+                in -> out : ""write(..)""
+                group Playback PCM data
+                    loop while buffer has content unread
+                        out -> sdl : ""SDL_Delay(1)""
+                    end loop
+                    out -> out : set buffer with PCM data
+                    sdl -> out : ""fillAudioCallbackFunc(..)""
+                end group
+            end loop
+            in -> ffmpeg : ""av_packet_unref(..)""
+        end loop
+    end group
+== Stop Playback ==
+ctune -> in : ""stopPlayback()""
+in -> in : set state to ""PLAYBACK_CTRL_OFF""
+else #lightpink control state == ""PLAYBACK_CTRL_OFF""
+    group Stop
+        in -> ffmpeg : close/free resources
+        deactivate ffmpeg
+        in -> out : ""shutdown(..)""
+        group Shutdown
+            out -> sdl : ""SDL_CloseAudio()""
+            out -> sdl : ""SDL_Quit()""
+            deactivate sdl
+        end group
+        deactivate out
+    end group
+end group
+
+
+
+
+@enduml

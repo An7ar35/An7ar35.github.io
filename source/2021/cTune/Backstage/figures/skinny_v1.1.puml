@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+package player #lightgrey {
+    interface "AudioOut interface            " as iAudioOut
+    interface "Player interface" as iPlayer
+    component RadioPlayer
+    component FFMpeg
+    component SDL
+
+    iAudioOut -- SDL
+    iPlayer   -- FFMpeg
+    RadioPlayer --( iAudioOut
+    RadioPlayer --( iPlayer
+}
+
+FFMpeg .[#black]right..> SDL : PCM data
+
+@enduml

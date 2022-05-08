@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>Es's Blog</title>
+		<link>https://an7ar35.bitbucket.io</link>
+		<image>
+			<title>site logo</title>
+			<url>https://an7ar35.bitbucket.io/img/logo.png</url>
+			<url>i</url>
+			<link>https://an7ar35.bitbucket.io</link>
+			<width>50px</width>
+			<height>50px</height>
+			<description></description>
+		</image>
+		<img>img/logo.png</img>
+		<description></description>
+		<copyright>An7ar35 @2021</copyright>
+		<lastBuildDate>Sun, 15 Aug 2021 13:00:28 +0200</lastBuildDate>
+		<generator>Blogator 1.3.2</generator>
+		<item>
+			<title>Binary Search Algorithm</title>
+			<link>https://an7ar35.bitbucket.io/posts/29.html</link>
+			<pubDate>12 August 2021</pubDate>
+			<category>Algorithm</category>
+			<category>C99</category>
+			<description></description>
+		</item>
+		<item>
+			<title>Retrospective: cTune v1.0</title>
+			<link>https://an7ar35.bitbucket.io/posts/28.html</link>
+			<pubDate>19 July 2021</pubDate>
+			<category>C99</category>
+			<category>cTune</category>
+			<category>Project</category>
+			<category>Retrospectives</category>
+			<description>This post looks back at the development of <code class="inline terminal">ctune</code>, lessons learned along the way and possible functionalities that could be implemented in the future.</description>
+		</item>
+		<item>
+			<title>Circular Buffer</title>
+			<link>https://an7ar35.bitbucket.io/posts/27.html</link>
+			<pubDate>10 July 2021</pubDate>
+			<category>C99</category>
+			<category>Data Structure</category>
+			<category>Linux</category>
+			<description>A circular buffer is a really cool fixed-sized FIFO data-structure useful when passing a stream of data from a '<i>producer</i>' and '<i>consumer</i>' thread.</description>
+		</item>
+		<item>
+			<title>cTune v1.0: Part 3 - Frontstage</title>
+			<link>https://an7ar35.bitbucket.io/posts/26.html</link>
+			<pubDate>30 June 2021</pubDate>
+			<category>C99</category>
+			<category>cTune</category>
+			<category>Project</category>
+			<description><code class="inline terminal">ctune</code> is Linux based internet radio stream player for the console entirely written in C. It uses the RadioBrowser API as a source for searching streams and getting station information.This is part 3 of 3 blog posts detailing the process of designing and implementing cTune's frontend (UI).</description>
+		</item>
+		<item>
+			<title>cTune v1.0: Part 2 - Backstage</title>
+			<link>https://an7ar35.bitbucket.io/posts/25.html</link>
+			<pubDate>25 June 2021</pubDate>
+			<category>C99</category>
+			<category>cTune</category>
+			<category>Project</category>
+			<description><code class="inline terminal">ctune</code> is Linux based internet radio stream player for the console entirely written in C. It uses the RadioBrowser API as a source for searching streams and getting station information.This is part 2 of 3 blog posts detailing the process in implementing cTune's backend.</description>
+		</item>
+		<item>
+			<title>cTune v1.0: Part 1 - Design</title>
+			<link>https://an7ar35.bitbucket.io/posts/24.html</link>
+			<pubDate>16 June 2021</pubDate>
+			<category>C99</category>
+			<category>cTune</category>
+			<category>Project</category>
+			<description><code class="inline terminal">ctune</code> is Linux based internet radio stream player for the console entirely written in C. It uses the RadioBrowser API as a source for searching streams and getting station information.This is part 1 of 3 blog posts detailing the design philosophy and choices taken for cTune's development.</description>
+		</item>
+		<item>
+			<title>cTune v1.0 released</title>
+			<link>https://an7ar35.bitbucket.io/posts/23.html</link>
+			<pubDate>15 June 2021</pubDate>
+			<category>C99</category>
+			<category>cTune</category>
+			<category>Project</category>
+			<category>Releases</category>
+			<description><code class="inline terminal">ctune</code> is Linux based internet radio stream player for the console entirely written in C. It uses the RadioBrowser API as a source for for searching streams and getting the stations' information.</description>
+		</item>
+		<item>
+			<title>Indexed search with Javascript</title>
+			<link>https://an7ar35.bitbucket.io/posts/22.html</link>
+			<pubDate>16 June 2020</pubDate>
+			<category>Algorithm</category>
+			<category>Data Structure</category>
+			<category>Javascript</category>
+			<description>It started with an idea: "Wouldn't it be nice to have a search functionality on my blog?". Sure, nowadays there are many libraries and external sites such as Google offering this in some form or other. But, as far as my personal projects are concerned, I am not one to be satiated with a solution that would likely involve said third party injecting hell-knows-what into my little home-brew site. Even if that was an option it would probably be overkill for what I actually need.</description>
+		</item>
+		<item>
+			<title>Character encoding primer</title>
+			<link>https://an7ar35.bitbucket.io/posts/21.html</link>
+			<pubDate>3 June 2020</pubDate>
+			<category>Character encoding</category>
+			<category>Notes</category>
+			<description>On computers where <i>1</i> and <i>0</i> rule supreme we must have a way to express the human languages in the written format. Do do this there are standards that map characters to numeric values.</description>
+		</item>
+		<item>
+			<title>Blogator v1.3 released</title>
+			<link>https://an7ar35.bitbucket.io/posts/20.html</link>
+			<pubDate>27 May 2020</pubDate>
+			<category>Blogator</category>
+			<category>Project</category>
+			<category>Releases</category>
+			<description>New release for Blogator. An option to generate a JSON index of the blog's articles and, optionally the tags/years/authors indices is now available.</description>
+		</item>
+	</channel>
+</rss>

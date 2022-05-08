@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+together {
+    interface "Radio Stream" as RadioStream #back:black;line:black
+    interface "Sound out" as out #back:black;line:black
+
+    package player #lightgrey {
+        interface "AudioOut interface                    " as iAudioOut
+        component RadioPlayer
+        component SDL
+
+        iAudioOut --right-- SDL
+        RadioPlayer --right--( iAudioOut
+    }
+
+    RadioPlayer .[#black]....> SDL : PCM data
+
+    RadioStream .[#black].> RadioPlayer
+    SDL .[#black].> out
+}
+
+component "Driver\n(main)" as Controller #back:gold;line:black
+Controller -right-> RadioPlayer
+Controller .[#black].> RadioPlayer : stream url
+
+
+
+
+@enduml

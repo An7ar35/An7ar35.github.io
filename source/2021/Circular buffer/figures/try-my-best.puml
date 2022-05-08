@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+:calculate available;
+if( available "">"" 0 ) then (true)
+    if( required ""<="" available ) then (yes)
+        :process required amount of data;
+        :return required;
+        end
+    else (no)
+        :process available amount of data;
+        :return available;
+        end
+endif
+else (false)
+    :return 0;
+    end
+endif
+
+@enduml

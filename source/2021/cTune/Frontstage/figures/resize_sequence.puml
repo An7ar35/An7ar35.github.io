@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant UI
+participant Dialog
+box #gold
+    participant Resizer
+end box
+== Preliminary setup ==
+UI -> Resizer : ""Resizer.init()""
+UI -> Resizer : ""Resizer.push( UI.resize, NULL )""
+
+== Open new Dialog ==
+Dialog -> Resizer : ""Resizer.push( Dialog.resize, //dialog// )""
+
+== Resize event ==
+Dialog -> Resizer : ""Resizer.resize()""
+group #lightblue UI resizing
+Resizer -> UI : ""UI.resize( NULL )""
+UI -> UI : re-calculate all\nwindow sizes
+UI -> UI : repaint UI
+end group
+group #lightgreen Dialog resizing
+Resizer -> Dialog : ""Dialog.resize( //dialog// )""
+Dialog -> Dialog : repaint //dialog//
+end group
+
+== Close Dialog ==
+Dialog -> Resizer : ""Resizer.pop()""
+@enduml

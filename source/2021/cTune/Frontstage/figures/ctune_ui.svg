@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="956px" preserveAspectRatio="none" style="width:1503px;height:956px;background:#FFFFFF;" version="1.1" viewBox="0 0 1503 956" width="1503px" zoomAndPan="magnify"><defs><filter height="300%" id="fd332tj7ws4mu" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[64e2e010ba86d7988e5cd73bd64f61f9]
+cluster ui--><polygon fill="#D3D3D3" filter="url(#fd332tj7ws4mu)" points="16,6,37,6,44,28.2969,1486,28.2969,1486,949,16,949,16,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="44" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="15" x="20" y="20.9951">ui</text><!--MD5=[d56ea5b386379e67468db9a003947636]
+cluster definitions--><polygon fill="#FFFFFF" filter="url(#fd332tj7ws4mu)" points="615,169.5,707,169.5,714,191.7969,1039,191.7969,1039,486,615,486,615,169.5" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="615" x2="714" y1="191.7969" y2="191.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="86" x="619" y="184.4951">definitions</text><!--MD5=[a6e358cb66527167c36266af760644d0]
+cluster widget--><polygon fill="#FFFFFF" filter="url(#fd332tj7ws4mu)" points="868,722,929,722,936,744.2969,1299,744.2969,1299,925,868,925,868,722" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="868" x2="936" y1="744.2969" y2="744.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="55" x="872" y="736.9951">widget</text><!--MD5=[8979897548285ccb326517f31c8ee88c]
+cluster window--><polygon fill="#FFFFFF" filter="url(#fd332tj7ws4mu)" points="424,601,491,601,498,623.2969,727,623.2969,727,698,424,698,424,601" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="424" x2="498" y1="623.2969" y2="623.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="61" x="428" y="615.9951">window</text><!--MD5=[46ca6b0f5c353cd412b92f13bbe4dc5f]
+cluster dialog--><polygon fill="#FFFFFF" filter="url(#fd332tj7ws4mu)" points="751,601,806,601,813,623.2969,1447,623.2969,1447,698,751,698,751,601" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="751" x2="813" y1="623.2969" y2="623.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="49" x="755" y="615.9951">dialog</text><!--MD5=[c42ed81cef7fdd2e33758127945b9a5b]
+entity UI--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="54" x="906" y="530"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="940" y="535"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="938" y="537"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="938" y="541"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="921" y="562.9951">UI</text><!--MD5=[ba744a2eff16ef22db3bca6ac4c26dec]
+entity Resizer--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="92" x="1218" y="318"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1290" y="323"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1288" y="325"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1288" y="329"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="52" x="1233" y="350.9951">Resizer</text><!--MD5=[7b8dfd177886b73a985d075e0a12adee]
+entity iResizer--><ellipse cx="1461" cy="222.5" fill="#FEFECE" filter="url(#fd332tj7ws4mu)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><path d="M917,64 L917,104.2656 L1187,104.2656 L1187,74 L1177,64 L917,64 " fill="#ADD8E6" filter="url(#fd332tj7ws4mu)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1177,64 L1177,74 L1187,74 L1177,64 " fill="#ADD8E6" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="127" x="923" y="81.0669">Global UI access:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="249" x="923" y="96.1997">· text( TextID_e : enum ) : const char *</text><path d="M1222.5,64 L1222.5,104.2656 L1469.5,104.2656 L1469.5,74 L1459.5,64 L1222.5,64 " fill="#ADD8E6" filter="url(#fd332tj7ws4mu)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1459.5,64 L1459.5,74 L1469.5,74 L1459.5,64 " fill="#ADD8E6" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="127" x="1228.5" y="81.0669">Global UI access:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="226" x="1228.5" y="96.1997">· color( ThemeItem_e : enum ) : int</text><path d="M32.5,41 L32.5,126.6641 A0,0 0 0 0 32.5,126.6641 L670,126.6641 L674,213.31 L678,126.6641 L881.5,126.6641 A0,0 0 0 0 881.5,126.6641 L881.5,51 L871.5,41 L32.5,41 A0,0 0 0 0 32.5,41 " fill="#ADD8E6" filter="url(#fd332tj7ws4mu)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M871.5,41 L871.5,51 L881.5,51 L871.5,41 " fill="#ADD8E6" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="127" x="38.5" y="58.0669">Global UI access:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="388" x="38.5" y="73.1997">· getAction( Context_e: enum, ncurse_key: int ) : ActionID_e</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="150" x="38.5" y="88.3325">ContextHelp access:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="347" x="38.5" y="103.4653">· getKeyText( keyID : KeyboardKey_e  ) : const char *</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="828" x="38.5" y="118.5981">· processEntries( ctx : Context_e, userdata : void *, callback : void (*)( binding : const KeyBinding_t *, userdata : void * ) ) : bool</text><path d="M1054.5,187 L1054.5,257.5313 A0,0 0 0 0 1054.5,257.5313 L1417.5,257.5313 A0,0 0 0 0 1417.5,257.5313 L1417.5,227 L1451.94,223 L1417.5,219 L1417.5,197 L1407.5,187 L1054.5,187 A0,0 0 0 0 1054.5,187 " fill="#ADD8E6" filter="url(#fd332tj7ws4mu)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1407.5,187 L1407.5,197 L1417.5,197 L1407.5,187 " fill="#ADD8E6" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="127" x="1060.5" y="204.0669">Global UI access:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="342" x="1060.5" y="219.1997">· push( void(* resize_fn)( void * ), void * data ) : bool</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="82" x="1060.5" y="234.3325">· pop() : void</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="1060.5" y="249.4653">· resize() : void</text><!--MD5=[82e330770ce13c8ed359a0b9a0d161a5]
+entity Language--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="111" x="786.5" y="318"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="877.5" y="323"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="875.5" y="325"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="875.5" y="329"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="801.5" y="350.9951">Language</text><!--MD5=[5d9567360a3fc58194fad6789853caeb]
+entity KeyDescription--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="147" x="631.5" y="424"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="758.5" y="429"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="756.5" y="431"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="756.5" y="435"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="646.5" y="456.9951">KeyDescription</text><!--MD5=[9cb180d995f0c80ba88337b10070cd53]
+entity KeyBinding--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="120" x="631" y="318"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="731" y="323"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="729" y="325"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="729" y="329"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="646" y="350.9951">KeyBinding</text><!--MD5=[72174570c14433009257e7cd2b0769e1]
+entity Theme--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="90" x="933" y="318"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1003" y="323"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1001" y="325"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1001" y="329"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="948" y="350.9951">Theme</text><!--MD5=[4a57e52f5aa76274aa33eeb58375b724]
+entity iLanguage--><ellipse cx="869" cy="222.5" fill="#FEFECE" filter="url(#fd332tj7ws4mu)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><!--MD5=[484b8f144015aaa5dcbb2feb678d411b]
+entity iTheme--><ellipse cx="985" cy="222.5" fill="#FEFECE" filter="url(#fd332tj7ws4mu)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><!--MD5=[d2161f3b4776dc1a851353bfcee00d73]
+entity iKeyBinding--><ellipse cx="674" cy="222.5" fill="#FEFECE" filter="url(#fd332tj7ws4mu)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><!--MD5=[7ef9c71f28e7142fede1c01911911cd9]
+entity BorderWin--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="116" x="1167" y="863"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1263" y="868"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1261" y="870"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1261" y="874"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="1182" y="895.9951">BorderWin</text><!--MD5=[c0fe58fc51baeeb321a12f9314f344e9]
+entity ScrollBar--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="105" x="884.5" y="863"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="969.5" y="868"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="967.5" y="870"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="967.5" y="874"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="899.5" y="895.9951">ScrollBar</text><!--MD5=[b17b380054658488226b61c31a96155e]
+entity SlideMenu--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="114" x="884" y="757"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="978" y="762"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="976" y="764"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="976" y="768"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="899" y="789.9951">SlideMenu</text><!--MD5=[990ee15e83baa4304cfacc7544d75f46]
+entity Dialog--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="86" x="1034" y="757"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1100" y="762"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1098" y="764"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1098" y="768"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="1049" y="789.9951">Dialog</text><!--MD5=[477c6e5c6dee203282aba02378dc1801]
+entity ScrollWin--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="107" x="1024.5" y="863"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1111.5" y="868"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1109.5" y="870"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1109.5" y="874"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="1039.5" y="895.9951">ScrollWin</text><!--MD5=[4ad3a69cd1dfb856bd21c1bfee809d6a]
+entity RSListWin--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="110" x="601" y="636"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="691" y="641"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="689" y="643"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="689" y="647"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="616" y="668.9951">RSListWin</text><!--MD5=[faf4f431297255e5386b06572d652af7]
+entity BrowserWin--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="125" x="440.5" y="636"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="545.5" y="641"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="543.5" y="643"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="543.5" y="647"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="455.5" y="668.9951">BrowserWin</text><!--MD5=[f0b29d8bd442c901a571e320c9c12398]
+entity ContextHelp--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="128" x="1013" y="636"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1121" y="641"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1119" y="643"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1119" y="647"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1028" y="668.9951">ContextHelp</text><!--MD5=[4dae1caa626b928dac8f6e46ab0c3741]
+entity RSFind--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="89" x="888.5" y="636"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="957.5" y="641"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="955.5" y="643"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="955.5" y="647"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="903.5" y="668.9951">RSFind</text><!--MD5=[b224f35cb3ba45b955a5ce5c787892ec]
+entity RSInfo--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="86" x="767" y="636"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="833" y="641"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="831" y="643"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="831" y="647"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="782" y="668.9951">RSInfo</text><!--MD5=[c0fb2289473610512a22c23aca4410b3]
+entity RSEdit--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="86" x="1345" y="636"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1411" y="641"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1409" y="643"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1409" y="647"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="1360" y="668.9951">RSEdit</text><!--MD5=[cd9f97509c86510229e888529a3eb33e]
+entity OptionsMenu--><rect fill="#FEFECE" filter="url(#fd332tj7ws4mu)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="133" x="1176.5" y="636"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1289.5" y="641"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1287.5" y="643"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1287.5" y="647"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="1191.5" y="668.9951">OptionsMenu</text><!--MD5=[85285dc151cb9c8366bc43e9abc9b6d1]
+link iResizer to Resizer--><path d="M1461,231.8 C1461,259.73 1461,341 1461,341 C1461,341 1368.42,341 1310.19,341 " fill="none" id="iResizer-Resizer" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e618edfdc45c309402c6c24201b81ef0]
+reverse link Resizer to UI--><path d="M1263.75,369.22 C1263.75,369.22 1263.75,540 1263.75,540 C1263.75,540 1039.06,540 960.07,540 " fill="none" id="Resizer-backto-UI" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1263.75,364.22,1259.75,373.22,1263.75,369.22,1267.75,373.22,1263.75,364.22" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[af6a610ef5b029e9fecbe679368e91cd]
+link iLanguage to Language--><path d="M869,231.8 C869,250.13 869,291.43 869,317.66 " fill="none" id="iLanguage-Language" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3c3973994a40e311dfd3fe3dd108a1ec]
+link iTheme to Theme--><path d="M985,231.8 C985,250.13 985,291.43 985,317.66 " fill="none" id="iTheme-Theme" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[21e0048349cf9793877e9125e94289dc]
+link iKeyBinding to KeyBinding--><path d="M674,231.8 C674,250.13 674,291.43 674,317.66 " fill="none" id="iKeyBinding-KeyBinding" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d8b412aa601fee821d66fc8d47e2e16e]
+link KeyBinding to KeyDescription--><path d="M691.25,364 C691.25,364 691.25,418.68 691.25,418.68 " fill="none" id="KeyBinding-to-KeyDescription" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="691.25,423.68,695.25,414.68,691.25,418.68,687.25,414.68,691.25,423.68" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[bc37809ddce5d2a918c54b88a812c27d]
+link KeyBinding to Language--><path d="M751.11,334 C751.11,334 781.02,334 781.02,334 " fill="none" id="KeyBinding-to-Language" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="786.02,334,777.02,330,781.02,334,777.02,338,786.02,334" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e6376586c06228beb97bc58f7501b815]
+reverse link KeyBinding to UI--><path d="M756.01,349 C756.01,349 782.5,349 782.5,349 C782.5,349 782.5,546 782.5,546 C782.5,546 862.38,546 905.75,546 " fill="none" id="KeyBinding-backto-UI" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="751.01,349,760.01,353,756.01,349,760.01,345,751.01,349" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c84fa30d51d8df85c5a030dff12c2d8a]
+reverse link Language to UI--><path d="M893,369.37 C893,369.37 893,538 893,538 C893,538 898.62,538 905.66,538 " fill="none" id="Language-backto-UI" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="893,364.37,889,373.37,893,369.37,897,373.37,893,364.37" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c36d82065173c949ab2e2f0b8a0d3419]
+reverse link Theme to UI--><path d="M946.5,369.09 C946.5,369.09 946.5,529.94 946.5,529.94 " fill="none" id="Theme-backto-UI" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="946.5,364.09,942.5,373.09,946.5,369.09,950.5,373.09,946.5,364.09" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9a355a3fef76e95978d22f4510d4a7c8]
+reverse link Dialog to ScrollWin--><path d="M1077,816 C1077,816 1077,862.68 1077,862.68 " fill="none" id="Dialog-backto-ScrollWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1077,803,1073,809,1077,815,1081,809,1077,803" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7510c8f5a2dfbcf51882a9f2b1b52027]
+reverse link Dialog to ScrollBar--><path d="M1020.75,788 C1020.75,788 1018.75,788 1018.75,788 C1018.75,788 1018.75,886 1018.75,886 C1018.75,886 1005.52,886 989.7,886 " fill="none" id="Dialog-backto-ScrollBar" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1033.75,788,1027.75,784,1021.75,788,1027.75,792,1033.75,788" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[962ab12952c969d9a51b976db908efc8]
+reverse link Dialog to BorderWin--><path d="M1133.22,788 C1133.22,788 1171.75,788 1171.75,788 C1171.75,788 1171.75,833.8 1171.75,862.78 " fill="none" id="Dialog-backto-BorderWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1120.22,788,1126.22,792,1132.22,788,1126.22,784,1120.22,788" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6aacb35628e181700db035bb83c5402c]
+reverse link SlideMenu to ScrollBar--><path d="M937,816 C937,816 937,862.68 937,862.68 " fill="none" id="SlideMenu-backto-ScrollBar" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="937,803,933,809,937,815,941,809,937,803" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9df292c3db87d5462284c300140b9545]
+link RSListWin to BrowserWin--><path d="M600.76,659 C600.76,659 578.69,659 578.69,659 " fill="none" id="RSListWin-to-BrowserWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="565.69,659,571.69,663,577.69,659,571.69,655,565.69,659" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8c1720650488046a0974948e1ed688d1]
+reverse link ContextHelp to Dialog--><path d="M1091.33,695.04 C1091.33,695.04 1091.33,756.63 1091.33,756.63 " fill="none" id="ContextHelp-backto-Dialog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1091.33,682.04,1087.33,688.04,1091.33,694.04,1095.33,688.04,1091.33,682.04" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9cb1b9d9425b487c92231f02671f8367]
+reverse link BrowserWin to SlideMenu--><path d="M503,695.04 C503,695.04 503,780 503,780 C503,780 765.01,780 883.74,780 " fill="none" id="BrowserWin-backto-SlideMenu" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="503,682.04,499,688.04,503,694.04,507,688.04,503,682.04" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cb99c7a0d828a661c3e2a5cc191261cf]
+reverse link OptionsMenu to SlideMenu--><path d="M1212,695.16 C1212,695.16 1212,707 1212,707 C1212,707 987.75,707 987.75,707 C987.75,707 987.75,735.52 987.75,756.9 " fill="none" id="OptionsMenu-backto-SlideMenu" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1212,682.16,1208,688.16,1212,694.16,1216,688.16,1212,682.16" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7758242a5a47b0734c4736929ba1c83f]
+reverse link RSFind to Dialog--><path d="M990.68,659 C990.68,659 1005.5,659 1005.5,659 C1005.5,659 1005.5,773 1005.5,773 C1005.5,773 1018.7,773 1033.76,773 " fill="none" id="RSFind-backto-Dialog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="977.68,659,983.68,663,989.68,659,983.68,655,977.68,659" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4d972a6ab5603d2c2ccab4ad1552b7ed]
+reverse link RSInfo to Dialog--><path d="M810,695.1 C810,695.1 810,732 810,732 C810,732 1062.67,732 1062.67,732 C1062.67,732 1062.67,744.57 1062.67,756.84 " fill="none" id="RSInfo-backto-Dialog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="810,682.1,806,688.1,810,694.1,814,688.1,810,682.1" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[96f5a0bc8cdf8ad40e26c6dc205313d4]
+reverse link RSEdit to Dialog--><path d="M1388,695.07 C1388,695.07 1388,773 1388,773 C1388,773 1205.7,773 1120.24,773 " fill="none" id="RSEdit-backto-Dialog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1388,682.07,1384,688.07,1388,694.07,1392,688.07,1388,682.07" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b91a0f8c27dcbc853ae9db4b0ee2f338]
+reverse link OptionsMenu to BorderWin--><path d="M1247.5,695.02 C1247.5,695.02 1247.5,862.92 1247.5,862.92 " fill="none" id="OptionsMenu-backto-BorderWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1247.5,682.02,1243.5,688.02,1247.5,694.02,1251.5,688.02,1247.5,682.02" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6fddb8ea4d076c931b1041aba40d6105]
+link UI to OptionsMenu--><path d="M960.28,558 C1027.8,558 1197.25,558 1197.25,558 C1197.25,558 1197.25,630.83 1197.25,630.83 " fill="none" id="UI-to-OptionsMenu" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1197.25,635.83,1201.25,626.83,1197.25,630.83,1193.25,626.83,1197.25,635.83" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5de3942b55cc53b259457cc7d0a5969d]
+link UI to ContextHelp--><path d="M960.36,567 C985.21,567 1018,567 1018,567 C1018,567 1018,630.78 1018,630.78 " fill="none" id="UI-to-ContextHelp" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1018,635.78,1022,626.78,1018,630.78,1014,626.78,1018,635.78" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[0675953996ef12884123cc1241b64a4f]
+link UI to RSFind--><path d="M933,576 C933,576 933,630.68 933,630.68 " fill="none" id="UI-to-RSFind" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="933,635.68,937,626.68,933,630.68,929,626.68,933,635.68" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[32f6d01573a9f6a5f1fdcd477733ffc9]
+link UI to RSInfo--><path d="M905.87,569 C872.37,569 819.75,569 819.75,569 C819.75,569 819.75,630.82 819.75,630.82 " fill="none" id="UI-to-RSInfo" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="819.75,635.82,823.75,626.82,819.75,630.82,815.75,626.82,819.75,635.82" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[108e3c8a19d94cf04ccc480efa316058]
+link UI to RSEdit--><path d="M960.03,549 C1056.94,549 1381.25,549 1381.25,549 C1381.25,549 1381.25,630.94 1381.25,630.94 " fill="none" id="UI-to-RSEdit" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1381.25,635.94,1385.25,626.94,1381.25,630.94,1377.25,626.94,1381.25,635.94" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e1a3fae15f6b1845271ddda50f815782]
+link UI to RSListWin--><path d="M905.97,561 C839.1,561 671.25,561 671.25,561 C671.25,561 671.25,630.78 671.25,630.78 " fill="none" id="UI-to-RSListWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="671.25,635.78,675.25,626.78,671.25,630.78,667.25,626.78,671.25,635.78" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d88f4389af6c8f71f5226fade45170a9]
+link UI to BrowserWin--><path d="M905.78,553 C811.25,553 503,553 503,553 C503,553 503,631 503,631 " fill="none" id="UI-to-BrowserWin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="503,636,507,627,503,631,499,627,503,636" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[71d8c26ae82bbe4cbf7afc07200d25c3]
+link GMN45299 to iLanguage--><path d="M925,104.21 C925,142.76 925,223 925,223 C925,223 894.15,223 878.25,223 " fill="none" id="GMN45299-iLanguage" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[67059d0a6bd460c66143b45087888685]
+link GMN45302 to iTheme--><path d="M1320,104.08 C1320,110.51 1320,116 1320,116 C1320,116 985,116 985,116 C985,116 985,187.67 985,213.42 " fill="none" id="GMN45302-iTheme" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[43eca1536ab29f5e0598488c19a0d2b0]
+@startuml
+skinparam linetype ortho
+'skinparam linetype polyline
+
+package ui #lightgrey {
+    component UI
+    component Resizer
+    interface " " as iResizer
+
+    Resizer -up- iResizer
+    UI -up- -> Resizer
+
+    package definitions #white {
+        component Language
+        component KeyDescription
+        component KeyBinding
+        component Theme
+        interface " " as iLanguage
+        interface " " as iTheme
+        interface " " as iKeyBinding
+
+        Language -up- iLanguage
+        Theme -up- iTheme
+        KeyBinding -up- iKeyBinding
+
+        KeyBinding - -> KeyDescription
+        KeyBinding -> Language
+    }
+
+    UI -up- -> KeyBinding
+    UI -up- -> Language
+    UI -up- -> Theme
+
+    package widget #white {
+        component BorderWin
+        component ScrollBar
+        component SlideMenu
+        component Dialog
+        component ScrollWin
+
+        Dialog    *- - ScrollWin
+        Dialog    *- - ScrollBar
+        Dialog    *- - BorderWin
+        SlideMenu *- - ScrollBar
+    }
+
+    package window #white {
+        component RSListWin
+        component BrowserWin
+
+        BrowserWin *-left- RSListWin
+    }
+
+    package dialog #white {
+        component ContextHelp
+        component RSFind
+        component RSInfo
+        component RSEdit
+        component OptionsMenu
+
+        ContextHelp *- - Dialog
+    }
+
+'    dialog -[#purple]- -( iKeyBinding
+'    dialog -[#purple]- -( iResizer
+
+
+    BrowserWin  *- - SlideMenu
+    OptionsMenu *- - SlideMenu
+    RSFind      *- - Dialog
+    RSInfo      *- - Dialog
+    RSEdit      *- - Dialog
+    OptionsMenu *- - BorderWin
+
+    UI      - -> OptionsMenu
+    UI      - -> ContextHelp
+    UI      - -> RSFind
+    UI      - -> RSInfo
+    UI      - -> RSEdit
+    UI      - -> RSListWin
+    UI      - -> BrowserWin
+
+    note top of iLanguage #lightblue
+        **Global UI access:**
+        · text( TextID_e : enum ) : const char *
+    end note
+    note top of iTheme #lightblue
+        **Global UI access:**
+        · color( ThemeItem_e : enum ) : int
+    end note
+    note top of iKeyBinding #lightblue
+        **Global UI access:**
+        · getAction( Context_e: enum, ncurse_key: int ) : ActionID_e
+        **ContextHelp access:**
+        · getKeyText( keyID : KeyboardKey_e  ) : const char *
+        · processEntries( ctx : Context_e, userdata : void *, callback : void (*)( binding : const KeyBinding_t *, userdata : void * ) ) : bool
+    end note
+    note left of iResizer #lightblue
+        **Global UI access:**
+        · push( void(* resize_fn)( void * ), void * data ) : bool
+        · pop() : void
+        · resize() : void
+    end note
+}
+
+@enduml
+
+@startuml
+skinparam linetype ortho
+
+package ui #lightgrey {
+    component UI
+    component Resizer
+    interface " " as iResizer
+
+    Resizer -up- iResizer
+    UI -up- -> Resizer
+
+    package definitions #white {
+        component Language
+        component KeyDescription
+        component KeyBinding
+        component Theme
+        interface " " as iLanguage
+        interface " " as iTheme
+        interface " " as iKeyBinding
+
+        Language -up- iLanguage
+        Theme -up- iTheme
+        KeyBinding -up- iKeyBinding
+
+        KeyBinding - -> KeyDescription
+        KeyBinding -> Language
+    }
+
+    UI -up- -> KeyBinding
+    UI -up- -> Language
+    UI -up- -> Theme
+
+    package widget #white {
+        component BorderWin
+        component ScrollBar
+        component SlideMenu
+        component Dialog
+        component ScrollWin
+
+        Dialog    *- - ScrollWin
+        Dialog    *- - ScrollBar
+        Dialog    *- - BorderWin
+        SlideMenu *- - ScrollBar
+    }
+
+    package window #white {
+        component RSListWin
+        component BrowserWin
+
+        BrowserWin *-left- RSListWin
+    }
+
+    package dialog #white {
+        component ContextHelp
+        component RSFind
+        component RSInfo
+        component RSEdit
+        component OptionsMenu
+
+        ContextHelp *- - Dialog
+    }
+
+
+
+    BrowserWin  *- - SlideMenu
+    OptionsMenu *- - SlideMenu
+    RSFind      *- - Dialog
+    RSInfo      *- - Dialog
+    RSEdit      *- - Dialog
+    OptionsMenu *- - BorderWin
+
+    UI      - -> OptionsMenu
+    UI      - -> ContextHelp
+    UI      - -> RSFind
+    UI      - -> RSInfo
+    UI      - -> RSEdit
+    UI      - -> RSListWin
+    UI      - -> BrowserWin
+
+    note top of iLanguage #lightblue
+        **Global UI access:**
+        · text( TextID_e : enum ) : const char *
+    end note
+    note top of iTheme #lightblue
+        **Global UI access:**
+        · color( ThemeItem_e : enum ) : int
+    end note
+    note top of iKeyBinding #lightblue
+        **Global UI access:**
+        · getAction( Context_e: enum, ncurse_key: int ) : ActionID_e
+        **ContextHelp access:**
+        · getKeyText( keyID : KeyboardKey_e  ) : const char *
+        · processEntries( ctx : Context_e, userdata : void *, callback : void (*)( binding : const KeyBinding_t *, userdata : void * ) ) : bool
+    end note
+    note left of iResizer #lightblue
+        **Global UI access:**
+        · push( void(* resize_fn)( void * ), void * data ) : bool
+        · pop() : void
+        · resize() : void
+    end note
+}
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

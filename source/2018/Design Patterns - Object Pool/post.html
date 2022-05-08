@@ -1,0 +1,73 @@
+<article>
+    <div>
+        <h1><span class="title">Design Pattern: Object Pool</span></h1>
+        <time datetime="2018-08-27">27 August 2018</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">Design Patterns</span>
+            <span class="tag">Notes</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <p>Re-usable instances of a Class.</p>
+
+        <p><span class="bold">Type:</span> Creational.</p>
+
+        <figure class="right half-width">
+            <a href="object_pool.png">
+                <img src="object_pool.png" alt="Object Pool UML" />
+            </a>
+            <figcaption>Object Pool UML</figcaption>
+        </figure>
+
+        <p>An object pool essentially keeps a set of re-usable instantiated objects in a cache (pool) where each is put back and reset after use. This is to avoid the object creation/destruction overheads.</p>
+
+        <p>For example, a good candidate for such a pattern is a large and/or complex class that is constantly being instantiated and creates a performance bottleneck because of this.</p>
+
+        <p>Stateful objects must be <span style="color: red">reset</span> when released back into the pool and behaviour must be defined when a process tries to fetch an object from an empty pool (e.g.: throw exception, create instances, wait...).</p>
+
+        <h2>C++11</h2>
+
+        <p>In C++ object pooling can be easily achieved by using <code class="inline cpp">std::unique_ptr</code> and a custom deleter. Pool release is then auto-magically done even when calling <code class="inline cpp">std::unique_ptr.reset()</code> on the pooled object pointer.</p>
+
+        <figure class="center">
+            <a href="object_pool_cpp.png">
+                <img src="object_pool_cpp.png" alt="Object Pool in C++ UML" />
+            </a>
+            <figcaption>C++ Object Pool UML (Class diag.)</figcaption>
+        </figure>
+
+<div class="code-wrap">
+<code class="block cpp">class Deleter {
+    public:
+        explicit Deleter( std::weak_ptr&lt;ObjectPool*&gt; pool ) :
+            _pool( pool )
+        {}
+
+        void operator()( Object *ptr ) {
+            if( auto pool_ptr = _pool.lock() ) {
+                /* Pool exists so add pointer back to pool */
+                ( *pool_ptr.get() )->release( std::unique_ptr&lt;Object&gt;{ ptr } );
+            } else {
+                /* Pool has been destroyed so default deleter is used instead */
+                std::default_delete&lt;Object&gt;{}( ptr );
+            }
+        }
+
+    private:
+        std::weak_ptr&lt;ObjectPool*&gt; _pool; /* non-owning smart pointer */
+};
+</code></div>
+        <span class="caption-bottom">Custom deleter implementation for Pool objects</span>
+
+        <h2>Java</h2>
+
+        <p>Since Java is a Garbage Collected language the pool's object acquisition must be explicit and disposal must be used to "return" the borrowed object to the pool.</p>
+
+        <p>Generally, this pattern should be avoided as memory allocation and garbage collection in modern JVMs is very cheap for short lived objects. Exceptions are when object creation cost is very high (threads, network or db connections...).</p>
+
+    </div>
+</article>

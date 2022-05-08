@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="163px" preserveAspectRatio="none" style="width:560px;height:163px;background:#FFFFFF;" version="1.1" viewBox="0 0 560 163" width="560px" zoomAndPan="magnify"><defs><filter height="300%" id="f10592l75n650p" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[f69d0cb0505d19e89266c685e1b9b035]
+entity in--><ellipse cx="46.5" cy="30" fill="#000000" filter="url(#f10592l75n650p)" rx="8" ry="8" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="6" y="59.9951">stream info</text><!--MD5=[55ead11f279d43a49df83e73bfcb0783]
+entity out--><ellipse cx="518.5" cy="30" fill="#000000" filter="url(#f10592l75n650p)" rx="8" ry="8" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="483.5" y="59.9951">sound out</text><!--MD5=[073a9e5508879681648fac7d34324bbc]
+entity RadioBrowser--><rect fill="#FEFECE" filter="url(#f10592l75n650p)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="139" x="91" y="7"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="210" y="12"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="208" y="14"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="208" y="18"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="106" y="39.9951">RadioBrowser</text><!--MD5=[e8907a2785b2ea9784e1231cc1aa4a14]
+entity RadioPlayer--><rect fill="#FEFECE" filter="url(#f10592l75n650p)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="125" x="349" y="7"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="454" y="12"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="452" y="14"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="452" y="18"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="364" y="39.9951">RadioPlayer</text><path d="M48.5,114 L48.5,154.2656 A0,0 0 0 0 48.5,154.2656 L272.5,154.2656 A0,0 0 0 0 272.5,154.2656 L272.5,124 L262.5,114 L164.5,114 L160.5,53.13 L156.5,114 L48.5,114 A0,0 0 0 0 48.5,114 " fill="#FBFB77" filter="url(#f10592l75n650p)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M262.5,114 L262.5,124 L272.5,124 L262.5,114 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="203" x="54.5" y="131.0669">Gets a radio station's info from</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="175" x="58.5" y="146.1997">the Radio Browser web API</text><path d="M340,121.5 L340,146.6328 A0,0 0 0 0 340,146.6328 L483,146.6328 A0,0 0 0 0 483,146.6328 L483,131.5 L473,121.5 L415.5,121.5 L411.5,53.13 L407.5,121.5 L340,121.5 A0,0 0 0 0 340,121.5 " fill="#FBFB77" filter="url(#f10592l75n650p)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M473,121.5 L473,131.5 L483,131.5 L473,121.5 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="346" y="138.5669">Plays radio stream</text><!--MD5=[4c48c7a80f4ee758b61d0de0572adb5e]
+link RadioBrowser to RadioPlayer--><path d="M230.08,30 C265.48,30 308.35,30 343.52,30 " fill="none" id="RadioBrowser-to-RadioPlayer" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="348.65,30,339.65,26,343.65,30,339.65,34,348.65,30" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="82" x="248.5" y="23.0669">radio station</text><!--MD5=[1000f2b64a486f76186db0ca2d0a4c76]
+link in to RadioBrowser--><path d="M55.85,30 C65.71,30 75.58,30 85.44,30 " fill="none" id="in-to-RadioBrowser" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="90.6,30,81.6,26,85.6,30,81.6,34,90.6,30" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[1f15036bb55e85a0167cd1fe15efa23b]
+link RadioPlayer to out--><path d="M474.2,30 C484.12,30 494.04,30 503.97,30 " fill="none" id="RadioPlayer-to-out" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="509.15,30,500.15,26,504.15,30,500.15,34,509.15,30" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[4823b39639ba29abb8e89448b0989b56]
+@startuml
+
+interface "stream info" as in #back:black;line:black
+interface "sound out" as out #back:black;line:black
+
+[RadioBrowser] .[#black]right.> [RadioPlayer] : radio station
+in .[#black]right.> [RadioBrowser]
+RadioPlayer .[#black]right.> out
+
+note bottom of RadioBrowser : Gets a radio station's info from\n the Radio Browser web API
+note bottom of RadioPlayer : Plays radio stream
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

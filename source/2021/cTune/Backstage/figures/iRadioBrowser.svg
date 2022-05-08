@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="564px" preserveAspectRatio="none" style="width:739px;height:564px;background:#FFFFFF;" version="1.1" viewBox="0 0 739 564" width="739px" zoomAndPan="magnify"><defs><filter height="300%" id="f1j9qtewnqjzao" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[7afef55408d90ea6432d9952cf6fc2c6]
+class RadioBrowser--><rect codeLine="3" fill="#FEFECE" filter="url(#f1j9qtewnqjzao)" height="192.0469" id="RadioBrowser" style="stroke:#A80036;stroke-width:1.5;" width="718" x="7" y="7"/><ellipse cx="321.25" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M317.6719,18.7813 L317.6719,16.5 L325.0625,16.5 L325.0625,18.7813 L322.5938,18.7813 L322.5938,27.2344 L325.0625,27.2344 L325.0625,29.5 L317.6719,29.5 L317.6719,27.2344 L320.1406,27.2344 L320.1406,18.7813 L317.6719,18.7813 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="81" x="341.75" y="27.1543">RadioBrowser</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="724" y1="39" y2="39"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="46" x="13" y="53.2104">Needed</text><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="8" x2="724" y1="59.8047" y2="59.8047"/><ellipse cx="18" cy="70.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="490" x="27" y="74.0151">downloadStations( const RadioBrowserFilter_t * filter, Vector_t * radio_stations ) : bool</text><ellipse cx="18" cy="83.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="634" x="27" y="86.8198">downloadStationsBy( const ByCategory_e category, const char * search_term, Vector_t * radio_stations ) : bool</text><ellipse cx="18" cy="96.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="692" x="27" y="99.6245">downloadCategoryItems( const ListCategory_e category, const  RadioBrowserFilter_t * filter, Vector_t * categories ) : bool</text><ellipse cx="18" cy="109.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="482" x="27" y="112.4292">stationClickCounter( const char * station_uuid,  ClickCounter_t * click_counter ) : bool</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="724" y1="119.0234" y2="119.0234"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="53" x="13" y="133.2339">Optional</text><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="8" x2="724" y1="139.8281" y2="139.8281"/><ellipse cx="18" cy="150.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="289" x="27" y="154.0386">downloadServerStats( ServerStats_t * stats ) : bool</text><ellipse cx="18" cy="163.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="319" x="27" y="166.8433">downloadServerConfig( ServerConfig_t * srv_cfg ) : bool</text><ellipse cx="18" cy="176.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="467" x="27" y="179.6479">voteForStation( const char * station_uuid,  RadioStationVote_t * vote_state ) : bool</text><ellipse cx="18" cy="189.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="322" x="27" y="192.4526">addNewStation( NewRadioStation_t * new_station ) : bool</text><!--MD5=[0a1c9a222e7dc150ce3a5892d6a8b4a7]
+class ByCategory_e--><rect codeLine="19" fill="#FEFECE" filter="url(#f1j9qtewnqjzao)" height="291.2891" id="ByCategory_e" style="stroke:#A80036;stroke-width:1.5;" width="325" x="30.5" y="259"/><ellipse cx="147.75" cy="275" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M151.8594,281.5 L144.1406,281.5 L144.1406,268.5 L151.8594,268.5 L151.8594,270.7813 L146.5938,270.7813 L146.5938,273.5 L151.3594,273.5 L151.3594,275.7813 L146.5938,275.7813 L146.5938,279.2344 L151.8594,279.2344 L151.8594,281.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="82" x="168.25" y="279.1543">ByCategory_e</text><line style="stroke:#A80036;stroke-width:1.5;" x1="31.5" x2="354.5" y1="291" y2="291"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="227" x="36.5" y="305.2104">RADIOBROWSER_STATION_BY_UUID = 0</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="208" x="36.5" y="318.0151">RADIOBROWSER_STATION_BY_NAME</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="252" x="36.5" y="330.8198">RADIOBROWSER_STATION_BY_NAME_EXACT</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="216" x="36.5" y="343.6245">RADIOBROWSER_STATION_BY_CODEC</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="260" x="36.5" y="356.4292">RADIOBROWSER_STATION_BY_CODEC_EXACT</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="231" x="36.5" y="369.2339">RADIOBROWSER_STATION_BY_COUNTRY</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="275" x="36.5" y="382.0386">RADIOBROWSER_STATION_BY_COUNTRY_EXACT</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="313" x="36.5" y="394.8433">RADIOBROWSER_STATION_BY_COUNTRY_CODE_EXACT</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="212" x="36.5" y="407.6479">RADIOBROWSER_STATION_BY_STATE</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="256" x="36.5" y="420.4526">RADIOBROWSER_STATION_BY_STATE_EXACT</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="239" x="36.5" y="433.2573">RADIOBROWSER_STATION_BY_LANGUAGE</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="283" x="36.5" y="446.062">RADIOBROWSER_STATION_BY_LANGUAGE_EXACT</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="200" x="36.5" y="458.8667">RADIOBROWSER_STATION_BY_TAG</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="244" x="36.5" y="471.6714">RADIOBROWSER_STATION_BY_TAG_EXACT</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="198" x="36.5" y="484.4761">RADIOBROWSER_STATION_BY_URL</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="215" x="36.5" y="497.2808">RADIOBROWSER_STATION_BY_CLICKS</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="214" x="36.5" y="510.0854">RADIOBROWSER_STATION_BY_VOTES</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="266" x="36.5" y="522.8901">RADIOBROWSER_STATION_BY_RECENT_CLICKS</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="306" x="36.5" y="535.6948">RADIOBROWSER_STATION_BY_RECENT_ADD_OR_MOD</text><line style="stroke:#A80036;stroke-width:1.5;" x1="31.5" x2="354.5" y1="542.2891" y2="542.2891"/><!--MD5=[1c2bc62e9ecdf9f45f3e01cb86d02f6d]
+class ListCategory_e--><rect codeLine="41" fill="#FEFECE" filter="url(#f1j9qtewnqjzao)" height="124.8281" id="ListCategory_e" style="stroke:#A80036;stroke-width:1.5;" width="299" x="390.5" y="342"/><ellipse cx="491.75" cy="358" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M495.8594,364.5 L488.1406,364.5 L488.1406,351.5 L495.8594,351.5 L495.8594,353.7813 L490.5938,353.7813 L490.5938,356.5 L495.3594,356.5 L495.3594,358.7813 L490.5938,358.7813 L490.5938,362.2344 L495.8594,362.2344 L495.8594,364.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="88" x="512.25" y="362.1543">ListCategory_e</text><line style="stroke:#A80036;stroke-width:1.5;" x1="391.5" x2="688.5" y1="374" y2="374"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="258" x="396.5" y="388.2104">RADIOBROWSER_CATEGORY_COUNTRIES = 0</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="287" x="396.5" y="401.0151">RADIOBROWSER_CATEGORY_COUNTRYCODES = 1</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="240" x="396.5" y="413.8198">RADIOBROWSER_CATEGORY_CODECS = 2</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="236" x="396.5" y="426.6245">RADIOBROWSER_CATEGORY_STATES = 3</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="263" x="396.5" y="439.4292">RADIOBROWSER_CATEGORY_LANGUAGES = 4</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="224" x="396.5" y="452.2339">RADIOBROWSER_CATEGORY_TAGS = 5</text><line style="stroke:#A80036;stroke-width:1.5;" x1="391.5" x2="688.5" y1="458.8281" y2="458.8281"/><!--MD5=[710ed82733feb5bf7ad4551730e502e5]
+link RadioBrowser to ByCategory_e--><path codeLine="50" d="M311.02,199.18 C300.9,216.7 290.11,235.39 279.32,254.06 " fill="none" id="RadioBrowser-to-ByCategory_e" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="276.58,258.81,284.545,253.017,279.0807,254.4803,277.6174,249.0159,276.58,258.81" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[61116916b0454a95eab8ea4ad6452616]
+link RadioBrowser to ListCategory_e--><path codeLine="51" d="M421.29,199.18 C447.41,244.13 477.94,296.68 501.5,337.23 " fill="none" id="RadioBrowser-to-ListCategory_e" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="504.05,341.61,502.9884,331.8185,501.5386,337.2865,496.0707,335.8367,504.05,341.61" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a18ce5516a1d915858adcdbe62592913]
+@startuml
+'https://plantuml.com/class-diagram
+
+interface RadioBrowser {
+    <b>Needed</b>
+    ....
+    + downloadStations( const RadioBrowserFilter_t * filter, Vector_t * radio_stations ) : bool
+    + downloadStationsBy( const ByCategory_e category, const char * search_term, Vector_t * radio_stations ) : bool
+    + downloadCategoryItems( const ListCategory_e category, const  RadioBrowserFilter_t * filter, Vector_t * categories ) : bool
+    + stationClickCounter( const char * station_uuid,  ClickCounter_t * click_counter ) : bool
+    - - - -
+    <b>Optional</b>
+    ....
+    + downloadServerStats( ServerStats_t * stats ) : bool
+    + downloadServerConfig( ServerConfig_t * srv_cfg ) : bool
+    + voteForStation( const char * station_uuid,  RadioStationVote_t * vote_state ) : bool
+    + addNewStation( NewRadioStation_t * new_station ) : bool
+}
+
+enum ByCategory_e {
+    RADIOBROWSER_STATION_BY_UUID = 0
+    RADIOBROWSER_STATION_BY_NAME
+    RADIOBROWSER_STATION_BY_NAME_EXACT
+    RADIOBROWSER_STATION_BY_CODEC
+    RADIOBROWSER_STATION_BY_CODEC_EXACT
+    RADIOBROWSER_STATION_BY_COUNTRY
+    RADIOBROWSER_STATION_BY_COUNTRY_EXACT
+    RADIOBROWSER_STATION_BY_COUNTRY_CODE_EXACT
+    RADIOBROWSER_STATION_BY_STATE
+    RADIOBROWSER_STATION_BY_STATE_EXACT
+    RADIOBROWSER_STATION_BY_LANGUAGE
+    RADIOBROWSER_STATION_BY_LANGUAGE_EXACT
+    RADIOBROWSER_STATION_BY_TAG
+    RADIOBROWSER_STATION_BY_TAG_EXACT
+    RADIOBROWSER_STATION_BY_URL
+    RADIOBROWSER_STATION_BY_CLICKS
+    RADIOBROWSER_STATION_BY_VOTES
+    RADIOBROWSER_STATION_BY_RECENT_CLICKS
+    RADIOBROWSER_STATION_BY_RECENT_ADD_OR_MOD
+}
+
+enum ListCategory_e {
+    RADIOBROWSER_CATEGORY_COUNTRIES = 0
+    RADIOBROWSER_CATEGORY_COUNTRYCODES = 1
+    RADIOBROWSER_CATEGORY_CODECS = 2
+    RADIOBROWSER_CATEGORY_STATES = 3
+    RADIOBROWSER_CATEGORY_LANGUAGES = 4
+    RADIOBROWSER_CATEGORY_TAGS = 5
+}
+
+RadioBrowser - -> ByCategory_e
+RadioBrowser - -> ListCategory_e
+@enduml
+
+@startuml
+
+interface RadioBrowser {
+    <b>Needed</b>
+    ....
+    + downloadStations( const RadioBrowserFilter_t * filter, Vector_t * radio_stations ) : bool
+    + downloadStationsBy( const ByCategory_e category, const char * search_term, Vector_t * radio_stations ) : bool
+    + downloadCategoryItems( const ListCategory_e category, const  RadioBrowserFilter_t * filter, Vector_t * categories ) : bool
+    + stationClickCounter( const char * station_uuid,  ClickCounter_t * click_counter ) : bool
+    - - - -
+    <b>Optional</b>
+    ....
+    + downloadServerStats( ServerStats_t * stats ) : bool
+    + downloadServerConfig( ServerConfig_t * srv_cfg ) : bool
+    + voteForStation( const char * station_uuid,  RadioStationVote_t * vote_state ) : bool
+    + addNewStation( NewRadioStation_t * new_station ) : bool
+}
+
+enum ByCategory_e {
+    RADIOBROWSER_STATION_BY_UUID = 0
+    RADIOBROWSER_STATION_BY_NAME
+    RADIOBROWSER_STATION_BY_NAME_EXACT
+    RADIOBROWSER_STATION_BY_CODEC
+    RADIOBROWSER_STATION_BY_CODEC_EXACT
+    RADIOBROWSER_STATION_BY_COUNTRY
+    RADIOBROWSER_STATION_BY_COUNTRY_EXACT
+    RADIOBROWSER_STATION_BY_COUNTRY_CODE_EXACT
+    RADIOBROWSER_STATION_BY_STATE
+    RADIOBROWSER_STATION_BY_STATE_EXACT
+    RADIOBROWSER_STATION_BY_LANGUAGE
+    RADIOBROWSER_STATION_BY_LANGUAGE_EXACT
+    RADIOBROWSER_STATION_BY_TAG
+    RADIOBROWSER_STATION_BY_TAG_EXACT
+    RADIOBROWSER_STATION_BY_URL
+    RADIOBROWSER_STATION_BY_CLICKS
+    RADIOBROWSER_STATION_BY_VOTES
+    RADIOBROWSER_STATION_BY_RECENT_CLICKS
+    RADIOBROWSER_STATION_BY_RECENT_ADD_OR_MOD
+}
+
+enum ListCategory_e {
+    RADIOBROWSER_CATEGORY_COUNTRIES = 0
+    RADIOBROWSER_CATEGORY_COUNTRYCODES = 1
+    RADIOBROWSER_CATEGORY_CODECS = 2
+    RADIOBROWSER_CATEGORY_STATES = 3
+    RADIOBROWSER_CATEGORY_LANGUAGES = 4
+    RADIOBROWSER_CATEGORY_TAGS = 5
+}
+
+RadioBrowser - -> ByCategory_e
+RadioBrowser - -> ListCategory_e
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

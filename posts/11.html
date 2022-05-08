@@ -1,0 +1,634 @@
+<!-- Generated with Blogator 1.3.2 (https://an7ar35.bitbucket.io) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' 'unsafe-eval';">
+    <title>EAD | Writings</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/blogator/main.css" />
+</head>
+    <body>
+        <div class="header">
+            <div><img src="../img/tree-left.svg" alt="left tree"/></div>
+            <div>
+                <div class="site-title">Es' corner</div>
+                <div class="site-micro-title">Just another keyboard-enthusiastic hominid.</div>
+            </div>
+            <div><img src="../img/tree-right.svg" alt="right tree"/></div>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li class="active">
+                    <a class="nav-writings" href="../index.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Home</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-projects" href="../pages/projects/personal.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Projects</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-contact" href="../pages/contact.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script src="../js/sticky-top-navbar.js"></script>
+
+        <div class="breadcrumb">
+        	<ul>
+        		<li><a href="../index.html">Home</a></li>
+        		<li><a href="../index/by_date/0.html">Posts</a></li>
+        		<li>Retrospective: Blogator v1.0</li>
+        	</ul>
+        </div>
+
+        <div class="content-h">
+            <div class="left-col">
+                <div class="post-content">
+
+<article>
+    <div>
+        <h1><span class="title">Retrospective: Blogator v1.0</span></h1>
+        <time datetime="2019-08-20">20 August 2019</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">Blogator</span>
+            <span class="tag">C++</span>
+            <span class="tag">Project</span>
+            <span class="tag">Retrospectives</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <div class="auto-toc">
+        	<h2>Table of Contents</h2>
+        	<ol>
+        		<li><a href="#heading_1">1. Design background</a></li>
+        		<li><a href="#heading_2">2. Parsing: regular expressions or string find?</a></li>
+        		<li><a href="#heading_3">3. Sanitising the summary fields</a></li>
+        		<li><a href="#heading_4">4. Adapting relative paths in from source HTML</a></li>
+        		<li><a href="#heading_5">5. Forgetting character encoding</a></li>
+        		<li><a href="#heading_6">6. Configuration</a></li>
+        		<li><ol>
+        			<li><a href="#heading_6_1">6.1 CLI arguments</a></li>
+        			<li><a href="#heading_6_2">6.2 Configuration file</a></li>
+        		</ol></li>
+        		<li><a href="#heading_7">7. Terminal display</a></li>
+        		<li><ol>
+        			<li><a href="#heading_7_1">7.1 Progress bars</a></li>
+        			<li><a href="#heading_7_2">7.2 Redirecting the error stream to the message buffer</a></li>
+        			<li><a href="#heading_7_3">7.3 Coloured Output</a></li>
+        		</ol></li>
+        		<li><a href="#heading_8">8. Final thoughts</a></li>
+        		<li><a href="#heading_9">9. Repository links</a></li>
+        	</ol>
+        </div>
+
+        <p><span class="summary">This post highlights some of the aspects which I either found interesting, could be improved upon, or turned out to be a problem during development of the first version of the Blogator static site generator.</span> In other words: this is just a curated selection of topics, not a report.</p>
+
+        <p>As for the result: you are looking at it. The entire bloging section of this site was generated with Blogator. &#128077;</p>
+
+        <h2 id="heading_1">1. Design background</h2>
+
+        <p>Just to set the stage a little bit and bring some context, the hard requirements were set as follows:</p>
+        <ul>
+            <li>As few dependencies as possible. Don't want to run this one day and find out it's broken because a 3rd party library/framework has a new API or is just not available anymore.</li>
+            <li>No Javascript in the output. It needs to be able to display everything and have working links when JS is disabled in the browser.</li>
+            <li>HTML-based for source material. I.e. all articles to be published can be written in plain HTML allowing a maximum of granular flexibility in their formatting.</li>
+        </ul>
+
+        <figure class="right half-width">
+            <img src="../source/2019/Blogator/Retrospective%201.0/template_idea.png" alt="template idea"/>
+            <figcaption>Fig.1 The template approach</figcaption>
+        </figure>
+
+        <p>At first, just collating the header/footer parts of the site to each of the articles seemed like a viable path to take. A simple page listing all articles as a list of hyperlinks could be generated as a 'master index' of sorts. But this raises a couple of issues:</p>
+
+        <ol style="list-style-type: lower-alpha;">
+            <li><span class="bold">Navigation:</span> How to go to the previous/next article without having to manually add that part in for each article.</li>
+            <li><span class="bold">Expandability:</span> How to allow navigation by arbitrary types in the future without huge rewrites of the code (authors, date, categories, ...).</li>
+        </ol>
+
+        <p>Both issues are solved by just using templates in which key parts of the articles (title, date, content, navigation, etc...) can be inserted on a per-article basis.</p>
+
+        <p>Eventually, after some development time, I settled with the following template files:</p>
+
+        <ul>
+            <li><span class="bold">Landing page:</span> or the start page of the blog,</li>
+            <li><span class="bold">Post:</span> to display each of the articles,</li>
+            <li><span class="bold">Index page:</span> lists the articles as customisable hyperlinked divs,</li>
+            <li><span class="bold">Index list page:</span> for category listings (such as year, author, tags) that links to a sub index for each,</li>
+            <li><span class="bold">Index entry:</span> or how the hyperlinked div for the article will look in the indices.</li>
+        </ul>
+
+        <p>...leading to an I/O file/folder outline of:</p>
+
+        <figure class="fill">
+            <img src="../source/2019/Blogator/Retrospective%201.0/files.png" alt="File and folder structure"/>
+            <figcaption>Fig.2 I/O file structure after many revisions</figcaption>
+        </figure>
+
+        <p>Extra index and index list templates can be added as "overrides" optionally allowing some flexibility of the design on a per-category basis (e.g.: 'tag_list.html', 'tag_index.html', etc...).</p>
+
+        <h2 id="heading_2">2. Parsing: regular expressions or string find?</h2>
+
+        <figure class="right half-width">
+            <a href="../source/2019/Blogator/Retrospective%201.0/template_fields.svg"><img src="../source/2019/Blogator/Retrospective%201.0/template_fields.svg" alt="template fields"/></a>
+            <figcaption>Fig.3 Template fields</figcaption>
+        </figure>
+
+        <p>In order to help create a sort of 'master' index of all the articles some information from them need to be parsed.</p>
+
+        <p>Aside from the obvious fields (title, date stamp), others are needed for categorising the articles (tags and authors) as well as pointing out what text can be used as summary for the article entries in any indices created.</p>
+
+        <p>Parsing the key texts need not be difficult: a plain text-search that finds the encompassing html tags (i.e. getting the start-end indices within the string) and lifts any text found between them should do the trick assuming the source HTML is correct. For example:</p>
+
+<div class="code-wrap">
+<code class="block cpp">std::string from = "class=\"title\"&gt;";
+std::string to   = "&lt;&#47;";
+std::string content;
+
+auto i_begin = str.find( from );
+
+if( i_begin != std::string::npos ) {
+    auto range_begin = i_begin + from.length();
+    auto i_end       = str.find( to, range_begin );
+    if( i_end != std::string::npos ) {
+        auto range_end = i_end - ( i_begin + from.length() );
+        content = str.substr( range_begin, range_end );
+    }
+}</code>
+</div>
+        <span class="caption-bottom">Code.1 Finding a single (first match) title</span>
+
+        <p>For field types where there could be multiple declarations, such as 'tag', 'author' and 'summary', the code can be adapted to run until the end of the source HTML text whilst gathering the field contents as it finds them.</p>
+
+        <p>Another technique for field extraction is to use regular expressions. It does have significant drawback though as the performance hit is on the high side.</p>
+
+        <figure class="right half-width">
+            <a href="../source/2019/Blogator/Retrospective%201.0/rx_perf.png"><img src="../source/2019/Blogator/Retrospective%201.0/rx_perf.png" alt="regular expression perf results"/></a>
+            <figcaption>Fig.4 perf results</figcaption>
+        </figure>
+
+        <p>Running <code class="inline terminal">perf</code> confirms it (fig.4). The bulk of the load happens during the import of the templates where all insert positions are found using regular expressions</p>
+
+        <p>This is fine as there is a finite number of templates (5-11 max currently in v1.0b) with a finite number of insertion points in each.</p>
+
+        <p>Using the same method for parsing the articles whose count and lengths are not bound is not scalable (<span class="italic">side-note: the slowest part of regular expressions is the compilation</span>).</p>
+
+        <p>This is where markdown-based static generators are at a considerable advantage as parsing articles written in that format is easier in comparison (simpler syntax). HTML can cause many issues especially in the cases where formatting tags are mismatched, unclosed or malformed.</p>
+
+        <h2 id="heading_3">3. Sanitising the summary fields</h2>
+
+        <p>Speaking of issues... What if there are hyperlinks inside the content to be used within another hyperlink? i.e. a nested hyperlink. This is what happened with the summaries.</p>
+
+<div class="code-wrap">
+<code class="block html">&lt;a href=&quot;..&quot;&gt;
+    &lt;div&gt;
+        &lt;div class=summary&gt;
+            &lt;a href=&quot;..&quot;&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/a&gt;
+</code>
+</div>
+        <span class="caption-bottom">Code.2 Nested hyperlink in the summary of an index entry</span>
+
+        <p>In order to avoid that problem, all summaries must be checked for any hyperlinks as they are cached. Any found need to have their html <code class="inline">&lt;a ..&gt;&lt;/a&gt;</code> tags removed.</p>
+
+        <h2 id="heading_4">4. Adapting relative paths in from source HTML</h2>
+
+        <p>Here's the problem: a path is used inside a post pointing to a specific file inside the website directory sub-structure. The source post is located at:</p>
+<code class="block terminal">~/website/source/post1/post.html</code>
+        <p>The file being referenced by the path is:</p>
+<code class="block terminal">~/website/img/photos/file.jpg</code>
+        <p>The post, once processed by Blogator, will be located at:</p>
+<code class="block terminal">~/website/posts/1.html</code>
+
+        <p>There are 3 different approaches one can take to make sure the path is correctly pointing to the target file in the output post:</p>
+
+        <ol>
+            <li>use an absolute path based on the root of the site: <code class="inline terminal">/img/photos/file.jpg</code>,</li>
+            <li>use a relative path based on where the generated post will be at: <code class="inline terminal">../img/photos/file.jpg</code>,</li>
+            <li>use a relative path based on where the source is at (<code class="inline terminal">../../img/photos/file.jpg</code>) but then adapt it during output generation (<code class="inline terminal">../img/photos/file.jpg</code>).</li>
+        </ol>
+
+        <p>Option 1 doesn't require any particular processing. Option 2 puts the responsibility of working out the output's relative path on the operator which can lead to errors. Finally, option 3 can allow relative links but without the potential errors introduced by the manual conversion from option 2. Blogator thus got to support options 1 and 3.</p>
+
+        <p>Adapting relative paths is broken down into a number of steps:</p>
+
+        <ol>
+            <li><span class="bold">Finding &amp; Extracting:</span> The source HTML is loaded into memory and searched for any relative paths. Whenever one is found the line and character start/end positions is cached along with the relative path.</li>
+            <li><span class="bold">Adapting:</span> The path is adapted using C++'s <code class="inline terminal">std::filesystem::</code> functionality.
+<div class="code-wrap">
+<code class="block cpp">auto source_abs = ( source_file.parent_path() / rel_path ).lexically_normal();
+auto target_rel = source_abs.lexically_relative( target_file.parent_path() );
+</code>
+</div>
+            </li>
+            <li><span class="bold">Inserting:</span> During write to the output, when a cached start/end position is encountered, the adapted relative path is inserted instead of the original one.</li>
+            <li><span class="bold">Checking:</span> All cached relative paths are checked by looking if the target exists in the filesystem. If it doesn't then a message is pushed to the terminal display to inform the operator of that issue.</li>
+        </ol>
+
+        <h2 id="heading_5">5. Forgetting character encoding</h2>
+
+        <img src="../img/gifs/frustration.gif" alt="Frustration GIF" style="float: left; width: 113px; padding: 0.5em;"/>
+
+        <p>Ooh boy... This is what happens when the research &amp; design is rushed. Not having come across this particular problem before allowed some uninformed assumptions to be baked into the project. These assumptions boiled down to one really bad one: "<code class="inline terminal">std::string</code> should be fine handling HTML stuff."</p>
+
+        <p>Turns out: not really. Having come across the rather excellent <a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/">post by Joel Spolsky</a> it suddenly dawned on me halfway in the implementation that I had overlooked a rather large and important topic...</p>
+
+        <p>Converting and doing everything using wide characters internally inside the software and then reconverting to single-byte char on the output when you can is a better approach for cross-language and platform compatibility. The only downside to that aside from the conversion overhead is the fact that it doubles the memory requirement of any cached string (1 byte &#8594; 2 bytes per character).</p>
+
+        <p>Oh well, live and learn. It can be implemented for version 2.0 during the re-write if it gets to that. For the moment UTF-8 on the target platform (Linux) works fine which is what was originally needed.</p>
+
+        <h2 id="heading_6">6. Configuration</h2>
+
+        <h3 id="heading_6_1">6.1 CLI arguments</h3>
+
+        <p>In order to pass run-time arguments to Blogator a little backend magic is required. Using GNU's <a href="https://www.gnu.org/software/libc/manual/html_node/Getopt.html#Getopt"><code class="inline terminal">getopt</code></a> or <a href="https://www.gnu.org/software/libc/manual/html_node/Argp.html#Argp"><code class="inline terminal">argp</code></a> was considered but it adds an external dependency (albeit included in Linux distros). Since the number of arguments to be parsed via the command line is limited, implementing a small custom parser isn't much work and leads to a more portable solution.</p>
+
+        <p>All that is needed really is:</p>
+        <ul>
+            <li>help option to show the available command line options and the version of the software,</li>
+            <li>debug option to show extra messages to help sort out errors,</li>
+            <li>path of site when different than the current directory where Blogator is run from,</li>
+            <li>and a way to create a default configuration file.</li>
+        </ul>
+
+        <figure class="right half-width">
+            <img src="../source/2019/Blogator/Retrospective%201.0/cli_help.png" alt="CLI help option"/>
+            <figcaption>Fig.5 CLI help output</figcaption>
+        </figure>
+
+        <p>The implementation just uses a map of of the argument flags and their respective enums to check the flags given via the command line by the operator. Then a series of conditional statements making use of the enums controls the activation of the required functionalities and arguments passed (<code class="inline terminal">blogator::cli::ArgParser</code>).</p>
+
+        <h3 id="heading_6_2">6.2 Configuration file</h3>
+
+        <p>As the CLI interface options can easily get cluttered, any of the more website-specific options are pushed on a configuration file instead.</p>
+
+        <p>In the implementation, each line is processed using regular expressions that identify if the format is:</p>
+        <ol>
+            <li>A comment. e.g.:
+                <code class="block terminal">//This is a comment line</code>
+            </li>
+            <li>An option with a boolean variable. e.g.:
+                <code class="block terminal">build-future = false;</code>
+            </li>
+            <li>An option with an integer variable. e.g.:
+                <code class="block terminal">items-per-page = 10;</code>
+            </li>
+            <li>An option with a string variable. e.g.:
+                <code class="block terminal">breadcrumb-landing-page = "Home";</code>
+            </li>
+            <li>An option with an array of string variables. e.g.:
+                <code class="block terminal">landing-featured = [ "post_1/post.html", "post_4/post.html" ];</code>
+            </li>
+        </ol>
+
+        <p>Anything else (or badly formatted line) is identified as an unreadable line to the operator.</p>
+
+        <p>For each options lifted from the configuration file, the option's name and its variable(s) are stored in a lookup map along with the line number (for error reporting purposes) and an enum describing the value type.</p>
+
+        <figure class="half-width center">
+            <img src="../source/2019/Blogator/Retrospective%201.0/cfg_parsing.svg" alt="Config argument parsing" />
+            <figcaption>Fig. Configuration line parsing into key-value pair</figcaption>
+        </figure>
+
+        <p>After that it's just a question of iterating over all the supported keys and checking them against the lookup map. If there's a match then value conversion based on the type is done and the result stored in the <code class="inline terminal">blogator::dto::Options</code> structure.</p>
+
+        <h2 id="heading_7">7. Terminal display</h2>
+
+        <figure class="img-frame right half-width">
+            <a href="../source/2019/Blogator/Retrospective%201.0/terminal.png"><img src="../source/2019/Blogator/Retrospective%201.0/terminal.png" alt="Console screenshot"/></a>
+            <figcaption>Fig.6 Console money shot</figcaption>
+        </figure>
+
+        <p>A progress bar is decidedly a better way to give the operator (or 'user') some feedback on the progress of a process. Messages disembodied from the originating context, usually coming from deep within the bowls of the code, are of little use unless they give actionable information. Thus, a nice graphic representation of the amount left to do is preferred here. But then, when things do go wrong, messages are also needed.</p>
+
+        <p>This is the quandary that led to a buffered message approach. One of the issues of displaying <a href="https://en.wikipedia.org/wiki/Ascii">ASCII</a> based graphics in the terminal is that writing messages around it requires keeping track of the number of lines to move the cursor back and forth for either (a) updating the progress bar or (b) adding message lines after where the last one that was writen. I.e.: it sucks.</p>
+
+<div class="code-wrap">
+<code class="block terminal">[=========================                       ] 50%
+
+message 1 ....
+message 2 ....
+message 3 ....
+</code>
+</div>
+        <span class="caption-bottom">Fig.7 progress bar + messages: a cursor workout</span>
+
+        <p>Of course I could be using <a href="https://www.gnu.org/software/ncurses/">nCurse</a> if not for that pesky little little requirement of keeping dependencies to the strict minimum. So a little out-of-the-box thinking is required...</p>
+
+        <h3 id="heading_7_1">7.1 Progress bars</h3>
+
+        <p>Terminal progress bars in a basic form essentially write an entire line for the current progress state then return the cursor at the beginning of said line for the next one to be written over it.</p>
+
+        <p>The only thing that differs from most implementations of this is that the terminal cursor resets back 1 line above the bar in order to display a progress state as well as the graphical representation of said state. I.e.: it tells the operator what particular section or file is being processed during each iteration of the progress.</p>
+
+        <figure class="half-width center">
+            <img src="../source/2019/Blogator/Retrospective%201.0/progress_bar.gif" alt="Progress bar GIF" />
+            <figcaption>Fig.8 Info + progress bar update in action across 2 lines</figcaption>
+        </figure>
+
+        <h3 id="heading_7_2">7.2 Redirecting the error stream to the message buffer</h3>
+
+        <p>In C++ the lifecycle of resources is managed with <a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a> which is freakin' awesome. This means that things created during the construction of an object are auto-magically cleared out of memory on destruction. That is so long as we keep to the reasonably recent C++ standards (C++11 or above) and not some university level bastardisation of C and C++ (a.k.a. "C but with objects" &#128530;). It also means that we can divert an output stream on startup and put it back in place at the end automatically.</p>
+
+        <p>In our case, the error stream <code class="inline cpp">std::cerr</code> is redirected to a <code class="inline cpp">std::stringstream</code>.</p>
+
+        <p>This is used to catch anything sent to the <code class="inline cpp">std::cerr</code> buffer in order to not mess up the display whilst progress and other messages are being outputted. The custom string stream buffer is flushed out to the display at the end of the program's lifecycle.</p>
+
+<div class="code-wrap">
+<code class="block cpp">class MsgDisplay {
+    public:
+        MsgDisplay() :
+            _old_cerr_buffer( std::cerr.rdbuf( _err_buffer.rdbuf() ) )
+        {};
+
+        ~MsgDisplay() {
+            auto cerrors = _err_buffer.str();
+
+            if( !cerrors.empty() )
+                std::cout << _err_buffer.str() << std::endl;
+
+            std::cerr.rdbuf( _old_cerr_buffer );
+        }
+
+    private:
+        std::stringstream  _err_buffer;
+        std::streambuf    *_old_cerr_buffer;
+
+};
+</code>
+</div>
+        <span class="caption-bottom">Code.3 Error stream redirection and output on destruction</span>
+
+        <p>One assumption (a rather big one!) is that the errors sent to that stream will be quite small in number. A potential issue with this is the case of an error loop that feeds the buffer with the same error over and over again. Good methodical error control where exceptions are caught and dealt with appropriately (particularly in loops) is always judicious.</p>
+
+        <p>As the program is not massive nor multi-threaded I absconded from constantly keeping check on that buffer. That being said if I had to do it all over again I would either have put the whole display on its own separate thread and added a monitoring loop or just redirected the stream to a log file (something that I might very well do in a future update).</p>
+
+        <h3 id="heading_7_3">7.3 Coloured Output</h3>
+
+        <p>Colouring text output in the terminal can be done with <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#Colors">ANSI escape codes</a>. In itself it is neither particularly challenging nor novel.</p>
+
+        <p>Inserting the escape codes can be a bit fidly and the code inside the printing methods can soon become littered with them. Thus a more standardised approach was devised using template meta-programing. The trick here was to allow both colour and decorations (e.g.: underline) to be added cleanly and clearly. So with a bit of enum and recursion magic we get this:</p>
+
+<div class="code-wrap">
+<code class="block cpp">enum class FGColour {
+    BLACK = 30, RED = 31, GREEN = 32, YELLOW = 33, BLUE = 34, MAGENTA = 35, CYAN = 36, WHITE = 37
+};
+
+enum class Decoration {
+    BOLD = 1, FAINT = 2, ITALIC = 3, UNDERLINE = 4
+};
+
+template&lt;FGColour colour&gt;
+    void format_( std::stringstream &amp;ss ) {}; //Stops recursion
+
+template&lt;FGColour colour, Decoration head, Decoration ...tail&gt;
+    void format_( std::stringstream &amp;ss )
+{
+        ss &lt;&lt; ';' &lt;&lt; static_cast&lt;int&gt;( head );
+        format_&lt;colour, tail...&gt;( ss );
+};
+
+template&lt;FGColour colour, Decoration ...args&gt;
+    std::string format( const std::string &amp;str )
+{
+        std::stringstream ss;
+        ss &lt;&lt; &quot;\33[&quot; &lt;&lt; static_cast&lt;int&gt;( colour );
+        format_&lt;colour, args...&gt;( ss );
+        ss &lt;&lt; &quot;m&quot; &lt;&lt; str &lt;&lt; &quot;\033[0m&quot;;
+        return ss.str();
+};
+</code>
+</div>
+        <span class="caption-bottom">Code.4 Adding colours and decorations using template meta-programming recursion</span>
+
+        <p>Using this approach also allows for chainning decorations to the string with minimal code duplication and a clean method interface. For example:</p>
+
+<div class="code-wrap">
+<code class="block cpp">format&lt;FGColour::RED, Decoration::BOLD, Decoration::UNDERLINE&gt;( "some string to format" );</code>
+</div>
+        <span class="caption-bottom">Code.5 Formatting some text red, bold and underlined.</span>
+
+        <p>The full implementation is available in <a href="../pages/projects/personal.html">EADlib</a>'s CLI namespace (<code>eadlib::cli::</code>).</p>
+
+        <h2 id="heading_8">8. Final thoughts</h2>
+
+        <p>Originally I created Blogator to help generate posts for both my little site and a local association's who I offered my services to. As it enabled me to do both to satisfaction, it can be put down as a success in that sense.</p>
+
+        <p>But, as with most things, there is both good and bad. With better research &amp; design at the beginning (given more time), implementation and future maintainability could've been much better. In the end it is a viable product with its own flaws but it also was a great way to explore and learn.</p>
+
+        <h5>The bad</h5>
+
+        <ul>
+            <li>Still many areas where improvement could be made especially in the code architecture (rushed design stage = bad!).</li>
+            <li>The whole character code issue puts a damper on UTF-16.</li>
+        </ul>
+
+        <h5>The good</h5>
+        <ul>
+            <li>Runs pretty darn fast to compile this site on an Ivy bridge i7 3770K from 2012.</li>
+            <li>At just under 900kB compiled, Blogator could easily be stored on a double density floppy which is more than can be said about some other static site generator solutions...</li>
+            <li>There are no dependencies aside from C++ Standard Template Library's.</li>
+        </ul>
+
+        <h5>Possible future ideas for improvement</h5>
+
+        <ul>
+            <li>RSS description using the index entry's summary.</li>
+            <li>Code syntax highlighter.</li>
+            <li>Tags inside posts converted to hyperlinks to their respective category indices.</li>
+            <li>Tags with icon mapping injection (icons alongside tag names).</li>
+            <li>Auto Table-of-Contents based on headings inside post.</li>
+        </ul>
+
+        <h2 id="heading_9">9. Repository links</h2>
+
+        <div class="flex-table">
+            <div class="flex-table-row">
+                <div class="flex-cell flex-table-heading">
+                    Bitbucket Repository (main)
+                </div>
+                <div class="flex-cell center-align">
+                    <a href="https://bitbucket.org/An7ar35/blogator" rel="noreferrer" target="_blank">
+                        <img class="link-icon" src="../img/logos/bitbucket-original.svg">
+                    </a>
+                </div>
+            </div>
+            <div class="flex-table-row">
+                <div class="flex-cell flex-table-heading">
+                    Github Repository (mirror)
+                </div>
+                <div class="flex-cell center-align">
+                    <a href="https://github.com/An7ar35/blogator" rel="noreferrer" target="_blank">
+                        <img class="link-icon" src="../img/logos/github-original.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="page-nav">
+                	<ul>
+                		<li class="first"><a href="1.html">|&#9664;</a></li>
+                		<li class="prev"><a rel="prev" href="10.html">&#9664;</a></li>
+                		<li class="curr">11 / 29</li>
+                		<li class="next"><a rel="next" href="12.html">&#9654;</a></li>
+                		<li class="last"><a href="29.html">&#9654;|</a></li>
+                	</ul>
+                </div>
+
+                <div>
+                    <h2>By Date</h2>
+                    <div class="index-pane-dates">
+                    		<ol class="tree">
+                    			<li><label for="checkbox_2021">2021</label><input type="checkbox" id="checkbox_2021"/>
+                    				<ol>
+                    					<li><label for="checkbox_202108">August</label><input type="checkbox" id="checkbox_202108"/>
+                    						<ol>
+                    							<li>12 <a href="29.html">Binary Search Algorithm</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202107">July</label><input type="checkbox" id="checkbox_202107"/>
+                    						<ol>
+                    							<li>19 <a href="28.html">Retrospective: cTune v1.0</a></li>
+                    							<li>10 <a href="27.html">Circular Buffer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202106">June</label><input type="checkbox" id="checkbox_202106"/>
+                    						<ol>
+                    							<li>30 <a href="26.html">cTune v1.0: Part 3 - Frontstage</a></li>
+                    							<li>25 <a href="25.html">cTune v1.0: Part 2 - Backstage</a></li>
+                    							<li>16 <a href="24.html">cTune v1.0: Part 1 - Design</a></li>
+                    							<li>15 <a href="23.html">cTune v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2020">2020</label><input type="checkbox" id="checkbox_2020"/>
+                    				<ol>
+                    					<li><label for="checkbox_202006">June</label><input type="checkbox" id="checkbox_202006"/>
+                    						<ol>
+                    							<li>16 <a href="22.html">Indexed search with Javascript</a></li>
+                    							<li>03 <a href="21.html">Character encoding primer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202005">May</label><input type="checkbox" id="checkbox_202005"/>
+                    						<ol>
+                    							<li>27 <a href="20.html">Blogator v1.3 released</a></li>
+                    							<li>07 <a href="19.html">Blogator v1.2 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202004">April</label><input type="checkbox" id="checkbox_202004"/>
+                    						<ol>
+                    							<li>22 <a href="18.html">HDD diagnosis and recovery tools</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202003">March</label><input type="checkbox" id="checkbox_202003"/>
+                    						<ol>
+                    							<li>27 <a href="17.html">Coronavirus info and form fetcher script for the French gov. page</a></li>
+                    							<li>24 <a href="16.html">A RaspberryPi Git server</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202002">February</label><input type="checkbox" id="checkbox_202002"/>
+                    						<ol>
+                    							<li>23 <a href="15.html">CMake Variable Injection</a></li>
+                    							<li>14 <a href="14.html">Android upgrade woes</a></li>
+                    							<li>11 <a href="13.html">Basics of the Linux terminal and tools</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2019">2019</label><input type="checkbox" checked  id="checkbox_2019"/>
+                    				<ol>
+                    					<li><label for="checkbox_201910">October</label><input type="checkbox" id="checkbox_201910"/>
+                    						<ol>
+                    							<li>10 <a href="12.html">C++ Resource Acquisition Is Initialization (RAII)</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201908">August</label><input type="checkbox" checked  id="checkbox_201908"/>
+                    						<ol>
+                    							<li>20 <a class="current-post" href="11.html">Retrospective: Blogator v1.0</a></li>
+                    							<li>13 <a href="10.html">Blogator v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201901">January</label><input type="checkbox" id="checkbox_201901"/>
+                    						<ol>
+                    							<li>06 <a href="9.html">Terminal plot-graphs with braille characters</a></li>
+                    							<li>02 <a href="8.html">Creating bitmaps using braille characters</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2018">2018</label><input type="checkbox" id="checkbox_2018"/>
+                    				<ol>
+                    					<li><label for="checkbox_201811">November</label><input type="checkbox" id="checkbox_201811"/>
+                    						<ol>
+                    							<li>30 <a href="7.html">Maximum value in a Sliding Window</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201809">September</label><input type="checkbox" id="checkbox_201809"/>
+                    						<ol>
+                    							<li>11 <a href="6.html">C++ Raw and Smart Pointers</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201808">August</label><input type="checkbox" id="checkbox_201808"/>
+                    						<ol>
+                    							<li>27 <a href="5.html">Design Pattern: Object Pool</a></li>
+                    							<li>14 <a href="4.html">Design Pattern: Singleton</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201803">March</label><input type="checkbox" id="checkbox_201803"/>
+                    						<ol>
+                    							<li>18 <a href="3.html">Python package based app structure</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201801">January</label><input type="checkbox" id="checkbox_201801"/>
+                    						<ol>
+                    							<li>27 <a href="2.html">Working out coordinates using distances</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2017">2017</label><input type="checkbox" id="checkbox_2017"/>
+                    				<ol>
+                    					<li><label for="checkbox_201712">December</label><input type="checkbox" id="checkbox_201712"/>
+                    						<ol>
+                    							<li>30 <a href="1.html">Arch Linux on a MacBook Pro 2015</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    		</ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>
+                <div>
+                    <span class="footer-avatar"><img src="../img/kitteh.jpg" alt="logo"></span>
+                    An7ar35, 2018-21
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

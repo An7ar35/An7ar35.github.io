@@ -1,0 +1,417 @@
+<!-- Generated with Blogator 1.3.2 (https://an7ar35.bitbucket.io) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' 'unsafe-eval';">
+    <title>EAD | Writings</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/blogator/main.css" />
+</head>
+    <body>
+        <div class="header">
+            <div><img src="../img/tree-left.svg" alt="left tree"/></div>
+            <div>
+                <div class="site-title">Es' corner</div>
+                <div class="site-micro-title">Just another keyboard-enthusiastic hominid.</div>
+            </div>
+            <div><img src="../img/tree-right.svg" alt="right tree"/></div>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li class="active">
+                    <a class="nav-writings" href="../index.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Home</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-projects" href="../pages/projects/personal.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Projects</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-contact" href="../pages/contact.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script src="../js/sticky-top-navbar.js"></script>
+
+        <div class="breadcrumb">
+        	<ul>
+        		<li><a href="../index.html">Home</a></li>
+        		<li><a href="../index/by_date/0.html">Posts</a></li>
+        		<li>Retrospective: cTune v1.0</li>
+        	</ul>
+        </div>
+
+        <div class="content-h">
+            <div class="left-col">
+                <div class="post-content">
+
+<article>
+    <div>
+        <h1><span class="title">Retrospective: cTune v1.0</span></h1>
+        <time datetime="2021-07-19">19 July 2021</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">cTune</span>
+            <span class="tag">C99</span>
+            <span class="tag">Project</span>
+            <span class="tag">Retrospectives</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <div class="auto-toc">
+        	<h2>Table of Contents</h2>
+        	<ol>
+        		<li><a href="#heading_1">1. Foreword</a></li>
+        		<li><a href="#heading_2">2. Thoughts and impressions</a></li>
+        		<li><ol>
+        			<li><a href="#heading_2_1">2.1 C++ to C</a></li>
+        			<li><a href="#heading_2_2">2.2 Adapting to C</a></li>
+        			<li><a href="#heading_2_3">2.3 Libraries</a></li>
+        			<li><a href="#heading_2_4">2.4 Building cTune</a></li>
+        		</ol></li>
+        		<li><a href="#heading_3">3. C debugging</a></li>
+        		<li><a href="#heading_4">4. Ideas for future versions</a></li>
+        		<li><ol>
+        			<li><a href="#heading_4_1">4.1 Minor</a></li>
+        			<li><a href="#heading_4_2">4.2 Major</a></li>
+        			</ol></li>
+        	</ol>
+        </div>
+
+        <p><span class="summary"></span></p>
+
+        <p><span class="summary">This post looks back at the development of <code class="inline terminal">ctune</code>, lessons learned along the way and possible functionalities that could be implemented in the future.</span></p>
+
+        <div class="flex-table">
+            <div class="flex-table-row">
+                <div class="flex-cell flex-table-heading">
+                    Github Repository
+                </div>
+                <div class="flex-cell center-align">
+                    <a href="https://github.com/An7ar35/ctune" rel="noreferrer" target="_blank">
+                        <img class="link-icon" src="../img/logos/github-original.svg" alt="Github icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="heading_1">1. Foreword</h2>
+
+        <p>When jumping into new things there is one truism; you don't know until you do. This project exemplified that for me as not only did I not know C to start with, but the vast majority of the functionalities were alien too. The only exception was perhaps logging and file IO. But, if you want to learn more you can't get too comfortable...</p>
+
+        <p>From this project I gained an appreciation of the pros and cons of the C language as well as a deeper appreciation for many things taken for granted in modern development (frameworks and libraries aplenty) from having to implement a fair amount of said things from scratch.</p>
+
+        <h2 id="heading_2">2. Thoughts and impressions</h2>
+
+        <h3 id="heading_2_1">2.1 C++ to C</h3>
+
+        <p>I came into this project having already built a few projects in C++ (11+) and have gotten comfortable with it. Well, as much as one can with a <q>everything including the kitchen sink</q> language that gives the programmer a near endless list of how to approach a problem (for better or for worst - let's be honest here).</p>
+
+        <p>C++ essentially makes zero attempts at stopping you writing horrendous and unsafe code but gives you the tools to not do so. It assumes that you know what you are doing, which is great, but it does come at the cost of a near endless supply of foot-guns. Unless you are very diligent in keeping to a well defined subset of the language and are consistent in your approach throughout a project, it can become an absolute cluster-fuck very quickly.</p>
+
+        <p>To me, C is like being dropped in a pit of raw materials along with a tiny toolbox. Everything that I took for granted in higher level languages is now either non-existent or incredibly basic. Most things end up having to be implemented from scratch (good for learning, bad for time management) and everything needs to be manually managed to its nth degree (memory leaks ahoy!).</p>
+
+        <p>What was missed:</p>
+        <ul>
+            <li>real scoped enums</li>
+            <li>actual namespaces</li>
+            <li>templates (this one is a bit controversial but for creating ADTs and ADSs it's pretty handy!),</li>
+            <li>No Standard Template Library</li>
+            <li>RAII (manually freeing heap allocated stuff gets old pretty quickly!)</li>
+        </ul>
+
+        <h3 id="heading_2_2">2.2 Adapting to C</h3>
+
+        <p>In order to go around the new-found limitations some compromises had to be made.</p>
+
+        <p>Since there are no templates, void pointers (shudders...) were used which were then cast into the expected type. Not the greatest thing to do admittedly since any pretence of type safety goes out the window and <code class="inline">void *</code> is not exactly descriptive in a method signature.</p>
+
+        <p>No 'RAII' auto-cleaning of resources so everything allocated on the heap had to be manually freed. <a href="https://www.valgrind.org/" target="_blank" rel="noreferrer">Valgrind</a> was used regularly to find memory leaks so that they could be dealt with wherever possible... Some could not be fully plugged especially in the case of ncurses (it's normal and <a href="https://invisible-island.net/ncurses/ncurses.faq.html#config_leaks" rel="noreferrer" target="_blank">documented</a>). In any case any that ate up memory over time were plugged. The rest get cleaned up by the kernel when the application terminates anyway so it is less of a critical issue.</p>
+
+        <p>Error control became an item of concern rapidly as methods were becoming littered with resource cleaning code based on where possible error states were detected. This makes the entire thing a hell of a lot less readable and, thus, maintainable. So GOTOs, which are mostly considered evil (?!), were used as a conditional jump statement to the end of the method where all the cleaning up of previously allocated resources and appropriate return could be made. Doing this actually makes the happy path code a little clearer and more condensed.</p>
+
+        <p>Namespaces were emulated by aggregating the namespaces into the method and struct names. E.g.: <code class="inline">ctune_UI_Dialog</code>. I didn't particularly enjoy doing it this way but as it was the only method I could come up that distinctly indicated where a struct/method could be found within the source hierarchy...</p>
+
+        <h3 id="heading_2_3">2.3 Libraries</h3>
+
+        <p>Having had rocky experiences with Windows dependencies in the past has made me generally cautious in using anything 3<sup>rd</sup> party in code even if, when I switched to Linux, it made all these problems go away for the most part.</p>
+
+        <p>The biggest issues when dealing with 3<sup>rd</sup> parties really come down to documentation. These are my 6 identified categories:</p>
+
+        <ul>
+            <li><b>Awesome:</b> everything is there; up-to-date API, explanations, model diagrams, common examples. It aims to not waste anytime to get the reader completely clued-in.</li>
+            <li><b>Old school:</b> this mostly applies to those POSIX compliant libraries made last century with a battle-tested and very long track record. The API documentation usually covers all functionalities well but the way it's written assumes prior understanding of the internal model used which may not always be present in the reader. It's still pretty good and should be the absolute bare minimum to aim for really in my opinion.</li>
+            <li><b>Out-of-date:</b> when someone forgot to regenerate the documentations with the latest changes (Doxygen) or the model changed in the code but the docs were not updated to reflect this. Can easily overlap with the 'Crap' category.</li>
+            <li><b>Crap:</b> usually the result of an un-intuitive API, ambiguous method names along with a "code-is-documentation" approach.</li>
+            <li><b>Sparse:</b> incomplete or un-comprehensive documentation which will require significant time nearly the same amount of time as if there were no documentation available.</li>
+            <li><b>Absent:</b> By default the only way to even get clued in, aside from trying out stuff randomly until it gels, is to either scour the inter-web for that elusive up-to-date tutorial blog article or minimal code posted on a archived forum post.</li>
+        </ul>
+
+        <p>Thankfully, the libraries used in cTune mostly fell on the "Old school" category but I still had to go find some more comprehensive examples and explanation as everything audio-related in the development was pretty new to me. More diagrams are always appreciated though.</p>
+
+        <h3 id="heading_2_4">2.4 Building cTune</h3>
+
+        <figure class="center fill">
+            <a href="../source/2021/cTune/Retrospective%201.0/figures/ctune0.1.0.png"><img src="../source/2021/cTune/Retrospective%201.0/figures/ctune0.1.0.png" alt="ctune v0.1" /></a>
+            <figcaption>Fig.1 cTune 0.1.0a</figcaption>
+        </figure>
+
+        <p>As there were quite a few things that were bran new to me for this project it took a little longer than expected. Learning and figuring out things can be a bit of a time sink but worth it in the end as concepts can carry over other projects even if the language is different. For example, I had already in the past made a couple of logger engines, albeit single threaded, and that help speed things along when it was time to design and make cTune's logger library.</p>
+
+        <div class="comment-box">
+            <p>After having built a few projects there is some knowledge beyond a language or framework that carries over well from one project to the next:</p>
+            <ul>
+                <li>Good CS fundamentals (basic datastructures and the like)</li>
+                <li>Having a structured approach to new topics</li>
+                <li>Being able to take a problem space and break it down into well defined components,</li>
+                <li>Ability to recognise the same patterns under different circumstances,</li>
+                <li>Translating real-world requirements into usable APIs and systems,</li>
+                <li>And of course, sharp web-searching skills.</li>
+            </ul>
+
+            <p>Everything else is just a question of getting to grips with the tool-of-the-moment (C, Java, JS, or whatever language/framework is hot shit atm) and, more importantly, knowing which may serve the end goal of the project best. Obviously, for the latter, the more you know the better informed that decision will be. - <q>If all you know is a ${HAMMER}, everything looks like a ${NAIL}.</q> as the adage goes...</p>
+        </div>
+
+        <p>I've been meaning to do something with <a href="https://invisible-island.net/ncurses/" rel="noreferrer" target="_blank">ncurses</a> but never got round to it until now. Although painful, implementing UI widgets from scratch was a enlightening experience and pretty fun once the <b>ScrollBar</b> worked in particular. Emulating an interactive keyboard-driven GUI in a text environment is a interesting challenge.</p>
+
+        <p>The plugin system was particularly compelling not only on a conceptual level but also implementation-wise. Being able to dynamically load library object files and execute the code therein opens up a whole new realm of possibilities. <i>10/10 Would do it again!</i></p>
+
+        <p>The most challenging aspect was getting <a href="https://ffmpeg.org/" rel="noreferrer" target="_blank">ffmpeg</a> and a sound server to play well together and get some sound out of the speakers without it being garbled. That required a lot of comprehensive reading on the how and what of PCM data, formats, codecs, AV streams and their working relationships. It's no small topic but it is a central feature in cTune so it had to be done.</p>
+
+        <div class="comment-box">
+            <p>Developing a complete application is a lot of work and not always sunshine and candy. But getting to that moment near the end where all the different parts start to come together and work as intended per the original plan is incredibly gratifying.</p>
+        </div>
+
+        <p>The end result doesn't look too bad and, for what it is, does its job well.</p>
+
+        <figure class="center fill">
+            <a href="../source/2021/cTune/Retrospective%201.0/figures/ctune1.0.2.png"><img src="../source/2021/cTune/Retrospective%201.0/figures/ctune1.0.2.png" alt="ctune v1.0.2" /></a>
+            <figcaption>Fig.2 cTune 1.0.2</figcaption>
+        </figure>
+
+        <h2 id="heading_3">3. C debugging</h2>
+
+        <p>Debugging for C is similar to C++ so GDB and <a href="https://www.jetbrains.com/clion/" rel="noreferrer" target="_blank">CLion</a>'s nice and intuitive debugging interface was a highlight during development. Nearly all the debugging was for 3 classes of bugs:</p>
+        <ol>
+            <li>Pointers<ul>
+                <li>Bad pointers due to forgetting to initialise to NULL or resetting them after a <code class="inline">free(..)</code> operation,
+                <li>Memory leaks mostly due to forgetfulness in freeing resources (mea culpa!),</li>
+            </ul></li>
+            <li>Off by 1 errors - mostly occurring with <code class="inline">char *</code> array access,</li>
+            <li><code class="inline">strlen(..)</code> based - not always because of a direct call but an indirect one done by some other C function (like <code class="inline">snprintf</code>).</li>
+        </ol>
+
+        <p>One annoyance that drove me to finally learn how to deal with <i>coredumps</i> was that <a href="https://www.jetbrains.com/clion/" rel="noreferrer" target="_blank">CLion</a>'s "debug" didn't work once <a href="https://invisible-island.net/ncurses/" rel="noreferrer" target="_blank">ncurses</a> was included. When running debug the ncurses window cannot output to CLion's embedded terminal.</p>
+
+        <div class="information-box">
+            <p><b>Linux/CLion coredumps</b></p>
+            <p>In the terminal:</p>
+            <ul>
+                <li><code class="inline terminal">sudo zstd -d /var/lib/systemd/coredump/${COREDUMP}.zst -o ~/coredump</code></li>
+                <li><code class="inline terminal">sudo chmod 777 ~/coredump</code></li>
+            </ul>
+            <p>In CLion: (once) add core-dump configuration.</p>
+            <figure class="center fill">
+                <a href="../source/2021/cTune/Retrospective%201.0/figures/coredump.png"><img src="../source/2021/cTune/Retrospective%201.0/figures/coredump.png" alt="Core Dump Configuration" /></a>
+                <figcaption>Adding a core-dump configuration</figcaption>
+            </figure>
+            <p>Choose the appropriate <q>Debugger</q>, for example "Bundled GDB". The <q>Core Dump</q> field should point to the decompressed core-dump file and the <q>Symbol File</q> should point to the compiled binary used when the crash happened (preferably a 'debug' version). Then it's just a matter of running the Core-Dump configuration which will use the CLion debugger interface.</p>
+        </div>
+
+        <h2 id="heading_4">4. Ideas for future versions</h2>
+
+        <p>These are mostly ideas for "nice to have" features that came up during and after development. Whether they ever get implemented is another question altogether but it opens up possible expansion paths for future versions of the application.</p>
+
+        <h3 id="heading_4_1">4.1 Minor</h3>
+
+        <dl>
+            <dt>Single session-ing</dt>
+            <dd>Deal with the event where another instance of <code class="inline">cTune</code> is already running. Possible handling could be to just print a message and abort the new instance or force kill previous instance. A command line argument could be added to force kill any other running session.</dd>
+
+            <dt>Favourites rolling backups</dt>
+            <dd>Backing up of previous bookmarked favourites in case the current session corrupts <code class="inline">ctune.fav</code>.</dd>
+        </dl>
+
+        <h3 id="heading_4_2">4.2 Major</h3>
+
+        <dl>
+            <dt>Playlists tab</dt>
+            <dd>
+                <figure class="right half-width">
+                    <a href="../source/2021/cTune/Retrospective%201.0/figures/playlists.svg"><img src="../source/2021/cTune/Retrospective%201.0/figures/playlists.svg" alt="Playlists wireframe" /></a>
+                    <figcaption>Wireframe.1 Playlists tab</figcaption>
+                </figure>
+                A complete new tab where playlists can be loaded and edited from '<code class="inline">.csv</code> files (see wireframe.1). A file browser dialog would need to be created to load these files into <code class="inline">cTune</code>. A pane-context based option menu would also be a good idea for the playlist and its item list to add/edit/remove/save changes.</dd>
+
+            <dt>Playlog viewer tab</dt>
+            <dd>A simple tab that just buffers and shows the same info as in the play-log (could behave like <code class="inline">tail</code>).</dd>
+
+            <dt>Settings viewer dialog</dt>
+            <dd>A dialog to view the currently used operator editable settings from the <code class="inline">ctune.cfg</code> file and indication on changed settings made during the running session (e.g.: the bookmarked favourites' ordering).</dd>
+        </dl>
+
+    </div>
+</article>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="page-nav">
+                	<ul>
+                		<li class="first"><a href="1.html">|&#9664;</a></li>
+                		<li class="prev"><a rel="prev" href="27.html">&#9664;</a></li>
+                		<li class="curr">28 / 29</li>
+                		<li class="next"><a rel="next" href="29.html">&#9654;</a></li>
+                		<li class="last"><a href="29.html">&#9654;|</a></li>
+                	</ul>
+                </div>
+
+                <div>
+                    <h2>By Date</h2>
+                    <div class="index-pane-dates">
+                    		<ol class="tree">
+                    			<li><label for="checkbox_2021">2021</label><input type="checkbox" checked  id="checkbox_2021"/>
+                    				<ol>
+                    					<li><label for="checkbox_202108">August</label><input type="checkbox" id="checkbox_202108"/>
+                    						<ol>
+                    							<li>12 <a href="29.html">Binary Search Algorithm</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202107">July</label><input type="checkbox" checked  id="checkbox_202107"/>
+                    						<ol>
+                    							<li>19 <a class="current-post" href="28.html">Retrospective: cTune v1.0</a></li>
+                    							<li>10 <a href="27.html">Circular Buffer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202106">June</label><input type="checkbox" id="checkbox_202106"/>
+                    						<ol>
+                    							<li>30 <a href="26.html">cTune v1.0: Part 3 - Frontstage</a></li>
+                    							<li>25 <a href="25.html">cTune v1.0: Part 2 - Backstage</a></li>
+                    							<li>16 <a href="24.html">cTune v1.0: Part 1 - Design</a></li>
+                    							<li>15 <a href="23.html">cTune v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2020">2020</label><input type="checkbox" id="checkbox_2020"/>
+                    				<ol>
+                    					<li><label for="checkbox_202006">June</label><input type="checkbox" id="checkbox_202006"/>
+                    						<ol>
+                    							<li>16 <a href="22.html">Indexed search with Javascript</a></li>
+                    							<li>03 <a href="21.html">Character encoding primer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202005">May</label><input type="checkbox" id="checkbox_202005"/>
+                    						<ol>
+                    							<li>27 <a href="20.html">Blogator v1.3 released</a></li>
+                    							<li>07 <a href="19.html">Blogator v1.2 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202004">April</label><input type="checkbox" id="checkbox_202004"/>
+                    						<ol>
+                    							<li>22 <a href="18.html">HDD diagnosis and recovery tools</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202003">March</label><input type="checkbox" id="checkbox_202003"/>
+                    						<ol>
+                    							<li>27 <a href="17.html">Coronavirus info and form fetcher script for the French gov. page</a></li>
+                    							<li>24 <a href="16.html">A RaspberryPi Git server</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202002">February</label><input type="checkbox" id="checkbox_202002"/>
+                    						<ol>
+                    							<li>23 <a href="15.html">CMake Variable Injection</a></li>
+                    							<li>14 <a href="14.html">Android upgrade woes</a></li>
+                    							<li>11 <a href="13.html">Basics of the Linux terminal and tools</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2019">2019</label><input type="checkbox" id="checkbox_2019"/>
+                    				<ol>
+                    					<li><label for="checkbox_201910">October</label><input type="checkbox" id="checkbox_201910"/>
+                    						<ol>
+                    							<li>10 <a href="12.html">C++ Resource Acquisition Is Initialization (RAII)</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201908">August</label><input type="checkbox" id="checkbox_201908"/>
+                    						<ol>
+                    							<li>20 <a href="11.html">Retrospective: Blogator v1.0</a></li>
+                    							<li>13 <a href="10.html">Blogator v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201901">January</label><input type="checkbox" id="checkbox_201901"/>
+                    						<ol>
+                    							<li>06 <a href="9.html">Terminal plot-graphs with braille characters</a></li>
+                    							<li>02 <a href="8.html">Creating bitmaps using braille characters</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2018">2018</label><input type="checkbox" id="checkbox_2018"/>
+                    				<ol>
+                    					<li><label for="checkbox_201811">November</label><input type="checkbox" id="checkbox_201811"/>
+                    						<ol>
+                    							<li>30 <a href="7.html">Maximum value in a Sliding Window</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201809">September</label><input type="checkbox" id="checkbox_201809"/>
+                    						<ol>
+                    							<li>11 <a href="6.html">C++ Raw and Smart Pointers</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201808">August</label><input type="checkbox" id="checkbox_201808"/>
+                    						<ol>
+                    							<li>27 <a href="5.html">Design Pattern: Object Pool</a></li>
+                    							<li>14 <a href="4.html">Design Pattern: Singleton</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201803">March</label><input type="checkbox" id="checkbox_201803"/>
+                    						<ol>
+                    							<li>18 <a href="3.html">Python package based app structure</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201801">January</label><input type="checkbox" id="checkbox_201801"/>
+                    						<ol>
+                    							<li>27 <a href="2.html">Working out coordinates using distances</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2017">2017</label><input type="checkbox" id="checkbox_2017"/>
+                    				<ol>
+                    					<li><label for="checkbox_201712">December</label><input type="checkbox" id="checkbox_201712"/>
+                    						<ol>
+                    							<li>30 <a href="1.html">Arch Linux on a MacBook Pro 2015</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    		</ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>
+                <div>
+                    <span class="footer-avatar"><img src="../img/kitteh.jpg" alt="logo"></span>
+                    An7ar35, 2018-21
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

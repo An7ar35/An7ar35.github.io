@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="225px" preserveAspectRatio="none" style="width:866px;height:225px;background:#FFFFFF;" version="1.1" viewBox="0 0 866 225" width="866px" zoomAndPan="magnify"><defs><filter height="300%" id="f5coifahc9qq9" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[e981733631c04f13db83c588d33f70a8]
+class JSON--><rect codeLine="3" fill="#FEFECE" filter="url(#f5coifahc9qq9)" height="204.8516" id="JSON" style="stroke:#A80036;stroke-width:1.5;" width="623" x="7" y="7"/><ellipse cx="299.25" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M295.6719,18.7813 L295.6719,16.5 L303.0625,16.5 L303.0625,18.7813 L300.5938,18.7813 L300.5938,27.2344 L303.0625,27.2344 L303.0625,29.5 L295.6719,29.5 L295.6719,27.2344 L298.1406,27.2344 L298.1406,18.7813 L295.6719,18.7813 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="30" x="319.75" y="27.1543">JSON</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="629" y1="39" y2="39"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="46" x="13" y="53.2104">Needed</text><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="8" x2="629" y1="59.8047" y2="59.8047"/><ellipse cx="18" cy="70.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="469" x="27" y="74.0151">parseToRadioStationList( const String_t * raw_str, Vector_t * radio_stations ) : bool</text><ellipse cx="18" cy="83.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="597" x="27" y="86.8198">parseToRadioStationListFrom( const String_t * raw_str, StationSrc_e src, Vector_t * radio_stations ) : bool</text><ellipse cx="18" cy="96.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="510" x="27" y="99.6245">parseRadioStationListToJSON( const String_t Vector_t * stations, String_t * json_str ) : bool</text><ellipse cx="18" cy="109.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="483" x="27" y="112.4292">parseToCategoryItemList( const String_t * raw_str, Vector_t * category_items ) : bool</text><ellipse cx="18" cy="122.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="469" x="27" y="125.2339">parseToClickCounter( const String_t * raw_str, ClickCounter_t * clk_counter ) : bool</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="629" y1="131.8281" y2="131.8281"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="53" x="13" y="146.0386">Optional</text><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:1.0,2.0;" x1="8" x2="629" y1="152.6328" y2="152.6328"/><ellipse cx="18" cy="163.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="422" x="27" y="166.8433">parseToServerStats( const String_t * raw_str, ServerStats_t * stats ) : bool</text><ellipse cx="18" cy="176.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="428" x="27" y="179.6479">parseToServerConfig( const String_t * raw_str, ServerConfig_t * cfg ) : bool</text><ellipse cx="18" cy="189.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="516" x="27" y="192.4526">parseToRadioStationVote( const String_t * raw_str, RadioStationVote_t * vote_state ) : bool</text><ellipse cx="18" cy="202.0469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="541" x="27" y="205.2573">parseToNewRadioStationRcv( const String_t * raw_str, NewRadioStation_t * new_station ) : bool</text><!--MD5=[4f4bf2ac6a9c81efc12444700651b921]
+class StationSrc_e--><rect codeLine="35" fill="#FEFECE" filter="url(#f5coifahc9qq9)" height="73.6094" id="StationSrc_e" style="stroke:#A80036;stroke-width:1.5;" width="188" x="664.5" y="72.5"/><ellipse cx="716.25" cy="88.5" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M720.3594,95 L712.6406,95 L712.6406,82 L720.3594,82 L720.3594,84.2813 L715.0938,84.2813 L715.0938,87 L719.8594,87 L719.8594,89.2813 L715.0938,89.2813 L715.0938,92.7344 L720.3594,92.7344 L720.3594,95 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="76" x="736.75" y="92.6543">StationSrc_e</text><line style="stroke:#A80036;stroke-width:1.5;" x1="665.5" x2="851.5" y1="104.5" y2="104.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="143" x="670.5" y="118.7104">STATIONSRC_LOCAL = 0,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="176" x="670.5" y="131.5151">STATIONSRC_RADIOBROWSER,</text><line style="stroke:#A80036;stroke-width:1.5;" x1="665.5" x2="851.5" y1="138.1094" y2="138.1094"/><!--MD5=[f62eb8251040c6d7b04bb0f1ff19bbd2]
+link JSON to StationSrc_e--><path codeLine="40" d="M630.02,109.5 C639.78,109.5 649.54,109.5 659.3,109.5 " fill="none" id="JSON-to-StationSrc_e" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="664.4,109.5,655.4,105.5,659.4,109.5,655.4,113.5,664.4,109.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[098d490db69c3080fa3b9c742fdc4719]
+@startuml
+'https://plantuml.com/class-diagram
+
+interface JSON {
+' - packField_str( const char * key, const char * val, char ** target ) : bool
+' - packField_bool( const char * key, const char * val, bool * target ) : bool
+' - packField_long( const char * key, const char * val, long * target ) : bool
+' - packField_ulong( const char * key, const char * val, ulong * target ) : bool
+' - packField_double( const char * key, const char * val, double * target ) : bool
+' - packField_enum( const char * key, const char * val, int enum_min, int enum_max, int * target ) : bool
+' ....
+' - packServerStats( String_t ServerStats_t * stats, const char * key, const char * val ) : bool
+' - packServerConfig( String_t ServerConfig_t * cfg, const char * key, const char * val ) : bool
+' - packStationInfo( String_t RadioStationInfo_t * rsi, const char * key, const char * val ) : bool
+' - packCategoryItem( String_t CategoryItem_t * cat_item, const char * key, const char * val ) : bool
+' - packClickCounter( String_t ClickCounter_t * clk_counter, const char * key, const char * val ) :  bool
+' - packRadioStationVote( String_t RadioStationVote_t * vote_state, const char * key, const char * val ) : bool
+' - packNewRadioStationRcv( String_t NewRadioStation_t * new_station, const char * key, const char * val ) : bool
+' - - - -
+    <b>Needed</b>
+    ....
+    + parseToRadioStationList( const String_t * raw_str, Vector_t * radio_stations ) : bool
+    + parseToRadioStationListFrom( const String_t * raw_str, StationSrc_e src, Vector_t * radio_stations ) : bool
+    + parseRadioStationListToJSON( const String_t Vector_t * stations, String_t * json_str ) : bool
+    + parseToCategoryItemList( const String_t * raw_str, Vector_t * category_items ) : bool
+    + parseToClickCounter( const String_t * raw_str, ClickCounter_t * clk_counter ) : bool
+    - - - -
+    <b>Optional</b>
+    ....
+    + parseToServerStats( const String_t * raw_str, ServerStats_t * stats ) : bool
+    + parseToServerConfig( const String_t * raw_str, ServerConfig_t * cfg ) : bool
+    + parseToRadioStationVote( const String_t * raw_str, RadioStationVote_t * vote_state ) : bool
+    + parseToNewRadioStationRcv( const String_t * raw_str, NewRadioStation_t * new_station ) : bool
+}
+
+enum StationSrc_e {
+    STATIONSRC_LOCAL = 0,
+    STATIONSRC_RADIOBROWSER,
+}
+
+JSON -right-> StationSrc_e
+
+@enduml
+
+@startuml
+
+interface JSON {
+    <b>Needed</b>
+    ....
+    + parseToRadioStationList( const String_t * raw_str, Vector_t * radio_stations ) : bool
+    + parseToRadioStationListFrom( const String_t * raw_str, StationSrc_e src, Vector_t * radio_stations ) : bool
+    + parseRadioStationListToJSON( const String_t Vector_t * stations, String_t * json_str ) : bool
+    + parseToCategoryItemList( const String_t * raw_str, Vector_t * category_items ) : bool
+    + parseToClickCounter( const String_t * raw_str, ClickCounter_t * clk_counter ) : bool
+    - - - -
+    <b>Optional</b>
+    ....
+    + parseToServerStats( const String_t * raw_str, ServerStats_t * stats ) : bool
+    + parseToServerConfig( const String_t * raw_str, ServerConfig_t * cfg ) : bool
+    + parseToRadioStationVote( const String_t * raw_str, RadioStationVote_t * vote_state ) : bool
+    + parseToNewRadioStationRcv( const String_t * raw_str, NewRadioStation_t * new_station ) : bool
+}
+
+enum StationSrc_e {
+    STATIONSRC_LOCAL = 0,
+    STATIONSRC_RADIOBROWSER,
+}
+
+JSON -right-> StationSrc_e
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

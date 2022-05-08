@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="575px" preserveAspectRatio="none" style="width:759px;height:575px;background:#FFFFFF;" version="1.1" viewBox="0 0 759 575" width="759px" zoomAndPan="magnify"><defs><filter height="300%" id="f1o8pg1vcywv4g" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[42603eecb267091c13893a16d8c379fb]
+cluster player--><polygon fill="#D3D3D3" filter="url(#f1o8pg1vcywv4g)" points="314,6,370,6,377,28.2969,659,28.2969,659,221,314,221,314,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="314" x2="377" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="50" x="318" y="20.9951">player</text><!--MD5=[a1e697959a4136f8f292b7e2b4e69eb9]
+cluster fs--><polygon fill="#D3D3D3" filter="url(#f1o8pg1vcywv4g)" points="16,245,36,245,43,267.2969,742,267.2969,742,568,16,568,16,245" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="43" y1="267.2969" y2="267.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="14" x="20" y="259.9951">fs</text><!--MD5=[7910ace1cc7a97c35374d08f90b7d3fe]
+cluster player plugins--><polygon fill="#FFFFFF" filter="url(#f1o8pg1vcywv4g)" points="255,457,374,457,381,479.2969,384,479.2969,384,544,255,544,255,457" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="255" x2="381" y1="479.2969" y2="479.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="113" x="259" y="471.9951">player plugins</text><!--MD5=[2dd40a3973260850c49d4b5ecf3210ef]
+cluster output plugins--><polygon fill="#FFFFFF" filter="url(#f1o8pg1vcywv4g)" points="408,457,531,457,538,479.2969,718,479.2969,718,544,408,544,408,457" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="408" x2="538" y1="479.2969" y2="479.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="117" x="412" y="471.9951">output plugins</text><!--MD5=[e8907a2785b2ea9784e1231cc1aa4a14]
+entity RadioPlayer--><rect fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="125" x="331.5" y="41"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="436.5" y="46"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="434.5" y="48"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="434.5" y="52"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="346.5" y="73.9951">RadioPlayer</text><!--MD5=[de2effd8dc5bf946a609466312d0f75f]
+entity Player--><ellipse cx="394" cy="176" fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="112" x="338" y="205.9951">Player interface</text><!--MD5=[159ed0582e4c3047360479e06de969b1]
+entity AudioOut--><ellipse cx="568" cy="176" fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="501" y="205.9951">AudioOut interface</text><!--MD5=[1488900c34a19ae7431261af07bc5ac1]
+entity Settings--><rect fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="97" x="153.5" y="280"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="230.5" y="285"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="228.5" y="287"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="228.5" y="291"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="168.5" y="312.9951">Settings</text><!--MD5=[6a88aea038141ee488e61f39bf1ca119]
+entity cfg--><polygon fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" points="32,492,32,528.2969,118,528.2969,118,502,108,492,32,492" style="stroke:#000000;stroke-width:1.5;"/><path d="M108,492 L108,502 L118,502 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="42" y="514.9951">ctune.cfg</text><!--MD5=[c7420d8098391d4bdc639c1023988fb5]
+entity fav--><polygon fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" points="153,492,153,528.2969,239,528.2969,239,502,229,492,153,492" style="stroke:#000000;stroke-width:1.5;"/><path d="M229,492 L229,502 L239,502 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="163" y="514.9951">ctune.fav</text><!--MD5=[336b9fd48f5e9f3ed29f596a82d3af84]
+entity Plugin--><rect fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="83" x="280.5" y="386"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="343.5" y="391"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="341.5" y="393"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="341.5" y="397"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="295.5" y="418.9951">Plugin</text><!--MD5=[0176c2906baf4b0d96aa62b184160f60]
+entity pl_ffmpeg--><polygon fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" points="276.5,492,276.5,528.2969,367.5,528.2969,367.5,502,357.5,492,276.5,492" style="stroke:#000000;stroke-width:1.5;"/><path d="M357.5,492 L357.5,502 L367.5,502 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="286.5" y="514.9951">ffmpeg.so</text><!--MD5=[1ae5dddce08b22c4e56229b185fcff7a]
+entity pl_pulse--><polygon fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" points="529,492,529,528.2969,607,528.2969,607,502,597,492,529,492" style="stroke:#000000;stroke-width:1.5;"/><path d="M597,492 L597,502 L607,502 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="539" y="514.9951">pulse.so</text><!--MD5=[1ea1281f0b9e3a22def1e2d64cec7861]
+entity pl_sld--><polygon fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" points="642,492,642,528.2969,702,528.2969,702,502,692,492,642,492" style="stroke:#000000;stroke-width:1.5;"/><path d="M692,492 L692,502 L702,502 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="652" y="514.9951">sdl.so</text><!--MD5=[c5f77854de1d65ef17ff0ab41c3c487b]
+entity pl_alsa--><polygon fill="#FEFECE" filter="url(#f1o8pg1vcywv4g)" points="424.5,492,424.5,528.2969,493.5,528.2969,493.5,502,483.5,492,424.5,492" style="stroke:#000000;stroke-width:1.5;"/><path d="M483.5,492 L483.5,502 L493.5,502 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="434.5" y="514.9951">alsa.so</text><!--MD5=[f855680bc6c989572ebb25245d27968d]
+entity Controller--><rect fill="#FFD700" filter="url(#f1o8pg1vcywv4g)" height="46.2969" style="stroke:#000000;stroke-width:1.5;" width="111" x="179.5" y="41"/><rect fill="#FFD700" height="10" style="stroke:#000000;stroke-width:1.5;" width="15" x="270.5" y="46"/><rect fill="#FFD700" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="268.5" y="48"/><rect fill="#FFD700" height="2" style="stroke:#000000;stroke-width:1.5;" width="4" x="268.5" y="52"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="194.5" y="73.9951">Controller</text><!--MD5=[10cb0e90a85202c68b4f5ae5584896d4]
+link RadioPlayer to Player--><path d="M394,87.26 C394,107.74 394,137.73 394,156.81 " fill="none" id="RadioPlayer-to-Player" style="stroke:#A80036;stroke-width:1.0;"/><path d="M402.4572,163.7818 A9,9 0 0 0 385.5428 163.7818" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><!--MD5=[7e20831118692683f0701c696ba50bd8]
+link RadioPlayer to AudioOut--><path d="M429.21,87.26 C465.97,110.5 522.12,145.99 550.41,163.88 " fill="none" id="RadioPlayer-to-AudioOut" style="stroke:#A80036;stroke-width:1.0;"/><path d="M560.7847,160.436 A9,9 0 0 0 551.7506 174.7359" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><!--MD5=[bfa0e73260976bf05b6fc2a14b2eff20]
+link Settings to cfg--><path d="M188.17,326.33 C163.64,365.92 112.84,447.93 88.53,487.16 " fill="none" id="Settings-to-cfg" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="85.7,491.73,93.8402,486.1859,88.3333,487.4796,87.0395,481.9727,85.7,491.73" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f0a2fae81e1e9c6299bcd7ac68afd1c7]
+link Settings to fav--><path d="M201.35,326.33 C200.19,365.76 197.81,447.26 196.65,486.68 " fill="none" id="Settings-to-fav" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="196.51,491.73,200.7654,482.8479,196.6528,486.732,192.7687,482.6194,196.51,491.73" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[fb8e1d109dc6581bd65943e25a5a10bb]
+link Plugin to pl_sld--><path d="M363.59,411.49 C435.9,414.7 581.26,424.12 625,449 C640.6,457.88 652.87,474.19 660.95,487.57 " fill="none" id="Plugin-to-pl_sld" style="stroke:#4169E1;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#4169E1" points="663.53,491.98,662.4301,482.1927,661.0018,487.6663,655.5282,486.2379,663.53,491.98" style="stroke:#4169E1;stroke-width:1.0;"/><!--MD5=[2d1aab1816588c661b015069564b5b1d]
+link Plugin to pl_pulse--><path d="M363.54,411.46 C403.58,414.46 464.73,423.28 511,449 C527.96,458.42 542.89,474.6 553.21,487.78 " fill="none" id="Plugin-to-pl_pulse" style="stroke:#4169E1;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#4169E1" points="556.26,491.77,553.9614,482.1931,553.219,487.801,547.6111,487.0587,556.26,491.77" style="stroke:#4169E1;stroke-width:1.0;"/><!--MD5=[6c23d8f7e8f351d3371c61a2aa672c19]
+link Plugin to pl_alsa--><path d="M358.52,432.01 C367,437.39 375.92,443.25 384,449 C401.51,461.45 420.4,476.58 434.84,488.52 " fill="none" id="Plugin-to-pl_alsa" style="stroke:#4169E1;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#4169E1" points="438.79,491.8,434.4141,482.9767,434.9407,488.6089,429.3084,489.1355,438.79,491.8" style="stroke:#4169E1;stroke-width:1.0;"/><!--MD5=[ac8970b5386ba2ebd8d1bb52b6d3d951]
+link Plugin to pl_ffmpeg--><path d="M322,432.46 C322,448.66 322,470.43 322,486.61 " fill="none" id="Plugin-to-pl_ffmpeg" style="stroke:#4169E1;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#4169E1" points="322,491.87,326.0257,482.8815,322.0143,486.87,318.0257,482.8586,322,491.87" style="stroke:#4169E1;stroke-width:1.0;"/><!--MD5=[7e008308df4ef163c9809a8e50db708d]
+link Settings to Plugin--><path d="M227.45,326.06 C246.54,342.6 272.71,365.28 292.68,382.59 " fill="none" id="Settings-to-Plugin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="296.59,385.98,292.4316,377.0521,292.82,382.6956,287.1765,383.084,296.59,385.98" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[df52c17833183ed09e06a962efb385ee]
+link Player to pl_ffmpeg--><path d="M396.19,185.34 C404.41,218.23 431.07,341.53 395,432 C385.94,454.71 366.65,474.58 350.17,488.44 " fill="none" id="Player-to-pl_ffmpeg" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="346.05,491.83,355.5423,489.2038,349.9121,488.6545,350.4614,483.0243,346.05,491.83" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[daba9c3635ea68ed7e92a9086a59dce1]
+link AudioOut to pl_sld--><path d="M571.87,185.02 C577.28,196.4 587.18,217.98 594,237 C626.63,328.06 655.21,439.96 666.67,486.77 " fill="none" id="AudioOut-to-pl_sld" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="667.91,491.89,669.6884,482.203,666.7377,487.0294,661.9114,484.0787,667.91,491.89" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a7fd67edddfc9db0014fd3715b2de297]
+link AudioOut to pl_pulse--><path d="M568,185.21 C568,227.36 568,420.11 568,486.47 " fill="none" id="AudioOut-to-pl_pulse" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="568,491.76,572,482.76,568,486.76,564,482.76,568,491.76" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6b9a881849178fe2f8e14a19207c05f5]
+link AudioOut to pl_alsa--><path d="M565.31,185.21 C551.44,227.44 487.93,420.88 466.27,486.87 " fill="none" id="AudioOut-to-pl_alsa" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="464.66,491.76,471.2678,484.4568,466.2197,487.0095,463.667,481.9613,464.66,491.76" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a8d79c831c5bd7890cacf2dfc7af37d1]
+link Controller to Settings--><path d="M231.9,87.3 C225.81,130.99 212.34,227.73 205.76,274.97 " fill="none" id="Controller-to-Settings" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="205.07,279.94,210.2655,271.573,205.7551,274.9872,202.3409,270.4768,205.07,279.94" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[30e46fa21d3c4462bba3a0b10c513127]
+link Controller to RadioPlayer--><path d="M290.59,64 C302.49,64 314.39,64 326.29,64 " fill="none" id="Controller-to-RadioPlayer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="331.39,64,322.39,60,326.39,64,322.39,68,331.39,64" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9df7800614120f05dabaea654cedca4f]
+@startuml
+'https://plantuml.com/component-diagram
+
+component Controller #back:gold;line:black
+
+package player #lightgrey {
+    component RadioPlayer
+    interface "Player interface" as Player
+    interface "AudioOut interface" as AudioOut
+
+    RadioPlayer - -( Player
+    RadioPlayer - -( AudioOut
+}
+
+package fs #lightgrey {
+    component Settings
+    file "ctune.cfg" as cfg
+    file "ctune.fav" as fav
+
+    Settings ...> cfg
+    Settings ...> fav
+
+    component Plugin
+
+    package "player plugins" #white {
+        file "ffmpeg.so" as pl_ffmpeg
+    }
+
+    package "output plugins" #white {
+        file "pulse.so" as pl_pulse
+        file "sdl.so" as pl_sld
+        file "alsa.so" as pl_alsa
+    }
+
+    Plugin .[#RoyalBlue].> pl_sld
+    Plugin .[#RoyalBlue].> pl_pulse
+    Plugin .[#RoyalBlue].> pl_alsa
+    Plugin .[#RoyalBlue].> pl_ffmpeg
+
+    Settings - -> Plugin
+}
+
+Player   - - - -> pl_ffmpeg
+AudioOut - - - -> pl_sld
+AudioOut - - - -> pl_pulse
+AudioOut - - - -> pl_alsa
+
+Controller -down-> Settings
+Controller -right-> RadioPlayer
+
+@enduml
+
+@startuml
+
+component Controller #back:gold;line:black
+
+package player #lightgrey {
+    component RadioPlayer
+    interface "Player interface" as Player
+    interface "AudioOut interface" as AudioOut
+
+    RadioPlayer - -( Player
+    RadioPlayer - -( AudioOut
+}
+
+package fs #lightgrey {
+    component Settings
+    file "ctune.cfg" as cfg
+    file "ctune.fav" as fav
+
+    Settings ...> cfg
+    Settings ...> fav
+
+    component Plugin
+
+    package "player plugins" #white {
+        file "ffmpeg.so" as pl_ffmpeg
+    }
+
+    package "output plugins" #white {
+        file "pulse.so" as pl_pulse
+        file "sdl.so" as pl_sld
+        file "alsa.so" as pl_alsa
+    }
+
+    Plugin .[#RoyalBlue].> pl_sld
+    Plugin .[#RoyalBlue].> pl_pulse
+    Plugin .[#RoyalBlue].> pl_alsa
+    Plugin .[#RoyalBlue].> pl_ffmpeg
+
+    Settings - -> Plugin
+}
+
+Player   - - - -> pl_ffmpeg
+AudioOut - - - -> pl_sld
+AudioOut - - - -> pl_pulse
+AudioOut - - - -> pl_alsa
+
+Controller -down-> Settings
+Controller -right-> RadioPlayer
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

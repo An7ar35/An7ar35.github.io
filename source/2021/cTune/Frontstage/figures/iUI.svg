@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="516px" preserveAspectRatio="none" style="width:344px;height:516px;background:#FFFFFF;" version="1.1" viewBox="0 0 344 516" width="344px" zoomAndPan="magnify"><defs><filter height="300%" id="fbc83bfynweh8" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[06117b6055ba15b6cd5bffd833a4fbd7]
+class RadioStationInfo_t--><rect codeLine="3" fill="#FEFECE" filter="url(#fbc83bfynweh8)" height="32" id="RadioStationInfo_t" style="stroke:#A80036;stroke-width:1.5;" width="142" x="13.5" y="411"/><ellipse cx="28.5" cy="427" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M30.9688,432.875 Q30.3906,433.1875 29.75,433.3438 Q29.1094,433.5 28.4063,433.5 Q25.9063,433.5 24.5781,431.8281 Q23.2656,430.1563 23.2656,427 Q23.2656,423.8438 24.5781,422.1719 Q25.9063,420.5 28.4063,420.5 Q29.1094,420.5 29.75,420.6563 Q30.4063,420.8125 30.9688,421.125 L30.9688,423.9219 Q30.3438,423.3594 29.75,423.0938 Q29.1563,422.8125 28.5313,422.8125 Q27.1875,422.8125 26.5,423.875 Q25.8125,424.9375 25.8125,427 Q25.8125,429.0781 26.5,430.1406 Q27.1875,431.1875 28.5313,431.1875 Q29.1563,431.1875 29.75,430.9219 Q30.3438,430.6563 30.9688,430.0781 L30.9688,432.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="110" x="42.5" y="431.1543">RadioStationInfo_t</text><!--MD5=[43605cd797284713c0dfb53ebf037637]
+class PanelID_e--><rect codeLine="6" fill="#FEFECE" filter="url(#fbc83bfynweh8)" height="150.4375" id="PanelID_e" style="stroke:#A80036;stroke-width:1.5;" width="125" x="191" y="352"/><ellipse cx="221.75" cy="368" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M225.8594,374.5 L218.1406,374.5 L218.1406,361.5 L225.8594,361.5 L225.8594,363.7813 L220.5938,363.7813 L220.5938,366.5 L225.3594,366.5 L225.3594,368.7813 L220.5938,368.7813 L220.5938,372.2344 L225.8594,372.2344 L225.8594,374.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58" x="239.25" y="372.1543">PanelID_e</text><line style="stroke:#A80036;stroke-width:1.5;" x1="192" x2="315" y1="384" y2="384"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96" x="197" y="398.2104">PANEL_TITLE = 0</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="99" x="197" y="411.0151">PANEL_STATUS_1</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="99" x="197" y="423.8198">PANEL_STATUS_2</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="99" x="197" y="436.6245">PANEL_STATUS_3</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="197" y="449.4292">PANEL_MSG_LINE</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="197" y="462.2339">PANEL_FAVOURITES</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="197" y="475.0386">PANEL_SEARCH</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="100" x="197" y="487.8433">PANEL_BROWSER</text><line style="stroke:#A80036;stroke-width:1.5;" x1="192" x2="315" y1="494.4375" y2="494.4375"/><!--MD5=[df76e760f2062188d44f98c21a88999b]
+class UI--><rect codeLine="17" fill="#FEFECE" filter="url(#fbc83bfynweh8)" height="284.875" id="UI" style="stroke:#A80036;stroke-width:1.5;" width="323" x="7" y="7"/><ellipse cx="157.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M160.2188,28.875 Q159.6406,29.1875 159,29.3438 Q158.3594,29.5 157.6563,29.5 Q155.1563,29.5 153.8281,27.8281 Q152.5156,26.1563 152.5156,23 Q152.5156,19.8438 153.8281,18.1719 Q155.1563,16.5 157.6563,16.5 Q158.3594,16.5 159,16.6563 Q159.6563,16.8125 160.2188,17.125 L160.2188,19.9219 Q159.5938,19.3594 159,19.0938 Q158.4063,18.8125 157.7813,18.8125 Q156.4375,18.8125 155.75,19.875 Q155.0625,20.9375 155.0625,23 Q155.0625,25.0781 155.75,26.1406 Q156.4375,27.1875 157.7813,27.1875 Q158.4063,27.1875 159,26.9219 Q159.5938,26.6563 160.2188,26.0781 L160.2188,28.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="13" x="178.25" y="27.1543">UI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="329" y1="39" y2="39"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="79" x="13" y="53.2104">Management</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="329" y1="59.8047" y2="59.8047"/><ellipse cx="18" cy="70.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="182" x="27" y="74.0151">setup( bool show_cursor ) : bool</text><ellipse cx="18" cy="83.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="102" x="27" y="86.8198">start( void ) : void</text><ellipse cx="18" cy="96.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="27" y="99.6245">teardown( void ) : void</text><ellipse cx="18" cy="109.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="27" y="112.4292">resize() : void</text><ellipse cx="18" cy="122.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="194" x="27" y="125.2339">show( enum PanelID panel ) : void</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="329" y1="131.8281" y2="131.8281"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="218" x="13" y="146.0386">Actions (mostly used as callbacks)</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="329" y1="152.6328" y2="152.6328"/><ellipse cx="18" cy="163.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="297" x="27" y="166.8433">setCurrStation( const RadioStationInfo_t * rsi ) : void</text><ellipse cx="18" cy="176.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="215" x="27" y="179.6479">printSongInfo( const char * str ) : void</text><ellipse cx="18" cy="189.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="190" x="27" y="192.4526">printVolume( const int vol ) : void</text><ellipse cx="18" cy="202.0469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="247" x="27" y="205.2573">printPlaybackState( const bool state ) : void</text><ellipse cx="18" cy="214.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="253" x="27" y="218.062">printSearchingState( const bool state ) : void</text><ellipse cx="18" cy="227.6563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="281" x="27" y="230.8667">printError( const char * err_str, int err_no ) : void</text><ellipse cx="18" cy="240.4609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="250" x="27" y="243.6714">printStatusMsg( const char * info_str ) : void</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="329" y1="250.2656" y2="250.2656"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="92" x="13" y="264.4761">Callback setter</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="329" y1="271.0703" y2="271.0703"/><ellipse cx="18" cy="282.0703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="282" x="27" y="285.2808">setQuietVolChangeCallback( int(* cb)( int ) ) : void</text><!--MD5=[5f23731719181c2abbc6eaae83093d66]
+link UI to PanelID_e--><path codeLine="41" d="M212.24,292.29 C218.05,311.09 223.81,329.79 229.12,346.98 " fill="none" id="UI-to-PanelID_e" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="230.6,351.79,231.7702,342.0109,229.1266,347.012,224.1254,344.3684,230.6,351.79" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2352cc003f8792a753b9b1d7085682eb]
+link UI to RadioStationInfo_t--><path codeLine="42" d="M125.27,292.29 C111.61,337.09 98.12,381.32 90.6,406.01 " fill="none" id="UI-to-RadioStationInfo_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="89.08,410.97,95.5342,403.5307,90.5404,406.188,87.8831,401.1941,89.08,410.97" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[57eb03603cfd70aa00a8f5a93462da3f]
+@startuml
+'https://plantuml.com/class-diagram
+
+class RadioStationInfo_t
+hide RadioStationInfo_t members
+
+enum PanelID_e {
+    PANEL_TITLE = 0
+    PANEL_STATUS_1
+    PANEL_STATUS_2
+    PANEL_STATUS_3
+    PANEL_MSG_LINE
+    PANEL_FAVOURITES
+    PANEL_SEARCH
+    PANEL_BROWSER
+}
+
+class UI {
+    <b>Management</b>
+    - - - -
+    + setup( bool show_cursor ) : bool
+    + start( void ) : void
+    + teardown( void ) : void
+    + resize() : void
+    + show( enum PanelID panel ) : void
+    - - - -
+    <b>Actions (mostly used as callbacks)</b>
+    - - - -
+    + setCurrStation( const RadioStationInfo_t * rsi ) : void
+    + printSongInfo( const char * str ) : void
+    + printVolume( const int vol ) : void
+    + printPlaybackState( const bool state ) : void
+    + printSearchingState( const bool state ) : void
+    + printError( const char * err_str, int err_no ) : void
+    + printStatusMsg( const char * info_str ) : void
+    - - - -
+    <b>Callback setter</b>
+    - - - -
+    + setQuietVolChangeCallback( int(* cb)( int ) ) : void
+}
+
+UI - -> PanelID_e
+UI - -> RadioStationInfo_t
+
+@enduml
+
+@startuml
+
+class RadioStationInfo_t
+hide RadioStationInfo_t members
+
+enum PanelID_e {
+    PANEL_TITLE = 0
+    PANEL_STATUS_1
+    PANEL_STATUS_2
+    PANEL_STATUS_3
+    PANEL_MSG_LINE
+    PANEL_FAVOURITES
+    PANEL_SEARCH
+    PANEL_BROWSER
+}
+
+class UI {
+    <b>Management</b>
+    - - - -
+    + setup( bool show_cursor ) : bool
+    + start( void ) : void
+    + teardown( void ) : void
+    + resize() : void
+    + show( enum PanelID panel ) : void
+    - - - -
+    <b>Actions (mostly used as callbacks)</b>
+    - - - -
+    + setCurrStation( const RadioStationInfo_t * rsi ) : void
+    + printSongInfo( const char * str ) : void
+    + printVolume( const int vol ) : void
+    + printPlaybackState( const bool state ) : void
+    + printSearchingState( const bool state ) : void
+    + printError( const char * err_str, int err_no ) : void
+    + printStatusMsg( const char * info_str ) : void
+    - - - -
+    <b>Callback setter</b>
+    - - - -
+    + setQuietVolChangeCallback( int(* cb)( int ) ) : void
+}
+
+UI - -> PanelID_e
+UI - -> RadioStationInfo_t
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

@@ -1,0 +1,28 @@
+@startuml
+
+component LogQueue
+
+interface "Logger interface                                 " as iLogger
+interface " " as iLogQueue
+component Logger
+component LogWriter
+
+iLogger -- Logger
+iLogQueue -right- LogQueue
+
+Logger -down-( iLogQueue
+LogWriter -up-( iLogQueue
+
+file Out as "ctune.log"
+LogWriter -[#black]-> Out : write msgs to file
+
+
+Logger .[#black].> LogQueue : enqueue\nlog msgs
+LogQueue .[#black].> LogWriter : dequeue\nlog msgs
+
+'note "**Callback:**\n- resume()" as cb1 #lightblue
+'LogQueue .[#blue].. cb1
+'cb1 .[#blue]..> LogWriter
+
+
+@enduml

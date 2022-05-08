@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1693px" preserveAspectRatio="none" style="width:1635px;height:1693px;background:#FFFFFF;" version="1.1" viewBox="0 0 1635 1693" width="1635px" zoomAndPan="magnify"><defs><filter height="300%" id="f8ulhzu6olnms" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[5b4b28f3c26a5ab3a0fc7317af32b6dc]
+cluster ctune--><polygon fill="#D3D3D3" filter="url(#f8ulhzu6olnms)" points="16,6,67,6,74,28.2969,1618,28.2969,1618,1686,16,1686,16,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="74" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="45" x="20" y="20.9951">ctune</text><!--MD5=[09fd8552ab48c65ddc70dbeb1978b198]
+cluster network--><polygon fill="#FFFFFF" filter="url(#f8ulhzu6olnms)" points="113,340.5,185,340.5,192,362.7969,469,362.7969,469,886,113,886,113,340.5" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="113" x2="192" y1="362.7969" y2="362.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="66" x="117" y="355.4951">network</text><!--MD5=[72fae8e1779ba7dedab19f6352fd74e8]
+cluster parser--><polygon fill="#FFFFFF" filter="url(#f8ulhzu6olnms)" points="40,1184,97,1184,104,1206.2969,274,1206.2969,274,1416,40,1416,40,1184" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="40" x2="104" y1="1206.2969" y2="1206.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="51" x="44" y="1198.9951">parser</text><!--MD5=[a1e697959a4136f8f292b7e2b4e69eb9]
+cluster fs--><polygon fill="#FFFFFF" filter="url(#f8ulhzu6olnms)" points="702,783,722,783,729,805.2969,1434,805.2969,1434,1440,702,1440,702,783" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="702" x2="729" y1="805.2969" y2="805.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="14" x="706" y="797.9951">fs</text><!--MD5=[2fe767d97f0f6bfd4b32c920bf021b5a]
+cluster plugins_in--><polygon fill="#D3D3D3" filter="url(#f8ulhzu6olnms)" points="726,1189,850,1189,857,1211.2969,945,1211.2969,945,1416,726,1416,726,1189" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="726" x2="857" y1="1211.2969" y2="1211.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="118" x="730" y="1203.9951">plugins/player/</text><!--MD5=[43553bf2e73362c61462429c254f0ba5]
+cluster plugins_out--><polygon fill="#D3D3D3" filter="url(#f8ulhzu6olnms)" points="969,1189,1097,1189,1104,1211.2969,1410,1211.2969,1410,1416,969,1416,969,1189" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="969" x2="1104" y1="1211.2969" y2="1211.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="122" x="973" y="1203.9951">plugins/output/</text><!--MD5=[5c49199f6a9e966b55f4906f1e05ad85]
+cluster config dir--><polygon fill="#D3D3D3" filter="url(#f8ulhzu6olnms)" points="726,919,808,919,815,941.2969,965,941.2969,965,1006,726,1006,726,919" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="726" x2="815" y1="941.2969" y2="941.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="76" x="730" y="933.9951">config dir</text><!--MD5=[582d7e99c73df562eab9205cbda9adb9]
+cluster log dir--><polygon fill="#D3D3D3" filter="url(#f8ulhzu6olnms)" points="989,919,1047,919,1054,941.2969,1236,941.2969,1236,1006,989,1006,989,919" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="989" x2="1054" y1="941.2969" y2="941.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="52" x="993" y="933.9951">log dir</text><!--MD5=[9c85c30a42fdb0134cd2452887ef5f91]
+cluster audio--><polygon fill="#FFFFFF" filter="url(#f8ulhzu6olnms)" points="1458,1042,1508,1042,1515,1064.2969,1594,1064.2969,1594,1151,1458,1151,1458,1042" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1458" x2="1515" y1="1064.2969" y2="1064.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="44" x="1462" y="1056.9951">audio</text><!--MD5=[42603eecb267091c13893a16d8c379fb]
+cluster player--><polygon fill="#FFFFFF" filter="url(#f8ulhzu6olnms)" points="1272,340.5,1328,340.5,1335,362.7969,1430,362.7969,1430,599,1272,599,1272,340.5" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="1272" x2="1335" y1="362.7969" y2="362.7969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="50" x="1276" y="355.4951">player</text><!--MD5=[e3a89b72019d8d69b73b0a9ebb84eda6]
+cluster cli--><polygon fill="#FFFFFF" filter="url(#f8ulhzu6olnms)" points="823,204,847,204,854,226.2969,917,226.2969,917,301,823,301,823,204" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="823" x2="854" y1="226.2969" y2="226.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="18" x="827" y="218.9951">cli</text><!--MD5=[64e2e010ba86d7988e5cd73bd64f61f9]
+cluster ui--><polygon fill="#FFFFFF" filter="url(#f8ulhzu6olnms)" points="743,496,764,496,771,518.2969,829,518.2969,829,593,743,593,743,496" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="743" x2="771" y1="518.2969" y2="518.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="15" x="747" y="510.9951">ui</text><!--MD5=[5668e9e22a2e6cdf5edb81914b79d7db]
+cluster logger--><polygon fill="#FFFFFF" filter="url(#f8ulhzu6olnms)" points="298,1184,356,1184,363,1206.2969,678,1206.2969,678,1662,298,1662,298,1184" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="298" x2="363" y1="1206.2969" y2="1206.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="52" x="302" y="1198.9951">logger</text><!--MD5=[b179f5d82c027960f8a4604b9827100b]
+entity iErr1--><ellipse cx="499" cy="262" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><!--MD5=[a387bfcbc2fca68040df60a95ed92dfe]
+entity ctune_err--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="108" x="543" y="239"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="631" y="244"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="629" y="246"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="629" y="250"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="558" y="271.9951">ctune_err</text><path d="M353,79 L353,119.2656 A0,0 0 0 0 353,119.2656 L446.69,119.2656 L574.15,238.84 L454.69,119.2656 L509,119.2656 A0,0 0 0 0 509,119.2656 L509,89 L499,79 L353,79 A0,0 0 0 0 353,79 " fill="#FBFB77" filter="url(#f8ulhzu6olnms)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M499,79 L499,89 L509,89 L499,79 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="359" y="96.0669">global ctune-specific</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="85" x="359" y="111.1997">error number</text><!--MD5=[f855680bc6c989572ebb25245d27968d]
+entity Controller--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="111" x="936.5" y="239"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1027.5" y="244"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1025.5" y="246"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1025.5" y="250"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="951.5" y="271.9951">Controller</text><!--MD5=[20e8a0d1c10cbe4476c06f9d600054d8]
+entity driver--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="62.5938" style="stroke:#A80036;stroke-width:1.5;" width="86" x="949" y="67.5"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1015" y="72.5"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1013" y="74.5"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1013" y="78.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="42" x="964" y="100.4951">driver</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="964" y="116.792">(main)</text><path d="M802.5,41 L802.5,156.9297 A0,0 0 0 0 802.5,156.9297 L913.5,156.9297 A0,0 0 0 0 913.5,156.9297 L913.5,103 L948.9,99 L913.5,95 L913.5,51 L903.5,41 L802.5,41 A0,0 0 0 0 802.5,41 " fill="#FBFB77" filter="url(#f8ulhzu6olnms)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M903.5,41 L903.5,51 L913.5,51 L903.5,41 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="808.5" y="58.0669">Spools up:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="808.5" y="73.1997">· ctune_err</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="61" x="808.5" y="88.3325">· Settings</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="808.5" y="103.4653">· Logger</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="808.5" y="118.5981">· PlaybackLog</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="72" x="808.5" y="133.731">· Controller</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="808.5" y="148.8638">· UI</text><path d="M822,348 L822,448.7969 L1134,448.7969 L1134,358 L1124,348 L822,348 " fill="#ADD8E6" filter="url(#f8ulhzu6olnms)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1124,348 L1124,358 L1134,358 L1124,348 " fill="#ADD8E6" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="75" x="828" y="365.0669">Callbacks:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="291" x="828" y="380.1997">- setCurrStation( RadioStationInfo_t * ) : void</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="232" x="828" y="395.3325">- printSongInfo( const char * ) : void</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164" x="828" y="410.4653">- printVolume( int ) : void</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="218" x="828" y="425.5981">- printPlaybackState( bool ) : void</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="223" x="828" y="440.731">- printSearchingState( bool ) : void</text><path d="M1081.5,71.5 L1081.5,126.8984 L1364.5,126.8984 L1364.5,81.5 L1354.5,71.5 L1081.5,71.5 " fill="#ADD8E6" filter="url(#f8ulhzu6olnms)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1354.5,71.5 L1354.5,81.5 L1364.5,81.5 L1354.5,71.5 " fill="#ADD8E6" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="75" x="1087.5" y="88.5669">Callbacks:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="262" x="1087.5" y="103.6997">- songChangeEvent( const char * ) : void</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="258" x="1087.5" y="118.8325">- volumeChangeEvent( const int ) : void</text><path d="M544.5,79 L544.5,119.2656 L767.5,119.2656 L767.5,89 L757.5,79 L544.5,79 " fill="#ADD8E6" filter="url(#f8ulhzu6olnms)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M757.5,79 L757.5,89 L767.5,89 L757.5,79 " fill="#ADD8E6" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="75" x="550.5" y="96.0669">Callbacks:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="202" x="550.5" y="111.1997">- setSearchState( enum ) : bool</text><path d="M699.5,671 L699.5,711.2656 L872.5,711.2656 L872.5,681 L862.5,671 L699.5,671 " fill="#ADD8E6" filter="url(#f8ulhzu6olnms)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M862.5,671 L862.5,681 L872.5,681 L862.5,671 " fill="#ADD8E6" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="75" x="705.5" y="688.0669">Callbacks:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="705.5" y="703.1997">- modVolume( int ) : int</text><path d="M485.5,378.5 L485.5,418.7656 L712.5,418.7656 L712.5,388.5 L702.5,378.5 L485.5,378.5 " fill="#ADD8E6" filter="url(#f8ulhzu6olnms)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M702.5,378.5 L702.5,388.5 L712.5,388.5 L702.5,378.5 " fill="#ADD8E6" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="67" x="491.5" y="395.5669">Callback:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="206" x="491.5" y="410.6997">- printError( const char * ) : void</text><!--MD5=[ba38d564a2fd195e0495449e7e39a4e4]
+entity NetworkUtils--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="128" x="317" y="531"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="425" y="536"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="423" y="538"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="423" y="542"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="332" y="563.9951">NetworkUtils</text><!--MD5=[073a9e5508879681648fac7d34324bbc]
+entity RadioBrowser--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="139" x="311.5" y="375.5"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="430.5" y="380.5"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="428.5" y="382.5"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="428.5" y="386.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="326.5" y="408.4951">RadioBrowser</text><!--MD5=[8f1922df71fbb09ba3d52e2bfb881e20]
+entity RadioBrowserAPI--><ellipse cx="244" cy="841" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="162" x="163" y="870.9951">Radio Browser web API</text><!--MD5=[20c02266008734f6b11ee8d2a8d8125e]
+entity OpenSSL--><ellipse cx="403" cy="691" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="360.5" y="720.9951">OpenSSL lib</text><!--MD5=[51782615dfdad16f2399c2381172b8c9]
+entity Sockets--><ellipse cx="175" cy="691" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="137" y="720.9951">Sockets lib</text><!--MD5=[e27a950f7a9632a09edeab395b044ead]
+entity Curl--><ellipse cx="287" cy="691" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="264" y="720.9951">libCurl</text><!--MD5=[c470d76c68afda2f5e9525cd4f85a320]
+entity JSON--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="74" x="56" y="1219"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="110" y="1224"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="108" y="1226"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="108" y="1230"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="34" x="71" y="1251.9951">JSON</text><!--MD5=[0fb6fadc8d75350ee1ddc6f79f12dccb]
+entity JSONlib--><ellipse cx="95" cy="1371" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="63.5" y="1400.9951">json-c lib</text><!--MD5=[90bfb6928bb73dc2bd6036131bbc265f]
+entity KVPairs--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="93" x="165.5" y="1219"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="238.5" y="1224"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="236.5" y="1226"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="236.5" y="1230"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="180.5" y="1251.9951">KVPairs</text><!--MD5=[421e09d847199601dc92a3f2da8a7f88]
+entity PlaybackLog--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="129" x="1065.5" y="818"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1174.5" y="823"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1172.5" y="825"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1172.5" y="829"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="1080.5" y="850.9951">PlaybackLog</text><!--MD5=[1488900c34a19ae7431261af07bc5ac1]
+entity Settings--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="97" x="737.5" y="818"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="814.5" y="823"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="812.5" y="825"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="812.5" y="829"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="752.5" y="850.9951">Settings</text><!--MD5=[336b9fd48f5e9f3ed29f596a82d3af84]
+entity Plugin--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="83" x="1255.5" y="949"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1318.5" y="954"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1316.5" y="956"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1316.5" y="960"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="43" x="1270.5" y="981.9951">Plugin</text><!--MD5=[a2c0ac8be1b0b2cd580d74b263297c66]
+entity ffmpeg.so--><polygon fill="#FEFECE" filter="url(#f8ulhzu6olnms)" points="742.5,1224,742.5,1260.2969,833.5,1260.2969,833.5,1234,823.5,1224,742.5,1224" style="stroke:#000000;stroke-width:1.5;"/><path d="M823.5,1224 L823.5,1234 L833.5,1234 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="752.5" y="1246.9951">ffmpeg.so</text><!--MD5=[dd2950b57c70d5c3792fa9694cb5ed19]
+entity vlc.so--><polygon fill="#FEFECE" filter="url(#f8ulhzu6olnms)" points="869,1224,869,1260.2969,929,1260.2969,929,1234,919,1224,869,1224" style="stroke:#000000;stroke-width:1.5;"/><path d="M919,1224 L919,1234 L929,1234 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="879" y="1246.9951">vlc.so</text><!--MD5=[5152074efe053b7d69bb3f92e65395b5]
+entity libffmpeg--><ellipse cx="788" cy="1371" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="754" y="1400.9951">libffmpeg</text><!--MD5=[4283699a5d2f7acdc5cdc3e1a798d31b]
+entity libvlc--><ellipse cx="897" cy="1371" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="37" x="878.5" y="1400.9951">libvlc</text><!--MD5=[d26437c5c4a098aba5e0ebdb4b9d9ed5]
+entity pulse.so--><polygon fill="#FEFECE" filter="url(#f8ulhzu6olnms)" points="1003,1224,1003,1260.2969,1081,1260.2969,1081,1234,1071,1224,1003,1224" style="stroke:#000000;stroke-width:1.5;"/><path d="M1071,1224 L1071,1234 L1081,1234 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="1013" y="1246.9951">pulse.so</text><!--MD5=[a2f5e940a62d0bf3f9dbadf262bf2453]
+entity alsa.so--><polygon fill="#FEFECE" filter="url(#f8ulhzu6olnms)" points="1116.5,1224,1116.5,1260.2969,1185.5,1260.2969,1185.5,1234,1175.5,1224,1116.5,1224" style="stroke:#000000;stroke-width:1.5;"/><path d="M1175.5,1224 L1175.5,1234 L1185.5,1234 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="1126.5" y="1246.9951">alsa.so</text><!--MD5=[0aedb1959ee3740cd92d8ba6c06b466e]
+entity sdl.so--><polygon fill="#FEFECE" filter="url(#f8ulhzu6olnms)" points="1334,1224,1334,1260.2969,1394,1260.2969,1394,1234,1384,1224,1334,1224" style="stroke:#000000;stroke-width:1.5;"/><path d="M1384,1224 L1384,1234 L1394,1234 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="1344" y="1246.9951">sdl.so</text><!--MD5=[6dbb7ca448e3f2f5efe7ed85593b78b9]
+entity sndio.so--><polygon fill="#FEFECE" filter="url(#f8ulhzu6olnms)" points="1221,1224,1221,1260.2969,1299,1260.2969,1299,1234,1289,1224,1221,1224" style="stroke:#000000;stroke-width:1.5;"/><path d="M1289,1224 L1289,1234 L1299,1234 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="1231" y="1246.9951">sndio.so</text><!--MD5=[628d59dc4c580a0eb99fb7c1ac18cd22]
+entity libalsa--><ellipse cx="1161" cy="1371" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="1138" y="1400.9951">libalsa</text><!--MD5=[c8c5c2211ba437b8f31d432ae5a6f756]
+entity libpulseaudio--><ellipse cx="1040" cy="1371" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="992.5" y="1400.9951">libpulseaudio</text><!--MD5=[37afd14c6b8859e52ec89208aa607010]
+entity libsld2--><ellipse cx="1363" cy="1371" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="1340" y="1400.9951">libsld2</text><!--MD5=[dfd587de5bd07ffb66f36e67f8398080]
+entity libsndio--><ellipse cx="1262" cy="1371" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="1234.5" y="1400.9951">libsndio</text><!--MD5=[2ee04c8d5e1b9d1851d75cb39b387f52]
+entity cfgfile--><polygon fill="#FEFECE" filter="url(#f8ulhzu6olnms)" points="742,954,742,990.2969,828,990.2969,828,964,818,954,742,954" style="stroke:#000000;stroke-width:1.5;"/><path d="M818,954 L818,964 L828,964 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="752" y="976.9951">ctune.cfg</text><!--MD5=[4b268d34529ff2358f4185fa38c47305]
+entity favfile--><polygon fill="#FEFECE" filter="url(#f8ulhzu6olnms)" points="863,954,863,990.2969,949,990.2969,949,964,939,954,863,954" style="stroke:#000000;stroke-width:1.5;"/><path d="M939,954 L939,964 L949,964 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="873" y="976.9951">ctune.fav</text><!--MD5=[77e836310b97089699cb148e0d428188]
+entity playlog--><polygon fill="#FEFECE" filter="url(#f8ulhzu6olnms)" points="1005,954,1005,990.2969,1099,990.2969,1099,964,1089,954,1005,954" style="stroke:#000000;stroke-width:1.5;"/><path d="M1089,954 L1089,964 L1099,964 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="1015" y="976.9951">playlog.txt</text><!--MD5=[797d089f4b6d46c93f0c35872d87d364]
+entity logfile--><polygon fill="#FEFECE" filter="url(#f8ulhzu6olnms)" points="1134,954,1134,990.2969,1220,990.2969,1220,964,1210,954,1134,954" style="stroke:#000000;stroke-width:1.5;"/><path d="M1210,954 L1210,964 L1220,964 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="1144" y="976.9951">ctune.log</text><!--MD5=[031e947446d0acf39314cbfc4096f809]
+entity AudioOutput--><ellipse cx="1526" cy="1106" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="89" x="1481.5" y="1135.9951">AudioOutput</text><!--MD5=[e8907a2785b2ea9784e1231cc1aa4a14]
+entity RadioPlayer--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="125" x="1288.5" y="375.5"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="1393.5" y="380.5"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1391.5" y="382.5"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="1391.5" y="386.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="1303.5" y="408.4951">RadioPlayer</text><!--MD5=[de2effd8dc5bf946a609466312d0f75f]
+entity Player--><ellipse cx="1375" cy="554" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="44" x="1353" y="583.9951">Player</text><!--MD5=[df6a39b053164d23cc3ecae9c3484a54]
+entity CLI--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="62" x="839" y="239"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="881" y="244"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="879" y="246"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="879" y="250"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="854" y="271.9951">CLI</text><!--MD5=[c42ed81cef7fdd2e33758127945b9a5b]
+entity UI--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="54" x="759" y="531"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="793" y="536"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="791" y="538"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="791" y="542"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="14" x="774" y="563.9951">UI</text><!--MD5=[30ba7fb1050e29c0f3290b9e87c281e8]
+entity log--><ellipse cx="405" cy="1516" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="22" x="394" y="1545.9951">log</text><!--MD5=[8419b246086a95c8daf12ec08390610a]
+entity logDbg--><ellipse cx="541" cy="1516" fill="#FEFECE" filter="url(#f8ulhzu6olnms)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="51" x="515.5" y="1545.9951">logDbg</text><!--MD5=[3bf4b1e53e0207bd36e89b37adf9cc09]
+entity Logger--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="90" x="376" y="1348"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="446" y="1353"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="444" y="1355"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="444" y="1359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="391" y="1380.9951">Logger</text><!--MD5=[5a6866208810807446f698808c4639a6]
+entity LogQueue--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="113" x="548.5" y="1219"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="641.5" y="1224"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="639.5" y="1226"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="639.5" y="1230"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="563.5" y="1251.9951">LogQueue</text><!--MD5=[c8eaeb597b753e9454ff1472d5d10b2b]
+entity LogWriter--><rect fill="#FEFECE" filter="url(#f8ulhzu6olnms)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="110" x="314" y="1219"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="404" y="1224"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="402" y="1226"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="402" y="1230"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="329" y="1251.9951">LogWriter</text><path d="M320,1606 L320,1646.2656 A0,0 0 0 0 320,1646.2656 L462,1646.2656 A0,0 0 0 0 462,1646.2656 L462,1616 L452,1606 L397.51,1606 L403.95,1525.12 L389.51,1606 L320,1606 A0,0 0 0 0 320,1606 " fill="#FBFB77" filter="url(#f8ulhzu6olnms)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M452,1606 L452,1616 L462,1616 L452,1606 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="326" y="1623.0669">Release build</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="121" x="326" y="1638.1997">message interface</text><path d="M497,1606 L497,1646.2656 A0,0 0 0 0 497,1646.2656 L639,1646.2656 A0,0 0 0 0 639,1646.2656 L639,1616 L629,1606 L567.17,1606 L543.03,1525.12 L559.17,1606 L497,1606 A0,0 0 0 0 497,1606 " fill="#FBFB77" filter="url(#f8ulhzu6olnms)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M629,1606 L629,1616 L639,1616 L629,1606 " fill="#FBFB77" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="503" y="1623.0669">Debug build</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="121" x="503" y="1638.1997">message interface</text><path d="M528.5,1351 L528.5,1391.2656 L657.5,1391.2656 L657.5,1361 L647.5,1351 L528.5,1351 " fill="#ADD8E6" filter="url(#f8ulhzu6olnms)" style="stroke:#A80036;stroke-width:1.0;"/><path d="M647.5,1351 L647.5,1361 L657.5,1361 L647.5,1351 " fill="#ADD8E6" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="67" x="534.5" y="1368.0669">Callback:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="534.5" y="1383.1997">- resume() : void</text><!--MD5=[64966e37413faa872430de90c81d5db5]
+link RadioBrowser to NetworkUtils--><path d="M381,421.82 C381,449.3 381,495.95 381,525.58 " fill="none" id="RadioBrowser-to-NetworkUtils" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="381,530.9,385,521.9,381,525.9,377,521.9,381,530.9" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9e05e4c3119957e39407ec8cf3470092]
+link NetworkUtils to OpenSSL--><path d="M373.2,577.18 C368.85,592.71 365.2,613.85 370,632 C374.03,647.22 383.08,662.63 390.69,673.74 " fill="none" id="NetworkUtils-to-OpenSSL" style="stroke:#A80036;stroke-width:1.0;"/><path d="M401.673,674.526 A9,9 0 0 0 387.9354 684.3939" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="371" y="628.0669">uses</text><!--MD5=[bbe6011ac59770313a482dcf3c0a5a5b]
+link NetworkUtils to Sockets--><path d="M339.68,577.11 C320.06,587.99 296.47,601.62 276,615 C245.56,634.9 211.99,660.64 192.24,676.2 " fill="none" id="NetworkUtils-to-Sockets" style="stroke:#A80036;stroke-width:1.0;"/><path d="M191.869,687.2902 A9,9 0 0 0 181.3528 674.0422" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="277" y="628.0669">uses</text><!--MD5=[c062f169eaca55b3fb1ac0886acf1fad]
+link NetworkUtils to Curl--><path d="M358.59,577.26 C348.29,588.12 336.33,601.69 327,615 C314.06,633.46 302.32,656.59 294.96,672.25 " fill="none" id="NetworkUtils-to-Curl" style="stroke:#A80036;stroke-width:1.0;"/><path d="M299.5702,682.4713 A9,9 0 0 0 284.1985 675.4138" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="328" y="628.0669">uses</text><!--MD5=[94d1e51203bc945521d65a1b39d4857c]
+link OpenSSL to RadioBrowserAPI--><path d="M394,700.38 C367.21,725.31 287.98,799.07 256.8,828.08 " fill="none" id="OpenSSL-to-RadioBrowserAPI" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="252.91,831.71,262.2246,828.5102,256.5714,828.305,256.7766,822.6519,252.91,831.71" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="33" x="338" y="763.0669">https</text><!--MD5=[49be97cfc9d0fd8f20eab8cabb02668e]
+link Sockets to RadioBrowserAPI--><path d="M178.91,700.38 C190.39,725.01 224.08,797.27 237.94,827 " fill="none" id="Sockets-to-RadioBrowserAPI" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="240.14,831.71,239.9571,821.8628,238.0248,827.1794,232.7082,825.2472,240.14,831.71" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="53" x="210" y="763.0669">http/dns</text><!--MD5=[04ca7a5c302d22fe3d3e2f4ae06177f0]
+link JSON to JSONlib--><path d="M93.35,1265.12 C93.74,1289.68 94.35,1328.87 94.71,1351.75 " fill="none" id="JSON-to-JSONlib" style="stroke:#A80036;stroke-width:1.0;"/><path d="M103.2778,1358.5893 A9,9 0 0 0 86.3654 1358.8551" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="95" y="1308.0669">uses</text><!--MD5=[b2ce74f589f3a3b6857cc0f5c84426cd]
+link ffmpeg.so to libffmpeg--><path d="M788,1260.13 C788,1284.09 788,1327.43 788,1351.9 " fill="none" id="ffmpeg.so-to-libffmpeg" style="stroke:#A80036;stroke-width:1.0;"/><path d="M796.4572,1358.8818 A9,9 0 0 0 779.5428 1358.8818" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="789" y="1308.0669">uses</text><!--MD5=[c121631cd6004524564d68734a1e62ca]
+link vlc.so to libvlc--><path d="M898.73,1260.13 C898.35,1284.09 897.67,1327.43 897.28,1351.9 " fill="none" id="vlc.so-to-libvlc" style="stroke:#A80036;stroke-width:1.0;"/><path d="M905.6346,1359.0151 A9,9 0 0 0 888.7222 1358.7493" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="899" y="1308.0669">uses</text><!--MD5=[25ca642cdc0ac98d93025c966418bfd0]
+link pulse.so to libpulseaudio--><path d="M1041.73,1260.13 C1041.35,1284.09 1040.67,1327.43 1040.28,1351.9 " fill="none" id="pulse.so-to-libpulseaudio" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1048.6346,1359.0151 A9,9 0 0 0 1031.7222 1358.7493" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1042" y="1308.0669">uses</text><!--MD5=[6b38be0675be99f88985ae9603a65d69]
+link alsa.so to libalsa--><path d="M1152.35,1260.13 C1154.24,1284.09 1157.65,1327.43 1159.58,1351.9 " fill="none" id="alsa.so-to-libalsa" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1168.5593,1358.227 A9,9 0 0 0 1151.6971 1359.5557" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1157" y="1308.0669">uses</text><!--MD5=[f04cb017bcde82119bd8397a21cccd55]
+link sdl.so to libsld2--><path d="M1363.87,1260.13 C1363.68,1284.09 1363.34,1327.43 1363.14,1351.9 " fill="none" id="sdl.so-to-libsld2" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1371.5433,1358.9544 A9,9 0 0 0 1354.6295 1358.8094" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1364" y="1308.0669">uses</text><!--MD5=[c2d96afaeacd826f01d5a1331df473a6]
+link sndio.so to libsndio--><path d="M1260.27,1260.13 C1260.65,1284.09 1261.33,1327.43 1261.72,1351.9 " fill="none" id="sndio.so-to-libsndio" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1270.2778,1358.7493 A9,9 0 0 0 1253.3654 1359.0151" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1262" y="1308.0669">uses</text><!--MD5=[0888fbc0f33e467f430fa3a4d96eaf6c]
+link Plugin to ffmpeg.so--><path d="M1270.7,995.09 C1260.5,1002.42 1248.31,1009.79 1236,1014 C1173.83,1035.28 998.63,1002.44 941,1034 C864.19,1076.06 815.33,1175.01 796.63,1219.12 " fill="none" id="Plugin-to-ffmpeg.so" style="stroke:#4169E1;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#4169E1" points="794.6,1223.96,801.7687,1217.2065,796.5332,1219.3489,794.3909,1214.1134,794.6,1223.96" style="stroke:#4169E1;stroke-width:1.0;"/><!--MD5=[00204d1957023f32e3be6cf7ef45e46c]
+link Plugin to vlc.so--><path d="M1269.97,995.14 C1259.87,1002.29 1247.95,1009.53 1236,1014 C1168.88,1039.12 1139.1,1000.03 1076,1034 C994.45,1077.9 934.08,1175.8 910.21,1219.37 " fill="none" id="Plugin-to-vlc.so" style="stroke:#4169E1;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#4169E1" points="907.75,1223.91,915.5644,1217.9154,910.1392,1219.5178,908.5369,1214.0926,907.75,1223.91" style="stroke:#4169E1;stroke-width:1.0;"/><!--MD5=[ad537638c85c926d354bf4e9391557fb]
+link Plugin to pulse.so--><path d="M1266.73,995.12 C1257.15,1001.63 1246.36,1008.48 1236,1014 C1215.24,1025.06 1205.38,1019.33 1187,1034 C1120.79,1086.84 1071.98,1177.71 1051.98,1219.2 " fill="none" id="Plugin-to-pulse.so" style="stroke:#4169E1;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#4169E1" points="1049.8,1223.77,1057.2895,1217.3741,1051.9558,1219.2586,1050.0713,1213.9249,1049.8,1223.77" style="stroke:#4169E1;stroke-width:1.0;"/><!--MD5=[d5da73447693046c89b9f67c5cf252c5]
+link Plugin to alsa.so--><path d="M1284.5,995.27 C1278.04,1006.81 1270.06,1021.14 1263,1034 C1226.1,1101.18 1183.15,1181.05 1162.82,1218.94 " fill="none" id="Plugin-to-alsa.so" style="stroke:#4169E1;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#4169E1" points="1160.22,1223.79,1168.003,1217.7546,1162.5862,1219.3854,1160.9555,1213.9686,1160.22,1223.79" style="stroke:#4169E1;stroke-width:1.0;"/><!--MD5=[8be5bf739be6540ed02d79cc56bfa822]
+link Plugin to sdl.so--><path d="M1302.6,995.39 C1315.25,1045.98 1345.91,1168.65 1358.48,1218.93 " fill="none" id="Plugin-to-sdl.so" style="stroke:#4169E1;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#4169E1" points="1359.71,1223.85,1361.4077,1214.1486,1358.4973,1218.9993,1353.6466,1216.0889,1359.71,1223.85" style="stroke:#4169E1;stroke-width:1.0;"/><!--MD5=[bc3edb0396fa5e08454d1490fad00a84]
+link Plugin to sndio.so--><path d="M1293.91,995.39 C1286.94,1045.88 1270.06,1168.15 1263.09,1218.63 " fill="none" id="Plugin-to-sndio.so" style="stroke:#4169E1;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#4169E1" points="1262.37,1223.85,1267.5688,1215.485,1263.0571,1218.8974,1259.6447,1214.3857,1262.37,1223.85" style="stroke:#4169E1;stroke-width:1.0;"/><!--MD5=[1bb5247f0034116de9bfc3194446db76]
+link Settings to cfgfile--><path d="M785.83,864.18 C785.65,887.75 785.36,924.83 785.17,948.52 " fill="none" id="Settings-to-cfgfile" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="785.13,953.65,789.207,944.6846,785.1729,948.6502,781.2073,944.616,785.13,953.65" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8b4d968f65ae179f504c4ad872833bad]
+link Settings to favfile--><path d="M806.63,864.18 C828.93,888.15 864.21,926.08 886.19,949.7 " fill="none" id="Settings-to-favfile" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="889.86,953.65,886.6615,944.335,886.4556,949.9881,880.8024,949.7821,889.86,953.65" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[88702ac2c963748c7624f7cb98c73cf7]
+link PlaybackLog to playlog--><path d="M1116.59,864.18 C1102.22,887.95 1079.54,925.45 1065.23,949.11 " fill="none" id="PlaybackLog-to-playlog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1062.49,953.65,1070.5726,948.0222,1065.0793,949.3727,1063.7289,943.8794,1062.49,953.65" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b8e881ecf6b5b7c308922d14e6270177]
+link AudioOutput to pulse.so--><path d="M1516.9,1114.47 C1499.54,1128.18 1459.95,1156.99 1421,1168 C1386.56,1177.74 1131.41,1160.83 1099,1176 C1077.66,1185.99 1061.06,1208.18 1051.41,1223.84 " fill="none" id="AudioOutput-pulse.so" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6d5a1ff9bb673b47ca6e864b3625ca9b]
+link AudioOutput to alsa.so--><path d="M1521.57,1115.24 C1513.59,1129.12 1495.33,1156.74 1471,1168 C1444.07,1180.47 1230.62,1162.87 1204,1176 C1183.5,1186.11 1168.21,1208.27 1159.45,1223.89 " fill="none" id="AudioOutput-alsa.so" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[65610cec55d8f01eccde6c8aae2c98c8]
+link AudioOutput to sdl.so--><path d="M1526.72,1115.02 C1527.42,1127.62 1526.97,1152.23 1515,1168 C1485.24,1207.19 1428.97,1226.45 1394.15,1235.02 " fill="none" id="AudioOutput-sdl.so" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1b39df13727aa661d273f9adcec0bb13]
+link AudioOutput to sndio.so--><path d="M1525.1,1115.03 C1523.11,1128.58 1516.98,1155.72 1499,1168 C1482.28,1179.41 1335.25,1167.24 1317,1176 C1295.76,1186.19 1279.13,1208.33 1269.45,1223.93 " fill="none" id="AudioOutput-sndio.so" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[10cb0e90a85202c68b4f5ae5584896d4]
+link RadioPlayer to Player--><path d="M1354.49,421.82 C1359.27,452.37 1367.75,506.62 1372.16,534.83 " fill="none" id="RadioPlayer-to-Player" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1381.6105,540.5228 A9,9 0 0 0 1364.8989 543.1347" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><!--MD5=[06447379bb3df1d6064d044ec6460fcb]
+link Player to ffmpeg.so--><path d="M1375,563.22 C1375,584.29 1375,641.95 1375,690 C1375,690 1375,690 1375,1107 C1375,1134.2 1389.86,1149.41 1370,1168 C1359.49,1177.83 865.23,1170.34 852,1176 C829.14,1185.78 810.25,1208.01 799.06,1223.74 " fill="none" id="Player-ffmpeg.so" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b5f7a86efc88e577722e15a0c437f134]
+link Player to vlc.so--><path d="M1378.82,563.01 C1388.27,583.58 1412,640.18 1412,690 C1412,690 1412,690 1412,1107 C1412,1136.83 1408.95,1151.66 1384,1168 C1364.71,1180.63 990.38,1167.36 969,1176 C944.86,1185.75 924,1207.99 911.48,1223.73 " fill="none" id="Player-vlc.so" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b3e9d134e63a8d7aa3f287a78abb2d59]
+link RadioPlayer to AudioOutput--><path d="M1390.63,421.56 C1431.09,447.33 1488,494.06 1488,553 C1488,553 1488,553 1488,973 C1488,1015.57 1506.47,1062.95 1517.66,1087.74 " fill="none" id="RadioPlayer-to-AudioOutput" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1528.2948,1090.5369 A9,9 0 0 0 1512.9641 1097.6832" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><!--MD5=[bbac84d5d4349470c0500b007b5b0015]
+link Logger to log--><path d="M418.54,1394.03 C414.91,1426.47 408.3,1485.54 405.9,1506.97 " fill="none" id="Logger-log" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[a6c3d5f4857156522f9b808d97800491]
+link Logger to logDbg--><path d="M439.49,1394.03 C466.71,1426.47 516.28,1485.54 534.26,1506.97 " fill="none" id="Logger-logDbg" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[b00a031df03622f411a69eaa4b018234]
+reverse link LogQueue to Logger--><path d="M548.26,1267.25 C532.1,1275.16 514.86,1284.62 500,1295 C477.98,1310.38 456.08,1331.77 440.95,1347.78 " fill="none" id="LogQueue-backto-Logger" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="552.79,1265.06,542.946,1265.3688,548.2869,1267.2329,546.4227,1272.5738,552.79,1265.06" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="501" y="1308.0669">enqueue msg</text><!--MD5=[fe2f4b01650b32207a929dc6ef74f642]
+link Logger to LogWriter--><path d="M411.21,1347.77 C406.52,1337 400.88,1323.87 396,1312 C390.34,1298.24 384.29,1282.83 379.35,1270.07 " fill="none" id="Logger-to-LogWriter" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="377.44,1265.14,376.9435,1274.9763,379.2378,1269.8056,384.4085,1272.0999,377.44,1265.14" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="35" x="397" y="1308.0669">spool</text><!--MD5=[c8512c4f5860a4de46e8ea09f07c1c56]
+link LogWriter to LogQueue--><path d="M424.03,1242 C459.6,1242 505.97,1242 542.86,1242 " fill="none" id="LogWriter-to-LogQueue" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="548.24,1242,539.24,1238,543.24,1242,539.24,1246,548.24,1242" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="88" x="442.25" y="1235.0669">dequeue msg</text><!--MD5=[e74591cef35e750c8cbe9b506976e1dd]
+reverse link logfile to LogWriter--><path d="M1153.95,993.36 C1143.43,1001.37 1130.35,1009.68 1117,1014 C1029.23,1042.4 790.11,997.65 702,1025 C571.69,1065.45 443.75,1172.54 392.47,1218.99 " fill="none" id="logfile-backto-LogWriter" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1158,990.19,1148.4472,992.5868,1154.0625,993.2715,1153.3777,998.8868,1158,990.19" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6450a4a20f6a55d588446ffc20e74e4a]
+link LogQueue to LogCB1--><path d="M602.91,1265.12 C600.63,1289.28 597.01,1327.61 594.83,1350.63 " fill="none" id="LogQueue-LogCB1" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[3156b8282329d9657333c0a365bd14db]
+link LogCB1 to LogWriter--><path d="M595.36,1350.88 C596.31,1334.04 594.76,1309.93 581,1295 C560.7,1272.96 484.57,1258.31 429.34,1250.32 " fill="none" id="LogCB1-to-LogWriter" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#0000FF" points="424.07,1249.57,432.4202,1254.7925,429.0206,1250.2711,433.542,1246.8715,424.07,1249.57" style="stroke:#0000FF;stroke-width:1.0;"/><!--MD5=[2d52d8b260ec6de556d7a672142c74bf]
+link iErr1 to ctune_err--><path d="M508.19,262 C519.75,262 531.32,262 542.88,262 " fill="none" id="iErr1-ctune_err" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2ff713993cdfd5f0c5f64c2d73d3eba9]
+link driver to CLI--><path d="M960.55,130.79 C943.02,148.86 921.48,172.67 905,196 C896.58,207.92 888.72,222.1 882.6,234.17 " fill="none" id="driver-to-CLI" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="880.25,238.85,887.8446,232.5793,882.4803,234.375,880.6846,229.0107,880.25,238.85" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[63b020015e11c0e5e1bce865abb456b7]
+link driver to Controller--><path d="M992,130.66 C992,160.38 992,205.04 992,233.6 " fill="none" id="driver-to-Controller" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="992,238.74,996,229.74,992,233.74,988,229.74,992,238.74" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7e008308df4ef163c9809a8e50db708d]
+link Settings to Plugin--><path d="M834.51,853.23 C886.9,864.98 972.95,883.19 1048,894 C1089.52,899.98 1197.93,893.37 1236,911 C1252.37,918.58 1266.93,932.47 1277.72,944.98 " fill="none" id="Settings-to-Plugin" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1280.95,948.81,1278.2059,939.3511,1277.7267,944.9877,1272.0902,944.5084,1280.95,948.81" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c913f57a5a23e448c1f57e842e97dd3f]
+link RadioBrowser to JSON--><path d="M311.28,406.31 C226.05,418.93 93,454.41 93,553 C93,553 93,553 93,1107 C93,1143.86 93,1186.42 93,1213.51 " fill="none" id="RadioBrowser-to-JSON" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="93,1218.71,97,1209.71,93,1213.71,89,1209.71,93,1218.71" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c95fc8cea580c6ce64d8ab83b46e3cae]
+reverse link Controller to UI--><path d="M956.77,288.05 C944.63,295.73 930.65,303.57 917,309 C869.74,327.79 838.73,294.43 805,332.5 C755.32,388.58 770.3,487.16 780.26,530.96 " fill="none" id="Controller-backto-UI" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="961.15,285.23,951.4141,286.7171,956.9399,287.9273,955.7297,293.4532,961.15,285.23" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[30e46fa21d3c4462bba3a0b10c513127]
+link Controller to RadioPlayer--><path d="M1047.76,276.21 C1132.72,296.35 1284.84,332.41 1285,332.5 C1302.47,342.17 1318.52,357.74 1330.42,371.23 " fill="none" id="Controller-to-RadioPlayer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1333.97,375.34,1331.0943,365.9203,1330.6937,371.563,1325.0511,371.1624,1333.97,375.34" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[99aae573a179cb6080e43406f6d768fb]
+link Controller to NetworkUtils--><path d="M963.3,285.03 C949.95,294.08 933.42,303.67 917,309 C873.75,323.05 859.73,308.8 815,317 C790.86,321.43 779.21,315 762,332.5 C724.35,370.78 767.56,410.62 730,449 C655.79,524.83 528.9,545.93 450.29,551.47 " fill="none" id="Controller-to-NetworkUtils" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="445.18,551.82,454.4326,555.1949,450.1683,551.4779,453.8853,547.2137,445.18,551.82" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cfb6983f70c483fc84e54921e9c5304d]
+link Controller to RadioBrowser--><path d="M963.74,285.04 C950.34,294.21 933.65,303.89 917,309 C879.36,320.55 779.32,315.04 740,317 C676.65,320.15 513.72,308.53 455,332.5 C434.6,340.83 415.98,357.25 402.52,371.5 " fill="none" id="Controller-to-RadioBrowser" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="398.87,375.45,407.92,371.5645,402.2673,371.7815,402.0504,366.1288,398.87,375.45" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e4bc2f9d6e2d4747fac596ee7f8c92e9]
+link Controller to PlaybackLog--><path d="M1047.78,265.74 C1088.93,270.62 1143.68,283.53 1179,317 C1206.49,343.06 1207,359.62 1207,397.5 C1207,397.5 1207,397.5 1207,692 C1207,738.93 1176.15,785.74 1153.51,813.79 " fill="none" id="Controller-to-PlaybackLog" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="1150.23,817.79,1159.0357,813.3786,1153.4055,813.9279,1152.8562,808.2977,1150.23,817.79" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a8d79c831c5bd7890cacf2dfc7af37d1]
+link Controller to Settings--><path d="M1047.85,274.33 C1082.47,284.13 1125.28,301.76 1152,332.5 C1171.67,355.12 1170,367.52 1170,397.5 C1170,397.5 1170,397.5 1170,692 C1170,726.99 945.16,795.09 839.57,825.14 " fill="none" id="Controller-to-Settings" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="834.63,826.54,844.3777,827.948,839.4424,825.1834,842.2071,820.2481,834.63,826.54" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[61f95d8f48a78216e269f04dfabb9521]
+link Settings to JSON--><path d="M737.46,847.22 C675.12,855.17 564.55,873.52 477,911 C312.13,981.58 166.16,1149.26 113.67,1214.44 " fill="none" id="Settings-to-JSON" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="110.35,1218.58,119.0937,1214.0471,113.4717,1214.6743,112.8445,1209.0523,110.35,1218.58" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[05f1569571d9e52042152fef0aaee717]
+link Settings to KVPairs--><path d="M742.58,864.09 C678.03,897.63 553.84,964.85 456,1034 C372.33,1093.13 282.57,1174.5 238.93,1215.38 " fill="none" id="Settings-to-KVPairs" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="235.1,1218.97,244.3953,1215.7145,238.741,1215.5432,238.9123,1209.8889,235.1,1218.97" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4db86e9bb4a8841c30ff98d2ed9df8f2]
+link Controller to Callbacks1--><path d="M989.69,285.21 C987.92,302.22 985.41,326.35 983.16,347.88 " fill="none" id="Controller-Callbacks1" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[554af9df06c4fbf9384c4775d8b01622]
+link Callbacks1 to UI--><path d="M865.8,449.12 C848.08,460.2 831.01,473.16 817,488 C806.92,498.67 799.57,513.23 794.56,525.86 " fill="none" id="Callbacks1-to-UI" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#0000FF" points="792.69,530.78,799.6399,523.8015,794.4753,526.1096,792.1673,520.945,792.69,530.78" style="stroke:#0000FF;stroke-width:1.0;"/><!--MD5=[147af9f871a4039522b924bc6e0e7497]
+link RadioPlayer to Callbacks2--><path d="M1341.46,375.32 C1318.35,321.61 1259.45,184.71 1234.47,126.66 " fill="none" id="RadioPlayer-Callbacks2" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[95b87d0ab57ac167cfea558fd137732a]
+link Callbacks2 to Controller--><path d="M1184.86,126.59 C1141.37,156.89 1070.81,206.07 1028.17,235.79 " fill="none" id="Callbacks2-to-Controller" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#0000FF" points="1023.87,238.79,1033.5365,236.9035,1027.9655,235.9217,1028.9473,230.3507,1023.87,238.79" style="stroke:#0000FF;stroke-width:1.0;"/><!--MD5=[42a16d11d369e0c77a95748559efcca8]
+link RadioBrowser to Callbacks3--><path d="M386.02,375.44 C396.15,335.25 422.5,249.34 473,196 C493.53,174.31 564.77,140.22 612.07,119.04 " fill="none" id="RadioBrowser-Callbacks3" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[754aebc46a456cd1d58421aa7bce0fbe]
+link Callbacks3 to Controller--><path d="M695.55,119.06 C720.8,130.84 754.43,145.78 785,157 C842.43,178.07 863.34,166.63 917,196 C935.79,206.28 954.02,221.91 967.8,235.26 " fill="none" id="Callbacks3-to-Controller" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#0000FF" points="971.56,238.96,967.9502,229.7965,967.996,235.4532,962.3393,235.499,971.56,238.96" style="stroke:#0000FF;stroke-width:1.0;"/><!--MD5=[c3e7aa0159a18b01c35268d48722c8db]
+link UI to Callbacks4--><path d="M786,577.29 C786,603.35 786,646.06 786,670.74 " fill="none" id="UI-Callbacks4" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[572db73c250740dd2f49cac3950837d2]
+link Callbacks4 to Settings--><path d="M786,711.05 C786,736.84 786,783.05 786,812.58 " fill="none" id="Callbacks4-to-Settings" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#0000FF" points="786,817.89,790,808.89,786,812.89,782,808.89,786,817.89" style="stroke:#0000FF;stroke-width:1.0;"/><!--MD5=[19846d7537b8837ee987502f2418b974]
+link ctune_err to Callbacks5--><path d="M597.33,285.21 C597.72,311.18 598.35,353.72 598.71,378.31 " fill="none" id="ctune_err-Callbacks5" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[5778785cf6d604fcf999a757caa7ca4d]
+link Callbacks5 to UI--><path d="M622.31,418.63 C655.84,446.16 717.77,496.99 755.09,527.63 " fill="none" id="Callbacks5-to-UI" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#0000FF" points="759.07,530.89,754.6586,522.0843,755.2079,527.7145,749.5777,528.2638,759.07,530.89" style="stroke:#0000FF;stroke-width:1.0;"/><!--MD5=[20dcd310d7fb46665606bd232f235db9]
+@startuml
+
+'skinparam linetype ortho
+'skinparam linetype polyline
+
+package ctune #lightgrey {
+    package network #white {
+        component                            NetworkUtils
+        component                            RadioBrowser
+        interface "Radio Browser web API" as RadioBrowserAPI
+        interface "OpenSSL lib"           as OpenSSL
+        interface "Sockets lib"           as Sockets
+        interface "libCurl"               as Curl
+
+        [RadioBrowser] - ->  [NetworkUtils]
+
+        NetworkUtils - -( OpenSSL : "uses"
+        NetworkUtils - -( Sockets : "uses"
+        NetworkUtils - -( Curl    : "uses"
+        OpenSSL      ..> RadioBrowserAPI : https
+        Sockets      ..> RadioBrowserAPI : http/dns
+    }
+
+    package parser #white {
+        component JSON
+        interface JSONlib as "json-c lib"
+        component KVPairs
+
+        JSON - -( JSONlib : uses
+    }
+
+    package fs #white {
+        component PlaybackLog
+        component Settings
+        component Plugin
+
+        package "plugins/player/" as plugins_in #lightgrey {
+            file      ffmpeg.so
+            file      vlc.so
+            interface libffmpeg
+            interface libvlc
+
+            ffmpeg.so -down-( libffmpeg : uses
+            vlc.so    -down-( libvlc : uses
+        }
+
+        package "plugins/output/" as plugins_out #lightgrey {
+            file pulse.so
+            file alsa.so
+            file sdl.so
+            file sndio.so
+
+            interface libalsa
+            interface libpulseaudio
+            interface libsld2
+
+            pulse.so -down-( libpulseaudio : uses
+            alsa.so -down-( libalsa : uses
+            sdl.so -down-( libsld2 : uses
+            sndio.so -down-( libsndio : uses
+        }
+
+        package "config dir" #lightgrey {
+            file cfgfile as "ctune.cfg"
+            file favfile as "ctune.fav"
+        }
+
+        package "log dir" #lightgrey {
+            file playlog as "playlog.txt"
+            file logfile as "ctune.log"
+        }
+
+        Plugin .[#RoyalBlue]..> ffmpeg.so
+        Plugin .[#RoyalBlue]..> vlc.so
+        Plugin .[#RoyalBlue]..> pulse.so
+        Plugin .[#RoyalBlue]..> alsa.so
+        Plugin .[#RoyalBlue]..> sdl.so
+        Plugin .[#RoyalBlue]..> sndio.so
+
+        Settings -down-> cfgfile
+        Settings -down-> favfile
+
+        PlaybackLog -down-> playlog
+    }
+
+    package audio #white {
+        interface AudioOutput
+    }
+
+    AudioOutput - - pulse.so
+    AudioOutput - - alsa.so
+    AudioOutput - - sdl.so
+    AudioOutput - - sndio.so
+
+    package player #white {
+        component RadioPlayer
+        interface Player
+
+        RadioPlayer -down-( Player
+    }
+
+    Player - - ffmpeg.so
+    Player - - vlc.so
+    RadioPlayer - -( AudioOutput
+
+    package cli #white {
+        component CLI
+    }
+
+    package ui #white {
+        component UI
+    }
+
+    package logger #white {
+        interface log
+        interface logDbg
+        component Logger
+        component LogQueue
+        component LogWriter
+
+        log .up. Logger
+        logDbg .up. Logger
+
+        Logger -up-> LogQueue : enqueue msg
+        Logger - -> LogWriter : spool
+        LogWriter -right-> LogQueue : dequeue msg
+        LogWriter -up- -> logfile
+
+        note bottom of log    : Release build\nmessage interface
+        note bottom of logDbg : Debug build\nmessage interface
+
+        note "**Callback:**\n- resume() : void" as LogCB1 #lightblue
+        LogQueue .[#blue].  LogCB1
+        LogCB1   .[#blue].> LogWriter
+    }
+
+    interface " " as iErr1
+    component ctune_err
+    iErr1 - ctune_err
+    note top of ctune_err : global ctune-specific\nerror number
+
+    component Controller
+    component "driver\n(main)" as driver
+
+    note left of driver : Spools up:\n· ctune_err\n· Settings\n· Logger\n· PlaybackLog\n· Controller\n· UI
+
+
+    driver - -> CLI
+    driver - -> Controller
+    Settings  - ->   Plugin
+
+    RadioBrowser - ->   JSON
+
+    Controller <- -    UI
+    Controller  - ->   RadioPlayer
+    Controller  - - - -> NetworkUtils
+    Controller  - ->   RadioBrowser
+    Controller  - - ->  PlaybackLog
+    Controller  - ->   Settings
+
+
+    Settings    - - - -> JSON
+    Settings    - - - -> KVPairs
+
+
+    note "**Callbacks:**\n- setCurrStation( RadioStationInfo_t * ) : void\n- printSongInfo( const char * ) : void\n- printVolume( int ) : void\n- printPlaybackState( bool ) : void\n- printSearchingState( bool ) : void" as Callbacks1 #lightblue
+    Controller .[#blue].  Callbacks1
+    Callbacks1 .[#blue].> UI
+
+    note "**Callbacks:**\n- songChangeEvent( const char * ) : void\n- volumeChangeEvent( const int ) : void" as Callbacks2 #lightblue
+    RadioPlayer .[#blue].  Callbacks2
+    Callbacks2  .[#blue].> Controller
+
+    note "**Callbacks:**\n- setSearchState( enum ) : bool" as Callbacks3 #lightblue
+    RadioBrowser .[#blue].  Callbacks3
+    Callbacks3   .[#blue].> Controller
+
+    note "**Callbacks:**\n- modVolume( int ) : int" as Callbacks4 #lightblue
+    UI .[#blue]. Callbacks4
+    Callbacks4 .[#blue].> Settings
+
+    note "**Callback:**\n- printError( const char * ) : void" as Callbacks5 #lightblue
+    ctune_err .[#blue]. Callbacks5
+    Callbacks5 .[#blue].> UI
+
+'    note "**Callback:**\n- playbackCtrl( enum ) : bool\n- songChangeEvent( const char * ) : void" as Callbacks6 #lightblue
+'    AudioOutput .[#blue]. Callbacks6
+'    Callbacks6 .[#blue].> Player
+}
+@enduml
+
+@startuml
+
+
+package ctune #lightgrey {
+    package network #white {
+        component                            NetworkUtils
+        component                            RadioBrowser
+        interface "Radio Browser web API" as RadioBrowserAPI
+        interface "OpenSSL lib"           as OpenSSL
+        interface "Sockets lib"           as Sockets
+        interface "libCurl"               as Curl
+
+        [RadioBrowser] - ->  [NetworkUtils]
+
+        NetworkUtils - -( OpenSSL : "uses"
+        NetworkUtils - -( Sockets : "uses"
+        NetworkUtils - -( Curl    : "uses"
+        OpenSSL      ..> RadioBrowserAPI : https
+        Sockets      ..> RadioBrowserAPI : http/dns
+    }
+
+    package parser #white {
+        component JSON
+        interface JSONlib as "json-c lib"
+        component KVPairs
+
+        JSON - -( JSONlib : uses
+    }
+
+    package fs #white {
+        component PlaybackLog
+        component Settings
+        component Plugin
+
+        package "plugins/player/" as plugins_in #lightgrey {
+            file      ffmpeg.so
+            file      vlc.so
+            interface libffmpeg
+            interface libvlc
+
+            ffmpeg.so -down-( libffmpeg : uses
+            vlc.so    -down-( libvlc : uses
+        }
+
+        package "plugins/output/" as plugins_out #lightgrey {
+            file pulse.so
+            file alsa.so
+            file sdl.so
+            file sndio.so
+
+            interface libalsa
+            interface libpulseaudio
+            interface libsld2
+
+            pulse.so -down-( libpulseaudio : uses
+            alsa.so -down-( libalsa : uses
+            sdl.so -down-( libsld2 : uses
+            sndio.so -down-( libsndio : uses
+        }
+
+        package "config dir" #lightgrey {
+            file cfgfile as "ctune.cfg"
+            file favfile as "ctune.fav"
+        }
+
+        package "log dir" #lightgrey {
+            file playlog as "playlog.txt"
+            file logfile as "ctune.log"
+        }
+
+        Plugin .[#RoyalBlue]..> ffmpeg.so
+        Plugin .[#RoyalBlue]..> vlc.so
+        Plugin .[#RoyalBlue]..> pulse.so
+        Plugin .[#RoyalBlue]..> alsa.so
+        Plugin .[#RoyalBlue]..> sdl.so
+        Plugin .[#RoyalBlue]..> sndio.so
+
+        Settings -down-> cfgfile
+        Settings -down-> favfile
+
+        PlaybackLog -down-> playlog
+    }
+
+    package audio #white {
+        interface AudioOutput
+    }
+
+    AudioOutput - - pulse.so
+    AudioOutput - - alsa.so
+    AudioOutput - - sdl.so
+    AudioOutput - - sndio.so
+
+    package player #white {
+        component RadioPlayer
+        interface Player
+
+        RadioPlayer -down-( Player
+    }
+
+    Player - - ffmpeg.so
+    Player - - vlc.so
+    RadioPlayer - -( AudioOutput
+
+    package cli #white {
+        component CLI
+    }
+
+    package ui #white {
+        component UI
+    }
+
+    package logger #white {
+        interface log
+        interface logDbg
+        component Logger
+        component LogQueue
+        component LogWriter
+
+        log .up. Logger
+        logDbg .up. Logger
+
+        Logger -up-> LogQueue : enqueue msg
+        Logger - -> LogWriter : spool
+        LogWriter -right-> LogQueue : dequeue msg
+        LogWriter -up- -> logfile
+
+        note bottom of log    : Release build\nmessage interface
+        note bottom of logDbg : Debug build\nmessage interface
+
+        note "**Callback:**\n- resume() : void" as LogCB1 #lightblue
+        LogQueue .[#blue].  LogCB1
+        LogCB1   .[#blue].> LogWriter
+    }
+
+    interface " " as iErr1
+    component ctune_err
+    iErr1 - ctune_err
+    note top of ctune_err : global ctune-specific\nerror number
+
+    component Controller
+    component "driver\n(main)" as driver
+
+    note left of driver : Spools up:\n· ctune_err\n· Settings\n· Logger\n· PlaybackLog\n· Controller\n· UI
+
+
+    driver - -> CLI
+    driver - -> Controller
+    Settings  - ->   Plugin
+
+    RadioBrowser - ->   JSON
+
+    Controller <- -    UI
+    Controller  - ->   RadioPlayer
+    Controller  - - - -> NetworkUtils
+    Controller  - ->   RadioBrowser
+    Controller  - - ->  PlaybackLog
+    Controller  - ->   Settings
+
+
+    Settings    - - - -> JSON
+    Settings    - - - -> KVPairs
+
+
+    note "**Callbacks:**\n- setCurrStation( RadioStationInfo_t * ) : void\n- printSongInfo( const char * ) : void\n- printVolume( int ) : void\n- printPlaybackState( bool ) : void\n- printSearchingState( bool ) : void" as Callbacks1 #lightblue
+    Controller .[#blue].  Callbacks1
+    Callbacks1 .[#blue].> UI
+
+    note "**Callbacks:**\n- songChangeEvent( const char * ) : void\n- volumeChangeEvent( const int ) : void" as Callbacks2 #lightblue
+    RadioPlayer .[#blue].  Callbacks2
+    Callbacks2  .[#blue].> Controller
+
+    note "**Callbacks:**\n- setSearchState( enum ) : bool" as Callbacks3 #lightblue
+    RadioBrowser .[#blue].  Callbacks3
+    Callbacks3   .[#blue].> Controller
+
+    note "**Callbacks:**\n- modVolume( int ) : int" as Callbacks4 #lightblue
+    UI .[#blue]. Callbacks4
+    Callbacks4 .[#blue].> Settings
+
+    note "**Callback:**\n- printError( const char * ) : void" as Callbacks5 #lightblue
+    ctune_err .[#blue]. Callbacks5
+    Callbacks5 .[#blue].> UI
+
+}
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

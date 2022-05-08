@@ -1,0 +1,95 @@
+<article>
+    <div>
+        <h1><span class="title">Design Pattern: Singleton</span></h1>
+        <time datetime="2018-08-14">14 August 2018</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">Design Patterns</span>
+            <span class="tag">Notes</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <p>One-Instance only Class.</p>
+
+        <p><span class="bold">Type:</span> Creational.</p>
+
+        <figure class="right quarter-width">
+            <a href="singleton.png">
+                <img src="singleton.png" alt="Singleton UML" />
+            </a>
+            <figcaption>Singleton UML</figcaption>
+        </figure>
+
+        <p>Singletons can be useful for loggers, settings managers and any 1-instance patterns like façades or builders for example. An unknown provenance for the first invocation means that instantiation must be done automatically and the instance requires self-management. Also, holding global state in a singleton is a step better than polluting the global namespace.</p>
+
+        <p>Testing an implementation of this pattern or any processes that interacts with it and where data flows in both directions makes it difficult to test functionalities independently as a Singleton will retains state throughout its lifetime (i.e. between unit tests). A dirty solution is to implement some helper methods to set/clear that state which can then be called prior/post unit tests.</p>
+
+        <h2>C++11</h2>
+
+        <p>In C++11 a static local variable can be used safely in threaded environments.</p>
+
+<div class="code-wrap">
+<code class="block cpp">class Singleton {
+    public:
+        ~Singleton() = default;
+
+        static Singleton & getInstance() {
+            static Singleton instance;
+            return instance;
+        }
+
+    private:
+        Singleton() {}
+}
+</code></div>
+
+        <p>The C++11 standard (§6.7 [stmt.dcl] p4) states:</p>
+
+        <blockquote>
+            "If control enters the declaration concurrently while the variable is being initialized, the concurrent execution shall wait for completion of the initialization."
+        </blockquote>
+
+        <h2>Java</h2>
+
+        <p>In Java, for thread safety, double-checked locking can be used in <code class="inline java">getInstance()</code> to ensure only 1 instance is created with lazy initialization (- where the object is created when <code class="inline java">getInstance()</code> is first invoked and not before).</p>
+
+<div class="code-wrap">
+<code class="block java">public final class Singleton {
+    private static volatile Singleton instance = null;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if( instance == null ) {
+            synchronized( Singleton.class ) {
+                if( instance == null )
+                    instance = new Singleton();
+            }
+        }
+
+        return instance;
+    }
+}
+</code></div>
+
+        <p>Alternatively, in order to avoid the synchronization overhead, initialization-on-demand holder idiom offers can be used instead.</p>
+
+<div class="code-wrap">
+<code class="block java">public class Singleton {
+    private Singleton() {}
+
+    private static class LazyHolder {
+        static final Singleton INSTANCE = new Singleton();
+    }
+
+    public static Singleton getInstance() {
+        return LazyHolder.INSTANCE;
+    }
+}
+</code></div>
+
+    </div>
+</article>

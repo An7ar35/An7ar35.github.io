@@ -1,0 +1,55 @@
+.toc, .auto-toc {
+    margin: 0.5em 0 0.5em 2em;
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid lightgrey;
+    display: block;
+    float: right;
+}
+
+.toc h2, .auto-toc h2 {
+    padding: 0;
+    margin: 0.5em;
+    font-size: large;
+}
+
+.toc      ol *,
+.auto-toc ol *              { font-size: 1em; }
+
+.toc      ol,
+.auto-toc ol                { margin: 0.25em 0.5em; }
+
+.toc      li,
+.auto-toc li                { margin: 0.25em 0; }
+
+.toc      li > a,
+.auto-toc li > a            { text-decoration: none; }
+
+.toc      > ol > li > a,
+.auto-toc > ol > li > a     { font-weight: bold; }
+
+.toc      ol li li,
+.auto-toc ol li li          { padding-left: 0.5em; }
+
+.toc      > ol ol,
+.auto-toc > ol ol           { border-left: 1px solid #4169e1; }
+
+.toc      > ol ol:hover,
+.auto-toc > ol ol:hover     { border-left: 1px solid deepskyblue; }
+
+.toc      li,
+.toc      ol,
+.toc      ol li,
+.auto-toc li,
+.auto-toc ol,
+.auto-toc ol li {
+    padding: 0;
+    list-style: outside none none !important;
+}
+
+@media screen and ( max-width: 1100px ) {
+    .toc, .auto-toc {
+        width: 100%;
+        margin: 0.5em 0 1em 0;
+        padding: 0;
+    }
+}

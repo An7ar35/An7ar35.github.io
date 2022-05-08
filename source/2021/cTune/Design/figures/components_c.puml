@@ -1,0 +1,36 @@
+@startuml
+
+interface "Radio Browser API" as RadioBrowserAPI
+interface "Radio Stream" as RadioStream #back:black;line:black
+interface "Sound out" as out #back:black;line:black
+
+package parser #lightgrey {
+    component JSON
+}
+
+package player #lightgrey {
+    component RadioPlayer
+    component Player
+    component AudioOutput
+    interface "Player interface" as iPlayer
+    interface "AudioOut interface" as iAudioOut
+
+    iPlayer -up- Player
+    iAudioOut --AudioOutput
+    RadioPlayer -up-( iPlayer
+    RadioPlayer -down-( iAudioOut
+    Player .[#black].> AudioOutput : PCM data
+}
+
+[NetworkUtils] .[#black]right.> [JSON] : string\n(raw data)
+[RadioBrowser] .[#black]left.>  [NetworkUtils] : query
+[RadioBrowser] .[#black]right.> [RadioPlayer] : DTO(s)\n(radio station)
+[JSON]         .[#black]up.>    [RadioBrowser] : DTO(s)
+
+RadioBrowserAPI )-down- [NetworkUtils] : http/s
+RadioStream .[#black].> Player
+AudioOutput .[#black].> out
+
+note bottom of JSON : Parses JSON data from\nraw string and packs into\nthe appropriate DTO(s)
+
+@enduml
