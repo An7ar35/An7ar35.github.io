@@ -1,0 +1,106 @@
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figure img {
+    width: 100%;
+    display: block;
+    transition: 0.2s box-shadow ease;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+figure figcaption {
+    padding: 0.5em 0.5em 0.5em 0;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: small;
+    color: #31363b;
+    font-style: italic;
+}
+
+figure.three-quarter-width { width: 75%; }
+figure.two-third-width     { width: 66%; }
+figure.half-width          { width: 50%; }
+figure.third-width         { width: 33%; }
+figure.quarter-width       { width: 25%; }
+figure.eighth-width        { width: 15%; }
+figure.right               { float: right; }
+figure.left                { float: left;  }
+figure.icon                { width: 4.25em !important; height: auto; }
+figure.icon img            { transition: none !important; box-shadow: none !important; }
+
+figure.fill {
+    display: block;
+    width: 90%;
+    margin: 0.5em auto;
+    height: auto;
+    text-align: center;
+}
+
+figure.center {
+    margin: 0.5em auto !important;
+    max-width: 90%;
+    text-align: center;
+}
+
+figure.center img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and ( max-width: 650px ) {
+    figure.center,
+    figure.three-quarter-width,
+    figure.two-third-width,
+    figure.half-width {
+        margin: 0.5em auto !important;
+        width: 90% !important;
+        max-width: 90% !important;
+        float: none !important;
+        text-align: center;
+    }
+
+    figure.third-width {
+        margin: 0.5em auto !important;
+        width: 66% !important;
+        max-width: 66% !important;
+        float: none !important;
+        text-align: center;
+    }
+
+    figure.quarter-width {
+        width: 50% !important;
+        max-width: 50% !important;
+    }
+
+    figure.eighth-width {
+        width: 25% !important;
+        max-width: 25% !important;
+    }
+}
+
+@media screen and ( max-width: 400px ) {
+    figure.third-width,
+    figure.quarter-width {
+        width: 90% !important;
+        max-width: 90% !important;
+        float: none !important;
+        text-align: center;
+    }
+
+    figure.eighth-width {
+        width: 35% !important;
+        max-width: 35% !important;
+    }
+}
+
+.img-caption {
+    display: block;
+    text-align: center;
+    font-size: small;
+    color: darkgrey;
+    font-style: italic;
+}

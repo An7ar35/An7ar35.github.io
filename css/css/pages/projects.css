@@ -1,0 +1,107 @@
+.tabbed {
+    transition:       0.2s box-shadow ease;
+    box-shadow:       0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width:            100%;
+    display:          flex;
+    flex-wrap:        wrap;
+    position:         relative;
+    list-style:       none;
+    overflow:         hidden;
+    background: rgb( 255, 255, 255 );
+    background: linear-gradient( 0deg, rgba( 252, 252, 252, 1 ) 0%, rgba( 247, 247, 247, 1 ) 50%, rgba( 252, 252, 252, 1 ) 100% );
+}
+
+.tabbed > ul {
+    width:            100%;
+    display:          flex;
+    justify-content:  stretch;
+    flex-wrap: wrap;
+    flex-direction:   row;
+    align-items:      flex-start;
+    margin:           0;
+    padding:          0;
+    height:           auto;
+    background-color: #31363b;
+}
+
+.tabbed > ul li {
+    list-style: none;
+    text-align: center;
+    flex-grow : 1;
+}
+
+.tabbed > ul li:first-of-type a {
+    border-left: grey solid 1px;
+}
+
+.tabbed > ul li:last-of-type a {
+    border-right: grey solid 1px;
+}
+
+.tabbed > ul li.active a {
+    color: #31363b;
+    background-color: #FCFCFC; /* global background */
+    border-left:  #FCFCFC solid 1px;
+    border-right: #FCFCFC solid 1px;
+    cursor: default;
+}
+
+.tabbed > ul li a {
+    display:          block;
+    flex-basis:       100%;
+    color:            white;
+    background-color: grey;
+    border-left:      #FCFCFC solid 1px;
+    border-right:     #FCFCFC solid 1px;
+    transition:       0.2s background-color ease;
+    text-align:       center;
+    padding:          0.5em;
+    height:           3em;
+    text-decoration:  none;
+    font-weight:      normal;
+    box-sizing:       border-box;
+    /*flex-grow:        3;*/
+}
+
+.tabbed > ul li a:hover {
+    color: #31363b;
+    background-color: #f9f9f9;
+    border-left:  #f9f9f9 solid 1px;
+    border-right: #f9f9f9 solid 1px;
+}
+
+.tabbed > ul li * { display: inline-block; }
+
+.tabbed > ul li .nav-icon {
+    display: inline-block;
+    height:  2em;
+    margin:  0;
+    padding: 0 0.5em;
+    vertical-align: middle;
+}
+
+.tabbed > ul li .nav-icon > img { height: 100%; }
+
+.tabbed > ul li .nav-text {
+    display:        inline-block;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width : 459px) {
+    .tabbed > ul li:first-of-type a {
+        border: none;
+        border-bottom: #FCFCFC 1px solid;
+    }
+
+    .tabbed > ul li:last-of-type a {
+        border: none;
+        border-bottom: grey 1px solid;
+    }
+
+    .tabbed > ul li a {
+        border: none;
+        border-bottom: #FCFCFC 1px solid;
+    }
+}
+
+.tab-content > hr { margin-left: 1em; }

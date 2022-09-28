@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'CourierCode';
+    src: url('../../fonts/CourierCode-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CourierCode';
+    src: url('../../fonts/CourierCode-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'CourierCode';
+    src: url('../../fonts/CourierCode-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'CourierCode';
+    src: url('../../fonts/CourierCode-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+div.code-wrap {
+    min-width: 100%;
+    overflow-x: auto;
+}
+
+code        { font-family: "CourierCode", monospace; }
+code.inline { background-color: #F3F3F3; }
+
+code.block {
+    display: block;
+    white-space: pre-wrap;
+    border-left: solid thick sandybrown;
+    margin: 0.5em 0 0.5em 0;
+    padding: 0 0.5em 0 0.5em;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    line-height: 1.4em;
+    min-width: auto;
+}
+
+code.terminal {
+    color: #31363b;
+    background-color: #F3F3F3;
+}
+
+code.terminal-bg {
+    color: lime;
+    background-color: black;
+}
+
+code.terminal.block, code.terminal-bg.block {
+    border-left: none;
+}
+
+code.cpp {}
+code.html {}
+code.clang {}
+code.api-simple { /* use when embedding hyperlinks and such in the code */
+    color: black;
+    background: #d9d9d9;
+}
+code.api-complex {}
+
+code > a {
+    /*color: lightblue;*/
+    text-decoration: none;
+}
+
+code > a.hover {}
+
+@media screen and ( max-width: 650px ) {
+    code.block { font-size: 13px; }
+}
+
+@media screen and ( max-width: 400px ) {
+    /*code.block { font-size: 11px; }*/
+}

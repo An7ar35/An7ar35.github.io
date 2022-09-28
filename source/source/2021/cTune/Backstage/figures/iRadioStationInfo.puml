@@ -1,0 +1,53 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface RadioStationInfo {
+    typedef int (* Comparator)( const void *, const void * )
+    ====
+'    <b>Bit mask constants</b>
+'    ----
+'    + unsigned IS_FAV = 0b0001
+'    + unsigned IS_QUEUED = 0b0010
+'    + unsigned IS_LOCAL = 0b0100
+'    ====
+    + init( void * rsi ) : void
+    + copy( const void * from, void * dest ) : void
+    + dup( const void * rsi ) : void *
+    + freeContent( void * rsi ) : void
+    + free( void * rsi ) : void
+    ....
+    + sameUUID( const void * lhs, const void * rhs ) : bool
+    + equal( const void * lhs, const void * rhs ) : bool
+    + hash( const void * uuid_str ) : uint64_t
+    + compareBy( const void * lhs, const void * rhs, RadioStationInfo_SortBy_e attr ) : int
+    + getComparator( RadioStationInfo_SortBy_e attr ) : Comparator
+    ....
+    /* getters */
+    ....
+    /* setters */
+}
+
+enum RadioStationInfo_SortBy_e {
+    RADIOSTATIONINFO_SORTBY_NONE = 0
+    RADIOSTATIONINFO_SORTBY_SOURCE
+    RADIOSTATIONINFO_SORTBY_SOURCE_DESC
+    RADIOSTATIONINFO_SORTBY_NAME
+    RADIOSTATIONINFO_SORTBY_NAME_DESC
+    RADIOSTATIONINFO_SORTBY_TAGS
+    RADIOSTATIONINFO_SORTBY_TAGS_DESC
+    RADIOSTATIONINFO_SORTBY_COUNTRY
+    RADIOSTATIONINFO_SORTBY_COUNTRY_DESC
+    RADIOSTATIONINFO_SORTBY_COUNTRYCODE
+    RADIOSTATIONINFO_SORTBY_COUNTRYCODE_DESC
+    RADIOSTATIONINFO_SORTBY_STATE
+    RADIOSTATIONINFO_SORTBY_STATE_DESC
+    RADIOSTATIONINFO_SORTBY_LANGUAGE
+    RADIOSTATIONINFO_SORTBY_LANGUAGE_DESC
+    RADIOSTATIONINFO_SORTBY_CODEC
+    RADIOSTATIONINFO_SORTBY_CODEC_DESC
+    RADIOSTATIONINFO_SORTBY_BITRATE
+    RADIOSTATIONINFO_SORTBY_BITRATE_DESC
+}
+
+RadioStationInfo -right-> RadioStationInfo_SortBy_e
+@enduml

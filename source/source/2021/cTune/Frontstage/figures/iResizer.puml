@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface "Resizer interface " as iResizer {
+    + init( void ) : void
+    + free( void ) : void
+    ----
+    <b>UI global</b>
+    ----
+    + push( void(* resize_fn)( void * ), void * data ) : bool
+    + pop( void ) : void
+    + resize( void ) : void
+}
+
+@enduml

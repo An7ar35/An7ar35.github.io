@@ -1,0 +1,483 @@
+<!-- Generated with Blogator 1.3.2 (https://an7ar35.bitbucket.io) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' 'unsafe-eval';">
+    <title>EAD | Writings</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/blogator/main.css" />
+</head>
+    <body>
+        <div class="header">
+            <div><img src="../img/tree-left.svg" alt="left tree"/></div>
+            <div>
+                <div class="site-title">Es' corner</div>
+                <div class="site-micro-title">Just another keyboard-enthusiastic hominid.</div>
+            </div>
+            <div><img src="../img/tree-right.svg" alt="right tree"/></div>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li class="active">
+                    <a class="nav-writings" href="../index.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Home</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-projects" href="../pages/projects/personal.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Projects</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-contact" href="../pages/contact.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script src="../js/sticky-top-navbar.js"></script>
+
+        <div class="breadcrumb">
+        	<ul>
+        		<li><a href="../index.html">Home</a></li>
+        		<li><a href="../index/by_date/0.html">Posts</a></li>
+        		<li>cTune v1.0: Part 1 - Design</li>
+        	</ul>
+        </div>
+
+        <div class="content-h">
+            <div class="left-col">
+                <div class="post-content">
+
+<article>
+    <div>
+        <h1><span class="title">cTune v1.0: Part 1 - Design</span></h1>
+        <time datetime="2021-06-16">16 June 2021</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">cTune</span>
+            <span class="tag">C99</span>
+            <span class="tag">Project</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <div class="auto-toc">
+        	<h2>Table of Contents</h2>
+        	<ol>
+        		<li><a href="#heading_1">1. Problem space</a></li>
+        		<li><a href="#heading_2">2. Design philosophy</a></li>
+        		<li><ol>
+        			<li><a href="#heading_2_1">2.1 Designing for longevity</a></li>
+        			<li><a href="#heading_2_2">2.2 Designing for redundancy</a></li>
+        			<li><a href="#heading_2_3">2.3 Designing for failure</a></li>
+        		</ol></li>
+        		<li><a href="#heading_3">3. Core architecture</a></li>
+        		<li><ol>
+        			<li><a href="#heading_3_1">3.1 Component pipeline</a></li>
+        			<li><a href="#heading_3_2">3.2 Peripheral components</a></li>
+        		</ol></li>
+        		<li><a href="#heading_4">4. Logger library</a></li>
+        		<li><a href="#heading_5">5. Development of UI ideas</a></li>
+        		<li><a href="#heading_6">6. Summary</a></li>
+        	</ol>
+        </div>
+
+        <p><span class="summary"><code class="inline terminal">ctune</code> is Linux based internet radio stream player for the console entirely written in C. It uses the <a href="https://www.radio-browser.info" rel="noreferrer" target="_blank">RadioBrowser API</a> as a source for searching streams and getting station information.</span></p>
+
+        <p><span class="summary">This is part 1 of 3 blog posts detailing the design philosophy and choices taken for cTune's development.</span></p>
+
+        <p>All UML diagrams are made with <a href="https://plantuml.com/" rel="noreferrer" target="_blank">PlantUML</a>.</p>
+
+        <h2 id="heading_1">1. Problem space</h2>
+
+        <p>First, why? - Two reasons: (a) to learn C which is an arguably important language in the history of software development and (b) create a radio stream player in the same vein as the really cool <a href="https://cmus.github.io/" rel="noreferrer" target="_blank">cmus</a> player. I use the latter for playing my music library so something similar to play radio streams would be a nice complement.<p>
+
+        <p>The mandatory functional requirement are as follows:</p>
+
+        <ul>
+            <li>Play radio streams</li>
+            <li>Control playback volume</li>
+            <li>Search radio streams from <a href="https://www.radio-browser.info" rel="noreferrer" target="_blank">RadioBrowser</a></li>
+            <li>Browse radio streams available in <a href="https://www.radio-browser.info" rel="noreferrer" target="_blank">RadioBrowser</a></li>
+        </ul>
+
+        <p>The optional functional requirement are as follows:</p>
+
+        <ul>
+            <li>Keep a locally stored list of favourite radio streams</li>
+            <li>Edit entries in favourites</li>
+            <li>Check state of a stream in the favourites</li>
+            <li>Create custom local-only entries in the favourites</li>
+            <li>Ability to resume playing stream from last session's exit</li>
+            <li>Keeping volume state between session</li>
+        </ul>
+
+        <p>This is not an exhaustive list but covers enough of the foundations to produce, at the very least, a radio stream player with the bare necessities.</p>
+
+        <h2 id="heading_2">2. Design philosophy</h2>
+
+        <p>At this stage of the development process I am unfamiliar with the C language aside with some cross-over concepts from C++. I have also never done any sort of sound processing. I know this will unquestionably lead to some pretty bad assumptions and design choices.</p>
+
+        <p>The best approach is to account for these failings early and, hopefully, avoid huge future time-sinks. An impasses during the implementation phase is incredibly infuriating and more so when it is because the design is inflexible and/or based on wrong abstractions. Assuming fallibility can actually make things easier later on.</p>
+
+        <h3 id="heading_2_1">2.1 Designing for longevity</h3>
+
+        <figure class="right third-width">
+            <a href="../source/2021/cTune/Design/figures/wrappers.svg"><img src="../source/2021/cTune/Design/figures/wrappers.svg" alt="Library substitutability" /></a>
+            <figcaption>Fig.1 Library substitutability</figcaption>
+        </figure>
+
+        <p>Here longevity is mostly about ease of maintenance. Let's say one of the external libraries used becomes broken and/or abandoned; its functionality would need to be replaced by either swapping in another similar library or re-writing all of the original functionality that the software depends on.</p>
+
+        <p>In the worst case scenario, where the library calls are peppered everywhere inside the software, it would mean:</p>
+        <ul>
+            <li>All of the calls needing to be hunted down and replaced to fit the new API,</li>
+            <li>Code dependent on the calls needing editing/re-implementing especially in the cases where the new API calls are not a 1-to-1 replacement,</li>
+            <li>New code = new bugs</li>
+        </ul>
+
+        <p>In any case, to avoid the worst of all that, I think it's generally wiser to keep external dependencies wrapped behind local interfaces and not leak their non-standard data types/objects. This is very much inline with the "<a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle" rel="noreferrer" target="_blank">Liskov substitution principle</a>" since substitutability is a big part of what is trying to be achieved here.</p>
+
+        <p>As long as the wrapper API's contract is not broken (e.g.: returning a NULL string when the API contract says strings will never return as NULL) then code inside the wrapper can be adapted to work with a new library's API without messing up the rest of the software.</p>
+
+        <h3 id="heading_2_2">2.2 Designing for redundancy</h3>
+
+        <figure class="right half-width">
+            <a href="../source/2021/cTune/Design/figures/plugins.svg"><img src="../source/2021/cTune/Design/figures/plugins.svg" alt="Plugin system" /></a>
+            <figcaption>Fig.2 Plugin system</figcaption>
+        </figure>
+
+        <p>Some dependencies such as the stream decoding and output to the system's sound server can be made into binary modules so that they can be side loaded as plugins to the already compiled application. This is inspired by the similar approach taken in <a href="https://cmus.github.io/" rel="noreferrer" target="_blank">cmus</a>.</p>
+
+        <p>A plugin system enables, to a larger extent, the future expandability of the software. New 'players' and sound 'outputs' be added to adapt and fit different host configurations. If more than one plugin type is available for a host, it offers a fallback solution in the case where the default plugin is sub-optimal (or broken) for the host system.</p>
+
+        <p>As an extra bonus it also makes supporting new players or sound outputs a lot easier: only knowledge of the required interface and the plugin system is needed for development instead of the complete inner workings of the software. Good for third parties!</p>
+
+        <h3 id="heading_2_3">2.3 Designing for failure</h3>
+
+        <p>By coming in with the mindset that the code will both suck and fail, a lot of future headaches can be avoided by taking a defensive coding stance along with a healthy dose of aggressive logging (describing the what/where of what is going on at important execution points).</p>
+
+        <p>So what does this look like in practice?</p>
+        <ul>
+            <li>Methods check their arguments and any returns from external calls,</li>
+            <li>Debug logging for any key method entry point (exceptions: avoid when inside loops, called from loops or any other instance where it will spam the log)</li>
+            <li>Error logging for all possible major failure points including a description detailing the what and where,</li>
+            <li>A unified error system for the application (e.g.: error codes defined and used consistently throughout)</li>
+        </ul>
+
+        <div class="code-wrap">
+            <code class="ansic block">int foo( void * data, int i ) {
+    log( debug, "[foo( %p, %d )] starting...", data, i );
+
+    if( data == NULL || i < 0 ) {
+        log( error, "[foo( %p, %d )] Unexpected arg(s) passed.", data, i );
+        return -ERROR_BAD_ARGS
+    }
+
+    struct DataStore data_store;
+
+    if( !loadData( data, &data_store ) ) {
+        log( error, "[foo( %p, %d )] failed to load data into store.", data, i );
+        return -ERROR_PACKING_FAILED;
+    }
+
+    int err_no = 0;
+
+    if( ( err_no = processData( &data_store, i ) ) < 0 ) {
+        log( error, "[foo( %p, %d )] failed to process store: %s.", data, i, my_strerr( ret ) );
+        return -ERROR_PROCESSING_FAILED;
+    }
+
+    return ERROR_NONE;
+}</code>
+        </div>
+        <div class="caption-bottom">Example of checks and logging inside a function.</div>
+
+        <p>This makes bug hunting a hell of a lot easier!</p>
+
+        <h2 id="heading_3">3. Core architecture</h2>
+
+        <p>If software is boiled down do its core abstraction it's just data inputs and outputs with some processing in between.</p>
+
+        <figure class="center quarter-width">
+            <a href="../source/2021/cTune/Design/figures/process.svg"><img src="../source/2021/cTune/Design/figures/process.svg" alt="Abstract process" /></a>
+            <figcaption>Fig.3 Abstract process</figcaption>
+        </figure>
+
+        <p>It's then possible to chain these processes creating a data pipeline by connecting one output to another process's input and so on. Pipelines can split into forks and join up.</p>
+
+        <figure class="center half-width">
+            <a href="../source/2021/cTune/Design/figures/pipeline.svg"><img src="../source/2021/cTune/Design/figures/pipeline.svg" alt="Process pipeline" /></a>
+            <figcaption>Fig.4 Process pipeline</figcaption>
+        </figure>
+
+        <p>When approaching a problem I personally find it easier to understand what the data is, its flow and how it needs to be processed first and foremost. This way I can come up with a reasonably sound architectural design I can continually trust even when I get lost in the implementation (coding stage).</p>
+
+        <h3 id="heading_3_1">3.1 Component pipeline</h3>
+
+        <p>When building something unfamiliar it is important to start in terms of generalities (highest abstraction) and dig down towards the details in stages as understanding of the domain grows. Doing some exploratory prototyping is a good way to get a good feel of things and find any holes in any assumptions made. This tends to lead to better architectural design choices down the line. In simpler terms; it's good to experiment and test things before hand.</p>
+
+        <p>Before starting I looked a bit into both how to play streams and how to play sound in a linux system. For decoding/playing streams I settled on the <a href="https://ffmpeg.org/" rel="noreferrer" target="_blank">ffmpeg</a> library and, for the sound output, I picked <a href="https://www.libsdl.org/" rel="noreferrer" target="_blank">SDL2</a>, <a href="https://www.freedesktop.org/wiki/Software/PulseAudio/" rel="noreferrer" target="_blank">PulseAudio</a> and, optionally, <a href="https://alsa-project.org" rel="noreferrer" target="_blank">ALSA</a> if I can be bothered.</p>
+
+        <p>Now that these choices are made, what sort of data is coming in and what sort of data needs to come out?: Radio station information comes in, radio stream plays out. This means that something is needed to get the radio station information and something is needed to play the streams detailed in said information...</p>
+
+        <figure class="center half-width">
+            <a href="../source/2021/cTune/Design/figures/components_a.svg"><img src="../source/2021/cTune/Design/figures/components_a.svg" alt="MVP pipeline 1" /></a>
+            <figcaption>Fig.5 MVP Pipeline v1</figcaption>
+        </figure>
+
+        <p>Now it's just a matter of drilling down and breaking up things into sub-tasks until the components are detailed enough to identify all the major moving pieces whilst conveying the information in a clear and concise manner. In other words, too much details is as bad as too little as it locks you into in an inflexible design too soon.</p>
+
+        <p>As the radio station information is fetched from the <a href="https://api.radio-browser.info/" rel="noreferrer" target="_blank">RadioBrowser web API</a> over the internet, network IO will be involved. A '<b>NetworkUtils</b>' component can be added as an abstraction for the querying and fetching of the raw data from the API over the internet. Also, the radio stream data input needs to be added to the player.</p>
+
+        <figure class="center fill">
+            <a href="../source/2021/cTune/Design/figures/components_b.svg"><img src="../source/2021/cTune/Design/figures/components_b.svg" alt="MVP pipeline 2" /></a>
+            <figcaption>Fig.6 MVP Pipeline v2</figcaption>
+        </figure>
+
+        <p>Looking at the <a href="https://api.radio-browser.info" target="_blank" rel="noreferrer">RadioBrowser API</a> there are two possible formats for the data returned: XML and JSON. I chose to go the JSON route as I wanted to play a bit with the <a href="https://github.com/json-c/json-c" target="_blank" rel="noreferrer"><code class="inline terminal">json-c</code></a> library. Regardless, the data returned from a query needs to be parsed from the given format into something more local and manageable such as a DTO (Data Transfer Object).</p>
+
+        <p>As for the '<b>RadioPlayer</b>' component, its process can be split into 2 areas of concerns:</p>
+        <ol>
+            <li>a player that fetches a stream and decodes it into <a href="https://en.wikipedia.org/wiki/Pulse-code_modulation" rel="noreferrer" target="_blank">PCM</a> data,</li>
+            <li>a sound output system that interacts with the system's audio server</li>
+        </ol>
+
+        <figure class="center three-quarter-width">
+            <a href="../source/2021/cTune/Design/figures/components_c.svg"><img src="../source/2021/cTune/Design/figures/components_c.svg" alt="MVP pipeline 3" /></a>
+            <figcaption>Fig.7 MVP Pipeline v3</figcaption>
+        </figure>
+
+        <p>Now that a pipeline is defined there is still the issue of how to control what's going on inside of it. To pass instruction from the operator to the key components ('<b>RadioBrowser</b>' and '<b>RadioPlayer</b>') a '<b>Controller</b>' is required. This will be the hub interface from which the UI can latch on later.</p>
+
+        <p>The calls for parsing the JSON data into DTO(s) should really be kept within the scope of just 1 component. '<b>RadioBrowser</b>' makes more sense as parsing JSON has got nothing to do with network IO.</p>
+
+        <figure class="center three-quarter-width">
+            <a href="../source/2021/cTune/Design/figures/components_d.svg"><img src="../source/2021/cTune/Design/figures/components_d.svg" alt="MVP pipeline 4" /></a>
+            <figcaption>Fig.8 MVP Pipeline v4</figcaption>
+        </figure>
+
+        <p></p>
+
+        <h3 id="heading_3_2">3.2 Peripheral components</h3>
+
+        <p>There are still a few things to append around that core pipeline in order to satisfy the more loosely connected and optional requirement. Namely:</p>
+        <ol>
+            <li><b>Settings:</b>
+                <ul>
+                    <li>loading/saving the application's configuration and session variables,</li>
+                    <li>loading/saving the operator's bookmarked favourite radio stations,</li>
+                </ul>
+            </li>
+            <li>
+                <b>Plugin:</b> where all the plugin management and loading happens for the player(s) and audio output(s).
+            </li>
+        </ol>
+
+        <p>The component dealing with the settings (<b>Settings</b>) can also act as gateway interface to the plugin system; what plugin gets loaded is dictated by the application's configuration. As for the plugins, the <b>Player</b> and <b>AudioOut</b> components from the previous diagram (fig. 8) can be replaced by the plugin files and their respective interfaces connected to them instead.</p>
+
+        <figure class="center three-quarter-width">
+            <a href="../source/2021/cTune/Design/figures/peripheral_a.svg"><img src="../source/2021/cTune/Design/figures/peripheral_a.svg" alt="Filesystem IO" /></a>
+            <figcaption>Fig.9 Filesystem IO</figcaption>
+        </figure>
+
+        <h2 id="heading_4">4. Logger library</h2>
+
+        <figure class="right third-width">
+            <a href="../source/2021/cTune/Design/figures/logger.svg"><img src="../source/2021/cTune/Design/figures/logger.svg" alt="Logger design" /></a>
+            <figcaption>Fig.10 Logger design</figcaption>
+        </figure>
+
+        <p>Last but definitely not least; the logger. This is meant to be used throughout the application so it's best to keep it on it's own separate thread so that if the main application blocks, the logger will continue writing whatever messages have managed to get through to the output file.</p>
+
+        <p>For this to happen the design is based around asynchronous access to a message queue. Meaning threading will be involved to make the whole thing work.</p>
+
+        <p>The plan is to send the logging message to the queue when and wherever a logging call happens. Meanwhile, the 'worker' thread grabs messages from the queue and writes them to the log file, only stopping when there are no more to process. The file writing operation should only be resumed when there are new messages in the queue. For signalling this, a callback is added between the <b>LogQueue</b> data-structure and the worker thread (<b>LogWriter</b>).</p>
+
+        <h2 id="heading_5">5. Development of UI ideas</h2>
+
+        <p>At this stage the "UI design" amounts to little more than ideas and some incomplete hand-drawn sketches of various graphical interface functionalities. It's sort of like a 'bucket of ideas', if you will.</p>
+
+        <p>I tend to continuously think over things and how to go about them as I write backend code.</p>
+
+        <p>I'd equivalise this process as a 1-person brainstorm; I continuously pit previous ideas against new ones eventually getting to an actual final UI design. It bears to mention UI/UX design does not come easy to me so it takes a bit of time to bring anything into focus.</p>
+
+        <h2 id="heading_6">6. Summary</h2>
+
+        <figure class="right half-width">
+            <a href="../source/2021/cTune/Design/figures/cTune.svg"><img src="../source/2021/cTune/Design/figures/cTune.svg" alt="cTune architecture type" /></a>
+            <figcaption>Fig.11 cTune architecture</figcaption>
+        </figure>
+
+        <p>The application is put together in a 2-tiered architectural fashion with the frontend and backend as the respecive tiers. The plugins will be loaded by the backend and all parts of the application will have access to the Logger library instance.</p>
+
+    </div>
+</article>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="page-nav">
+                	<ul>
+                		<li class="first"><a href="1.html">|&#9664;</a></li>
+                		<li class="prev"><a rel="prev" href="23.html">&#9664;</a></li>
+                		<li class="curr">24 / 30</li>
+                		<li class="next"><a rel="next" href="25.html">&#9654;</a></li>
+                		<li class="last"><a href="30.html">&#9654;|</a></li>
+                	</ul>
+                </div>
+
+                <div>
+                    <h2>By Date</h2>
+                    <div class="index-pane-dates">
+                    		<ol class="tree">
+                    			<li><label for="checkbox_2022">2022</label><input type="checkbox" id="checkbox_2022"/>
+                    				<ol>
+                    					<li><label for="checkbox_202209">September</label><input type="checkbox" id="checkbox_202209"/>
+                    						<ol>
+                    							<li>28 <a href="30.html">Socket event epoll blocking in linux</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2021">2021</label><input type="checkbox" checked  id="checkbox_2021"/>
+                    				<ol>
+                    					<li><label for="checkbox_202108">August</label><input type="checkbox" id="checkbox_202108"/>
+                    						<ol>
+                    							<li>12 <a href="29.html">Binary Search Algorithm</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202107">July</label><input type="checkbox" id="checkbox_202107"/>
+                    						<ol>
+                    							<li>19 <a href="28.html">Retrospective: cTune v1.0</a></li>
+                    							<li>10 <a href="27.html">Circular Buffer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202106">June</label><input type="checkbox" checked  id="checkbox_202106"/>
+                    						<ol>
+                    							<li>30 <a href="26.html">cTune v1.0: Part 3 - Frontstage</a></li>
+                    							<li>25 <a href="25.html">cTune v1.0: Part 2 - Backstage</a></li>
+                    							<li>16 <a class="current-post" href="24.html">cTune v1.0: Part 1 - Design</a></li>
+                    							<li>15 <a href="23.html">cTune v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2020">2020</label><input type="checkbox" id="checkbox_2020"/>
+                    				<ol>
+                    					<li><label for="checkbox_202006">June</label><input type="checkbox" id="checkbox_202006"/>
+                    						<ol>
+                    							<li>16 <a href="22.html">Indexed search with Javascript</a></li>
+                    							<li>03 <a href="21.html">Character encoding primer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202005">May</label><input type="checkbox" id="checkbox_202005"/>
+                    						<ol>
+                    							<li>27 <a href="20.html">Blogator v1.3 released</a></li>
+                    							<li>07 <a href="19.html">Blogator v1.2 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202004">April</label><input type="checkbox" id="checkbox_202004"/>
+                    						<ol>
+                    							<li>22 <a href="18.html">HDD diagnosis and recovery tools</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202003">March</label><input type="checkbox" id="checkbox_202003"/>
+                    						<ol>
+                    							<li>27 <a href="17.html">Coronavirus info and form fetcher script for the French gov. page</a></li>
+                    							<li>24 <a href="16.html">A RaspberryPi Git server</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202002">February</label><input type="checkbox" id="checkbox_202002"/>
+                    						<ol>
+                    							<li>23 <a href="15.html">CMake Variable Injection</a></li>
+                    							<li>14 <a href="14.html">Android upgrade woes</a></li>
+                    							<li>11 <a href="13.html">Basics of the Linux terminal and tools</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2019">2019</label><input type="checkbox" id="checkbox_2019"/>
+                    				<ol>
+                    					<li><label for="checkbox_201910">October</label><input type="checkbox" id="checkbox_201910"/>
+                    						<ol>
+                    							<li>10 <a href="12.html">C++ Resource Acquisition Is Initialization (RAII)</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201908">August</label><input type="checkbox" id="checkbox_201908"/>
+                    						<ol>
+                    							<li>20 <a href="11.html">Retrospective: Blogator v1.0</a></li>
+                    							<li>13 <a href="10.html">Blogator v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201901">January</label><input type="checkbox" id="checkbox_201901"/>
+                    						<ol>
+                    							<li>06 <a href="9.html">Terminal plot-graphs with braille characters</a></li>
+                    							<li>02 <a href="8.html">Creating bitmaps using braille characters</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2018">2018</label><input type="checkbox" id="checkbox_2018"/>
+                    				<ol>
+                    					<li><label for="checkbox_201811">November</label><input type="checkbox" id="checkbox_201811"/>
+                    						<ol>
+                    							<li>30 <a href="7.html">Maximum value in a Sliding Window</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201809">September</label><input type="checkbox" id="checkbox_201809"/>
+                    						<ol>
+                    							<li>11 <a href="6.html">C++ Raw and Smart Pointers</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201808">August</label><input type="checkbox" id="checkbox_201808"/>
+                    						<ol>
+                    							<li>27 <a href="5.html">Design Pattern: Object Pool</a></li>
+                    							<li>14 <a href="4.html">Design Pattern: Singleton</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201803">March</label><input type="checkbox" id="checkbox_201803"/>
+                    						<ol>
+                    							<li>18 <a href="3.html">Python package based app structure</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201801">January</label><input type="checkbox" id="checkbox_201801"/>
+                    						<ol>
+                    							<li>27 <a href="2.html">Working out coordinates using distances</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2017">2017</label><input type="checkbox" id="checkbox_2017"/>
+                    				<ol>
+                    					<li><label for="checkbox_201712">December</label><input type="checkbox" id="checkbox_201712"/>
+                    						<ol>
+                    							<li>30 <a href="1.html">Arch Linux on a MacBook Pro 2015</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    		</ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>
+                <div>
+                    <span class="footer-avatar"><img src="../img/kitteh.jpg" alt="logo"></span>
+                    An7ar35, 2018-21
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' 'unsafe-eval';">
+    <title>EAD | Projects</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/pages/projects.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/pages/project-box.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/pages/org-box.css" />
+</head>
+<body>
+<div class="header">
+    <div><img src="../../img/tree-left.svg" alt="left tree"/></div>
+    <div>
+        <div class="site-title">Es' corner</div>
+        <div class="site-micro-title">Just another keyboard-enthusiastic hominid.</div>
+    </div>
+    <div><img src="../../img/tree-right.svg" alt="right tree"/></div>
+</div>
+<nav class="navigation">
+    <ul>
+        <li>
+            <a class="nav-writings" href="../../index.html">
+                <div class="nav-icon"></div>
+                <div class="nav-text">Home</div>
+            </a>
+        </li>
+        <li class="active">
+            <a class="nav-projects" href="personal.html">
+                <div class="nav-icon"></div>
+                <div class="nav-text">Projects</div>
+            </a>
+        </li>
+        <li>
+            <a class="nav-contact" href="../contact.html">
+                <div class="nav-icon"></div>
+                <div class="nav-text">Contact</div>
+            </a>
+        </li>
+    </ul>
+</nav>
+<script src="../../js/sticky-top-navbar.js"></script>
+
+<div id="Project" class="content-h main">
+    <div class="tabbed">
+
+        <ul>
+            <li>
+                <a id="my-projects" href="personal.html">
+                    <div class="nav-icon"><img src="../../img/avatar.svg" alt="my-icon"></div>
+                    <div class="nav-text">Personal</div>
+                </a>
+            </li>
+            <li class="active">
+                <a id="oss-projects" href="contributions.html">
+                    <div class="nav-icon"><img src="../../img/icons/menus/group.svg" alt="oss-icon"></div>
+                    <div class="nav-text">OSS Contributions</div>
+                </a>
+            </li>
+            <li>
+                <a id="uni-projects" href="university.html">
+                    <div class="nav-icon"><img src="../../img/icons/menus/university.svg" alt="uni-icon"></div>
+                    <div class="nav-text">University</div>
+                </a>
+            </li>
+        </ul>
+
+        <!--Group/OSS Projects-->
+        <div class="tab-content">
+            <div class="org-inner-box">
+                <p>Open-source project contributions.</p>
+            </div>
+
+            <div class="org-project-boxes">
+                <div class="box" id="oss1">
+                    <a class="box-header" href="https://github.com/BBKbeam/mtRooms">
+                        <div>
+                            <h3>BBK Beam::mtRooms</h3>
+                        </div>
+                        <div>
+                            <div class="box-header-date">2017 (contributions)</div>
+                            <div class="dev-tags-box">
+                                <div class="dev-tag-java">Java</div>
+                                <div class="dev-tag-javafx"><span>Java</span><span class="dev-tag-javafx-innerFX">FX</span></div>
+                                <div class="dev-tag-sqlite">SQLite</div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="box-desc">
+                        <p>Room booking software for conference buildings.</p>
+                        <p class="bold">Contributions:</p>
+                        <ul>
+                            <li>Architecture design (n-tiered, client-server using RMI),</li>
+                            <li>Data layer with user session-aware SQLite wrapper,</li>
+                            <li>Hashed authentication component for user login,</li>
+                            <li>Reservation logic using a Observer pattern cache to avert booking conflict with multiple opened user sessions,</li>
+                            <li>JavaFX (MVC) frontend client.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div>
+        <div>
+            <span class="footer-avatar"><img src="../../img/kitteh.jpg" alt="logo"></span>
+            An7ar35, 2018-21
+        </div>
+    </div>
+</footer>
+</body>
+</html>

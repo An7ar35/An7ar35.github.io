@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="418px" preserveAspectRatio="none" style="width:504px;height:418px;background:#FFFFFF;" version="1.1" viewBox="0 0 504 418" width="504px" zoomAndPan="magnify"><defs><filter height="300%" id="f1536u4sezhfb5" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[b01c065ec6a29a073690a6c5118a0cf9]
+cluster library--><polygon fill="#D3D3D3" filter="url(#f1536u4sezhfb5)" points="210.75,324,268.75,324,275.75,346.2969,312.75,346.2969,312.75,411,210.75,411,210.75,324" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="210.75" x2="275.75" y1="346.2969" y2="346.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="52" x="214.75" y="338.9951">library</text><!--MD5=[f37f0077b0e42f424c43ac6386b5c03a]
+cluster plugins--><polygon fill="#D3D3D3" filter="url(#f1536u4sezhfb5)" points="34.75,213,98.75,213,105.75,235.2969,470.75,235.2969,470.75,300,34.75,300,34.75,213" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="34.75" x2="105.75" y1="235.2969" y2="235.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="58" x="38.75" y="227.9951">plugins</text><!--MD5=[5b4b28f3c26a5ab3a0fc7317af32b6dc]
+cluster ctune--><polygon fill="#D3D3D3" filter="url(#f1536u4sezhfb5)" points="204.75,6,255.75,6,262.75,28.2969,320.75,28.2969,320.75,189,204.75,189,204.75,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="204.75" x2="262.75" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="45" x="208.75" y="20.9951">ctune</text><!--MD5=[3bf4b1e53e0207bd36e89b37adf9cc09]
+entity Logger--><rect fill="#FEFECE" filter="url(#f1536u4sezhfb5)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="70" x="226.75" y="359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="236.75" y="381.9951">Logger</text><!--MD5=[ccc17ae7357ae4f0c994d165f50e5229]
+entity pulse--><polygon fill="#FEFECE" filter="url(#f1536u4sezhfb5)" points="376.75,248,376.75,284.2969,454.75,284.2969,454.75,258,444.75,248,376.75,248" style="stroke:#000000;stroke-width:1.5;"/><path d="M444.75,248 L444.75,258 L454.75,258 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="58" x="386.75" y="270.9951">pulse.so</text><!--MD5=[c593910df8fe70e25ae5d6132dca038e]
+entity sdl2--><polygon fill="#FEFECE" filter="url(#f1536u4sezhfb5)" points="281.75,248,281.75,284.2969,341.75,284.2969,341.75,258,331.75,248,281.75,248" style="stroke:#000000;stroke-width:1.5;"/><path d="M331.75,248 L331.75,258 L341.75,258 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="291.75" y="270.9951">sdl.so</text><!--MD5=[3206581a23510ef9b48344113cf23837]
+entity alsa--><polygon fill="#FEFECE" filter="url(#f1536u4sezhfb5)" points="177.25,248,177.25,284.2969,246.25,284.2969,246.25,258,236.25,248,177.25,248" style="stroke:#000000;stroke-width:1.5;"/><path d="M236.25,248 L236.25,258 L246.25,258 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="187.25" y="270.9951">alsa.so</text><!--MD5=[6c365302c950079f25b7d21bef334260]
+entity ffmpeg--><polygon fill="#FEFECE" filter="url(#f1536u4sezhfb5)" points="51.25,248,51.25,284.2969,142.25,284.2969,142.25,258,132.25,248,51.25,248" style="stroke:#000000;stroke-width:1.5;"/><path d="M132.25,248 L132.25,258 L142.25,258 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="61.25" y="270.9951">ffmpeg.so</text><!--MD5=[a6db0c926898241e7c594507fb3ca544]
+entity Backend--><rect fill="#FEFECE" filter="url(#f1536u4sezhfb5)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="82" x="220.75" y="137"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="230.75" y="159.9951">Backend</text><!--MD5=[194a92f280a7d2c2f105939ff984a7cf]
+entity Frontend--><rect fill="#FEFECE" filter="url(#f1536u4sezhfb5)" height="36.2969" style="stroke:#000000;stroke-width:1.5;" width="84" x="220.75" y="41"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="230.75" y="63.9951">Frontend</text><!--MD5=[c405145c6d56ea5e94b2c84d19eaaf74]
+link Backend to Logger--><path d="M220.62,158.84 C161.65,163.87 57.67,176.61 34.75,205 C6,240.62 7.42,271.28 34.75,308 C57.11,338.03 162.42,359.73 221.42,369.77 " fill="none" id="Backend-to-Logger" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="226.64,370.64,218.4277,365.2033,221.7092,369.8111,217.1014,373.0925,226.64,370.64" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[801077478146237149554433a9d12378]
+link Frontend to Logger--><path d="M304.8,75.27 C354.82,95.99 435.92,138.27 470.75,205 C491.93,245.58 497.65,270.96 470.75,308 C432.24,361.02 351.34,373.51 302.25,375.98 " fill="none" id="Frontend-to-Logger" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="297.02,376.21,306.183,379.821,302.0154,375.9959,305.8405,371.8283,297.02,376.21" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[ac9a7cce627ee077267a72748cde2c97]
+link pulse to Logger--><path d="M392.69,284.09 C382.62,291.5 370.64,300.24 359.75,308 C336.86,324.32 310.7,342.45 291.16,355.88 " fill="none" id="pulse-to-Logger" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="286.85,358.85,296.5354,357.0631,290.9748,356.024,292.0138,350.4634,286.85,358.85" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[701df547d8d96f9e8c5ffd27cde58347]
+link alsa to Logger--><path d="M219.56,284.03 C228.21,302.88 242.17,333.31 251.64,353.96 " fill="none" id="alsa-to-Logger" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="253.83,358.73,253.71,348.8819,251.7438,354.186,246.4396,352.2198,253.83,358.73" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[b3b2c4e4e43ec935f4d138551f02cd56]
+link sdl2 to Logger--><path d="M303.94,284.03 C295.29,302.88 281.33,333.31 271.86,353.96 " fill="none" id="sdl2-to-Logger" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="269.67,358.73,277.0604,352.2198,271.7562,354.186,269.79,348.8819,269.67,358.73" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[1549993417e2dfcd972696eafd4a902c]
+link ffmpeg to Logger--><path d="M122.53,284.03 C151.99,303.49 200.15,335.31 231.4,355.95 " fill="none" id="ffmpeg-to-Logger" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="235.88,358.91,230.5774,350.6104,231.7088,356.153,226.1662,357.2844,235.88,358.91" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[f85c07b2e4b942dbfedec5f971a699d1]
+link Backend to pulse--><path d="M303.21,172.74 C321.42,181.08 342.53,192.13 359.75,205 C374.62,216.11 388.86,231.45 399.26,243.84 " fill="none" id="Backend-to-pulse" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="402.63,247.92,399.9828,238.4336,399.446,244.0649,393.8146,243.528,402.63,247.92" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[cee68bc1c76dbe26b1ecc0874543d6c6]
+link Backend to alsa--><path d="M253.94,173.03 C245.29,191.88 231.33,222.31 221.86,242.96 " fill="none" id="Backend-to-alsa" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="219.67,247.73,227.0604,241.2198,221.7562,243.186,219.79,237.8819,219.67,247.73" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[4d81f4adf993f84d1dc490c93892b11c]
+link Backend to sdl2--><path d="M269.56,173.03 C278.21,191.88 292.17,222.31 301.64,242.96 " fill="none" id="Backend-to-sdl2" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="303.83,247.73,303.71,237.8819,301.7438,243.186,296.4396,241.2198,303.83,247.73" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[68ee744246e011b7ce4e0ae19ac1cdd3]
+link Backend to ffmpeg--><path d="M220.42,172.32 C201.2,180.77 178.5,192.05 159.75,205 C143.42,216.28 127.25,231.79 115.39,244.21 " fill="none" id="Backend-to-ffmpeg" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="111.85,247.96,120.9464,244.1844,115.2915,244.3329,115.143,238.678,111.85,247.96" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[2c52bf2a9f4c69e755a5015cfec4aff1]
+link Frontend to Backend--><path d="M262.57,77.24 C262.41,92.48 262.17,114.81 261.99,131.46 " fill="none" id="Frontend-to-Backend" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="261.93,136.87,266.0326,127.9163,261.9871,131.8703,258.0331,127.8249,261.93,136.87" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[8a1440d8dd5197d15b6aa7078d361c09]
+@startuml
+'https://plantuml.com/component-diagram
+
+skinparam componentStyle rectangle
+
+package library #lightgrey {
+    component Logger
+}
+
+package plugins #lightgrey {
+    file pulse.so as pulse
+    file sdl.so as sdl2
+    file alsa.so as alsa
+    file ffmpeg.so as ffmpeg
+}
+
+package ctune #lightgrey {
+    component Backend
+    component Frontend
+}
+
+Backend  -[#black]-> Logger
+Frontend -[#black]-> Logger
+pulse    -[#black]-> Logger
+alsa     -[#black]-> Logger
+sdl2     -[#black]-> Logger
+ffmpeg   -[#black]-> Logger
+Backend  -[#black]-> pulse
+Backend  -[#black]-> alsa
+Backend  -[#black]-> sdl2
+Backend  -[#black]-> ffmpeg
+Frontend -[#black]-> Backend
+
+@enduml
+
+@startuml
+
+skinparam componentStyle rectangle
+
+package library #lightgrey {
+    component Logger
+}
+
+package plugins #lightgrey {
+    file pulse.so as pulse
+    file sdl.so as sdl2
+    file alsa.so as alsa
+    file ffmpeg.so as ffmpeg
+}
+
+package ctune #lightgrey {
+    component Backend
+    component Frontend
+}
+
+Backend  -[#black]-> Logger
+Frontend -[#black]-> Logger
+pulse    -[#black]-> Logger
+alsa     -[#black]-> Logger
+sdl2     -[#black]-> Logger
+ffmpeg   -[#black]-> Logger
+Backend  -[#black]-> pulse
+Backend  -[#black]-> alsa
+Backend  -[#black]-> sdl2
+Backend  -[#black]-> ffmpeg
+Frontend -[#black]-> Backend
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

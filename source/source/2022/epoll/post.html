@@ -1,0 +1,133 @@
+<article>
+    <div>
+        <h1><span class="title">Socket event epoll blocking in linux</span></h1>
+        <time datetime="2022-09-28">28 September 2022</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">Linux</span>
+            <span class="tag">C++</span>
+            <span class="tag">Networking</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <div class="auto-toc"></div>
+
+        <p><span class="summary"></span></p>
+
+        <p>Whether server or client-side, the same basic thing is going to happen: send and receive data to and from at least a socket. I won't go explain how as there are plenty of guides covering that stuff around, most notably <a href="https://beej.us/guide/bgnet/" target="_blank" rel="noreferrer">Beej's Guide to Network Programming</a> (pretty much the standard).</p>
+
+        <p>There is one issue that will inevitably come up when implementing a polling system: blocking.</p>
+
+        <h2>Setting up <code class="terminal inline">epoll</code></h2>
+
+        <p>Constantly checking a socket for data will incur wasted CPU cycles on the thread that runs it. It would be better to wait for a signal and then resume operations then. This is where polling comes in with its ability to block and only resume on specified events.</p>
+
+        <p>First, we got to make sure the file descriptor used is set to non-blocking so we can "poll" it. In the case of multiple clients server-side, each client file descriptors need to be set.</p>
+
+        <div class="code-wrap">
+            <code class="block cpp">::fcntl( client_fd, F_SETFL, O_NONBLOCK );</code>
+        </div>
+
+        <p>Creating a new <i>epoll</i> returns its file descriptor (or -1 on error). Note that the queue length argument is ignored since Linux 2.6.8.</p>
+
+        <div class="code-wrap">
+            <code class="block cpp">int epoll_fd = ::epoll_create( EPOLL_PENDING_QUEUE_LENGTH );</code>
+        </div>
+
+        <p>All file descriptors that we want to keep an eye on for any activity must be added to the epoll queue.</p>
+
+        <div class="code-wrap">
+            <code class="block cpp">struct epoll_event event = {};
+
+event.events  = EPOLLIN;
+event.data.fd = fd; //this way we can retrieve the file descriptor via the event struct
+
+if( ::epoll_ctl( epoll_fd, EPOLL_CTL_ADD, client_fd, &event ) < 0 ) {
+    //error
+}</code>
+        </div>
+
+        <p>The second argument is the operation to perform with the given file descriptor:</p>
+        <dl>
+            <dt><code class="terminal inline">EPOLL_CTL_ADD</code></dt>
+            <dd>Adds the file descriptor to the given epoll's watch list and associates it with the <code class="terminal inline">event</code> given.</dd>
+            <dt><code class="terminal inline">EPOLL_CTL_MOD</code></dt>
+            <dd>Changes the associated event of the file descriptor with the new <code class="terminal inline">event</code> given.</dd>
+            <dt><code class="terminal inline">EPOLL_CTL_DEL</code></dt>
+            <dd>Removes the file descriptor from the given epoll's watch list</dd>
+        </dl>
+
+        <p>To wait on events it's a simple matter of using <code class="terminal inline">epoll_wait</code> and iterating through whatever events may have been triggered.</p>
+
+        <div class="code-wrap">
+            <code class="block cpp">struct epoll_event event_buff[EPOLL_ARRAY_SIZE];
+
+int event_count = epoll_wait( _epoll_fd, event_buff, EPOLL_ARRAY_SIZE, -1 );
+
+for( int i = 0; i < event_count; ++i ) {
+    int client_fd = event_buff[i].data.fd; //since we set the client fd there previously
+    //deal with event
+}</code>
+        </div>
+
+        <p>The last argument of <code class="terminal inline">epoll_wait</code> is the timeout before unblocking - even if there are no events. A "<code>-1</code>" value sets it to indefinite so, unless an event is signaled, <code class="terminal inline">epoll_wait</code> will stay blocked.</p>
+
+        <p>That concludes the basics for getting "epoll" off the ground. See the linux manual page for "<a href="https://man7.org/linux/man-pages/man7/epoll.7.html" target="_blank" rel="noreferrer">epoll</a>" for more.</p>
+
+        <h2>Solution to blocking issue</h2>
+
+        <p>Now onto the meat of the matter, and you might already see where I'm going with this... If <code class="terminal inline">epoll_wait</code> is blocked and you want to exit the application cleanly, how the hell can you work around that?</p>
+
+        <p>There are 3 possible approaches outside of force-killing the application.</p>
+
+        <ul>
+            <li>Using <code class="terminal inline">epoll_pwait</code> with an interrupt mask (good for forwarding interrupt signals like <code class="terminal inline">SIGINT</code>, <code class="terminal inline">SIGTERM</code>, etc...),</li>
+            <li>Using the "self-pipe" trick, or</li>
+            <li>The event file descriptor.</li>
+        </ul>
+
+        <p>The "self-pipe" trick uses a pipe (<q>unidirectional data channel that can be used for interprocess communication</q>) whose "read" file descriptor end is added to the epoll watch list. This facilitates unblocking <code class="terminal inline">epoll_wait</code> by sending some data to the "write" end of the pipe.</p>
+
+        <p>A simpler and much cleaner way to have that behaviour is <code class="terminal inline">eventfd</code>. This creates a special file descriptor that only holds a uint64_t. This has the advantage of requiring only 1 file descriptor to do both the writing and reading unlike a pipe which has 1 for each.</p>
+
+        <div class="code-wrap">
+            <code class="block cpp">if( ( _unblock_event_fd = ::eventfd( 0, EFD_NONBLOCK ) ) == -1 ) {
+    //error
+}</code>
+        </div>
+
+        <p>The idea is to add an <code class="terminal inline">eventfd</code> to our epoll watch list and write to it from another thread like 'main' to unblock it so that the thread in which <code class="terminal inline">epoll_wait</code> and the event processing can be exited gracefully.</p>
+
+        <div class="code-wrap">
+            <code class="block cpp">struct epoll_event event_buff[EPOLL_ARRAY_SIZE];
+
+int event_count = epoll_wait( _epoll_fd, event_buff, EPOLL_ARRAY_SIZE, -1 );
+
+for( int i = 0; i < event_count; ++i ) {
+    if( event_buff[i].data.fd == _unblock_event_fd ) {
+        //clean up/gracefully exit
+    } else {
+        //deal with event
+    }
+}</code>
+        </div>
+
+        <p>And voila!</p>
+
+        <h2>Links</h2>
+
+        <ul>
+            <li><a href="https://beej.us/guide/bgnet/" target="_blank" rel="noreferrer">Beej's Guide to Network Programming</a></li>
+            <li><a href="https://man7.org/linux/man-pages/man7/epoll.7.html" target="_blank" rel="noreferrer"><code class="inline terminal">epoll</code> man page</a></li>
+            <li><a href="https://man7.org/linux/man-pages/man2/epoll_ctl.2.html" target="_blank" rel="noreferrer"><code class="inline terminal">epoll_ctl</code> man page</a></li>
+            <li><a href="https://man7.org/linux/man-pages/man2/eventfd.2.html" target="_blank" rel="noreferrer"><code class="inline terminal">eventfd</code> man page</a></li>
+            <li><a href="https://linux.die.net/man/3/eventfd_write" target="_blank" rel="noreferrer"><code class="inline terminal">eventfd_write</code> man page</a></li>
+            <li><a href="http://www.kegel.com/c10k.html" target="_blank" rel="noreferrer">The C10K problem</a></li>
+            <li><a href="https://libevent.org/" target="_blank" rel="noreferrer">The <code class="terminal">libevent</code> library (event notification based library)</a></li>
+        </ul>
+
+    </div>
+</article>

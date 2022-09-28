@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="546px" preserveAspectRatio="none" style="width:263px;height:546px;background:#FFFFFF;" version="1.1" viewBox="0 0 263 546" width="263px" zoomAndPan="magnify"><defs><filter height="300%" id="f8jgw0nhwhf9r" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[5a6866208810807446f698808c4639a6]
+entity LogQueue--><rect fill="#FEFECE" filter="url(#f8jgw0nhwhf9r)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="113" x="125.5" y="242"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="218.5" y="247"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="216.5" y="249"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="216.5" y="253"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="73" x="140.5" y="274.9951">LogQueue</text><!--MD5=[9fca017fc4e6fada137289149592bba1]
+entity iLogger--><ellipse cx="131" cy="14" fill="#FEFECE" filter="url(#f8jgw0nhwhf9r)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118" x="6" y="43.9951">Logger interface</text><!--MD5=[ca1d6ce4023a299f20775cb80966cb46]
+entity iLogQueue--><ellipse cx="81" cy="265" fill="#FEFECE" filter="url(#f8jgw0nhwhf9r)" rx="8" ry="8" style="stroke:#A80036;stroke-width:1.5;"/><!--MD5=[3bf4b1e53e0207bd36e89b37adf9cc09]
+entity Logger--><rect fill="#FEFECE" filter="url(#f8jgw0nhwhf9r)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="90" x="86" y="104"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="156" y="109"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="154" y="111"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="154" y="115"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="101" y="136.9951">Logger</text><!--MD5=[c8eaeb597b753e9454ff1472d5d10b2b]
+entity LogWriter--><rect fill="#FEFECE" filter="url(#f8jgw0nhwhf9r)" height="46.2969" style="stroke:#A80036;stroke-width:1.5;" width="110" x="76" y="380"/><rect fill="#FEFECE" height="10" style="stroke:#A80036;stroke-width:1.5;" width="15" x="166" y="385"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="164" y="387"/><rect fill="#FEFECE" height="2" style="stroke:#A80036;stroke-width:1.5;" width="4" x="164" y="391"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="70" x="91" y="412.9951">LogWriter</text><!--MD5=[7b05989e369ae1af2c6a9837cb382bd0]
+entity Out--><polygon fill="#FEFECE" filter="url(#f8jgw0nhwhf9r)" points="88,503,88,539.2969,174,539.2969,174,513,164,503,88,503" style="stroke:#000000;stroke-width:1.5;"/><path d="M164,503 L164,513 L174,513 " fill="#FEFECE" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="98" y="525.9951">ctune.log</text><!--MD5=[a445313eb87df50deb86ffb5e7088f4d]
+link iLogger to Logger--><path d="M131,23.34 C131,40.28 131,79.2 131,103.95 " fill="none" id="iLogger-Logger" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[665e536ee7aaea2eb0d076f7a8287b04]
+link iLogQueue to LogQueue--><path d="M90.07,265 C101.8,265 113.53,265 125.26,265 " fill="none" id="iLogQueue-LogQueue" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d0a2aab11c0d6ace4e1a02eca65460ee]
+link Logger to iLogQueue--><path d="M122.86,150.15 C112.97,177.04 96.51,221.81 87.46,246.43 " fill="none" id="Logger-to-iLogQueue" style="stroke:#A80036;stroke-width:1.0;"/><path d="M92.97,255.9426 A9,9 0 0 0 77.0902 250.1176" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><!--MD5=[742a8f3095f8a0b905218839f012402e]
+reverse link iLogQueue to LogWriter--><path d="M87.46,283.58 C96.51,308.2 112.96,352.92 122.84,379.8 " fill="none" id="iLogQueue-backto-LogWriter" style="stroke:#A80036;stroke-width:1.0;"/><path d="M77.1002,279.9024 A9,9 0 0 0 92.98 274.0774" style="stroke:#A80036;stroke-width:1.5;fill:none;"/><!--MD5=[3805f23b3f99cb7c63ab36f71b508163]
+link LogWriter to Out--><path d="M131,426.09 C131,446.7 131,477.27 131,497.88 " fill="none" id="LogWriter-to-Out" style="stroke:#000000;stroke-width:1.0;"/><polygon fill="#000000" points="131,502.89,135,493.89,131,497.89,127,493.89,131,502.89" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="114" x="132" y="469.0669">write msgs to file</text><!--MD5=[391a27df391f0eb2b7da11b2f0189b58]
+link Logger to LogQueue--><path d="M139.31,150.15 C148.2,173.86 162.31,211.49 171.85,236.94 " fill="none" id="Logger-to-LogQueue" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="173.7,241.86,174.2852,232.0285,171.9444,237.1784,166.7946,234.8375,173.7,241.86" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="56" x="164.5" y="193.0669">enqueue</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="163" y="208.1997">log msgs</text><!--MD5=[6e1c89e7e9f6cda93a84d6a2d8563584]
+link LogQueue to LogWriter--><path d="M173.69,288.15 C164.8,311.86 150.69,349.49 141.15,374.94 " fill="none" id="LogQueue-to-LogWriter" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="139.3,379.86,146.2054,372.8375,141.0556,375.1784,138.7148,370.0285,139.3,379.86" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="56" x="164.5" y="331.0669">dequeue</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="163" y="346.1997">log msgs</text><!--MD5=[077f3f57811ac514bc6b3e103de2cbfe]
+@startuml
+
+component LogQueue
+
+interface "Logger interface                                 " as iLogger
+interface " " as iLogQueue
+component Logger
+component LogWriter
+
+iLogger - - Logger
+iLogQueue -right- LogQueue
+
+Logger -down-( iLogQueue
+LogWriter -up-( iLogQueue
+
+file Out as "ctune.log"
+LogWriter -[#black]-> Out : write msgs to file
+
+
+Logger .[#black].> LogQueue : enqueue\nlog msgs
+LogQueue .[#black].> LogWriter : dequeue\nlog msgs
+
+'note "**Callback:**\n- resume()" as cb1 #lightblue
+'LogQueue .[#blue].. cb1
+'cb1 .[#blue]..> LogWriter
+
+
+@enduml
+
+@startuml
+
+component LogQueue
+
+interface "Logger interface                                 " as iLogger
+interface " " as iLogQueue
+component Logger
+component LogWriter
+
+iLogger - - Logger
+iLogQueue -right- LogQueue
+
+Logger -down-( iLogQueue
+LogWriter -up-( iLogQueue
+
+file Out as "ctune.log"
+LogWriter -[#black]-> Out : write msgs to file
+
+
+Logger .[#black].> LogQueue : enqueue\nlog msgs
+LogQueue .[#black].> LogWriter : dequeue\nlog msgs
+
+
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

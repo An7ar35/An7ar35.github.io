@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface RadioStationFilter {
+    <b>Constants</b>
+    ----
+    + unsigned BITRATE_MAX_DFLT 1000000
+    + unsigned LIMIT_DFLT 1000
+    ====
+    <b>Functions</b>
+    ----
+    + init( void ) : RadioBrowserFilter_t
+    + copy( const RadioBrowserFilter_t * from, RadioBrowserFilter_t * dest ) : void
+    + freeContent( RadioBrowserFilter_t * filter ) : void
+    ....
+    + parameteriseFields( const RadioBrowserFilter_t * filter, String_t * str ) : void
+}
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+
+interface "stream info" as in #back:black;line:black
+interface "sound out" as out #back:black;line:black
+
+[RadioBrowser] .[#black]right.> [RadioPlayer] : radio station
+in .[#black]right.> [RadioBrowser]
+RadioPlayer .[#black]right.> out
+
+note bottom of RadioBrowser : Gets a radio station's info from\n the Radio Browser web API
+note bottom of RadioPlayer : Plays radio stream
+
+@enduml

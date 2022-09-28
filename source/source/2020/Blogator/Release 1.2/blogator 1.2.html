@@ -1,0 +1,71 @@
+<article>
+    <div>
+        <h1><span class="title">Blogator v1.2 released</span></h1>
+        <time datetime="2020-05-07">07 May 2020</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">Blogator</span>
+            <span class="tag">Project</span>
+            <span class="tag">Releases</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <p><span class="summary">New release for <a href="../../../../pages/projects/personal.html">Blogator</a> that now includes a Table of Contents generator to use inside posts. In addition there was some major refactoring done in the code of the posts' output generation.</span></p>
+
+        <p>The new functionality takes the headings found inside the post's source HTML and, from these, creates a table of content in the form of an ordered list (<code class="inline html">&lt;ol&gt;&lt;/ol&gt;</code>).</p>
+
+        <p>All the headings to be featured in the ToC are automatically given IDs so that they can be locally referenced with hyperlinks inside the ToC making the ToC entries clickable. Optionally, the headings featured in the ToC can have a numbering scheme applied to them.</p>
+
+        <h2>Example</h2>
+
+        <p>Let's say we only require 3 levels of headings to be featured starting from <code class="inline html">&lt;h2&gt;&lt;/h2&gt;</code> up to <code class="inline html">&lt;h4&gt;&lt;/h4&gt;</code> as H1 is used for other purposes:</p>
+
+        <div class="code-wrap">
+            <code class="block html">&lt;div class="auto-toc"&gt;&lt;/div&gt;
+
+&lt;h2&gt;Heading A&lt;/h2&gt;
+&lt;h3&gt;Sub-heading A&lt;/h3&gt;
+&lt;h4&gt;Sub-sub-heading A&lt;/h4&gt;
+&lt;h2&gt;Heading B&lt;/h2&gt;</code>
+        </div>
+        <span class="caption-bottom">Code.1 HTML code snippet from a source post.</span>
+
+        <p>The settings in the config file are set as follows:</p>
+
+        <div class="code-wrap">
+            <code class="block terminal">toc-auto-generate  = 3;
+toc-level-offset   = 1;
+toc-auto-numerate  = true;
+toc-heading        = "&lt;h2&gt;Table of Contents&lt;/h2&gt;";</code>
+        </div>
+
+        <p>The ToC heading specified in the configuration file is inserted and the ToC is generated:</p>
+
+        <div class="code-wrap">
+            <code class="block html">&lt;div class="auto-toc"&gt;
+    &lt;h2&gt;Table of Contents&lt;/h2&gt;
+    &lt;ol&gt;
+        &lt;li&gt;&lt;a href="#heading_1"&gt;1. Heading A&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;ol&gt;
+            &lt;li&gt;&lt;a href="#heading_1_1"&gt;1.1 Sub-heading A&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;ol&gt;
+                &lt;li&gt;&lt;a href="#heading_1_1_1"&gt;1.1.1 Sub-sub-heading A&lt;/a&gt;&lt;/li&gt;
+            &lt;/ol&gt;&lt;/li&gt;
+        &lt;/ol&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#heading_2"&gt;2. Heading B&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/div&gt;
+
+&lt;h2 id="heading_1"&gt;1. Heading A&lt;/h2&gt;
+&lt;h3 id="heading_1_1"&gt;1.1 Sub-heading A&lt;/h3&gt;
+&lt;h4 id="heading_1_1_1"&gt;1.1.1 Sub-sub-heading A&lt;/h4&gt;
+&lt;h2 id="heading_2"&gt;2. Heading B&lt;/h2&gt;</code>
+        </div>
+        <span class="caption-bottom">Code.2 Modified code after generation of the ToC.</span>
+
+        <p>And that's it! Easy creation of tables of contents with just 1 <code class="inline html">div</code> block declaration.</p>
+    </div>
+</article>

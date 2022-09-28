@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="673px" preserveAspectRatio="none" style="width:442px;height:673px;background:#FFFFFF;" version="1.1" viewBox="0 0 442 673" width="442px" zoomAndPan="magnify"><defs><filter height="300%" id="fpm6ros81rsqe" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[605ddada9486cd68ea3cb33d81299a4c]
+class WindowProperty_t--><rect codeLine="3" fill="#FEFECE" filter="url(#fpm6ros81rsqe)" height="99.2188" id="WindowProperty_t" style="stroke:#A80036;stroke-width:1.5;" width="142" x="15.5" y="465.5"/><ellipse cx="30.5" cy="481.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M32.9688,487.375 Q32.3906,487.6875 31.75,487.8438 Q31.1094,488 30.4063,488 Q27.9063,488 26.5781,486.3281 Q25.2656,484.6563 25.2656,481.5 Q25.2656,478.3438 26.5781,476.6719 Q27.9063,475 30.4063,475 Q31.1094,475 31.75,475.1563 Q32.4063,475.3125 32.9688,475.625 L32.9688,478.4219 Q32.3438,477.8594 31.75,477.5938 Q31.1563,477.3125 30.5313,477.3125 Q29.1875,477.3125 28.5,478.375 Q27.8125,479.4375 27.8125,481.5 Q27.8125,483.5781 28.5,484.6406 Q29.1875,485.6875 30.5313,485.6875 Q31.1563,485.6875 31.75,485.4219 Q32.3438,485.1563 32.9688,484.5781 L32.9688,487.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="110" x="44.5" y="485.6543">WindowProperty_t</text><line style="stroke:#A80036;stroke-width:1.5;" x1="16.5" x2="156.5" y1="497.5" y2="497.5"/><ellipse cx="26.5" cy="508.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="35.5" y="511.7104">rows : int</text><ellipse cx="26.5" cy="521.3047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="35.5" y="524.5151">cols : int</text><ellipse cx="26.5" cy="534.1094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="35.5" y="537.3198">pos_y : int</text><ellipse cx="26.5" cy="546.9141" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="35.5" y="550.1245">pos_x : int</text><line style="stroke:#A80036;stroke-width:1.5;" x1="16.5" x2="156.5" y1="556.7188" y2="556.7188"/><!--MD5=[9c09ac47de501d13dda962a8b2237437]
+class ScrollWin_t--><rect codeLine="10" fill="#FEFECE" filter="url(#fpm6ros81rsqe)" height="288.0703" id="ScrollWin_t" style="stroke:#A80036;stroke-width:1.5;" width="236" x="192.5" y="371"/><ellipse cx="272.75" cy="387" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M275.2188,392.875 Q274.6406,393.1875 274,393.3438 Q273.3594,393.5 272.6563,393.5 Q270.1563,393.5 268.8281,391.8281 Q267.5156,390.1563 267.5156,387 Q267.5156,383.8438 268.8281,382.1719 Q270.1563,380.5 272.6563,380.5 Q273.3594,380.5 274,380.6563 Q274.6563,380.8125 275.2188,381.125 L275.2188,383.9219 Q274.5938,383.3594 274,383.0938 Q273.4063,382.8125 272.7813,382.8125 Q271.4375,382.8125 270.75,383.875 Q270.0625,384.9375 270.0625,387 Q270.0625,389.0781 270.75,390.1406 Q271.4375,391.1875 272.7813,391.1875 Q273.4063,391.1875 274,390.9219 Q274.5938,390.6563 275.2188,390.0781 L275.2188,392.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="67" x="293.25" y="391.1543">ScrollWin_t</text><line style="stroke:#A80036;stroke-width:1.5;" x1="193.5" x2="427.5" y1="403" y2="403"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="91" x="198.5" y="417.2104">Pad properties</text><line style="stroke:#A80036;stroke-width:1.0;" x1="193.5" x2="427.5" y1="423.8047" y2="423.8047"/><ellipse cx="203.5" cy="434.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="212.5" y="438.0151">pad : WINDOW *</text><ellipse cx="203.5" cy="447.6094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="212.5" y="450.8198">rows : int</text><ellipse cx="203.5" cy="460.4141" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="212.5" y="463.6245">cols : int</text><line style="stroke:#A80036;stroke-width:1.0;" x1="193.5" x2="427.5" y1="470.2188" y2="470.2188"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="159" x="198.5" y="484.4292">View-box screen position</text><line style="stroke:#A80036;stroke-width:1.0;" x1="193.5" x2="427.5" y1="491.0234" y2="491.0234"/><ellipse cx="203.5" cy="502.0234" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="117" x="212.5" y="505.2339">viewbox.from_y : int</text><ellipse cx="203.5" cy="514.8281" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="117" x="212.5" y="518.0386">viewbox.from_x : int</text><ellipse cx="203.5" cy="527.6328" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="101" x="212.5" y="530.8433">viewbox.to_y : int</text><ellipse cx="203.5" cy="540.4375" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="101" x="212.5" y="543.6479">viewbox.to_x : int</text><line style="stroke:#A80036;stroke-width:1.0;" x1="193.5" x2="427.5" y1="550.2422" y2="550.2422"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="224" x="198.5" y="564.4526">Position of the view-box on the pad</text><line style="stroke:#A80036;stroke-width:1.0;" x1="193.5" x2="427.5" y1="571.0469" y2="571.0469"/><ellipse cx="203.5" cy="582.0469" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="212.5" y="585.2573">pos.x : int</text><ellipse cx="203.5" cy="594.8516" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="212.5" y="598.062">pos.y : int</text><line style="stroke:#A80036;stroke-width:1.0;" x1="193.5" x2="427.5" y1="604.6563" y2="604.6563"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="91" x="198.5" y="618.8667">Scrolling state</text><line style="stroke:#A80036;stroke-width:1.0;" x1="193.5" x2="427.5" y1="625.4609" y2="625.4609"/><ellipse cx="203.5" cy="636.4609" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="94" x="212.5" y="639.6714">scrolling.y : bool</text><ellipse cx="203.5" cy="649.2656" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="94" x="212.5" y="652.4761">scrolling.x : bool</text><!--MD5=[fab753a3a5c11274625a5202a534cc0e]
+class ScrollWin--><rect codeLine="35" fill="#FEFECE" filter="url(#fpm6ros81rsqe)" height="304.0938" id="ScrollWin" style="stroke:#A80036;stroke-width:1.5;" width="383" x="7" y="7"/><ellipse cx="166.25" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M162.6719,18.7813 L162.6719,16.5 L170.0625,16.5 L170.0625,18.7813 L167.5938,18.7813 L167.5938,27.2344 L170.0625,27.2344 L170.0625,29.5 L162.6719,29.5 L162.6719,27.2344 L165.1406,27.2344 L165.1406,18.7813 L162.6719,18.7813 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="56" x="186.75" y="27.1543">ScrollWin</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="389" y1="39" y2="39"/><ellipse cx="18" cy="50" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="162" x="27" y="53.2104">initBlank( void ) : ScrollWin_t</text><ellipse cx="18" cy="62.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="216" x="27" y="66.0151">init( int height, int width ) : ScrollWin_t</text><ellipse cx="18" cy="75.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="317" x="27" y="78.8198">createPad( ScrollWin_t * sw, int height, int width ) : void</text><ellipse cx="18" cy="88.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="289" x="27" y="91.6245">reinit( ScrollWin_t * sw, int height, int width ) : void</text><ellipse cx="18" cy="101.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="166" x="27" y="104.4292">free( ScrollWin_t * sw ) : void</text><line style="stroke:#A80036;stroke-width:1.0;" x1="8" x2="389" y1="111.0234" y2="111.0234"/><ellipse cx="18" cy="122.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="211" x="27" y="125.2339">refreshView( ScrollWin_t * sw ) : void</text><ellipse cx="18" cy="134.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="357" x="27" y="138.0386">redraw( ScrollWin_t * sw, int viewsize_y, int viewsize_x ) : void</text><ellipse cx="18" cy="147.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="309" x="27" y="150.8433">scrollPad( ScrollWin_t * sw, int nrows, int ncols ) : void</text><ellipse cx="18" cy="160.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="290" x="27" y="163.6479">moveViewBox( ScrollWin_t * sw, int y, int x ) : void</text><ellipse cx="18" cy="173.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="281" x="27" y="176.4526">setInsDelLine( ScrollWin_t * sw, bool state ) : void</text><ellipse cx="18" cy="186.0469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="272" x="27" y="189.2573">setScrolling( ScrollWin_t * sw, bool state ) : void</text><ellipse cx="18" cy="198.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="279" x="27" y="202.062">setScrollingY(ScrollWin_t * sw,  bool state ) : void</text><ellipse cx="18" cy="211.6563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="280" x="27" y="214.8667">setScrollingX( ScrollWin_t * sw, bool state ) : void</text><ellipse cx="18" cy="224.4609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="207" x="27" y="227.6714">isScrollable( ScrollWin_t * sw ) : bool</text><ellipse cx="18" cy="237.2656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="214" x="27" y="240.4761">isScrollableY( ScrollWin_t * sw ) : bool</text><ellipse cx="18" cy="250.0703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="215" x="27" y="253.2808">isScrollableX( ScrollWin_t * sw ) : bool</text><ellipse cx="18" cy="262.875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="327" x="27" y="266.0854">resizeViewBox( ScrollWin_t * sw, int rows, int cols ) : void</text><ellipse cx="18" cy="275.6797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="350" x="27" y="278.8901">getViewProperty( const ScrollWin_t * sw ) : WindowProperty_t</text><ellipse cx="18" cy="288.4844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="299" x="27" y="291.6948">resizePad( ScrollWin_t * sw, int rows, int cols ) : bool</text><ellipse cx="18" cy="301.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="192" x="27" y="304.4995">clearPad( ScrollWin_t * sw ) : void</text><!--MD5=[f6d63998166cb51703f856a47c1eb80e]
+link ScrollWin to ScrollWin_t--><path codeLine="59" d="M246.32,311.15 C252.06,329.28 257.91,347.77 263.63,365.85 " fill="none" id="ScrollWin-to-ScrollWin_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="265.24,370.93,266.3301,361.1417,263.7275,366.1642,258.7049,363.5616,265.24,370.93" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[77595ea7c33b75e46a4df9dae587be30]
+link ScrollWin to WindowProperty_t--><path codeLine="60" d="M150.68,311.15 C133.82,364.43 115.96,420.89 103.37,460.68 " fill="none" id="ScrollWin-to-WindowProperty_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="101.86,465.45,108.3951,458.0816,103.3725,460.6842,100.7699,455.6617,101.86,465.45" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e84b6c8c13eec6ebeeb085de5be5de3c]
+@startuml
+'https://plantuml.com/class-diagram
+
+class WindowProperty_t {
+    + rows : int
+    + cols : int
+    + pos_y : int
+    + pos_x : int
+}
+
+class ScrollWin_t {
+    <b>Pad properties</b>
+    - - - -
+    + pad : WINDOW *
+    + rows : int
+    + cols : int
+    - - - -
+    <b>View-box screen position</b>
+    - - - -
+    + viewbox.from_y : int
+    + viewbox.from_x : int
+    + viewbox.to_y : int
+    + viewbox.to_x : int
+    - - - -
+    <b>Position of the view-box on the pad</b>
+    - - - -
+    + pos.x : int
+    + pos.y : int
+    - - - -
+    <b>Scrolling state</b>
+    - - - -
+    + scrolling.y : bool
+    + scrolling.x : bool
+}
+
+interface ScrollWin {
+    + initBlank( void ) : ScrollWin_t
+    + init( int height, int width ) : ScrollWin_t
+    + createPad( ScrollWin_t * sw, int height, int width ) : void
+    + reinit( ScrollWin_t * sw, int height, int width ) : void
+    + free( ScrollWin_t * sw ) : void
+    - - - -
+    + refreshView( ScrollWin_t * sw ) : void
+    + redraw( ScrollWin_t * sw, int viewsize_y, int viewsize_x ) : void
+    + scrollPad( ScrollWin_t * sw, int nrows, int ncols ) : void
+    + moveViewBox( ScrollWin_t * sw, int y, int x ) : void
+    + setInsDelLine( ScrollWin_t * sw, bool state ) : void
+    + setScrolling( ScrollWin_t * sw, bool state ) : void
+    + setScrollingY(ScrollWin_t * sw,  bool state ) : void
+    + setScrollingX( ScrollWin_t * sw, bool state ) : void
+    + isScrollable( ScrollWin_t * sw ) : bool
+    + isScrollableY( ScrollWin_t * sw ) : bool
+    + isScrollableX( ScrollWin_t * sw ) : bool
+    + resizeViewBox( ScrollWin_t * sw, int rows, int cols ) : void
+    + getViewProperty( const ScrollWin_t * sw ) : WindowProperty_t
+    + resizePad( ScrollWin_t * sw, int rows, int cols ) : bool
+    + clearPad( ScrollWin_t * sw ) : void
+}
+
+ScrollWin - -> ScrollWin_t
+ScrollWin - -> WindowProperty_t
+
+@enduml
+
+@startuml
+
+class WindowProperty_t {
+    + rows : int
+    + cols : int
+    + pos_y : int
+    + pos_x : int
+}
+
+class ScrollWin_t {
+    <b>Pad properties</b>
+    - - - -
+    + pad : WINDOW *
+    + rows : int
+    + cols : int
+    - - - -
+    <b>View-box screen position</b>
+    - - - -
+    + viewbox.from_y : int
+    + viewbox.from_x : int
+    + viewbox.to_y : int
+    + viewbox.to_x : int
+    - - - -
+    <b>Position of the view-box on the pad</b>
+    - - - -
+    + pos.x : int
+    + pos.y : int
+    - - - -
+    <b>Scrolling state</b>
+    - - - -
+    + scrolling.y : bool
+    + scrolling.x : bool
+}
+
+interface ScrollWin {
+    + initBlank( void ) : ScrollWin_t
+    + init( int height, int width ) : ScrollWin_t
+    + createPad( ScrollWin_t * sw, int height, int width ) : void
+    + reinit( ScrollWin_t * sw, int height, int width ) : void
+    + free( ScrollWin_t * sw ) : void
+    - - - -
+    + refreshView( ScrollWin_t * sw ) : void
+    + redraw( ScrollWin_t * sw, int viewsize_y, int viewsize_x ) : void
+    + scrollPad( ScrollWin_t * sw, int nrows, int ncols ) : void
+    + moveViewBox( ScrollWin_t * sw, int y, int x ) : void
+    + setInsDelLine( ScrollWin_t * sw, bool state ) : void
+    + setScrolling( ScrollWin_t * sw, bool state ) : void
+    + setScrollingY(ScrollWin_t * sw,  bool state ) : void
+    + setScrollingX( ScrollWin_t * sw, bool state ) : void
+    + isScrollable( ScrollWin_t * sw ) : bool
+    + isScrollableY( ScrollWin_t * sw ) : bool
+    + isScrollableX( ScrollWin_t * sw ) : bool
+    + resizeViewBox( ScrollWin_t * sw, int rows, int cols ) : void
+    + getViewProperty( const ScrollWin_t * sw ) : WindowProperty_t
+    + resizePad( ScrollWin_t * sw, int rows, int cols ) : bool
+    + clearPad( ScrollWin_t * sw ) : void
+}
+
+ScrollWin - -> ScrollWin_t
+ScrollWin - -> WindowProperty_t
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

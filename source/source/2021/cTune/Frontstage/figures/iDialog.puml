@@ -1,0 +1,84 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class WindowProperty_t {
+    + rows : int
+    + cols : int
+    + pos_y : int
+    + pos_x : int
+}
+
+class WindowMargin_t {
+    + top : int
+    + right : int
+    + bottom  : int
+    + left : int
+}
+
+class ScrollBar_t
+class ScrollWin_t
+class BorderWin_t
+hide ScrollBar_t members
+hide ScrollWin_t members
+hide BorderWin_t members
+
+class Dialog_t {
+    property : WindowProperty_t
+    border_win : BorderWin_t
+    canvas : ScrollWin_t
+    ----
+    <b>Scrollbar(s)</b>
+    ----
+    scrollbar.y_init : bool
+    scrollbar.x_init : bool
+    scrollbar.y_property : WindowProperty_t
+    scrollbar.x_property : WindowProperty_t
+    scrollbar.y : ScrollBar_t
+    scrollbar.x : ScrollBar_t
+    scrollbar.scroll_pos_x : size_t
+    scrollbar.scroll_pos_y : size_t
+    ----
+    <b>Auto-scrolling</b>
+    ----
+    autoscroll.offset_y : int
+    autoscroll.offset_x : int
+}
+
+interface Dialog {
+    + init( void ) : Dialog_t
+    + createScrollWin( Dialog_t * dialog, int rows, int cols );
+    + createBorderWin( Dialog_t * dialog, const WindowProperty_t * parent, const char * title, const WindowMargin_t * margins );
+    + isScrollableY( Dialog_t * dialog ) : bool
+    + isScrollableX( Dialog_t * dialog ) : bool
+    + show( Dialog_t * dialog ) : void
+    + refreshView( Dialog_t * dialog ) : void
+    + hide( Dialog_t * dialog ) : voi : void
+    + free( Dialog_t * dialog ) : voi : void
+    ----
+    <b>Navigation</b>
+    ----
+    + scrollUp( Dialog_t * dialog ) : void
+    + scrollRight( Dialog_t * dialog ) : void
+    + scrollDown( Dialog_t * dialog ) : void
+    + scrollLeft( Dialog_t * dialog ) : void
+    + scrollHome( Dialog_t * dialog ) : void
+    + scrollTop( Dialog_t * dialog ) : void
+    + scrollBottom( Dialog_t * dialog ) : void
+    + scrollLeftEdge( Dialog_t * dialog ) : void
+    + scrollRightEdge( Dialog_t * dialog ) : void
+    ----
+    <b>Auto-scrolling</b>
+    ----
+    + setAutoScrollOffset( Dialog_t * dialog, int y, int x ) : void
+    + autoScroll( Dialog_t * dialog, int y, int x ) : void
+}
+
+Dialog --> WindowMargin_t
+Dialog --> Dialog_t
+Dialog --> WindowProperty_t
+Dialog_t -right-> WindowProperty_t
+Dialog_t --> BorderWin_t
+Dialog_t --> ScrollWin_t
+Dialog_t --> ScrollBar_t
+
+@enduml

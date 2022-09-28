@@ -1,0 +1,141 @@
+.tabbed {
+    transition:       0.2s box-shadow ease;
+    box-shadow:       0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width:            100%;
+    display:          flex;
+    flex-wrap:        wrap;
+    position:         relative;
+    list-style:       none;
+    overflow:         hidden;
+    background: rgb( 255, 255, 255 );
+    background: linear-gradient( 0deg, rgba( 252, 252, 252, 1 ) 0%, rgba( 247, 247, 247, 1 ) 50%, rgba( 252, 252, 252, 1 ) 100% );
+}
+
+.tab {
+    display: none;
+}
+
+.tab:checked:nth-of-type(1) ~ .tab-content:nth-of-type(1) {
+    opacity: 1;
+    transition: 0.2s opacity ease-in, 0.8s transform ease;
+    position: relative;
+    top: 0;
+    z-index: 100;
+}
+
+.tab:checked:nth-of-type(2) ~ .tab-content:nth-of-type(2) {
+    opacity: 1;
+    transition: 0.2s opacity ease-in, 0.8s transform ease;
+    position: relative;
+    top: 0;
+    z-index: 100;
+}
+
+.tab:checked:nth-of-type(3) ~ .tab-content:nth-of-type(3) {
+    opacity: 1;
+    transition: 0.2s opacity ease-in, 0.8s transform ease;
+    position: relative;
+    top: 0;
+    z-index: 100;
+}
+
+.tab:checked:nth-of-type(4) ~ .tab-content:nth-of-type(4) {
+    opacity: 1;
+    transition: 0.2s opacity ease-in, 0.8s transform ease;
+    position: relative;
+    top: 0;
+    z-index: 100;
+}
+
+.tab:checked:nth-of-type(5) ~ .tab-content:nth-of-type(5) {
+    opacity: 1;
+    transition: 0.2s opacity ease-in, 0.8s transform ease;
+    position: relative;
+    top: 0;
+    z-index: 100;
+}
+
+.tab + label:first-of-type {
+    border-left: grey solid 1px;
+}
+
+.tab + label:last-of-type {
+    border-right: grey solid 1px;
+}
+
+.tab:checked + label {
+    color: #31363b;
+    background-color: #FCFCFC; /* global background */
+    border-left: #FCFCFC solid 1px;
+    border-right: #FCFCFC solid 1px;
+    cursor: default;
+}
+
+.tab:checked + label:hover {
+    color: #31363b;
+    background-color: #FCFCFC; /* global background */
+}
+
+.tab + label {
+    cursor:           pointer;
+    display:          block;
+    text-decoration:  none;
+    color:            white;
+    flex-grow:        3;
+    text-align:       center;
+    background-color: grey;
+    border-left:      #FCFCFC solid 1px;
+    border-right:     #FCFCFC solid 1px;
+    user-select:      none;
+    transition:       0.2s background-color ease;
+    height:           3em;
+    box-sizing:       border-box;
+    padding:          1em;
+}
+
+@media only screen and (max-width : 459px) {
+    .tab + label:first-of-type {
+        border: none;
+        border-bottom: #FCFCFC 1px solid;
+    }
+
+    .tab + label:last-of-type {
+        border: none;
+        border-bottom: grey 1px solid;
+    }
+
+    .tab + label {
+        border: none;
+        border-bottom: #FCFCFC 1px solid;
+    }
+}
+
+.tab + label:hover {
+    color: #31363b;
+    background-color: #f9f9f9;
+    border-left: #f9f9f9 solid 1px;
+    border-right: #f9f9f9 solid 1px;
+}
+
+.tab + label {
+    padding: 0.5em;
+}
+
+.tab + label img {
+    height: 2em;
+    margin: 0;
+    padding: 0 0.5em 0 0.5em;
+    vertical-align: middle;
+}
+
+.tab-content {
+    position: absolute;
+    width: 98%;
+    z-index: -1;
+    opacity: 0;
+    top: 3em;
+    left: 0;
+    overflow: hidden;
+}
+
+.tab-content > hr { margin-left: 1em; }

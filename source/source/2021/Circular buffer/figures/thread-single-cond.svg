@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="589px" preserveAspectRatio="none" style="width:423px;height:589px;background:#FFFFFF;" version="1.1" viewBox="0 0 423 589" width="423px" zoomAndPan="magnify"><defs><filter height="300%" id="fdkunm91crlvo" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke:none;stroke-width:1.5;" x1="102.5" x2="298" y1="10" y2="10"/><rect fill="#FEFECE" filter="url(#fdkunm91crlvo)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="36" x="84.5" y="75.4688"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="16" x="94.5" y="96.6074">Fill</text><rect fill="#FEFECE" filter="url(#fdkunm91crlvo)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="84" x="60.5" y="144.4375"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="64" x="70.5" y="165.5762">lock buffer</text><rect fill="#FEFECE" filter="url(#fdkunm91crlvo)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="81" x="62" y="261.8086"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="72" y="282.9473">write data</text><rect fill="#FEFECE" filter="url(#fdkunm91crlvo)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="98" x="53.5" y="330.7773"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="39" x="63.5" y="351.916">signal:</text><text fill="#008000" font-family="monospace" font-size="12" lengthAdjust="spacing" textLength="35" x="106.5" y="351.916">ready</text><polygon fill="#FEFECE" filter="url(#fdkunm91crlvo)" points="32,213.4063,173,213.4063,185,225.4063,173,237.4063,32,237.4063,20,225.4063,32,213.4063" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="20" x="106.5" y="247.6167">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="36" y="229.2144">free space</text><text fill="#000000" font-family="monospace" font-size="11" lengthAdjust="spacing" textLength="14" x="100" y="229.2144">&gt;=</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="51" x="118" y="229.2144">data size</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="185" y="222.812">no</text><polygon fill="#FEFECE" filter="url(#fdkunm91crlvo)" points="102.5,389.1484,114.5,401.1484,102.5,413.1484,90.5,401.1484,102.5,389.1484" style="stroke:#A80036;stroke-width:1.5;"/><rect fill="#FEFECE" filter="url(#fdkunm91crlvo)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="100" x="52.5" y="443.7461"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="80" x="62.5" y="464.8848">unlock buffer</text><ellipse cx="102.5" cy="522.7148" fill="#FFFFFF" filter="url(#fdkunm91crlvo)" rx="10" ry="10" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:2.5;" x1="96.3128" x2="108.6872" y1="516.5277" y2="528.902"/><line style="stroke:#000000;stroke-width:2.5;" x1="108.6872" x2="96.3128" y1="516.5277" y2="528.902"/><rect fill="#FEFECE" filter="url(#fdkunm91crlvo)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="52" x="272" y="31.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32" x="282" y="52.6387">Drain</text><rect fill="#FEFECE" filter="url(#fdkunm91crlvo)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="84" x="256" y="96.0352"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="64" x="266" y="117.1738">lock buffer</text><rect fill="#FEFECE" filter="url(#fdkunm91crlvo)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="147" x="224.5" y="213.4063"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="88" x="234.5" y="234.5449">wait for signal:</text><text fill="#008000" font-family="monospace" font-size="12" lengthAdjust="spacing" textLength="35" x="326.5" y="234.5449">ready</text><polygon fill="#FEFECE" filter="url(#fdkunm91crlvo)" points="247.5,165.0039,348.5,165.0039,360.5,177.0039,348.5,189.0039,247.5,189.0039,235.5,177.0039,247.5,165.0039" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="20" x="302" y="199.2144">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="251.5" y="180.812">is buffer empty?</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="360.5" y="174.4097">no</text><polygon fill="#FEFECE" filter="url(#fdkunm91crlvo)" points="298,271.7773,310,283.7773,298,295.7773,286,283.7773,298,271.7773" style="stroke:#A80036;stroke-width:1.5;"/><rect fill="#FEFECE" filter="url(#fdkunm91crlvo)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="78" x="259" y="379.1797"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58" x="269" y="400.3184">read data</text><polygon fill="#FEFECE" filter="url(#fdkunm91crlvo)" points="223,330.7773,373,330.7773,385,342.7773,373,354.7773,223,354.7773,211,342.7773,223,330.7773" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="20" x="302" y="364.9878">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="63" x="227" y="346.5854">buffer data</text><text fill="#000000" font-family="monospace" font-size="11" lengthAdjust="spacing" textLength="14" x="294" y="346.5854">&gt;=</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="312" y="346.5854">requested</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="385" y="340.1831">no</text><polygon fill="#FEFECE" filter="url(#fdkunm91crlvo)" points="298,433.1484,310,445.1484,298,457.1484,286,445.1484,298,433.1484" style="stroke:#A80036;stroke-width:1.5;"/><rect fill="#FEFECE" filter="url(#fdkunm91crlvo)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="100" x="248" y="492.1484"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="80" x="258" y="513.2871">unlock buffer</text><ellipse cx="298" cy="562.7148" fill="#FFFFFF" filter="url(#fdkunm91crlvo)" rx="10" ry="10" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:2.5;" x1="291.8128" x2="304.1872" y1="556.5277" y2="568.902"/><line style="stroke:#000000;stroke-width:2.5;" x1="304.1872" x2="291.8128" y1="556.5277" y2="568.902"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="109.4375" y2="144.4375"/><polygon fill="#A80036" points="98.5,134.4375,102.5,144.4375,106.5,134.4375,102.5,138.4375" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="295.7773" y2="330.7773"/><polygon fill="#A80036" points="98.5,320.7773,102.5,330.7773,106.5,320.7773,102.5,324.7773" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="237.4063" y2="261.8086"/><polygon fill="#A80036" points="98.5,251.8086,102.5,261.8086,106.5,251.8086,102.5,255.8086" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="185" x2="197" y1="225.4063" y2="225.4063"/><polygon fill="#A80036" points="193,303.2773,197,313.2773,201,303.2773,197,307.2773" style="stroke:#A80036;stroke-width:1.5;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="197" x2="197" y1="225.4063" y2="401.1484"/><line style="stroke:#A80036;stroke-width:1.5;" x1="197" x2="114.5" y1="401.1484" y2="401.1484"/><polygon fill="#A80036" points="124.5,397.1484,114.5,401.1484,124.5,405.1484,120.5,401.1484" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="364.7461" y2="389.1484"/><polygon fill="#A80036" points="98.5,379.1484,102.5,389.1484,106.5,379.1484,102.5,383.1484" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="178.4063" y2="213.4063"/><polygon fill="#A80036" points="98.5,203.4063,102.5,213.4063,106.5,203.4063,102.5,207.4063" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="413.1484" y2="443.7461"/><polygon fill="#A80036" points="98.5,433.7461,102.5,443.7461,106.5,433.7461,102.5,437.7461" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="477.7148" y2="512.7148"/><polygon fill="#A80036" points="98.5,502.7148,102.5,512.7148,106.5,502.7148,102.5,506.7148" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="65.4688" y2="96.0352"/><polygon fill="#A80036" points="294,86.0352,298,96.0352,302,86.0352,298,90.0352" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="189.0039" y2="213.4063"/><polygon fill="#A80036" points="294,203.4063,298,213.4063,302,203.4063,298,207.4063" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="360.5" x2="381.5" y1="177.0039" y2="177.0039"/><polygon fill="#A80036" points="377.5,220.3906,381.5,230.3906,385.5,220.3906,381.5,224.3906" style="stroke:#A80036;stroke-width:1.5;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="381.5" x2="381.5" y1="177.0039" y2="283.7773"/><line style="stroke:#A80036;stroke-width:1.5;" x1="381.5" x2="310" y1="283.7773" y2="283.7773"/><polygon fill="#A80036" points="320,279.7773,310,283.7773,320,287.7773,316,283.7773" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="247.375" y2="271.7773"/><polygon fill="#A80036" points="294,261.7773,298,271.7773,302,261.7773,298,265.7773" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="130.0039" y2="165.0039"/><polygon fill="#A80036" points="294,155.0039,298,165.0039,302,155.0039,298,159.0039" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="354.7773" y2="379.1797"/><polygon fill="#A80036" points="294,369.1797,298,379.1797,302,369.1797,298,373.1797" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="385" x2="397" y1="342.7773" y2="342.7773"/><polygon fill="#A80036" points="393,386.1641,397,396.1641,401,386.1641,397,390.1641" style="stroke:#A80036;stroke-width:1.5;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="397" x2="397" y1="342.7773" y2="445.1484"/><line style="stroke:#A80036;stroke-width:1.5;" x1="397" x2="310" y1="445.1484" y2="445.1484"/><polygon fill="#A80036" points="320,441.1484,310,445.1484,320,449.1484,316,445.1484" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="413.1484" y2="433.1484"/><polygon fill="#A80036" points="294,423.1484,298,433.1484,302,423.1484,298,427.1484" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="295.7773" y2="330.7773"/><polygon fill="#A80036" points="294,320.7773,298,330.7773,302,320.7773,298,324.7773" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="457.1484" y2="492.1484"/><polygon fill="#A80036" points="294,482.1484,298,492.1484,302,482.1484,298,486.1484" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="526.1172" y2="552.7148"/><polygon fill="#A80036" points="294,542.7148,298,552.7148,302,542.7148,298,546.7148" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b08d5ef2bc707de0ec3869693bae0d60]
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+split
+    -[hidden]->
+    :Fill;
+    :lock buffer;
+    if( free space "">="" data size ) then (yes)
+        :write data;
+        :signal: ""<color green>ready</color>"";
+    else (no)
+    endif
+    :unlock buffer;
+    end
+split again
+    -[hidden]->
+    :Drain;
+    :lock buffer;
+    if( is buffer empty? ) then (yes)
+        :wait for signal: ""<color green>ready</color>"";
+    else (no)
+    endif
+    if( buffer data "">="" requested ) then (yes)
+        :read data;
+    else (no)
+    endif
+    :unlock buffer;
+    end
+end split
+
+@enduml
+
+@startuml
+
+split
+    -[hidden]->
+    :Fill;
+    :lock buffer;
+    if( free space "">="" data size ) then (yes)
+        :write data;
+        :signal: ""<color green>ready</color>"";
+    else (no)
+    endif
+    :unlock buffer;
+    end
+split again
+    -[hidden]->
+    :Drain;
+    :lock buffer;
+    if( is buffer empty? ) then (yes)
+        :wait for signal: ""<color green>ready</color>"";
+    else (no)
+    endif
+    if( buffer data "">="" requested ) then (yes)
+        :read data;
+    else (no)
+    endif
+    :unlock buffer;
+    end
+end split
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

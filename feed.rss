@@ -15,8 +15,17 @@
 		<img>img/logo.png</img>
 		<description></description>
 		<copyright>An7ar35 @2021</copyright>
-		<lastBuildDate>Sun, 15 Aug 2021 13:00:28 +0200</lastBuildDate>
+		<lastBuildDate>Wed, 28 Sep 2022 14:44:02 +0200</lastBuildDate>
 		<generator>Blogator 1.3.2</generator>
+		<item>
+			<title>Socket event epoll blocking in linux</title>
+			<link>https://an7ar35.bitbucket.io/posts/30.html</link>
+			<pubDate>28 September 2022</pubDate>
+			<category>C++</category>
+			<category>Linux</category>
+			<category>Networking</category>
+			<description></description>
+		</item>
 		<item>
 			<title>Binary Search Algorithm</title>
 			<link>https://an7ar35.bitbucket.io/posts/29.html</link>
@@ -97,15 +106,6 @@
 			<category>Character encoding</category>
 			<category>Notes</category>
 			<description>On computers where <i>1</i> and <i>0</i> rule supreme we must have a way to express the human languages in the written format. Do do this there are standards that map characters to numeric values.</description>
-		</item>
-		<item>
-			<title>Blogator v1.3 released</title>
-			<link>https://an7ar35.bitbucket.io/posts/20.html</link>
-			<pubDate>27 May 2020</pubDate>
-			<category>Blogator</category>
-			<category>Project</category>
-			<category>Releases</category>
-			<description>New release for Blogator. An option to generate a JSON index of the blog's articles and, optionally the tags/years/authors indices is now available.</description>
 		</item>
 	</channel>
 </rss>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="58px" preserveAspectRatio="none" style="width:226px;height:58px;background:#FFFFFF;" version="1.1" viewBox="0 0 226 58" width="226px" zoomAndPan="magnify"><defs><filter height="300%" id="f1vnl1huc8zkoq" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[f69d0cb0505d19e89266c685e1b9b035]
+entity in--><ellipse cx="14" cy="20.5" fill="#000000" filter="url(#f1vnl1huc8zkoq)" rx="8" ry="8" style="stroke:#000000;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="13" x="7.5" y="50.4951">in</text><!--MD5=[55ead11f279d43a49df83e73bfcb0783]
+entity out--><ellipse cx="204" cy="20.5" fill="#000000" filter="url(#f1vnl1huc8zkoq)" rx="8" ry="8" style="stroke:#000000;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="23" x="192.5" y="50.4951">out</text><ellipse cx="109.1079" cy="20.7016" fill="#FFFFFF" filter="url(#f1vnl1huc8zkoq)" rx="51.1079" ry="14.7016" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="78.6079" y="24.4492">process</text><!--MD5=[5dca50888ad2855e9a297b2f126360f1]
+link in to process--><path d="M23.28,20.5 C33.07,20.5 42.86,20.5 52.65,20.5 " fill="none" id="in-to-process" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="57.77,20.5,48.77,16.5,52.77,20.5,48.77,24.5,57.77,20.5" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[b6ba9eb151b1a4ec7d3ae6aade2436b3]
+link process to out--><path d="M160.21,20.5 C170.02,20.5 179.83,20.5 189.63,20.5 " fill="none" id="process-to-out" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#000000" points="194.76,20.5,185.76,16.5,189.76,20.5,185.76,24.5,194.76,20.5" style="stroke:#000000;stroke-width:1.0;"/><!--MD5=[495084c61a39cb376f7c2cf77d6706ae]
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+<style>
+    usecase {
+        BackGroundColor white
+        LineThickness 2
+    }
+    interface {
+        BackGroundColor black
+        LineThickness 2
+        LineColor black
+    }
+</style>
+
+interface in
+interface out
+
+in        .[#black]right.> (process)
+(process) .[#black]right.> out
+
+@enduml
+
+@startuml
+
+<style>
+    usecase {
+        BackGroundColor white
+        LineThickness 2
+    }
+    interface {
+        BackGroundColor black
+        LineThickness 2
+        LineColor black
+    }
+</style>
+
+interface in
+interface out
+
+in        .[#black]right.> (process)
+(process) .[#black]right.> out
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

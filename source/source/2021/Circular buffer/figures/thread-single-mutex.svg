@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="376px" preserveAspectRatio="none" style="width:423px;height:376px;background:#FFFFFF;" version="1.1" viewBox="0 0 423 376" width="423px" zoomAndPan="magnify"><defs><filter height="300%" id="f5j86pg9p97sr" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke:none;stroke-width:1.5;" x1="102.5" x2="298" y1="10" y2="10"/><rect fill="#FEFECE" filter="url(#f5j86pg9p97sr)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="36" x="84.5" y="31.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="16" x="94.5" y="52.6387">Fill</text><rect fill="#FEFECE" filter="url(#f5j86pg9p97sr)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="84" x="60.5" y="85.4688"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="64" x="70.5" y="106.6074">lock buffer</text><rect fill="#FEFECE" filter="url(#f5j86pg9p97sr)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="81" x="62" y="187.8398"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="72" y="208.9785">write data</text><polygon fill="#FEFECE" filter="url(#f5j86pg9p97sr)" points="32,139.4375,173,139.4375,185,151.4375,173,163.4375,32,163.4375,20,151.4375,32,139.4375" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="20" x="106.5" y="173.6479">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="36" y="155.2456">free space</text><text fill="#000000" font-family="monospace" font-size="11" lengthAdjust="spacing" textLength="14" x="100" y="155.2456">&gt;=</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="51" x="118" y="155.2456">data size</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="185" y="148.8433">no</text><polygon fill="#FEFECE" filter="url(#f5j86pg9p97sr)" points="102.5,241.8086,114.5,253.8086,102.5,265.8086,90.5,253.8086,102.5,241.8086" style="stroke:#A80036;stroke-width:1.5;"/><rect fill="#FEFECE" filter="url(#f5j86pg9p97sr)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="100" x="52.5" y="285.8086"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="80" x="62.5" y="306.9473">unlock buffer</text><ellipse cx="102.5" cy="349.7773" fill="#FFFFFF" filter="url(#f5j86pg9p97sr)" rx="10" ry="10" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:2.5;" x1="96.3128" x2="108.6872" y1="343.5902" y2="355.9645"/><line style="stroke:#000000;stroke-width:2.5;" x1="108.6872" x2="96.3128" y1="343.5902" y2="355.9645"/><rect fill="#FEFECE" filter="url(#f5j86pg9p97sr)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="52" x="272" y="31.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32" x="282" y="52.6387">Drain</text><rect fill="#FEFECE" filter="url(#f5j86pg9p97sr)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="84" x="256" y="85.4688"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="64" x="266" y="106.6074">lock buffer</text><rect fill="#FEFECE" filter="url(#f5j86pg9p97sr)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="78" x="259" y="187.8398"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58" x="269" y="208.9785">read data</text><polygon fill="#FEFECE" filter="url(#f5j86pg9p97sr)" points="223,139.4375,373,139.4375,385,151.4375,373,163.4375,223,163.4375,211,151.4375,223,139.4375" style="stroke:#A80036;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="20" x="302" y="173.6479">yes</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="63" x="227" y="155.2456">buffer data</text><text fill="#000000" font-family="monospace" font-size="11" lengthAdjust="spacing" textLength="14" x="294" y="155.2456">&gt;=</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="312" y="155.2456">requested</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="14" x="385" y="148.8433">no</text><polygon fill="#FEFECE" filter="url(#f5j86pg9p97sr)" points="298,241.8086,310,253.8086,298,265.8086,286,253.8086,298,241.8086" style="stroke:#A80036;stroke-width:1.5;"/><rect fill="#FEFECE" filter="url(#f5j86pg9p97sr)" height="33.9688" rx="12.5" ry="12.5" style="stroke:#A80036;stroke-width:1.5;" width="100" x="248" y="285.8086"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="80" x="258" y="306.9473">unlock buffer</text><ellipse cx="298" cy="349.7773" fill="#FFFFFF" filter="url(#f5j86pg9p97sr)" rx="10" ry="10" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:2.5;" x1="291.8128" x2="304.1872" y1="343.5902" y2="355.9645"/><line style="stroke:#000000;stroke-width:2.5;" x1="304.1872" x2="291.8128" y1="343.5902" y2="355.9645"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="65.4688" y2="85.4688"/><polygon fill="#A80036" points="98.5,75.4688,102.5,85.4688,106.5,75.4688,102.5,79.4688" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="163.4375" y2="187.8398"/><polygon fill="#A80036" points="98.5,177.8398,102.5,187.8398,106.5,177.8398,102.5,181.8398" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="185" x2="197" y1="151.4375" y2="151.4375"/><polygon fill="#A80036" points="193,194.8242,197,204.8242,201,194.8242,197,198.8242" style="stroke:#A80036;stroke-width:1.5;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="197" x2="197" y1="151.4375" y2="253.8086"/><line style="stroke:#A80036;stroke-width:1.5;" x1="197" x2="114.5" y1="253.8086" y2="253.8086"/><polygon fill="#A80036" points="124.5,249.8086,114.5,253.8086,124.5,257.8086,120.5,253.8086" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="221.8086" y2="241.8086"/><polygon fill="#A80036" points="98.5,231.8086,102.5,241.8086,106.5,231.8086,102.5,235.8086" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="119.4375" y2="139.4375"/><polygon fill="#A80036" points="98.5,129.4375,102.5,139.4375,106.5,129.4375,102.5,133.4375" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="265.8086" y2="285.8086"/><polygon fill="#A80036" points="98.5,275.8086,102.5,285.8086,106.5,275.8086,102.5,279.8086" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="102.5" x2="102.5" y1="319.7773" y2="339.7773"/><polygon fill="#A80036" points="98.5,329.7773,102.5,339.7773,106.5,329.7773,102.5,333.7773" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="65.4688" y2="85.4688"/><polygon fill="#A80036" points="294,75.4688,298,85.4688,302,75.4688,298,79.4688" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="163.4375" y2="187.8398"/><polygon fill="#A80036" points="294,177.8398,298,187.8398,302,177.8398,298,181.8398" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="385" x2="397" y1="151.4375" y2="151.4375"/><polygon fill="#A80036" points="393,194.8242,397,204.8242,401,194.8242,397,198.8242" style="stroke:#A80036;stroke-width:1.5;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="397" x2="397" y1="151.4375" y2="253.8086"/><line style="stroke:#A80036;stroke-width:1.5;" x1="397" x2="310" y1="253.8086" y2="253.8086"/><polygon fill="#A80036" points="320,249.8086,310,253.8086,320,257.8086,316,253.8086" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="221.8086" y2="241.8086"/><polygon fill="#A80036" points="294,231.8086,298,241.8086,302,231.8086,298,235.8086" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="119.4375" y2="139.4375"/><polygon fill="#A80036" points="294,129.4375,298,139.4375,302,129.4375,298,133.4375" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="265.8086" y2="285.8086"/><polygon fill="#A80036" points="294,275.8086,298,285.8086,302,275.8086,298,279.8086" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.5;" x1="298" x2="298" y1="319.7773" y2="339.7773"/><polygon fill="#A80036" points="294,329.7773,298,339.7773,302,329.7773,298,333.7773" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[577222456fdc21bd4c0380a7e2687ad1]
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+split
+    -[hidden]->
+    :Fill;
+    :lock buffer;
+    if( free space "">="" data size ) then (yes)
+        :write data;
+    else (no)
+    endif
+    :unlock buffer;
+    end
+split again
+    -[hidden]->
+    :Drain;
+    :lock buffer;
+    if( buffer data "">="" requested ) then (yes)
+        :read data;
+    else (no)
+    endif
+    :unlock buffer;
+    end
+end split
+
+@enduml
+
+@startuml
+
+split
+    -[hidden]->
+    :Fill;
+    :lock buffer;
+    if( free space "">="" data size ) then (yes)
+        :write data;
+    else (no)
+    endif
+    :unlock buffer;
+    end
+split again
+    -[hidden]->
+    :Drain;
+    :lock buffer;
+    if( buffer data "">="" requested ) then (yes)
+        :read data;
+    else (no)
+    endif
+    :unlock buffer;
+    end
+end split
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

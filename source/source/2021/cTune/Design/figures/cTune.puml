@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+skinparam componentStyle rectangle
+
+package library #lightgrey {
+    component Logger
+}
+
+package plugins #lightgrey {
+    file pulse.so as pulse
+    file sdl.so as sdl2
+    file alsa.so as alsa
+    file ffmpeg.so as ffmpeg
+}
+
+package ctune #lightgrey {
+    component Backend
+    component Frontend
+}
+
+Backend  -[#black]-> Logger
+Frontend -[#black]-> Logger
+pulse    -[#black]-> Logger
+alsa     -[#black]-> Logger
+sdl2     -[#black]-> Logger
+ffmpeg   -[#black]-> Logger
+Backend  -[#black]-> pulse
+Backend  -[#black]-> alsa
+Backend  -[#black]-> sdl2
+Backend  -[#black]-> ffmpeg
+Frontend -[#black]-> Backend
+
+@enduml

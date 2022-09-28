@@ -1,0 +1,48 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Controller {
+    + init( void ) : bool
+    + load( ArgOptions_t * opts ) : void
+    + free( void ) : void
+    ----
+    <b>Playback</b>
+    ----
+    + playback.getPlaybackState( void ) : bool
+    + playback.start( const RadioStationInfo_t * station ) : bool
+    + playback.stop( void ) : void
+    + playback.modifyVolume( int delta ) : void
+    + playback.testStream( const char * url, String_t * codec, ulong * bitrate ) : bool
+    + playback.validateURL( const char * url ) : bool
+    ----
+    <b>Search</b>
+    ----
+    + search.getStations( RadioBrowserFilter_t * filter, Vector_t * stations ) : bool
+    + search.getStationsBy( const ByCategory_e category, const char * search_term, Vector_t * stations ) : bool
+    + search.getCategoryItems( const ListCategory_e category, const RadioBrowserFilter_t * filter, Vector_t * categories ) : bool
+    ----
+    <b>Settings</b>
+    ----
+    + cfg.toggleFavourite( RadioStationInfo_t * rsi, StationSrc_e src ) : bool
+    + cfg.updateFavourite( RadioStationInfo_t * rsi, StationSrc_e src ) : bool
+    + cfg.isFavourite( const RadioStationInfo_t * rsi, StationSrc_e src ) : bool
+    + cfg.isFavouriteUUID( const char * uuid, StationSrc_e src ) : bool
+    + cfg.saveFavourites( void ) : bool
+    + cfg.getListOfFavourites( Vector_t * stations ) : bool
+    + cfg.setFavouriteSorting( RadioStationInfo_SortBy_e attr ) : void
+    + cfg.getUiTheme( void ) : struct ColourTheme
+    + cfg.favTabThemingState( void ) : bool
+    + cfg.largeRowsForFavTab( void ) : bool
+    + cfg.largeRowsForSearchTab( void ) : bool
+    + cfg.largeRowsForBrowserTab( void ) : bool
+    ----
+    <b>Callback setup</b>
+    ----
+    + setVolumeChangeEventCallback( void(* cb)( int ) ) : void
+    + setSongChangeEventCallback( void(* cb)( const char *) ) : void
+    + setStationChangeEventCallback( void(* cb)( const RadioStationInfo_t * rsi ) ) : void
+    + setPlaybackStateChangeEventCallback( void(* cb)( bool ) ) : void
+    + setSearchStateChangeEventCallback( void(* cb)( bool ) ) : void
+}
+
+@enduml

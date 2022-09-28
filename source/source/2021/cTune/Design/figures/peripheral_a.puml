@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+component Controller #back:gold;line:black
+
+package player #lightgrey {
+    component RadioPlayer
+    interface "Player interface" as Player
+    interface "AudioOut interface" as AudioOut
+
+    RadioPlayer --( Player
+    RadioPlayer --( AudioOut
+}
+
+package fs #lightgrey {
+    component Settings
+    file "ctune.cfg" as cfg
+    file "ctune.fav" as fav
+
+    Settings ...> cfg
+    Settings ...> fav
+
+    component Plugin
+
+    package "player plugins" #white {
+        file "ffmpeg.so" as pl_ffmpeg
+    }
+
+    package "output plugins" #white {
+        file "pulse.so" as pl_pulse
+        file "sdl.so" as pl_sld
+        file "alsa.so" as pl_alsa
+    }
+
+    Plugin .[#RoyalBlue].> pl_sld
+    Plugin .[#RoyalBlue].> pl_pulse
+    Plugin .[#RoyalBlue].> pl_alsa
+    Plugin .[#RoyalBlue].> pl_ffmpeg
+
+    Settings --> Plugin
+}
+
+Player   ----> pl_ffmpeg
+AudioOut ----> pl_sld
+AudioOut ----> pl_pulse
+AudioOut ----> pl_alsa
+
+Controller -down-> Settings
+Controller -right-> RadioPlayer
+
+@enduml

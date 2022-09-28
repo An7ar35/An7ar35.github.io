@@ -1,0 +1,83 @@
+@import url('dev-tags.css');
+
+.box {
+    background-color: #FCFCFC; /* global background */
+    position: relative;
+    border-radius: 0.5em;
+    border: solid 1px lightgray;
+    overflow: auto;
+    height: 20em;
+    font-size: medium;
+    z-index: 100;
+}
+
+@media screen and (max-width: 639px) {
+    .box { height: auto; }
+}
+
+.box:hover        { border-color: #31363b; }
+.box > a          { text-decoration: none; }
+.box > a:hover h3 { text-decoration: underline; }
+
+/*====Box Header====*/
+.box-header {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    padding: 0.5em;
+    border-bottom: solid 1px lightgray;
+    overflow: hidden;
+}
+
+.box-header > div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-header h3 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.box-header img {
+    max-height: 1.5em;
+    width: auto;
+    display: block;
+}
+
+.box-header-details {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.box-header-date {
+    padding: 0.25em 0;
+    flex-grow: 1;
+    font-size: small;
+    color: gray;
+    vertical-align: baseline;
+}
+
+/*====Box Description====*/
+.box-desc {
+    overflow: auto;
+    display: inline-block;
+    height: 15.5em;
+    z-index: 100;
+    position: relative;
+}
+
+.box-desc ul, .box-desc ol {
+    margin: 0.5em 0 0.5em 0.5em;
+    padding-left: 1.5em;
+    padding-right: 0.5em;
+}
+
+.box-desc ol { list-style-type: lower-roman; }

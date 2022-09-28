@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="908px" preserveAspectRatio="none" style="width:1041px;height:908px;background:#FFFFFF;" version="1.1" viewBox="0 0 1041 908" width="1041px" zoomAndPan="magnify"><defs><filter height="300%" id="f1p1hrxl0gkphw" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[c210d1697ab984d881819fa3094475bc]
+class PLAYBACK_CTRL--><rect codeLine="3" fill="#FEFECE" filter="url(#f1p1hrxl0gkphw)" height="99.2188" id="PLAYBACK_CTRL" style="stroke:#A80036;stroke-width:1.5;" width="180" x="847.5" y="763"/><ellipse cx="885.45" cy="779" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M889.5594,785.5 L881.8406,785.5 L881.8406,772.5 L889.5594,772.5 L889.5594,774.7813 L884.2938,774.7813 L884.2938,777.5 L889.0594,777.5 L889.0594,779.7813 L884.2938,779.7813 L884.2938,783.2344 L889.5594,783.2344 L889.5594,785.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="97" x="904.55" y="783.1543">PLAYBACK_CTRL</text><line style="stroke:#A80036;stroke-width:1.5;" x1="848.5" x2="1026.5" y1="795" y2="795"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="160" x="853.5" y="809.2104">PLAYBACK_CTRL_STATE = 0</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="145" x="853.5" y="822.0151">PLAYBACK_CTRL_OFF = 1</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="141" x="853.5" y="834.8198">PLAYBACK_CTRL_ON = 2</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="168" x="853.5" y="847.6245">PLAYBACK_CTRL_SWITCH = 3</text><line style="stroke:#A80036;stroke-width:1.5;" x1="848.5" x2="1026.5" y1="854.2188" y2="854.2188"/><!--MD5=[bcf7aa29426668e3c283b2b894fd001a]
+class PlaybackArgs_t--><rect codeLine="10" fill="#FEFECE" filter="url(#f1p1hrxl0gkphw)" height="86.4141" id="PlaybackArgs_t" style="stroke:#A80036;stroke-width:1.5;" width="123" x="105" y="197"/><ellipse cx="120" cy="213" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M122.4688,218.875 Q121.8906,219.1875 121.25,219.3438 Q120.6094,219.5 119.9063,219.5 Q117.4063,219.5 116.0781,217.8281 Q114.7656,216.1563 114.7656,213 Q114.7656,209.8438 116.0781,208.1719 Q117.4063,206.5 119.9063,206.5 Q120.6094,206.5 121.25,206.6563 Q121.9063,206.8125 122.4688,207.125 L122.4688,209.9219 Q121.8438,209.3594 121.25,209.0938 Q120.6563,208.8125 120.0313,208.8125 Q118.6875,208.8125 118,209.875 Q117.3125,210.9375 117.3125,213 Q117.3125,215.0781 118,216.1406 Q118.6875,217.1875 120.0313,217.1875 Q120.6563,217.1875 121.25,216.9219 Q121.8438,216.6563 122.4688,216.0781 L122.4688,218.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="91" x="134" y="217.1543">PlaybackArgs_t</text><line style="stroke:#A80036;stroke-width:1.5;" x1="106" x2="227" y1="229" y2="229"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="70" x="111" y="243.2104">url : String_t</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="111" y="256.0151">init_vol : int</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="92" x="111" y="268.8198">timeout_val : int</text><line style="stroke:#A80036;stroke-width:1.5;" x1="106" x2="227" y1="275.4141" y2="275.4141"/><!--MD5=[85e2007f8a8dab55cc6a1bb88482c467]
+class RadioPlayer--><rect codeLine="16" fill="#FEFECE" filter="url(#f1p1hrxl0gkphw)" height="465.7266" id="RadioPlayer" style="stroke:#A80036;stroke-width:1.5;" width="598" x="263.5" y="7"/><ellipse cx="523.75" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M526.2188,28.875 Q525.6406,29.1875 525,29.3438 Q524.3594,29.5 523.6563,29.5 Q521.1563,29.5 519.8281,27.8281 Q518.5156,26.1563 518.5156,23 Q518.5156,19.8438 519.8281,18.1719 Q521.1563,16.5 523.6563,16.5 Q524.3594,16.5 525,16.6563 Q525.6563,16.8125 526.2188,17.125 L526.2188,19.9219 Q525.5938,19.3594 525,19.0938 Q524.4063,18.8125 523.7813,18.8125 Q522.4375,18.8125 521.75,19.875 Q521.0625,20.9375 521.0625,23 Q521.0625,25.0781 521.75,26.1406 Q522.4375,27.1875 523.7813,27.1875 Q524.4063,27.1875 525,26.9219 Q525.5938,26.6563 526.2188,26.0781 L526.2188,28.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69" x="544.25" y="27.1543">RadioPlayer</text><line style="stroke:#A80036;stroke-width:1.5;" x1="264.5" x2="860.5" y1="39" y2="39"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="47"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="89" x="283.5" y="53.2104">initialised : bool</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="59.8047"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="131" x="283.5" y="66.0151">player_initialised : bool</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="72.6094"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="144" x="283.5" y="78.8198">player_plugin : Player_t *</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="85.4141"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="160" x="283.5" y="91.6245">output_plugin : AudioOut_t *</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="98.2188"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="169" x="283.5" y="104.4292">stream_args : PlaybackArgs_t</text><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="111.0234" y2="111.0234"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing" textLength="79" x="269.5" y="125.2339">Player control</text><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="131.8281" y2="131.8281"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="139.8281"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="143" x="283.5" y="146.0386">player.thread : pthread_t</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="152.6328"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="195" x="283.5" y="158.8433">player.state : volatile sig_atomic_t</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="165.4375"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="212" x="283.5" y="171.6479">launchPlayback( void * args ) : void *</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="178.2422"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="300" x="283.5" y="184.4526">setPlaybackState( enum PLAYBACK_CTRL ctrl ) : bool</text><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="191.0469" y2="191.0469"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacing" textLength="53" x="269.5" y="205.2573">Callbacks</text><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="211.8516" y2="211.8516"/><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="219.8516"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="304" x="283.5" y="226.062">cb.song_change_callback : void (*)( const char * str );</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="232.6563"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="338" x="283.5" y="238.8667">cb.volume_change_event_callback : void (*)( const int vol );</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="271.5" y="245.4609"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="297" x="283.5" y="251.6714">cb.playback_state_change_cb : void (*)( bool state );</text><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="258.2656" y2="258.2656"/><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="260.2656" y2="260.2656"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="36" x="269.5" y="272.4761">Setup</text><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="279.0703" y2="279.0703"/><ellipse cx="274.5" cy="290.0703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="572" x="283.5" y="293.2808">init( void (* song_change_cb)( const char * str ), void (* vol_change_event_cb)( const int vol ) ) : void</text><ellipse cx="274.5" cy="302.875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="424" x="283.5" y="306.0854">setStateChangeCallback( void (* playback_state_change_cb)( bool ) ) : void</text><ellipse cx="274.5" cy="315.6797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="242" x="283.5" y="318.8901">loadPlayerPlugin( Player_t * player ) : bool</text><ellipse cx="274.5" cy="328.4844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="336" x="283.5" y="331.6948">loadSoundServerPlugin( AudioOut_t * sound_server ) : bool</text><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="338.2891" y2="338.2891"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="104" x="269.5" y="352.4995">Playback control</text><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="359.0938" y2="359.0938"/><ellipse cx="274.5" cy="370.0938" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="431" x="283.5" y="373.3042">playRadioStream( const char * url, const int volume, int timeout_val ) : bool</text><ellipse cx="274.5" cy="382.8984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="150" x="283.5" y="386.1089">stopPlayback( void ) : void</text><ellipse cx="274.5" cy="395.7031" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="173" x="283.5" y="398.9136">getPlaybackState( void ) : bool</text><ellipse cx="274.5" cy="408.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="180" x="283.5" y="411.7183">modifyVolume( int delta ) : void</text><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="418.3125" y2="418.3125"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="49" x="269.5" y="432.5229">Utilities</text><line style="stroke:#A80036;stroke-width:1.0;" x1="264.5" x2="860.5" y1="439.1172" y2="439.1172"/><ellipse cx="274.5" cy="450.1172" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="283.5" y="453.3276">getError( void ) : int</text><ellipse cx="274.5" cy="462.9219" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="503" x="283.5" y="466.1323">testStream( const char * url, int timeout_val, String_t * codec_str, ulong * bitrate ) : bool</text><!--MD5=[42b1c6863a6e17de00f57fd22f7eb4d9]
+class Player_t--><rect codeLine="56" fill="#FEFECE" filter="url(#f1p1hrxl0gkphw)" height="137.6328" id="Player_t" style="stroke:#A80036;stroke-width:1.5;" width="792" x="166.5" y="533"/><ellipse cx="534.75" cy="549" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M531.1719,544.7813 L531.1719,542.5 L538.5625,542.5 L538.5625,544.7813 L536.0938,544.7813 L536.0938,553.2344 L538.5625,553.2344 L538.5625,555.5 L531.1719,555.5 L531.1719,553.2344 L533.6406,553.2344 L533.6406,544.7813 L531.1719,544.7813 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="47" x="555.25" y="553.1543">Player_t</text><line style="stroke:#A80036;stroke-width:1.5;" x1="167.5" x2="957.5" y1="565" y2="565"/><ellipse cx="177.5" cy="576" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="87" x="186.5" y="579.2104">name : String_t</text><ellipse cx="177.5" cy="588.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="186.5" y="592.0151">handle : void *</text><ellipse cx="177.5" cy="601.6094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="156" x="186.5" y="604.8198">abi_version : unsigned int *</text><line style="stroke:#A80036;stroke-width:1.0;" x1="167.5" x2="957.5" y1="611.4141" y2="611.4141"/><ellipse cx="177.5" cy="622.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="766" x="186.5" y="625.6245">init( AudioOut_t * sound_server, bool (* playback_ctrl_cb)( enum PLAYBACK_CTRL ), void (* song_change_cb)( const char * str ) ) : void</text><ellipse cx="177.5" cy="635.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="431" x="186.5" y="638.4292">playRadioStream( const char * url, const int volume, int timeout_val ) : bool</text><ellipse cx="177.5" cy="648.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="186.5" y="651.2339">getError( void ) : int</text><ellipse cx="177.5" cy="660.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="503" x="186.5" y="664.0386">testStream( const char * url, int timeout_val, String_t * codec_str, ulong * bitrate ) : bool</text><!--MD5=[c99ac4feae8a210a7d6c74bfcdb7fccb]
+class AudioOut_t--><rect codeLine="67" fill="#FEFECE" filter="url(#f1p1hrxl0gkphw)" height="163.2422" id="AudioOut_t" style="stroke:#A80036;stroke-width:1.5;" width="507" x="7" y="731"/><ellipse cx="222.75" cy="747" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M219.1719,742.7813 L219.1719,740.5 L226.5625,740.5 L226.5625,742.7813 L224.0938,742.7813 L224.0938,751.2344 L226.5625,751.2344 L226.5625,753.5 L219.1719,753.5 L219.1719,751.2344 L221.6406,751.2344 L221.6406,742.7813 L219.1719,742.7813 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="67" x="243.25" y="751.1543">AudioOut_t</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="513" y1="763" y2="763"/><ellipse cx="18" cy="774" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="87" x="27" y="777.2104">name : String_t</text><ellipse cx="18" cy="786.8047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="27" y="790.0151">handle : void *</text><ellipse cx="18" cy="799.6094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="156" x="27" y="802.8198">abi_version : unsigned int *</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="513" y1="809.4141" y2="809.4141"/><ellipse cx="18" cy="820.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="481" x="27" y="823.6245">init( OutputFmt_e fmt, int sample_rate, uint channels, uint samples, int volume ) : int</text><ellipse cx="18" cy="833.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="262" x="27" y="836.4292">write( const void * buffer, int buff_size ) : void</text><ellipse cx="18" cy="846.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="147" x="27" y="849.2339">setVolume( int vol ) : void</text><ellipse cx="18" cy="858.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="182" x="27" y="862.0386">changeVolume( int delta ) : bool</text><ellipse cx="18" cy="871.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="127" x="27" y="874.8433">getVolume( void ) : int</text><ellipse cx="18" cy="884.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="130" x="27" y="887.6479">shutdown( void ) : void</text><!--MD5=[13a09aca3f1ad40b46b28ef148fa332d]
+class OutputFmt_e--><rect codeLine="80" fill="#FEFECE" filter="url(#f1p1hrxl0gkphw)" height="73.6094" id="OutputFmt_e" style="stroke:#A80036;stroke-width:1.5;" width="190" x="549.5" y="775.5"/><ellipse cx="600.25" cy="791.5" fill="#EB937F" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M604.3594,798 L596.6406,798 L596.6406,785 L604.3594,785 L604.3594,787.2813 L599.0938,787.2813 L599.0938,790 L603.8594,790 L603.8594,792.2813 L599.0938,792.2813 L599.0938,795.7344 L604.3594,795.7344 L604.3594,798 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="80" x="620.75" y="795.6543">OutputFmt_e</text><line style="stroke:#A80036;stroke-width:1.5;" x1="550.5" x2="738.5" y1="807.5" y2="807.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="178" x="555.5" y="821.7104">AUDIO_OUTPUT_FMT_S16 = 16,</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="178" x="555.5" y="834.5151">AUDIO_OUTPUT_FMT_S32 = 32,</text><line style="stroke:#A80036;stroke-width:1.5;" x1="550.5" x2="738.5" y1="841.1094" y2="841.1094"/><!--MD5=[7d779e150f7acecf55578046a84106b7]
+reverse link PlaybackArgs_t to RadioPlayer--><path codeLine="85" d="M233.56,240 C243.47,240 253.38,240 263.29,240 " fill="none" id="PlaybackArgs_t-backto-RadioPlayer" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="228.38,240,237.3914,243.9743,233.38,239.9857,237.3685,235.9743,228.38,240" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[8d46db99154f9e981879fdc4dc2675d1]
+link RadioPlayer to Player_t--><path codeLine="86" d="M562.5,473.06 C562.5,492.54 562.5,511.14 562.5,527.81 " fill="none" id="RadioPlayer-to-Player_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="562.5,532.92,566.5,523.92,562.5,527.92,558.5,523.92,562.5,532.92" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cec7c390e6694acbeb567513bd943377]
+link RadioPlayer to AudioOut_t--><path codeLine="87" d="M263.44,460.82 C257.42,464.94 251.44,469 245.5,473 C203.46,501.32 173.18,488.72 148.5,533 C118.64,586.58 128.25,613.11 148.5,671 C155.34,690.54 166.16,709.4 178.44,726.61 " fill="none" id="RadioPlayer-to-AudioOut_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="181.59,730.95,179.5435,721.3161,178.6542,726.9026,173.0677,726.0133,181.59,730.95" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1d0795267b23108a5e5f7327bfe3acf8]
+link Player_t to AudioOut_t--><path codeLine="88" d="M463.61,671.27 C437.41,689.36 408.81,709.11 381.57,727.91 " fill="none" id="Player_t-to-AudioOut_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="377.21,730.92,386.8882,729.0946,381.3235,728.0777,382.3405,722.513,377.21,730.92" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[233f312e6ba4bc143ad13a395e364582]
+link Player_t to PLAYBACK_CTRL--><path codeLine="89" d="M685.03,671.13 C737.3,700.19 797.25,733.52 845.61,760.41 " fill="none" id="Player_t-to-PLAYBACK_CTRL" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="850.25,762.99,844.3252,755.1226,845.8792,760.5618,840.44,762.1158,850.25,762.99" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[33535709815e5ba14c6a8d06267ab895]
+link RadioPlayer to PLAYBACK_CTRL--><path codeLine="90" d="M861.66,397.71 C907.94,435.58 949.33,480.59 976.5,533 C1013.54,604.46 986.7,699.38 962.89,757.91 " fill="none" id="RadioPlayer-to-PLAYBACK_CTRL" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="960.89,762.76,968.026,755.972,962.8009,758.1396,960.6333,752.9145,960.89,762.76" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cd8e1e4475063ee9f66db0f2c55eb320]
+link AudioOut_t to OutputFmt_e--><path codeLine="91" d="M514,812.5 C524.06,812.5 534.11,812.5 544.17,812.5 " fill="none" id="AudioOut_t-to-OutputFmt_e" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="549.43,812.5,540.43,808.5,544.43,812.5,540.43,816.5,549.43,812.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[97a7718ade241e8fbc097ce2f6c265cc]
+@startuml
+'https://plantuml.com/class-diagram
+
+enum PLAYBACK_CTRL {
+    PLAYBACK_CTRL_STATE = 0
+    PLAYBACK_CTRL_OFF = 1
+    PLAYBACK_CTRL_ON = 2
+    PLAYBACK_CTRL_SWITCH = 3
+}
+
+class PlaybackArgs_t {
+    url : String_t
+    init_vol : int
+    timeout_val : int
+}
+
+class RadioPlayer {
+    - initialised : bool
+    - player_initialised : bool
+    - player_plugin : Player_t *
+    - output_plugin : AudioOut_t *
+    - stream_args : PlaybackArgs_t
+    - - - -
+    <i>Player control</i>
+    - - - -
+    - player.thread : pthread_t
+    - player.state : volatile sig_atomic_t
+    - launchPlayback( void * args ) : void *
+    - setPlaybackState( enum PLAYBACK_CTRL ctrl ) : bool
+    - - - -
+    <i>Callbacks</i>
+    - - - -
+    - cb.song_change_callback : void (*)( const char * str );
+    - cb.volume_change_event_callback : void (*)( const int vol );
+    - cb.playback_state_change_cb : void (*)( bool state );
+    ====
+    <b>Setup</b>
+    - - - -
+    + init( void (* song_change_cb)( const char * str ), void (* vol_change_event_cb)( const int vol ) ) : void
+    + setStateChangeCallback( void (* playback_state_change_cb)( bool ) ) : void
+    + loadPlayerPlugin( Player_t * player ) : bool
+    + loadSoundServerPlugin( AudioOut_t * sound_server ) : bool
+    - - - -
+    <b>Playback control</b>
+    - - - -
+    + playRadioStream( const char * url, const int volume, int timeout_val ) : bool
+    + stopPlayback( void ) : void
+    + getPlaybackState( void ) : bool
+    + modifyVolume( int delta ) : void
+    - - - -
+    <b>Utilities</b>
+    - - - -
+    + getError( void ) : int
+    + testStream( const char * url, int timeout_val, String_t * codec_str, ulong * bitrate ) : bool
+}
+
+interface Player_t {
+    + name : String_t
+    + handle : void *
+    + abi_version : unsigned int *
+    - - - -
+    + init( AudioOut_t * sound_server, bool (* playback_ctrl_cb)( enum PLAYBACK_CTRL ), void (* song_change_cb)( const char * str ) ) : void
+    + playRadioStream( const char * url, const int volume, int timeout_val ) : bool
+    + getError( void ) : int
+    + testStream( const char * url, int timeout_val, String_t * codec_str, ulong * bitrate ) : bool
+}
+
+interface AudioOut_t {
+    + name : String_t
+    + handle : void *
+    + abi_version : unsigned int *
+
+    + init( OutputFmt_e fmt, int sample_rate, uint channels, uint samples, int volume ) : int
+    + write( const void * buffer, int buff_size ) : void
+    + setVolume( int vol ) : void
+    + changeVolume( int delta ) : bool
+    + getVolume( void ) : int
+    + shutdown( void ) : void
+}
+
+enum OutputFmt_e {
+    AUDIO_OUTPUT_FMT_S16 = 16,
+    AUDIO_OUTPUT_FMT_S32 = 32,
+}
+
+RadioPlayer -left-> PlaybackArgs_t
+RadioPlayer - -> Player_t
+RadioPlayer - -> AudioOut_t
+Player_t - -> AudioOut_t
+Player_t - -> PLAYBACK_CTRL
+RadioPlayer - -> PLAYBACK_CTRL
+AudioOut_t -> OutputFmt_e
+
+@enduml
+
+@startuml
+
+enum PLAYBACK_CTRL {
+    PLAYBACK_CTRL_STATE = 0
+    PLAYBACK_CTRL_OFF = 1
+    PLAYBACK_CTRL_ON = 2
+    PLAYBACK_CTRL_SWITCH = 3
+}
+
+class PlaybackArgs_t {
+    url : String_t
+    init_vol : int
+    timeout_val : int
+}
+
+class RadioPlayer {
+    - initialised : bool
+    - player_initialised : bool
+    - player_plugin : Player_t *
+    - output_plugin : AudioOut_t *
+    - stream_args : PlaybackArgs_t
+    - - - -
+    <i>Player control</i>
+    - - - -
+    - player.thread : pthread_t
+    - player.state : volatile sig_atomic_t
+    - launchPlayback( void * args ) : void *
+    - setPlaybackState( enum PLAYBACK_CTRL ctrl ) : bool
+    - - - -
+    <i>Callbacks</i>
+    - - - -
+    - cb.song_change_callback : void (*)( const char * str );
+    - cb.volume_change_event_callback : void (*)( const int vol );
+    - cb.playback_state_change_cb : void (*)( bool state );
+    ====
+    <b>Setup</b>
+    - - - -
+    + init( void (* song_change_cb)( const char * str ), void (* vol_change_event_cb)( const int vol ) ) : void
+    + setStateChangeCallback( void (* playback_state_change_cb)( bool ) ) : void
+    + loadPlayerPlugin( Player_t * player ) : bool
+    + loadSoundServerPlugin( AudioOut_t * sound_server ) : bool
+    - - - -
+    <b>Playback control</b>
+    - - - -
+    + playRadioStream( const char * url, const int volume, int timeout_val ) : bool
+    + stopPlayback( void ) : void
+    + getPlaybackState( void ) : bool
+    + modifyVolume( int delta ) : void
+    - - - -
+    <b>Utilities</b>
+    - - - -
+    + getError( void ) : int
+    + testStream( const char * url, int timeout_val, String_t * codec_str, ulong * bitrate ) : bool
+}
+
+interface Player_t {
+    + name : String_t
+    + handle : void *
+    + abi_version : unsigned int *
+    - - - -
+    + init( AudioOut_t * sound_server, bool (* playback_ctrl_cb)( enum PLAYBACK_CTRL ), void (* song_change_cb)( const char * str ) ) : void
+    + playRadioStream( const char * url, const int volume, int timeout_val ) : bool
+    + getError( void ) : int
+    + testStream( const char * url, int timeout_val, String_t * codec_str, ulong * bitrate ) : bool
+}
+
+interface AudioOut_t {
+    + name : String_t
+    + handle : void *
+    + abi_version : unsigned int *
+
+    + init( OutputFmt_e fmt, int sample_rate, uint channels, uint samples, int volume ) : int
+    + write( const void * buffer, int buff_size ) : void
+    + setVolume( int vol ) : void
+    + changeVolume( int delta ) : bool
+    + getVolume( void ) : int
+    + shutdown( void ) : void
+}
+
+enum OutputFmt_e {
+    AUDIO_OUTPUT_FMT_S16 = 16,
+    AUDIO_OUTPUT_FMT_S32 = 32,
+}
+
+RadioPlayer -left-> PlaybackArgs_t
+RadioPlayer - -> Player_t
+RadioPlayer - -> AudioOut_t
+Player_t - -> AudioOut_t
+Player_t - -> PLAYBACK_CTRL
+RadioPlayer - -> PLAYBACK_CTRL
+AudioOut_t -> OutputFmt_e
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

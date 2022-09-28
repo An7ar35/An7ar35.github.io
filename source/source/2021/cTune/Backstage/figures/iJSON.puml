@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface JSON {
+' - packField_str( const char * key, const char * val, char ** target ) : bool
+' - packField_bool( const char * key, const char * val, bool * target ) : bool
+' - packField_long( const char * key, const char * val, long * target ) : bool
+' - packField_ulong( const char * key, const char * val, ulong * target ) : bool
+' - packField_double( const char * key, const char * val, double * target ) : bool
+' - packField_enum( const char * key, const char * val, int enum_min, int enum_max, int * target ) : bool
+' ....
+' - packServerStats( String_t ServerStats_t * stats, const char * key, const char * val ) : bool
+' - packServerConfig( String_t ServerConfig_t * cfg, const char * key, const char * val ) : bool
+' - packStationInfo( String_t RadioStationInfo_t * rsi, const char * key, const char * val ) : bool
+' - packCategoryItem( String_t CategoryItem_t * cat_item, const char * key, const char * val ) : bool
+' - packClickCounter( String_t ClickCounter_t * clk_counter, const char * key, const char * val ) :  bool
+' - packRadioStationVote( String_t RadioStationVote_t * vote_state, const char * key, const char * val ) : bool
+' - packNewRadioStationRcv( String_t NewRadioStation_t * new_station, const char * key, const char * val ) : bool
+' ----
+    <b>Needed</b>
+    ....
+    + parseToRadioStationList( const String_t * raw_str, Vector_t * radio_stations ) : bool
+    + parseToRadioStationListFrom( const String_t * raw_str, StationSrc_e src, Vector_t * radio_stations ) : bool
+    + parseRadioStationListToJSON( const String_t Vector_t * stations, String_t * json_str ) : bool
+    + parseToCategoryItemList( const String_t * raw_str, Vector_t * category_items ) : bool
+    + parseToClickCounter( const String_t * raw_str, ClickCounter_t * clk_counter ) : bool
+    ----
+    <b>Optional</b>
+    ....
+    + parseToServerStats( const String_t * raw_str, ServerStats_t * stats ) : bool
+    + parseToServerConfig( const String_t * raw_str, ServerConfig_t * cfg ) : bool
+    + parseToRadioStationVote( const String_t * raw_str, RadioStationVote_t * vote_state ) : bool
+    + parseToNewRadioStationRcv( const String_t * raw_str, NewRadioStation_t * new_station ) : bool
+}
+
+enum StationSrc_e {
+    STATIONSRC_LOCAL = 0,
+    STATIONSRC_RADIOBROWSER,
+}
+
+JSON -right-> StationSrc_e
+
+@enduml

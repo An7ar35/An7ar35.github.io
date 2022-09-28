@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+'autonumber
+
+participant cTune
+participant plugin
+participant ALSA
+
+activate cTune
+activate ALSA
+
+group Initialise
+    cTune -> plugin : ""init(..)""
+    activate plugin
+    plugin -> ALSA : ""snd_pcm_open(..)""
+    plugin -> ALSA : Set HW parameters
+    plugin -> ALSA : Initialise the mixer
+    plugin -> ALSA : ""snd_pcm_prepare(..)""
+end group
+
+group Playback PCM data
+    cTune -> plugin : ""write(..)""
+    plugin -> ALSA : ""snd_pcm_writei(..)""
+end group
+
+group Shutdown
+    cTune  -> plugin : ""shutdown()""
+    plugin -> ALSA : ""snd_pcm_drain(..)""
+    plugin -> ALSA : ""snd_pcm_close(..)""
+    plugin -> ALSA : ""snd_pcm_hw_free(..)""
+    plugin -> ALSA : ""snd_pcm_hw_params_free(..)""
+    plugin -> ALSA : ""snd_mixer_close(..)""
+end group
+
+deactivate plugin
+
+@enduml

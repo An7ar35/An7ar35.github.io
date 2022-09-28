@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="791px" preserveAspectRatio="none" style="width:792px;height:791px;background:#FFFFFF;" version="1.1" viewBox="0 0 792 791" width="792px" zoomAndPan="magnify"><defs><filter height="300%" id="fndn98l4ckevz" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[605ddada9486cd68ea3cb33d81299a4c]
+class WindowProperty_t--><rect codeLine="3" fill="#FEFECE" filter="url(#fndn98l4ckevz)" height="99.2188" id="WindowProperty_t" style="stroke:#A80036;stroke-width:1.5;" width="142" x="344" y="503.5"/><ellipse cx="359" cy="519.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M361.4688,525.375 Q360.8906,525.6875 360.25,525.8438 Q359.6094,526 358.9063,526 Q356.4063,526 355.0781,524.3281 Q353.7656,522.6563 353.7656,519.5 Q353.7656,516.3438 355.0781,514.6719 Q356.4063,513 358.9063,513 Q359.6094,513 360.25,513.1563 Q360.9063,513.3125 361.4688,513.625 L361.4688,516.4219 Q360.8438,515.8594 360.25,515.5938 Q359.6563,515.3125 359.0313,515.3125 Q357.6875,515.3125 357,516.375 Q356.3125,517.4375 356.3125,519.5 Q356.3125,521.5781 357,522.6406 Q357.6875,523.6875 359.0313,523.6875 Q359.6563,523.6875 360.25,523.4219 Q360.8438,523.1563 361.4688,522.5781 L361.4688,525.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="110" x="373" y="523.6543">WindowProperty_t</text><line style="stroke:#A80036;stroke-width:1.5;" x1="345" x2="485" y1="535.5" y2="535.5"/><ellipse cx="355" cy="546.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="364" y="549.7104">rows : int</text><ellipse cx="355" cy="559.3047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="364" y="562.5151">cols : int</text><ellipse cx="355" cy="572.1094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="364" y="575.3198">pos_y : int</text><ellipse cx="355" cy="584.9141" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="364" y="588.1245">pos_x : int</text><line style="stroke:#A80036;stroke-width:1.5;" x1="345" x2="485" y1="594.7188" y2="594.7188"/><!--MD5=[759cfab48a54ee8756a5bb02979c58a1]
+class WindowMargin_t--><rect codeLine="10" fill="#FEFECE" filter="url(#fndn98l4ckevz)" height="99.2188" id="WindowMargin_t" style="stroke:#A80036;stroke-width:1.5;" width="132" x="521" y="503.5"/><ellipse cx="536" cy="519.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M538.4688,525.375 Q537.8906,525.6875 537.25,525.8438 Q536.6094,526 535.9063,526 Q533.4063,526 532.0781,524.3281 Q530.7656,522.6563 530.7656,519.5 Q530.7656,516.3438 532.0781,514.6719 Q533.4063,513 535.9063,513 Q536.6094,513 537.25,513.1563 Q537.9063,513.3125 538.4688,513.625 L538.4688,516.4219 Q537.8438,515.8594 537.25,515.5938 Q536.6563,515.3125 536.0313,515.3125 Q534.6875,515.3125 534,516.375 Q533.3125,517.4375 533.3125,519.5 Q533.3125,521.5781 534,522.6406 Q534.6875,523.6875 536.0313,523.6875 Q536.6563,523.6875 537.25,523.4219 Q537.8438,523.1563 538.4688,522.5781 L538.4688,525.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="100" x="550" y="523.6543">WindowMargin_t</text><line style="stroke:#A80036;stroke-width:1.5;" x1="522" x2="652" y1="535.5" y2="535.5"/><ellipse cx="532" cy="546.5" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="541" y="549.7104">top : int</text><ellipse cx="532" cy="559.3047" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="52" x="541" y="562.5151">right : int</text><ellipse cx="532" cy="572.1094" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="70" x="541" y="575.3198">bottom  : int</text><ellipse cx="532" cy="584.9141" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;fill:none;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="541" y="588.1245">left : int</text><line style="stroke:#A80036;stroke-width:1.5;" x1="522" x2="652" y1="594.7188" y2="594.7188"/><!--MD5=[2192880aea5e556e16de6e61165a6950]
+class ScrollBar_t--><rect codeLine="17" fill="#FEFECE" filter="url(#fndn98l4ckevz)" height="32" id="ScrollBar_t" style="stroke:#A80036;stroke-width:1.5;" width="96" x="7" y="745"/><ellipse cx="22" cy="761" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M24.4688,766.875 Q23.8906,767.1875 23.25,767.3438 Q22.6094,767.5 21.9063,767.5 Q19.4063,767.5 18.0781,765.8281 Q16.7656,764.1563 16.7656,761 Q16.7656,757.8438 18.0781,756.1719 Q19.4063,754.5 21.9063,754.5 Q22.6094,754.5 23.25,754.6563 Q23.9063,754.8125 24.4688,755.125 L24.4688,757.9219 Q23.8438,757.3594 23.25,757.0938 Q22.6563,756.8125 22.0313,756.8125 Q20.6875,756.8125 20,757.875 Q19.3125,758.9375 19.3125,761 Q19.3125,763.0781 20,764.1406 Q20.6875,765.1875 22.0313,765.1875 Q22.6563,765.1875 23.25,764.9219 Q23.8438,764.6563 24.4688,764.0781 L24.4688,766.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="64" x="36" y="765.1543">ScrollBar_t</text><!--MD5=[9c09ac47de501d13dda962a8b2237437]
+class ScrollWin_t--><rect codeLine="18" fill="#FEFECE" filter="url(#fndn98l4ckevz)" height="32" id="ScrollWin_t" style="stroke:#A80036;stroke-width:1.5;" width="99" x="138.5" y="745"/><ellipse cx="153.5" cy="761" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M155.9688,766.875 Q155.3906,767.1875 154.75,767.3438 Q154.1094,767.5 153.4063,767.5 Q150.9063,767.5 149.5781,765.8281 Q148.2656,764.1563 148.2656,761 Q148.2656,757.8438 149.5781,756.1719 Q150.9063,754.5 153.4063,754.5 Q154.1094,754.5 154.75,754.6563 Q155.4063,754.8125 155.9688,755.125 L155.9688,757.9219 Q155.3438,757.3594 154.75,757.0938 Q154.1563,756.8125 153.5313,756.8125 Q152.1875,756.8125 151.5,757.875 Q150.8125,758.9375 150.8125,761 Q150.8125,763.0781 151.5,764.1406 Q152.1875,765.1875 153.5313,765.1875 Q154.1563,765.1875 154.75,764.9219 Q155.3438,764.6563 155.9688,764.0781 L155.9688,766.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="67" x="167.5" y="765.1543">ScrollWin_t</text><!--MD5=[93899e2e49460e9463982e40fb6a726b]
+class BorderWin_t--><rect codeLine="19" fill="#FEFECE" filter="url(#fndn98l4ckevz)" height="32" id="BorderWin_t" style="stroke:#A80036;stroke-width:1.5;" width="106" x="273" y="745"/><ellipse cx="288" cy="761" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M290.4688,766.875 Q289.8906,767.1875 289.25,767.3438 Q288.6094,767.5 287.9063,767.5 Q285.4063,767.5 284.0781,765.8281 Q282.7656,764.1563 282.7656,761 Q282.7656,757.8438 284.0781,756.1719 Q285.4063,754.5 287.9063,754.5 Q288.6094,754.5 289.25,754.6563 Q289.9063,754.8125 290.4688,755.125 L290.4688,757.9219 Q289.8438,757.3594 289.25,757.0938 Q288.6563,756.8125 288.0313,756.8125 Q286.6875,756.8125 286,757.875 Q285.3125,758.9375 285.3125,761 Q285.3125,763.0781 286,764.1406 Q286.6875,765.1875 288.0313,765.1875 Q288.6563,765.1875 289.25,764.9219 Q289.8438,764.6563 290.4688,764.0781 L290.4688,766.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="74" x="302" y="765.1543">BorderWin_t</text><!--MD5=[007e601034f03138a6c3fb510e3848a7]
+class Dialog_t--><rect codeLine="24" fill="#FEFECE" filter="url(#fndn98l4ckevz)" height="264.0703" id="Dialog_t" style="stroke:#A80036;stroke-width:1.5;" width="242" x="67" y="421"/><ellipse cx="159.75" cy="437" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M162.2188,442.875 Q161.6406,443.1875 161,443.3438 Q160.3594,443.5 159.6563,443.5 Q157.1563,443.5 155.8281,441.8281 Q154.5156,440.1563 154.5156,437 Q154.5156,433.8438 155.8281,432.1719 Q157.1563,430.5 159.6563,430.5 Q160.3594,430.5 161,430.6563 Q161.6563,430.8125 162.2188,431.125 L162.2188,433.9219 Q161.5938,433.3594 161,433.0938 Q160.4063,432.8125 159.7813,432.8125 Q158.4375,432.8125 157.75,433.875 Q157.0625,434.9375 157.0625,437 Q157.0625,439.0781 157.75,440.1406 Q158.4375,441.1875 159.7813,441.1875 Q160.4063,441.1875 161,440.9219 Q161.5938,440.6563 162.2188,440.0781 L162.2188,442.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="48" x="180.25" y="441.1543">Dialog_t</text><line style="stroke:#A80036;stroke-width:1.5;" x1="68" x2="308" y1="453" y2="453"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="164" x="73" y="467.2104">property : WindowProperty_t</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="145" x="73" y="480.0151">border_win : BorderWin_t</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="114" x="73" y="492.8198">canvas : ScrollWin_t</text><line style="stroke:#A80036;stroke-width:1.0;" x1="68" x2="308" y1="499.4141" y2="499.4141"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="73" x="73" y="513.6245">Scrollbar(s)</text><line style="stroke:#A80036;stroke-width:1.0;" x1="68" x2="308" y1="520.2188" y2="520.2188"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="119" x="73" y="534.4292">scrollbar.y_init : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="119" x="73" y="547.2339">scrollbar.x_init : bool</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="230" x="73" y="560.0386">scrollbar.y_property : WindowProperty_t</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="230" x="73" y="572.8433">scrollbar.x_property : WindowProperty_t</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="133" x="73" y="585.6479">scrollbar.y : ScrollBar_t</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="133" x="73" y="598.4526">scrollbar.x : ScrollBar_t</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="166" x="73" y="611.2573">scrollbar.scroll_pos_x : size_t</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="166" x="73" y="624.062">scrollbar.scroll_pos_y : size_t</text><line style="stroke:#A80036;stroke-width:1.0;" x1="68" x2="308" y1="630.6563" y2="630.6563"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="90" x="73" y="644.8667">Auto-scrolling</text><line style="stroke:#A80036;stroke-width:1.0;" x1="68" x2="308" y1="651.4609" y2="651.4609"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="130" x="73" y="665.6714">autoscroll.offset_y : int</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="130" x="73" y="678.4761">autoscroll.offset_x : int</text><!--MD5=[c25c956ab0d33992fc5cdd0db284c9fa]
+class Dialog--><rect codeLine="46" fill="#FEFECE" filter="url(#fndn98l4ckevz)" height="353.7031" id="Dialog" style="stroke:#A80036;stroke-width:1.5;" width="727" x="51.5" y="7"/><ellipse cx="392.25" cy="23" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M388.6719,18.7813 L388.6719,16.5 L396.0625,16.5 L396.0625,18.7813 L393.5938,18.7813 L393.5938,27.2344 L396.0625,27.2344 L396.0625,29.5 L388.6719,29.5 L388.6719,27.2344 L391.1406,27.2344 L391.1406,18.7813 L388.6719,18.7813 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="37" x="412.75" y="27.1543">Dialog</text><line style="stroke:#A80036;stroke-width:1.5;" x1="52.5" x2="777.5" y1="39" y2="39"/><ellipse cx="62.5" cy="50" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="114" x="71.5" y="53.2104">init( void ) : Dialog_t</text><ellipse cx="62.5" cy="62.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="302" x="71.5" y="66.0151">createScrollWin( Dialog_t * dialog, int rows, int cols );</text><ellipse cx="62.5" cy="75.6094" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="701" x="71.5" y="78.8198">createBorderWin( Dialog_t * dialog, const WindowProperty_t * parent, const char * title, const WindowMargin_t * margins );</text><ellipse cx="62.5" cy="88.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="216" x="71.5" y="91.6245">isScrollableY( Dialog_t * dialog ) : bool</text><ellipse cx="62.5" cy="101.2188" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="217" x="71.5" y="104.4292">isScrollableX( Dialog_t * dialog ) : bool</text><ellipse cx="62.5" cy="114.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="174" x="71.5" y="117.2339">show( Dialog_t * dialog ) : void</text><ellipse cx="62.5" cy="126.8281" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="71.5" y="130.0386">refreshView( Dialog_t * dialog ) : void</text><ellipse cx="62.5" cy="139.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="198" x="71.5" y="142.8433">hide( Dialog_t * dialog ) : voi : void</text><ellipse cx="62.5" cy="152.4375" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="197" x="71.5" y="155.6479">free( Dialog_t * dialog ) : voi : void</text><line style="stroke:#A80036;stroke-width:1.0;" x1="52.5" x2="777.5" y1="162.2422" y2="162.2422"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="67" x="57.5" y="176.4526">Navigation</text><line style="stroke:#A80036;stroke-width:1.0;" x1="52.5" x2="777.5" y1="183.0469" y2="183.0469"/><ellipse cx="62.5" cy="194.0469" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="190" x="71.5" y="197.2573">scrollUp( Dialog_t * dialog ) : void</text><ellipse cx="62.5" cy="206.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="204" x="71.5" y="210.062">scrollRight( Dialog_t * dialog ) : void</text><ellipse cx="62.5" cy="219.6563" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="206" x="71.5" y="222.8667">scrollDown( Dialog_t * dialog ) : void</text><ellipse cx="62.5" cy="232.4609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="196" x="71.5" y="235.6714">scrollLeft( Dialog_t * dialog ) : void</text><ellipse cx="62.5" cy="245.2656" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="208" x="71.5" y="248.4761">scrollHome( Dialog_t * dialog ) : void</text><ellipse cx="62.5" cy="258.0703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="196" x="71.5" y="261.2808">scrollTop( Dialog_t * dialog ) : void</text><ellipse cx="62.5" cy="270.875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="216" x="71.5" y="274.0854">scrollBottom( Dialog_t * dialog ) : void</text><ellipse cx="62.5" cy="283.6797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="224" x="71.5" y="286.8901">scrollLeftEdge( Dialog_t * dialog ) : void</text><ellipse cx="62.5" cy="296.4844" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="232" x="71.5" y="299.6948">scrollRightEdge( Dialog_t * dialog ) : void</text><line style="stroke:#A80036;stroke-width:1.0;" x1="52.5" x2="777.5" y1="306.2891" y2="306.2891"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="90" x="57.5" y="320.4995">Auto-scrolling</text><line style="stroke:#A80036;stroke-width:1.0;" x1="52.5" x2="777.5" y1="327.0938" y2="327.0938"/><ellipse cx="62.5" cy="338.0938" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="319" x="71.5" y="341.3042">setAutoScrollOffset( Dialog_t * dialog, int y, int x ) : void</text><ellipse cx="62.5" cy="350.8984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="267" x="71.5" y="354.1089">autoScroll( Dialog_t * dialog, int y, int x ) : void</text><!--MD5=[d0098d295342fd8d9291c504b6c6eb64]
+link Dialog to WindowMargin_t--><path codeLine="75" d="M497.6,361.24 C521.01,411.2 544.76,461.87 561.89,498.42 " fill="none" id="Dialog-to-WindowMargin_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="564.16,503.26,563.9516,493.4133,562.0331,498.7349,556.7115,496.8164,564.16,503.26" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[393af9009af3dd1cc32c13c92be5b23c]
+link Dialog to Dialog_t--><path codeLine="76" d="M305.99,361.24 C294.56,379.71 283.08,398.28 272,416.19 " fill="none" id="Dialog-to-Dialog_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="269.19,420.73,277.3218,415.1736,271.8169,416.4756,270.5148,410.9707,269.19,420.73" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e6d12829f1363942d0c4a9ff4756d02e]
+link Dialog to WindowProperty_t--><path codeLine="77" d="M415,361.24 C415,411 415,461.46 415,497.98 " fill="none" id="Dialog-to-WindowProperty_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="415,503.26,419,494.26,415,498.26,411,494.26,415,503.26" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[19626ccc0b5840e3618a9e7199f368e8]
+link Dialog_t to WindowProperty_t--><path codeLine="78" d="M309.04,553 C318.91,553 328.78,553 338.65,553 " fill="none" id="Dialog_t-to-WindowProperty_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="343.81,553,334.81,549,338.81,553,334.81,557,343.81,553" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6508d78fc6497fc22cc68eb20822cb7a]
+link Dialog_t to BorderWin_t--><path codeLine="79" d="M275.79,685.05 C290.31,706.72 303.62,726.6 312.89,740.43 " fill="none" id="Dialog_t-to-BorderWin_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="315.87,744.88,314.1905,735.1754,313.0899,740.7242,307.5411,739.6236,315.87,744.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6687f23237ff5013f862156fc42ec936]
+link Dialog_t to ScrollWin_t--><path codeLine="80" d="M188,685.05 C188,706.34 188,725.91 188,739.7 " fill="none" id="Dialog_t-to-ScrollWin_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="188,744.88,192,735.88,188,739.88,184,735.88,188,744.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[bdc68e699c47fa6aad24cbbd1bcb3a8e]
+link Dialog_t to ScrollBar_t--><path codeLine="81" d="M103.39,685.05 C89.4,706.72 76.56,726.6 67.63,740.43 " fill="none" id="Dialog_t-to-ScrollBar_t" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="64.76,744.88,73.0045,739.4922,67.4739,740.6806,66.2855,735.15,64.76,744.88" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a64276c9815a014cee87633b4e0bec24]
+@startuml
+'https://plantuml.com/class-diagram
+
+class WindowProperty_t {
+    + rows : int
+    + cols : int
+    + pos_y : int
+    + pos_x : int
+}
+
+class WindowMargin_t {
+    + top : int
+    + right : int
+    + bottom  : int
+    + left : int
+}
+
+class ScrollBar_t
+class ScrollWin_t
+class BorderWin_t
+hide ScrollBar_t members
+hide ScrollWin_t members
+hide BorderWin_t members
+
+class Dialog_t {
+    property : WindowProperty_t
+    border_win : BorderWin_t
+    canvas : ScrollWin_t
+    - - - -
+    <b>Scrollbar(s)</b>
+    - - - -
+    scrollbar.y_init : bool
+    scrollbar.x_init : bool
+    scrollbar.y_property : WindowProperty_t
+    scrollbar.x_property : WindowProperty_t
+    scrollbar.y : ScrollBar_t
+    scrollbar.x : ScrollBar_t
+    scrollbar.scroll_pos_x : size_t
+    scrollbar.scroll_pos_y : size_t
+    - - - -
+    <b>Auto-scrolling</b>
+    - - - -
+    autoscroll.offset_y : int
+    autoscroll.offset_x : int
+}
+
+interface Dialog {
+    + init( void ) : Dialog_t
+    + createScrollWin( Dialog_t * dialog, int rows, int cols );
+    + createBorderWin( Dialog_t * dialog, const WindowProperty_t * parent, const char * title, const WindowMargin_t * margins );
+    + isScrollableY( Dialog_t * dialog ) : bool
+    + isScrollableX( Dialog_t * dialog ) : bool
+    + show( Dialog_t * dialog ) : void
+    + refreshView( Dialog_t * dialog ) : void
+    + hide( Dialog_t * dialog ) : voi : void
+    + free( Dialog_t * dialog ) : voi : void
+    - - - -
+    <b>Navigation</b>
+    - - - -
+    + scrollUp( Dialog_t * dialog ) : void
+    + scrollRight( Dialog_t * dialog ) : void
+    + scrollDown( Dialog_t * dialog ) : void
+    + scrollLeft( Dialog_t * dialog ) : void
+    + scrollHome( Dialog_t * dialog ) : void
+    + scrollTop( Dialog_t * dialog ) : void
+    + scrollBottom( Dialog_t * dialog ) : void
+    + scrollLeftEdge( Dialog_t * dialog ) : void
+    + scrollRightEdge( Dialog_t * dialog ) : void
+    - - - -
+    <b>Auto-scrolling</b>
+    - - - -
+    + setAutoScrollOffset( Dialog_t * dialog, int y, int x ) : void
+    + autoScroll( Dialog_t * dialog, int y, int x ) : void
+}
+
+Dialog - -> WindowMargin_t
+Dialog - -> Dialog_t
+Dialog - -> WindowProperty_t
+Dialog_t -right-> WindowProperty_t
+Dialog_t - -> BorderWin_t
+Dialog_t - -> ScrollWin_t
+Dialog_t - -> ScrollBar_t
+
+@enduml
+
+@startuml
+
+class WindowProperty_t {
+    + rows : int
+    + cols : int
+    + pos_y : int
+    + pos_x : int
+}
+
+class WindowMargin_t {
+    + top : int
+    + right : int
+    + bottom  : int
+    + left : int
+}
+
+class ScrollBar_t
+class ScrollWin_t
+class BorderWin_t
+hide ScrollBar_t members
+hide ScrollWin_t members
+hide BorderWin_t members
+
+class Dialog_t {
+    property : WindowProperty_t
+    border_win : BorderWin_t
+    canvas : ScrollWin_t
+    - - - -
+    <b>Scrollbar(s)</b>
+    - - - -
+    scrollbar.y_init : bool
+    scrollbar.x_init : bool
+    scrollbar.y_property : WindowProperty_t
+    scrollbar.x_property : WindowProperty_t
+    scrollbar.y : ScrollBar_t
+    scrollbar.x : ScrollBar_t
+    scrollbar.scroll_pos_x : size_t
+    scrollbar.scroll_pos_y : size_t
+    - - - -
+    <b>Auto-scrolling</b>
+    - - - -
+    autoscroll.offset_y : int
+    autoscroll.offset_x : int
+}
+
+interface Dialog {
+    + init( void ) : Dialog_t
+    + createScrollWin( Dialog_t * dialog, int rows, int cols );
+    + createBorderWin( Dialog_t * dialog, const WindowProperty_t * parent, const char * title, const WindowMargin_t * margins );
+    + isScrollableY( Dialog_t * dialog ) : bool
+    + isScrollableX( Dialog_t * dialog ) : bool
+    + show( Dialog_t * dialog ) : void
+    + refreshView( Dialog_t * dialog ) : void
+    + hide( Dialog_t * dialog ) : voi : void
+    + free( Dialog_t * dialog ) : voi : void
+    - - - -
+    <b>Navigation</b>
+    - - - -
+    + scrollUp( Dialog_t * dialog ) : void
+    + scrollRight( Dialog_t * dialog ) : void
+    + scrollDown( Dialog_t * dialog ) : void
+    + scrollLeft( Dialog_t * dialog ) : void
+    + scrollHome( Dialog_t * dialog ) : void
+    + scrollTop( Dialog_t * dialog ) : void
+    + scrollBottom( Dialog_t * dialog ) : void
+    + scrollLeftEdge( Dialog_t * dialog ) : void
+    + scrollRightEdge( Dialog_t * dialog ) : void
+    - - - -
+    <b>Auto-scrolling</b>
+    - - - -
+    + setAutoScrollOffset( Dialog_t * dialog, int y, int x ) : void
+    + autoScroll( Dialog_t * dialog, int y, int x ) : void
+}
+
+Dialog - -> WindowMargin_t
+Dialog - -> Dialog_t
+Dialog - -> WindowProperty_t
+Dialog_t -right-> WindowProperty_t
+Dialog_t - -> BorderWin_t
+Dialog_t - -> ScrollWin_t
+Dialog_t - -> ScrollBar_t
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 14:40:07 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: GB
+--></g></svg>

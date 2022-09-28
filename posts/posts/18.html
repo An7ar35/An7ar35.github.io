@@ -1,0 +1,459 @@
+<!-- Generated with Blogator 1.3.2 (https://an7ar35.bitbucket.io) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="script-src-elem 'self' 'unsafe-inline' 'unsafe-eval';">
+    <title>EAD | Writings</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/blogator/main.css" />
+</head>
+    <body>
+        <div class="header">
+            <div><img src="../img/tree-left.svg" alt="left tree"/></div>
+            <div>
+                <div class="site-title">Es' corner</div>
+                <div class="site-micro-title">Just another keyboard-enthusiastic hominid.</div>
+            </div>
+            <div><img src="../img/tree-right.svg" alt="right tree"/></div>
+        </div>
+        <nav class="navigation">
+            <ul>
+                <li class="active">
+                    <a class="nav-writings" href="../index.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Home</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-projects" href="../pages/projects/personal.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Projects</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-contact" href="../pages/contact.html">
+                        <div class="nav-icon"></div>
+                        <div class="nav-text">Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <script src="../js/sticky-top-navbar.js"></script>
+
+        <div class="breadcrumb">
+        	<ul>
+        		<li><a href="../index.html">Home</a></li>
+        		<li><a href="../index/by_date/0.html">Posts</a></li>
+        		<li>HDD diagnosis and recovery tools</li>
+        	</ul>
+        </div>
+
+        <div class="content-h">
+            <div class="left-col">
+                <div class="post-content">
+
+<article>
+    <div>
+        <h1><span class="title">HDD diagnosis and recovery tools</span></h1>
+        <time datetime="2020-04-22">22 April 2020</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">Linux</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <div class="auto-toc">
+        	<h2>Table of Contents</h2>
+        	<ol>
+        		<li><a href="#heading_1">1. Health of the drive (S.M.A.R.T.)</a></li>
+        		<li><a href="#heading_2">2. Good drive, Bad data</a></li>
+        		<li><ol>
+        			<li><a href="#heading_2_1">2.1 File system checker</a></li>
+        			<li><a href="#heading_2_2">2.2 Recovery from a formatted hard drive</a></li>
+        			<li><a href="#heading_2_3">2.3 Data recovery tools</a></li>
+        			<li><a href="#heading_2_4">2.4 Accessing an encrypted volume</a></li>
+        			<li><ol>
+        				<li><a href="#heading_2_4_1">2.4.1 Decrypting a partition/drive</a></li>
+        				<li><a href="#heading_2_4_2">2.4.2 Mounting to access content</a></li>
+        			</ol></li>
+        		</ol></li>
+        		<li><a href="#heading_3">3. Bad drive, Good data</a></li>
+        		<li><ol>
+        			<li><a href="#heading_3_1">3.1 Checking for bad blocks</a></li>
+        			<li><a href="#heading_3_2">3.2 Backing up the data</a></li>
+        			<li><ol>
+        				<li><a href="#heading_3_2_1">3.2.1 Cloning from failing device to new device</a></li>
+        				<li><a href="#heading_3_2_2">3.2.2 Imaging failing device to a recovery file</a></li>
+        				<li><a href="#heading_3_2_3">3.2.3 Mounting a recovery image</a></li>
+        			</ol></li>
+        		</ol></li>
+        		<li><a href="#heading_4">4. Dead drive, Unknown data</a></li>
+        	</ol>
+        </div>
+
+        <figure class="left icon">
+            <img src="../source/2020/HDD%20recovery%20tools/hdd_fail.svg" alt="HDD failing"/>
+            <!-- made from https://www.svgrepo.com/svg/42874/warning and https://www.svgrepo.com/svg/105529/hard-drive-interior -->
+        </figure>
+
+        <p><span class="summary">Linux offers all the tools needed to diagnose and recover data for free from a failing hard drive as long as it can still be read. I'm just going to cover in a general way some tooling options to repair or extract data on a problematic hard drive in this post.</span><p>
+
+        <p><span class="summary">For those who cannot be bothered to roll out their own custom recovery image, <a href="http://www.system-rescue-cd.org/" rel="noreferrer" target="_blank">System rescue CD</a> has most of the needed tools within. To note that there are other equally capable custom distros images available for this very purpose. A spare USB key with at least enough storage to hold the distro's image and a quick use of <code class="inline terminal">dd</code> is all that required get going.</span></p>
+
+        <div class="comment-box">
+            <p>For this post I'm assuming the reader is terminal-literate and has at least some understanding of the Linux filesystem. As most examples are generified they will need to be modified where appropriate to fit the situation.</p>
+        </div>
+
+        <h2 id="heading_1">1. Health of the drive (S.M.A.R.T.)</h2>
+
+        <p>The first thing to do on a seemingly failing hard drive is to check if it actually is. Thankfully, on modern-ish drives, it is now possible to do just that by looking up the S.M.A.R.T. info of the device which indicates its general health and usage stats.</p>
+
+        <p>Enter <code class="inline terminal">smartctl</code> (part of the <code class="inline terminal">smartmontools</code> package) which can print all that information for you.</p>
+
+        <div class="code-wrap">
+            <code class="block terminal">smartctl -a /dev/device</code>
+        </div>
+
+        <p>The resulting output should give a clue as to what the problem is. If the device's health looks good then the problems will likely stem from data corruption (see next section).</p>
+
+        <div class="warning-box">
+            <p>If there is a high number of sector re-allocation reported it would be wise to replace the drive preemptively. It's usually a sign that the drive is on its way out.</p>
+        </div>
+
+        <h2 id="heading_2">2. Good drive, Bad data</h2>
+
+        <h3 id="heading_2_1">2.1 File system checker</h3>
+
+        <p>The <code class="inline terminal">fsck</code> (file system consistency check) utility can identify and correct integrity errors in unix/linux  file systems. <span class="italic" style="color: darkred">Just make sure the target partition is NOT mounted when subjecting it to <code class="inline terminal">fsck</code>.</span></p>
+
+        <p>If the drive/partition is encrypted, it will need to be decrypted first (see <a href="#heading_2_4_1">section 2.4.1</a>).</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">fsck -CVr /dev/device</code>
+        </div>
+
+        <h3 id="heading_2_2">2.2 Recovery from a formatted hard drive</h3>
+
+        <p>So you formatted your drive by mistake or something obliterated the partition table... The good news is that it can be recovered from in most cases (lest data was written on top).</p>
+
+        <p>For this predicament <a href="https://www.cgsecurity.org/wiki/TestDisk" rel="noreferrer" target="_blank"><code class="inline terminal">testdisk</code></a> can come to the rescue. It is an interactive utility that offers many useful things (excerpt taken from the  <a href="https://www.cgsecurity.org/wiki/TestDisk" rel="noreferrer" target="_blank">cgsecurity site</a>):</p>
+
+        <ul>
+            <li>Fix partition table, recover deleted partition,</li>
+            <li>Recover FAT32 boot sector from its backup,</li>
+            <li>Rebuild FAT12/FAT16/FAT32 boot sector,</li>
+            <li>Fix FAT tables,</li>
+            <li>Rebuild NTFS boot sector,</li>
+            <li>Recover NTFS boot sector from its backup,</li>
+            <li>Fix MFT using MFT mirror,</li>
+            <li>Locate ext2/ext3/ext4 Backup SuperBlock,</li>
+            <li>Undelete files from FAT, exFAT, NTFS and ext2 filesystem,</li>
+            <li>Copy files from deleted FAT, exFAT, NTFS and ext2/ext3/ext4 partitions.</li>
+        </ul>
+
+        <div class="comment-box">
+            <p>Without going too much into details this saved my arse a few years ago when I accidentally started formatting one of my archival drives. Definitely a tool worth knowing about and learning how to use!</p>
+        </div>
+
+        <h3 id="heading_2_3">2.3 Data recovery tools</h3>
+
+        <p>Aside from <a href="https://www.cgsecurity.org/wiki/TestDisk" rel="noreferrer" target="_blank"><code class="inline terminal">testdisk</code></a> mentioned <a href="#heading_2_2">above</a>, there are some other tools available that cover different domains.</p>
+
+        <p><a href="http://foremost.sourceforge.net/" rel="noreferrer" target="_blank"><code class="inline terminal">foremost</code></a> is a utility that can recover files based on their header/footer and internal structure (a.k.a.: "<a href="https://en.wikipedia.org/wiki/File_carving" rel="noreferrer" target="_blank">file craving</a>"). It supports a number of file types out-of-the-box but more can be added.</p>
+
+        <div class="information-box">
+            <p>A file header/footer is just a set of bytes identifying the file as of a certain type. This information is useful when trying to find files from a raw data source with no data telling us the structure of the content within. <span class="bold">E.g.:</span> 'jpg' files start with a <code class="inline terminal">ff d8 ff e0</code> and end with <code class="inline terminal">ff d9</code>.</p>
+        </div>
+
+        <p><a href="https://github.com/sleuthkit/scalpel" rel="noreferrer" target="_blank"><code class="inline terminal">scalpel</code></a>, a Linux and Mac file system file recovery utility originally based on foremost, offers an alternative with it's own set of advanced features.</p>
+
+        <p>If one of the tools doesn't return much of the lost data from a device/image it is worth trying the other ones as well as they may be more successful or help complete the recovered set.</p>
+
+        <h3 id="heading_2_4">2.4 Accessing an encrypted volume</h3>
+
+        <h4 id="heading_2_4_1">2.4.1 Decrypting a partition/drive</h4>
+
+        <p>If the partition or the entire drive to be checked is encrypted (let's assume with LUKS since this is for Linux) it will need to be un-encrypted first.</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">cryptsetup luksOpen /dev/device luks_volume</code>
+        </div>
+
+        <h4 id="heading_2_4_2">2.4.2 Mounting to access content</h4>
+
+        <p>In the case where the partition/drive is set up as a LVM then the volumes within the encrypted partition/drive will need to be mapped. To find out if this is the case just use <code class="inline terminal">vgscan</code> command and, to mount the volume(s), <code class="inline terminal">vgchange -aly</code>.</p>
+
+        <p>Otherwise, if LVM is *not* used, just mount the partitions found in <code class="inline terminal">/dev/mapper/luks_volume</code> like as normal using the <code class="inline terminal">mount</code> command.</p>
+
+        <h2 id="heading_3">3. Bad drive, Good data</h2>
+
+
+        <h3 id="heading_3_1">3.1 Checking for bad blocks</h3>
+
+        <p>On modern drive, S.M.A.R.T. can passively identify bad blocks on the device but only when an actual error is actually reported to it. To actively check for bad blocks the <code class="inline terminal">badblocks</code> utility can be used in either a non-destructive or destructive scenario.</p>
+
+        <p>The non destructive method tests each blocks by writing to it but, on each iteration, does a backup of block's data prior. This way the block's data can be put back after its test is completed:</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">badblocks -nsv /dev/device</code>
+        </div>
+
+        <p>To create a list of all the blocks identified as bad just amend the <code class="inline terminal">-o /save/path/to/badblocks.txt</code> to  the options in the arguments.</p>
+
+        <div class="warning-box">
+            <p>The destructive way will effectively wipe all data on the drive as it is testing each blocks. This is great for testing new drives but not so much ones in use. When taking this option, a full backup is required to restore everything back to its original state once the test has completed.</p>
+
+            <div class="code-wrap">
+                <code class="block terminal-bg">badblocks -wsv /dev/device</code>
+            </div>
+        </div>
+
+        <h3 id="heading_3_2">3.2 Backing up the data</h3>
+
+        <p>So the device looks to be failing hard. What now? If a backup has not been done very recently it might be a good idea to try doing one if the content can still be accessed... This is where that spare drive mentioned earlier comes into play.</p>
+
+        <div class="information-box">
+            <p>A spare drive with at least an amount of free space equivalent to the size of the dying drive is will be required.</p>
+        </div>
+
+        <p>Either <code class="inline terminal">rsync</code> or <a href="https://www.gnu.org/software/coreutils/manual/html_node/dd-invocation.html" rel="noreferrer" target="_blank"><code class="inline terminal">dd</code></a> could be used but they are not really the best tools for the job when the drive might just die on you mid-transfer and/or the data therein has, potentially, errors. A much better option for purpose at hand is <a href="https://www.gnu.org/software/ddrescue/ddrescue.html" rel="noreferrer" target="_blank"><code class="inline terminal">ddrescue</code></a>.</p>
+
+        <p><code class="inline terminal">ddrescue</code> copies the data but also attempts to repair it when read errors occur. Specifying a mapping file will enable the process to be resumed if interrupted and further read attempts to be made on problematic areas of the failing device.</p>
+
+        <p>When dealing with a failing device, the aim should be to get as much of the good/uncorrupted data as possible in one go. Once all that data is copied safely the attention can be focused the parts of the device that caused read errors on the first pass.</p>
+
+        <h4 id="heading_3_2_1">3.2.1 Cloning from failing device to new device</h4>
+
+        <div class="warning-box">
+            <p>Make sure neither the failing device nor the new device are mounted and that the target device for the cloning is at least the same size as the failing one.</p>
+        </div>
+
+        <p>The direct device-to-device cloning process should be considered when the failing device is to be replaced but the data needs to be the same and both the data and the failing device are in good enough conditions to do a full 1-1 copy without too many crippling errors.</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">ddrescue -df /dev/failing-device /dev/new-device /mnt/ext-usb/failing-device-map.log</code>
+        </div>
+
+        <h4 id="heading_3_2_2">3.2.2 Imaging failing device to a recovery file</h4>
+
+        <div class="warning-box">
+            <p>Make sure that the file system where the image file is to be saved to has more free space than the size of the failing device available.</p>
+        </div>
+
+        <p>Cloning to an image is used for recovery purposes rather than just replacing a failing device with a fresh one. If a lot of errors are reported by <code class="inline terminal">ddrescue</code> it may not be worth cloning the image into a new device. Targeted individual file/folder recovery from the image would then be a better option.</p>
+
+        <div class="code-wrap">
+            Pass #1: copying the good data: <code class="block terminal-bg">ddrescue -d /dev/device /mnt/ext-drive/hdd.img /mnt/ext-drive/hdd-map.log</code>
+            Pass #2: bad data recovery (3x attempts for each bad sectors: <code class="inline terminal">-r3</code>): <code class="block terminal-bg">ddrescue -d -r3 /dev/device /mnt/ext-drive/hdd.img /mnt/ext-drive/hdd-map.log</code>
+        </div>
+
+        <h4 id="heading_3_2_3">3.2.3 Mounting a recovery image</h4>
+
+        <p>To mount a recovery image into your system (e.g.: the <code class="inline terminal">/mnt/recovery-img</code> directory) there are different approaches depending on what the image is.</p>
+
+        <h5>Mounting an image of a partition</h5>
+
+        <p>That's the easiest. Note that the <code class="inline terminal">ro</code> read-only option is passed so that the image does not get modified by mistake.</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">mount -o loop,ro /mnt/ext-drive/hdd.img /mnt/recovery-img</code>
+        </div>
+
+        <h5>Mounting an image of a drive</h5>
+
+        <p>When there are multiple partitions in the image of the failing drive the offsets of each must be calculated before mounting these is possible. This is where the <a href="https://www.gnu.org/software/parted/" rel="noreferrer" target="_blank"><code class="inline terminal">parted</code></a> utility becomes useful.</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">parted /mnt/ext-drive/hdd.img</code>
+        </div>
+
+        <p>Then type the following in the interactive prompt to get the start/end/size of each partitions in the image:</p>
+
+        <div class="code-wrap">
+<code class="block terminal">units B
+print</code>
+        </div>
+
+        <p>With this information a partition can be mounted by passing its 'start' as the <code class="inline terminal"><span style="color: #eeaf4b">$OFFSET</span></code> value and its 'size' as its <code class="inline terminal"><span style="color: #eeaf4b">$SIZELIMIT</span></code> value. If the partition is the last on the imaged device then the <code class="inline terminal">sizelimit</code> argument can be omitted.</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">mount -o loop,ro,offset=<span style="color: #eeaf4b">$OFFSET</span>,sizelimit=<span style="color: #eeaf4b">$SIZELIMIT</span> /mnt/ext-drive/hdd.img /mnt/recovery-partX</code>
+        </div>
+
+        <h2 id="heading_4">4. Dead drive, Unknown data</h2>
+
+        <div class="comment-box">
+            <p>If the drive is not getting recognised on any systems then it might be time to pour out a drink and ponder about the value of backups. I shan't be judging as I've been in that place before.</p>
+        </div>
+
+        <p>The only recourse left on a drive that is not recognised is to send it off to your nearest friendly data recovery place that has a "clean room". If it's a mechanical drive you may still have a chance but with a solid state, it's another matter...</p>
+
+        <p>When the controller on an SSD goes you might as well just bin the thing or, as a last ditch attempt. try the <a href="https://dfarq.homeip.net/fix-dead-ssd/" rel="noreferrer" target="_blank">power cycle method</a> (I've had very limited success with it but your experience may vary). If that somehow works through some miracle, it is advisable to use that opportunity and do a full backup before swapping the device with a new one.</p>
+
+    </div>
+</article>
+                </div>
+            </div>
+            <div class="right-col">
+                <div class="page-nav">
+                	<ul>
+                		<li class="first"><a href="1.html">|&#9664;</a></li>
+                		<li class="prev"><a rel="prev" href="17.html">&#9664;</a></li>
+                		<li class="curr">18 / 30</li>
+                		<li class="next"><a rel="next" href="19.html">&#9654;</a></li>
+                		<li class="last"><a href="30.html">&#9654;|</a></li>
+                	</ul>
+                </div>
+
+                <div>
+                    <h2>By Date</h2>
+                    <div class="index-pane-dates">
+                    		<ol class="tree">
+                    			<li><label for="checkbox_2022">2022</label><input type="checkbox" id="checkbox_2022"/>
+                    				<ol>
+                    					<li><label for="checkbox_202209">September</label><input type="checkbox" id="checkbox_202209"/>
+                    						<ol>
+                    							<li>28 <a href="30.html">Socket event epoll blocking in linux</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2021">2021</label><input type="checkbox" id="checkbox_2021"/>
+                    				<ol>
+                    					<li><label for="checkbox_202108">August</label><input type="checkbox" id="checkbox_202108"/>
+                    						<ol>
+                    							<li>12 <a href="29.html">Binary Search Algorithm</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202107">July</label><input type="checkbox" id="checkbox_202107"/>
+                    						<ol>
+                    							<li>19 <a href="28.html">Retrospective: cTune v1.0</a></li>
+                    							<li>10 <a href="27.html">Circular Buffer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202106">June</label><input type="checkbox" id="checkbox_202106"/>
+                    						<ol>
+                    							<li>30 <a href="26.html">cTune v1.0: Part 3 - Frontstage</a></li>
+                    							<li>25 <a href="25.html">cTune v1.0: Part 2 - Backstage</a></li>
+                    							<li>16 <a href="24.html">cTune v1.0: Part 1 - Design</a></li>
+                    							<li>15 <a href="23.html">cTune v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2020">2020</label><input type="checkbox" checked  id="checkbox_2020"/>
+                    				<ol>
+                    					<li><label for="checkbox_202006">June</label><input type="checkbox" id="checkbox_202006"/>
+                    						<ol>
+                    							<li>16 <a href="22.html">Indexed search with Javascript</a></li>
+                    							<li>03 <a href="21.html">Character encoding primer</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202005">May</label><input type="checkbox" id="checkbox_202005"/>
+                    						<ol>
+                    							<li>27 <a href="20.html">Blogator v1.3 released</a></li>
+                    							<li>07 <a href="19.html">Blogator v1.2 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202004">April</label><input type="checkbox" checked  id="checkbox_202004"/>
+                    						<ol>
+                    							<li>22 <a class="current-post" href="18.html">HDD diagnosis and recovery tools</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202003">March</label><input type="checkbox" id="checkbox_202003"/>
+                    						<ol>
+                    							<li>27 <a href="17.html">Coronavirus info and form fetcher script for the French gov. page</a></li>
+                    							<li>24 <a href="16.html">A RaspberryPi Git server</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_202002">February</label><input type="checkbox" id="checkbox_202002"/>
+                    						<ol>
+                    							<li>23 <a href="15.html">CMake Variable Injection</a></li>
+                    							<li>14 <a href="14.html">Android upgrade woes</a></li>
+                    							<li>11 <a href="13.html">Basics of the Linux terminal and tools</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2019">2019</label><input type="checkbox" id="checkbox_2019"/>
+                    				<ol>
+                    					<li><label for="checkbox_201910">October</label><input type="checkbox" id="checkbox_201910"/>
+                    						<ol>
+                    							<li>10 <a href="12.html">C++ Resource Acquisition Is Initialization (RAII)</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201908">August</label><input type="checkbox" id="checkbox_201908"/>
+                    						<ol>
+                    							<li>20 <a href="11.html">Retrospective: Blogator v1.0</a></li>
+                    							<li>13 <a href="10.html">Blogator v1.0 released</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201901">January</label><input type="checkbox" id="checkbox_201901"/>
+                    						<ol>
+                    							<li>06 <a href="9.html">Terminal plot-graphs with braille characters</a></li>
+                    							<li>02 <a href="8.html">Creating bitmaps using braille characters</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2018">2018</label><input type="checkbox" id="checkbox_2018"/>
+                    				<ol>
+                    					<li><label for="checkbox_201811">November</label><input type="checkbox" id="checkbox_201811"/>
+                    						<ol>
+                    							<li>30 <a href="7.html">Maximum value in a Sliding Window</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201809">September</label><input type="checkbox" id="checkbox_201809"/>
+                    						<ol>
+                    							<li>11 <a href="6.html">C++ Raw and Smart Pointers</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201808">August</label><input type="checkbox" id="checkbox_201808"/>
+                    						<ol>
+                    							<li>27 <a href="5.html">Design Pattern: Object Pool</a></li>
+                    							<li>14 <a href="4.html">Design Pattern: Singleton</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201803">March</label><input type="checkbox" id="checkbox_201803"/>
+                    						<ol>
+                    							<li>18 <a href="3.html">Python package based app structure</a></li>
+                    						</ol>
+                    					</li>
+                    					<li><label for="checkbox_201801">January</label><input type="checkbox" id="checkbox_201801"/>
+                    						<ol>
+                    							<li>27 <a href="2.html">Working out coordinates using distances</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    			<li><label for="checkbox_2017">2017</label><input type="checkbox" id="checkbox_2017"/>
+                    				<ol>
+                    					<li><label for="checkbox_201712">December</label><input type="checkbox" id="checkbox_201712"/>
+                    						<ol>
+                    							<li>30 <a href="1.html">Arch Linux on a MacBook Pro 2015</a></li>
+                    						</ol>
+                    					</li>
+                    				</ol>
+                    			</li>
+                    		</ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>
+                <div>
+                    <span class="footer-avatar"><img src="../img/kitteh.jpg" alt="logo"></span>
+                    An7ar35, 2018-21
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

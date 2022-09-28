@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+package Application #lightgrey {
+    component "Component" as A
+    interface "Input API" as In
+    interface "Output API" as Out
+    component "Plugin loader" as Loader
+    interface "Plugin interface" as iLoader
+
+    iLoader -- Loader
+    A --( In
+    A --( Out
+    A --( iLoader
+}
+
+package Plugins #lightgrey {
+    File InputA
+    File InputB
+    File OutputA
+    File OutputB
+}
+
+InputA  <--up-- In
+InputB  <--up-- In
+OutputA <--up-- Out
+OutputB <--up-- Out
+
+Loader .[#RoyalBlue].> InputA
+Loader .[#RoyalBlue].> InputB
+Loader .[#RoyalBlue].> OutputA
+Loader .[#RoyalBlue].> OutputB
+
+@enduml

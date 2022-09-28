@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+component                            NetworkUtils
+interface "Radio Browser web API" as RadioBrowserAPI
+interface "OpenSSL lib"           as OpenSSL
+interface "Sockets lib"           as Sockets
+
+NetworkUtils --( OpenSSL : "uses"
+NetworkUtils --( Sockets : "uses"
+OpenSSL      ..> RadioBrowserAPI : https
+Sockets      ..> RadioBrowserAPI : http/dns
+
+@enduml

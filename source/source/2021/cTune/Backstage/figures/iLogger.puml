@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+enum LogLevel {
+    CTUNE_LOG_FATAL = 1
+    CTUNE_LOG_ERROR = 3
+    CTUNE_LOG_WARNING = 4
+    CTUNE_LOG_MSG = 5
+    CTUNE_LOG_DEBUG = 7
+    CTUNE_LOG_TRACE = 8
+}
+
+
+interface Logger {
+        + LOG( enum LogLevel lvl, const char * format, ... ) : void
+        ---
+        + init( const char * log_filepath, const char * file_mode, enum LogLevel lvl ) : bool
+        + close( void ) : void
+        + log( enum LogLevel lvl, const char * format, ... ) : void
+        + logDBG( enum LogLevel lvl, char * filename, int line_number, const char * format, ... ) : void
+}
+
+Logger -right-> LogLevel
+
+@enduml
