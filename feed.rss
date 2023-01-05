@@ -15,8 +15,18 @@
 		<img>img/logo.png</img>
 		<description></description>
 		<copyright>An7ar35 @2021</copyright>
-		<lastBuildDate>Wed, 28 Sep 2022 14:44:02 +0200</lastBuildDate>
+		<lastBuildDate>Thu, 05 Jan 2023 12:41:59 +0100</lastBuildDate>
 		<generator>Blogator 1.3.2</generator>
+		<item>
+			<title>cTune v1.1 released</title>
+			<link>https://an7ar35.bitbucket.io/posts/31.html</link>
+			<pubDate>5 January 2023</pubDate>
+			<category>C99</category>
+			<category>cTune</category>
+			<category>Project</category>
+			<category>Releases</category>
+			<description>I figured for the new year I'd go back into the guts of ctune. Here's what's new with this update:</description>
+		</item>
 		<item>
 			<title>Socket event epoll blocking in linux</title>
 			<link>https://an7ar35.bitbucket.io/posts/30.html</link>
@@ -98,14 +108,6 @@
 			<category>Data Structure</category>
 			<category>Javascript</category>
 			<description>It started with an idea: "Wouldn't it be nice to have a search functionality on my blog?". Sure, nowadays there are many libraries and external sites such as Google offering this in some form or other. But, as far as my personal projects are concerned, I am not one to be satiated with a solution that would likely involve said third party injecting hell-knows-what into my little home-brew site. Even if that was an option it would probably be overkill for what I actually need.</description>
-		</item>
-		<item>
-			<title>Character encoding primer</title>
-			<link>https://an7ar35.bitbucket.io/posts/21.html</link>
-			<pubDate>3 June 2020</pubDate>
-			<category>Character encoding</category>
-			<category>Notes</category>
-			<description>On computers where <i>1</i> and <i>0</i> rule supreme we must have a way to express the human languages in the written format. Do do this there are standards that map characters to numeric values.</description>
 		</item>
 	</channel>
 </rss>

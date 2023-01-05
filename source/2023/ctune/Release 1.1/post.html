@@ -1,0 +1,78 @@
+<article>
+    <div>
+        <h1><span class="title">cTune v1.1 released</span></h1>
+        <time datetime="2023-01-05">05 January 2023</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">cTune</span>
+            <span class="tag">C99</span>
+            <span class="tag">Project</span>
+            <span class="tag">Releases</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <p><span class="summary">I figured for the new year I'd go back into the guts of ctune. Here's what's new with this update:</span></p>
+
+        <h3>UI</h3>
+
+        <h4>Options menu</h4>
+
+        <p>The option menu now has a dynamically populated "Configuration" sub-menu.</p>
+
+        <p>On all listing tabs (favourites, search results and browser listing) the row size can now be changed from there. In addition, the favourite tab's theming can be toggled on/off.</p>
+
+        <figure class="center three-quarter-width">
+            <a href="img/config_menu_1.png"><img src="img/config_menu_1.png" alt="Config menu 1" /></a>
+            <figcaption>Fig.1 Configuration menu entry</figcaption>
+        </figure>
+
+        <figure class="center three-quarter-width">
+            <a href="img/config_menu_2.png"><img src="img/config_menu_2.png" alt="Config menu 2" /></a>
+            <figcaption>Fig.2 Configuration menu content</figcaption>
+        </figure>
+
+        <p>No more spelunking into the <code class="inline terminal">~/.config/ctune/</code> folder to edit the config file by hand for these.</p>
+
+        <h4>Resizing bug</h4>
+
+        <p>The resize functionality now works properly. In version 1.0.0, resizing was a bit janky admittedly and it got worse with time as the ncurses library got updates. The reason was that both ctune and ncurses were fighting to control the resizing. Now ctune takes on that responsibility entirely (tested in Konsole).</p>
+
+        <h3>Config file</h3>
+
+        <p>The <code class="inline terminal">UI::Favourite:HideTheming</code> configuration flag is now inverted into <code class="inline terminal">UI::Favourites::ShowTheme</code>. The log will show an error at first launch and then default the UI to its internal default parameters so if there was some customisation done it may be overridden once.</p>
+
+        <h3>Code</h3>
+
+        <p>The player component has been updated replacing deprecated FFMpeg library calls with their new updated equivalents.</p>
+
+        <p>Opportunistically, I did some refactoring and cleaning in the source code.</p>
+
+        <h3>Misc</h3>
+
+        <p>I've added Docker deployment config files to the repo along with a launch script to make the code-build-test cycle for the UI stuff a bit less involved.<p>
+
+        <p>No more having to remove an existing installation on the system in order to test/view changes! The docker image is build on ArchLinux's very own and passes through the host user's pulseaudio socket to play sound so this is for Linux hosts only.</p>
+
+        <h3>Final words</h3>
+
+        <p>As always, the update is available in Arch's <a href="https://aur.archlinux.org/packages/ctune-git" rel="noreferrer" target="_blank">AUR</a>. Otherwise, it's a manual build/install.</p>
+
+        <p>That's it. Happy radio listening!</p>
+
+        <div class="flex-table">
+            <div class="flex-table-row">
+                <div class="flex-cell flex-table-heading">
+                    Github Repository
+                </div>
+                <div class="flex-cell center-align">
+                    <a href="https://github.com/An7ar35/ctune" target="_blank">
+                        <img class="link-icon" src="../../../../img/logos/github-original.svg" alt="Github icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
