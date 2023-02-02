@@ -206,3 +206,10 @@ hr {
 }
 
 p.footnote { font-size: 90%; }
+
+div.fill-width {
+    width: 100%;
+    display: inline-block;
+    position: center;
+    justify-content: center;
+}

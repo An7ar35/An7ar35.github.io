@@ -24,6 +24,7 @@ figure figcaption {
 figure.three-quarter-width { width: 75%; }
 figure.two-third-width     { width: 66%; }
 figure.half-width          { width: 50%; }
+figure.width-45            { width: 45%; }
 figure.third-width         { width: 33%; }
 figure.quarter-width       { width: 25%; }
 figure.eighth-width        { width: 15%; }
@@ -63,6 +64,7 @@ figure.center img {
         text-align: center;
     }
 
+    figure.width-45,
     figure.third-width {
         margin: 0.5em auto !important;
         width: 66% !important;
@@ -83,6 +85,7 @@ figure.center img {
 }
 
 @media screen and ( max-width: 400px ) {
+    figure.width-45,
     figure.third-width,
     figure.quarter-width {
         width: 90% !important;

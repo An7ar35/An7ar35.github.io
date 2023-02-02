@@ -1,0 +1,45 @@
+@startuml
+skinparam linetype ortho
+'skinparam linetype polyline
+
+    package widget #white {
+        component BorderWin
+        component ScrollBar
+        component SlideMenu
+        component Dialog
+        component ScrollWin
+        component Form #cyan
+
+        Dialog    *-- ScrollWin
+        Dialog    *-- ScrollBar
+        Dialog    *--- BorderWin
+        SlideMenu *-- ScrollBar
+        Form      *-right- Dialog
+    }
+
+    package window #white {
+        component RSListWin
+        component BrowserWin
+
+        BrowserWin *-left- RSListWin
+    }
+
+    package dialog #white {
+        component ContextHelp
+        component RSFind
+        component RSInfo
+        component RSEdit
+        component OptionsMenu
+
+        ContextHelp *-- Dialog
+    }
+
+
+    BrowserWin  *-- SlideMenu
+    OptionsMenu *-- SlideMenu
+    RSFind      *-- Form
+    RSInfo      *-- Dialog
+    RSEdit      *-- Form
+    OptionsMenu *-- BorderWin
+
+@enduml

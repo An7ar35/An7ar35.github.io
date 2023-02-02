@@ -1,0 +1,165 @@
+<article>
+    <div>
+        <h1><span class="title">cTune v1.2 released</span></h1>
+        <time datetime="2023-02-02">02 February 2023</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">cTune</span>
+            <span class="tag">C99</span>
+            <span class="tag">Project</span>
+            <span class="tag">Releases</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <div class="auto-toc"></div>
+
+        <p><span class="summary">For this release there has been a lot of work done in the UI side as well as the usual bug squashing. Mouse support, Themes and unicode icons are added and are all available from the Configuration menu.</span></p>
+
+        <figure class="left half-width">
+            <a href="img/v1_2_0.png"><img src="img/v1_2_0.png" alt="Version 1.2" /></a>
+        </figure>
+
+        <h3>UI</h3>
+
+        <h4>Themes</h4>
+
+        <p>The theme engine now has internal presets as well as a "Custom" preset that can be selected from the Configuration menu. The "Custom" preset uses the values set inside the configuration file so, if the baked in themes are not your cup of tea, you can still make your own like in the previous versions but also select it via the Configuration menu.</p>
+
+        <div class="fill-width">
+            <figure class="left width-45">
+                <a href="img/default.png"><img src="img/default.png" alt="Default theme" /></a>
+                <figcaption>Fig.1 Default theme</figcaption>
+            </figure>
+
+            <figure class="right width-45">
+                <a href="img/hackerman.png"><img src="img/hackerman.png" alt="Hackerman theme" /></a>
+                <figcaption>Fig.2 "Hackerman" theme</figcaption>
+            </figure>
+
+            <figure class="left width-45">
+                <a href="img/red-zone.png"><img src="img/red-zone.png" alt="Red-zone theme" /></a>
+                <figcaption>Fig.3 "Red-zone" theme</figcaption>
+            </figure>
+
+            <figure class="right width-45">
+                <a href="img/deep-blue.png"><img src="img/deep-blue.png" alt="Deep-blue theme" /></a>
+                <figcaption>Fig.4 "Deep-blue" theme</figcaption>
+            </figure>
+        </div>
+
+        <p>When using internal presets, there is an ability to still use the "Custom" preset's colours for Favourite stations by using the "Toggle theming *" menu item. The relevant lines in the configuration files for that are:</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">UI::Theme::row::favourite::local={COLOUR}
+UI::Theme::row::favourite::remote={COLOUR}</code>
+        </div>
+
+        <h4>Unicode icons</h4>
+
+        <p>Unicode is now pretty ubiquitous in the terminal so why not use its fancy characters for icons? Assuming the terminal font supports these, cTune can now have those pretty single character icons replacing the old ASCII symbols. For the purists; fear not as there is a way to toggle between the two available in the Configuration menu.</p>
+
+        <div class="fill-width">
+            <figure class="left width-45">
+                <a href="img/unicode-icons.png"><img src="img/unicode-icons.png" alt="Unicode icons" /></a>
+                <figcaption>Fig.5 Unicode icons</figcaption>
+            </figure>
+
+            <figure class="right width-45">
+                <a href="img/ascii-icons.png"><img src="img/ascii-icons.png" alt="ASCII icons" /></a>
+                <figcaption>Fig.6 ASCII icons</figcaption>
+            </figure>
+        </div>
+
+        <h4>Mouse support</h4>
+
+        <p>That functionality was a long time coming! Mouse click detection for all the different widgets is now implemented as well as mouse event handlers for the dialogs using said widgets. Everything is navigable with the mouse alone including volume control, play/stop, etc...</p>
+
+        <p>The scrolling and window controls are only displayed when the mouse support is turned on.</p>
+
+        <p>There is also a guide available in the repository's documentation detailing mouse controls.</p>
+
+        <div class="fill-width">
+            <figure class="left width-45">
+                <a href="img/mouse_on.png"><img src="img/mouse_on.png" alt="Mouse on" /></a>
+                <figcaption>Fig.7 Dialog with mouse support ON</figcaption>
+            </figure>
+
+            <figure class="right width-45">
+                <a href="img/mouse_off.png"><img src="img/mouse_off.png" alt="Mouse off" /></a>
+                <figcaption>Fig.8 Dialog with mouse support OFF</figcaption>
+            </figure>
+        </div>
+
+        <h3>Code</h3>
+
+        <h4>Stream timeout</h4>
+
+        <figure class="right quarter-width">
+            <a href="img/timeout.png"><img src="img/timeout.png" alt="Stream timeout menu item" /></a>
+            <figcaption>Fig.9 Stream timeout menu item</figcaption>
+        </figure>
+
+        <p>The stream timout field (in seconds) from the configuration file can now be safely modified from the Options menu. The default value is currently '5s' but, for some streams with rather chungus frames to decode, increasing it to 6-8s might yield better results.</p>
+
+        <h4>Form widget</h4>
+
+        <p>When implementing mouse support it became very clear that a new widget was needed to not only combine the already large chunk of code shared between <code class="inline terminal">RSEdit</code> and <code class="inline terminal">RSFind</code> but to wrap the ncurses form library call neatly along with the mouse logic in  one package.</p>
+
+        <p>The upside now is that new "form" based dialogs can be implemented with all the basic mouse-related stuff like scrolling and field getters based on coordinates baked in. All there is to do is code-in the field initialisation callback and the mouse handling event method in a "form" based Dialog. This should make life a lot easier down the line.</p>
+
+        <figure class="center two-third-width">
+            <a href="uml/widgets.png"><img src="uml/widgets.png" alt="Widget UML" /></a>
+            <figcaption>Fig.10 New 'Form' widget</figcaption>
+        </figure>
+
+        <h4>Bugs</h4>
+
+        <p>The RadioBrowserAPI searches are now properly working. The following were corrected:</p>
+
+        <ul>
+            <li>"Exact match" broken for "Country", "Language" and single "Tag" (unused).</li>
+            <li>State: was broken when "Exact match" was selected for it.</li>
+        </ul>
+
+        <p>Aside from that, a fair amount of minor bugs have been squashed out of existence.</p>
+
+        <h3>Docker</h3>
+
+        <p>The previous "Arch" docker file was optimised a little and a new "Ubuntu" options was added since the last major release.</p>
+
+        <p>The <code class="inline terminal">docker-compose.sh</code> script takes an argument (<code class="inline terminal">arch</code>, <code class="inline terminal">ubuntu</code>) to build and launch a container with the preferred base image.</p>
+
+        <p>As previously stated in the v1.1 release, the containerisation is for Linux only as it requires pulseaudio to work.<p>
+
+        <h3>Showcase video</h3>
+
+        <p>I made a little video to showcase cTune a little...</p>
+
+        <video width="800" height="600" controls>
+            <source src="video/showcase.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h3>Final words</h3>
+
+        <p>As always, the update is available in Arch's <a href="https://aur.archlinux.org/packages/ctune-git" rel="noreferrer" target="_blank">AUR</a>. Otherwise, it's a manual build/install.</p>
+
+        <p>Rock on!</p>
+
+        <div class="flex-table">
+            <div class="flex-table-row">
+                <div class="flex-cell flex-table-heading">
+                    Github Repository
+                </div>
+                <div class="flex-cell center-align">
+                    <a href="https://github.com/An7ar35/ctune" target="_blank">
+                        <img class="link-icon" src="../../../../img/logos/github-original.svg" alt="Github icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
