@@ -1,0 +1,95 @@
+<article>
+    <div>
+        <h1><span class="title">cTune v1.3 released</span></h1>
+        <time datetime="2024-08-18">18 August 2024</time>
+        <div class="authors">
+            <span class="author">Es</span>
+        </div>
+        <div class="tags">
+            <span class="tag">cTune</span>
+            <span class="tag">C99</span>
+            <span class="tag">Project</span>
+            <span class="tag">Releases</span>
+        </div>
+    </div>
+    <div class="post-text">
+
+        <div class="auto-toc"></div>
+
+        <p><span class="summary">It's been a while since the last update so there are a couple of goodies in that one to make up for it along with some bug squashing...</span></p>
+
+        <h3>UI</h3>
+
+        <figure class="right quarter-width">
+            <a href="img/mouse_resolution.png"><img src="img/mouse_resolution.png" alt="Mouse click resolution option" /></a>
+            <figcaption>Fig.1 Mouse click delay</figcaption>
+        </figure>
+
+        <p>There is now the ability to change the click delay resolution (max time between clicks for it to be registered). It's been added mostly as a workaround for those with less twitchy fingers that didn't see their double clicks registered at all by ncurse.</p>
+
+        <p>The setting can be found in the Options menu.</p>
+
+        <h3>Plugins</h3>
+
+        <div class="fill-width">
+            <figure class="left quarter-width">
+                <a href="img/plugin_options.png"><img src="img/plugin_options.png" alt="Plugin options" /></a>
+                <figcaption>Fig.2 Plugin options</figcaption>
+            </figure>
+
+            <figure class="right half-width">
+                <a href="img/recording.png"><img src="img/recording.png" alt="Recording path" /></a>
+                <figcaption>Fig.3 Recording path</figcaption>
+            </figure>
+        </div>
+
+        <h4>Recording to a file</h4>
+
+        <p>A special plugin type was added for doing stream recording to file. A pcm (wave) as well as a mp3 plugin now feature in ctune but it's still experimental. The output folder is configurable in the options menu and the config file (see below).</p>
+
+        <div class="code-wrap">
+            <code class="block terminal-bg">IO::Recording::Path="/home/USER/Music/ctune/"</code>
+        </div>
+
+        <h4>Pipewire</h4>
+
+        <p>It's been in the pipeline since v1.2.0 but it's finally there! Audio output to native pipewire is now supported.</p>
+
+        <h3>Bugs/Code improvements</h3>
+
+        <h4>Bug: crash on resize</h4>
+
+        <p>This issue was caused by a couple of backend calls to callback functions that updated the UI as a side-effect. These could operate on a select number of UI variables during a resize in which they were in an undefined state. A thread-safe event queue specifically for communicating events between the backend threads and the UI is now in place guaranteeing cleaner asynchronous communication of events between the backend and the UI.</p>
+
+        <h4>Bug: PulseAudio issues with later versions</h4>
+
+        <p>The PulseAudio plugin basically stopped working properly after an update as it was using a 'push' paradigm for the audio buffer. With some refactoring and the inclusion of a <code class="inline">CircularBuffer</code>, a 'pull' paradigm is now used instead bringing the plugin inline with the recommended pulseaudio client implementation. The <code class="inline">pipewire-pulse</code> plugin also works again now.</p>
+
+        <h4>QoL improvements/Minor bugs</h4>
+        <ul>
+            <li>Added timeout option to the VLC plugin which now obeys the value set in the configuration,</li>
+            <li>Added a missing volume function to sndio output plugin API,</li>
+            <li>Much needed <code class="inline">CMakeList.txt</code> overhaul breaking down plugins and the logger into their own sub-projects,</li>
+            <li>And the usual refactoring, minor bug squashing and code cleaning...</li>
+        </ul>
+
+        <h3>Final words</h3>
+
+        <p>As always, the update is available in Arch's <a href="https://aur.archlinux.org/packages/ctune-git" rel="noreferrer" target="_blank">AUR</a>. Otherwise, it's a manual build/install.</p>
+
+        <p>Rock on!</p>
+
+        <div class="flex-table">
+            <div class="flex-table-row">
+                <div class="flex-cell flex-table-heading">
+                    Github Repository
+                </div>
+                <div class="flex-cell center-align">
+                    <a href="https://github.com/An7ar35/ctune" target="_blank">
+                        <img class="link-icon" src="../../../../img/logos/github-original.svg" alt="Github icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

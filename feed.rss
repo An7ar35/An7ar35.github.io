@@ -15,8 +15,18 @@
 		<img>img/logo.png</img>
 		<description></description>
 		<copyright>An7ar35 @2021</copyright>
-		<lastBuildDate>Thu, 02 Feb 2023 10:31:50 +0100</lastBuildDate>
+		<lastBuildDate>Sun, 18 Aug 2024 17:29:00 +0200</lastBuildDate>
 		<generator>Blogator 1.3.2</generator>
+		<item>
+			<title>cTune v1.3 released</title>
+			<link>https://an7ar35.bitbucket.io/posts/33.html</link>
+			<pubDate>18 August 2024</pubDate>
+			<category>C99</category>
+			<category>cTune</category>
+			<category>Project</category>
+			<category>Releases</category>
+			<description>It's been a while since the last update so there are a couple of goodies in that one to make up for it along with some bug squashing...</description>
+		</item>
 		<item>
 			<title>cTune v1.2 released</title>
 			<link>https://an7ar35.bitbucket.io/posts/32.html</link>
@@ -99,16 +109,6 @@
 			<category>cTune</category>
 			<category>Project</category>
 			<description><code class="inline terminal">ctune</code> is Linux based internet radio stream player for the console entirely written in C. It uses the RadioBrowser API as a source for searching streams and getting station information.This is part 1 of 3 blog posts detailing the design philosophy and choices taken for cTune's development.</description>
-		</item>
-		<item>
-			<title>cTune v1.0 released</title>
-			<link>https://an7ar35.bitbucket.io/posts/23.html</link>
-			<pubDate>15 June 2021</pubDate>
-			<category>C99</category>
-			<category>cTune</category>
-			<category>Project</category>
-			<category>Releases</category>
-			<description><code class="inline terminal">ctune</code> is Linux based internet radio stream player for the console entirely written in C. It uses the RadioBrowser API as a source for for searching streams and getting the stations' information.</description>
 		</item>
 	</channel>
 </rss>
