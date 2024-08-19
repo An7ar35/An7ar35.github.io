@@ -82,9 +82,11 @@
         		</ol></li>
         		<li><a href="#heading_3">3. Bugs/Code improvements</a></li>
         		<li><ol>
-        			<li><a href="#heading_3_1">3.1 Bug: crash on resize</a></li>
-        			<li><a href="#heading_3_2">3.2 Bug: PulseAudio issues with later versions</a></li>
-        			<li><a href="#heading_3_3">3.3 QoL improvements/Minor bugs</a></li>
+        			<li><a href="#heading_3_1">3.1 Bug: crash with unresponsive RadioBrowser server</a></li>
+        			<li><a href="#heading_3_2">3.2 Bug: crash on listing categories from RadioBrowser</a></li>
+        			<li><a href="#heading_3_3">3.3 Bug: crash on resize</a></li>
+        			<li><a href="#heading_3_4">3.4 Bug: PulseAudio issues with later versions</a></li>
+        			<li><a href="#heading_3_5">3.5 QoL improvements/Minor bugs</a></li>
         		</ol></li>
         		<li><a href="#heading_4">4. Final words</a></li>
         	</ol>
@@ -131,15 +133,23 @@
 
         <h3 id="heading_3">3. Bugs/Code improvements</h3>
 
-        <h4 id="heading_3_1">3.1 Bug: crash on resize</h4>
+        <h4 id="heading_3_1">3.1 Bug: crash with unresponsive RadioBrowser server</h4>
+
+        <p>In the network module, a call is first made to the RadioBrowser DNS to get a list of available servers. When the currently selected one (random) is not responsive it crashed the app. The code is now a bit more robust and retries the query on the next server in the list until it is exhausted and then fails gracefully with an error message in the UI. The network code was also change to use the <code class="inline">libcurl</code> library and to take the return HTTP code into account.</p>
+
+        <h4 id="heading_3_2">3.2 Bug: crash on listing categories from RadioBrowser</h4>
+
+        <p>When an a call from the RadioBrowser API return a category with an empty name, ctune would crash. The JSON parser code which packs the json returned from the RadioBrowser API into DTOs has been amended to deal with empty or NULL strings.</p>
+
+        <h4 id="heading_3_3">3.3 Bug: crash on resize</h4>
 
         <p>This issue was caused by a couple of backend calls to callback functions that updated the UI as a side-effect. These could operate on a select number of UI variables during a resize in which they were in an undefined state. A thread-safe event queue specifically for communicating events between the backend threads and the UI is now in place guaranteeing cleaner asynchronous communication of events between the backend and the UI.</p>
 
-        <h4 id="heading_3_2">3.2 Bug: PulseAudio issues with later versions</h4>
+        <h4 id="heading_3_4">3.4 Bug: PulseAudio issues with later versions</h4>
 
         <p>The PulseAudio plugin basically stopped working properly after an update as it was using a 'push' paradigm for the audio buffer. With some refactoring and the inclusion of a <code class="inline">CircularBuffer</code>, a 'pull' paradigm is now used instead bringing the plugin inline with the recommended pulseaudio client implementation. The <code class="inline">pipewire-pulse</code> plugin also works again now.</p>
 
-        <h4 id="heading_3_3">3.3 QoL improvements/Minor bugs</h4>
+        <h4 id="heading_3_5">3.5 QoL improvements/Minor bugs</h4>
         <ul>
             <li>Added timeout option to the VLC plugin which now obeys the value set in the configuration,</li>
             <li>Added a missing volume function to sndio output plugin API,</li>
