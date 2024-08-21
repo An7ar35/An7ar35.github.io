@@ -2,24 +2,24 @@
 <rss version="2.0">
 	<channel>
 		<title>Es's Blog</title>
-		<link>https://an7ar35.bitbucket.io</link>
+		<link>https://www.eadavison.com</link>
 		<image>
 			<title>site logo</title>
-			<url>https://an7ar35.bitbucket.io/img/logo.png</url>
+			<url>https://www.eadavison.com/img/logo.png</url>
 			<url>i</url>
-			<link>https://an7ar35.bitbucket.io</link>
+			<link>https://www.eadavison.com</link>
 			<width>50px</width>
 			<height>50px</height>
 			<description></description>
 		</image>
 		<img>img/logo.png</img>
 		<description></description>
-		<copyright>An7ar35 @2021</copyright>
-		<lastBuildDate>Tue, 20 Aug 2024 07:30:26 +0200</lastBuildDate>
+		<copyright>An7ar35 @2024</copyright>
+		<lastBuildDate>Wed, 21 Aug 2024 19:12:11 +0200</lastBuildDate>
 		<generator>Blogator 1.3.2</generator>
 		<item>
 			<title>cTune v1.3 released</title>
-			<link>https://an7ar35.bitbucket.io/posts/33.html</link>
+			<link>https://www.eadavison.com/posts/33.html</link>
 			<pubDate>18 August 2024</pubDate>
 			<category>C99</category>
 			<category>cTune</category>
@@ -29,7 +29,7 @@
 		</item>
 		<item>
 			<title>cTune v1.2 released</title>
-			<link>https://an7ar35.bitbucket.io/posts/32.html</link>
+			<link>https://www.eadavison.com/posts/32.html</link>
 			<pubDate>2 February 2023</pubDate>
 			<category>C99</category>
 			<category>cTune</category>
@@ -39,7 +39,7 @@
 		</item>
 		<item>
 			<title>cTune v1.1 released</title>
-			<link>https://an7ar35.bitbucket.io/posts/31.html</link>
+			<link>https://www.eadavison.com/posts/31.html</link>
 			<pubDate>5 January 2023</pubDate>
 			<category>C99</category>
 			<category>cTune</category>
@@ -49,7 +49,7 @@
 		</item>
 		<item>
 			<title>Socket event epoll blocking in linux</title>
-			<link>https://an7ar35.bitbucket.io/posts/30.html</link>
+			<link>https://www.eadavison.com/posts/30.html</link>
 			<pubDate>28 September 2022</pubDate>
 			<category>C++</category>
 			<category>Linux</category>
@@ -58,7 +58,7 @@
 		</item>
 		<item>
 			<title>Binary Search Algorithm</title>
-			<link>https://an7ar35.bitbucket.io/posts/29.html</link>
+			<link>https://www.eadavison.com/posts/29.html</link>
 			<pubDate>12 August 2021</pubDate>
 			<category>Algorithm</category>
 			<category>C99</category>
@@ -66,7 +66,7 @@
 		</item>
 		<item>
 			<title>Retrospective: cTune v1.0</title>
-			<link>https://an7ar35.bitbucket.io/posts/28.html</link>
+			<link>https://www.eadavison.com/posts/28.html</link>
 			<pubDate>19 July 2021</pubDate>
 			<category>C99</category>
 			<category>cTune</category>
@@ -76,7 +76,7 @@
 		</item>
 		<item>
 			<title>Circular Buffer</title>
-			<link>https://an7ar35.bitbucket.io/posts/27.html</link>
+			<link>https://www.eadavison.com/posts/27.html</link>
 			<pubDate>10 July 2021</pubDate>
 			<category>C99</category>
 			<category>Data Structure</category>
@@ -85,7 +85,7 @@
 		</item>
 		<item>
 			<title>cTune v1.0: Part 3 - Frontstage</title>
-			<link>https://an7ar35.bitbucket.io/posts/26.html</link>
+			<link>https://www.eadavison.com/posts/26.html</link>
 			<pubDate>30 June 2021</pubDate>
 			<category>C99</category>
 			<category>cTune</category>
@@ -94,7 +94,7 @@
 		</item>
 		<item>
 			<title>cTune v1.0: Part 2 - Backstage</title>
-			<link>https://an7ar35.bitbucket.io/posts/25.html</link>
+			<link>https://www.eadavison.com/posts/25.html</link>
 			<pubDate>25 June 2021</pubDate>
 			<category>C99</category>
 			<category>cTune</category>
@@ -103,7 +103,7 @@
 		</item>
 		<item>
 			<title>cTune v1.0: Part 1 - Design</title>
-			<link>https://an7ar35.bitbucket.io/posts/24.html</link>
+			<link>https://www.eadavison.com/posts/24.html</link>
 			<pubDate>16 June 2021</pubDate>
 			<category>C99</category>
 			<category>cTune</category>
